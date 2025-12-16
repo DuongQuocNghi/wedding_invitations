@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'lazy_image.dart';
 
 void main() {
   runApp(const WeddingInvitationApp());
@@ -13,7 +14,6 @@ class WeddingInvitationApp extends StatelessWidget {
       title: 'Thiệp Cưới Quốc Nghi & Mỹ Lan',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: 'Georgia',
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color(0xFF8B6F46),
           brightness: Brightness.light,
@@ -29,6 +29,8 @@ class WeddingInvitationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Để tối ưu first-load trên web, chỉ render các section quan trọng trước.
+    // Các section nặng hơn (nhiều ảnh, nội dung dài) sẽ được load trễ sau 1 frame.
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -45,26 +47,66 @@ class WeddingInvitationPage extends StatelessWidget {
             // Quote Section
             const QuoteSection(),
 
-            // Our Wedding Memories Section
-            const MemoriesSection(),
-
-            // Dating Section
-            const DatingSection(),
-
-            // Wedding Ceremony Section
-            const CeremonySection(),
-
-            // Together Forever Section
-            const TogetherForeverSection(),
-
-            // Wedding Album Section
-            const WeddingAlbumSection(),
-
-            // Thank You Section
-            const ThankYouSection(),
+            // Các section dưới đây được load lazy để giảm công việc build ban đầu.
+            const _LazyContentSections(),
           ],
         ),
       ),
+    );
+  }
+}
+
+/// Các section nội dung dài được render sau khi frame đầu tiên hoàn tất.
+class _LazyContentSections extends StatefulWidget {
+  const _LazyContentSections();
+
+  @override
+  State<_LazyContentSections> createState() => _LazyContentSectionsState();
+}
+
+class _LazyContentSectionsState extends State<_LazyContentSections> {
+  bool _ready = false;
+
+  @override
+  void initState() {
+    super.initState();
+    // Đợi sau frame đầu tiên để không chặn first paint.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        setState(() {
+          _ready = true;
+        });
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (!_ready) {
+      // Placeholder mỏng để giữ bố cục, có thể tinh chỉnh thêm nếu cần.
+      return const SizedBox.shrink();
+    }
+
+    return Column(
+      children: const [
+        // Our Wedding Memories Section
+        MemoriesSection(),
+
+        // Dating Section
+        DatingSection(),
+
+        // Wedding Ceremony Section
+        CeremonySection(),
+
+        // Together Forever Section
+        TogetherForeverSection(),
+
+        // Wedding Album Section
+        WeddingAlbumSection(),
+
+        // Thank You Section
+        ThankYouSection(),
+      ],
     );
   }
 }
@@ -583,36 +625,16 @@ class MemoriesSection extends StatelessWidget {
                   flex: 3,
                   child: Column(
                     children: [
-                      Container(
+                      const LazyNetworkImage(
+                        url: 'https://example.com/wedding-memory-1.webp',
                         width: double.infinity,
                         height: 250,
-                        decoration: BoxDecoration(
-                          color: const Color(0xFFD4C4B0),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: const Center(
-                          child: Icon(
-                            Icons.photo,
-                            size: 50,
-                            color: Colors.white70,
-                          ),
-                        ),
                       ),
                       const SizedBox(height: 20),
-                      Container(
+                      const LazyNetworkImage(
+                        url: 'https://example.com/wedding-memory-2.webp',
                         width: double.infinity,
                         height: 250,
-                        decoration: BoxDecoration(
-                          color: const Color(0xFFD4C4B0),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: const Center(
-                          child: Icon(
-                            Icons.photo,
-                            size: 50,
-                            color: Colors.white70,
-                          ),
-                        ),
                       ),
                     ],
                   ),
@@ -621,28 +643,16 @@ class MemoriesSection extends StatelessWidget {
           ),
           if (isMobile) ...[
             const SizedBox(height: 20),
-            Container(
+            const LazyNetworkImage(
+              url: 'https://example.com/wedding-memory-3.webp',
               width: double.infinity,
               height: 200,
-              decoration: BoxDecoration(
-                color: const Color(0xFFD4C4B0),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: const Center(
-                child: Icon(Icons.photo, size: 50, color: Colors.white70),
-              ),
             ),
             const SizedBox(height: 20),
-            Container(
+            const LazyNetworkImage(
+              url: 'https://example.com/wedding-memory-4.webp',
               width: double.infinity,
               height: 200,
-              decoration: BoxDecoration(
-                color: const Color(0xFFD4C4B0),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: const Center(
-                child: Icon(Icons.photo, size: 50, color: Colors.white70),
-              ),
             ),
           ],
         ],
@@ -708,36 +718,16 @@ class DatingSection extends StatelessWidget {
                       flex: 3,
                       child: Column(
                         children: [
-                          Container(
+                          const LazyNetworkImage(
+                            url: 'https://example.com/dating-1.webp',
                             width: double.infinity,
                             height: 200,
-                            decoration: BoxDecoration(
-                              color: const Color(0xFFD4C4B0),
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: const Center(
-                              child: Icon(
-                                Icons.photo,
-                                size: 50,
-                                color: Colors.white70,
-                              ),
-                            ),
                           ),
                           const SizedBox(height: 20),
-                          Container(
+                          const LazyNetworkImage(
+                            url: 'https://example.com/dating-2.webp',
                             width: double.infinity,
                             height: 250,
-                            decoration: BoxDecoration(
-                              color: const Color(0xFFD4C4B0),
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: const Center(
-                              child: Icon(
-                                Icons.photo,
-                                size: 50,
-                                color: Colors.white70,
-                              ),
-                            ),
                           ),
                         ],
                       ),
@@ -746,28 +736,16 @@ class DatingSection extends StatelessWidget {
               ),
               if (isMobile) ...[
                 const SizedBox(height: 20),
-                Container(
+                const LazyNetworkImage(
+                  url: 'https://example.com/dating-3.webp',
                   width: double.infinity,
                   height: 180,
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFD4C4B0),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: const Center(
-                    child: Icon(Icons.photo, size: 50, color: Colors.white70),
-                  ),
                 ),
                 const SizedBox(height: 20),
-                Container(
+                const LazyNetworkImage(
+                  url: 'https://example.com/dating-4.webp',
                   width: double.infinity,
                   height: 220,
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFD4C4B0),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: const Center(
-                    child: Icon(Icons.photo, size: 50, color: Colors.white70),
-                  ),
                 ),
               ],
               const SizedBox(height: 20),
@@ -826,36 +804,16 @@ class CeremonySection extends StatelessWidget {
                 flex: 3,
                 child: Column(
                   children: [
-                    Container(
+                    LazyNetworkImage(
+                      url: 'https://example.com/ceremony-1.webp',
                       width: double.infinity,
                       height: isMobile ? 200 : 300,
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFD4C4B0),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: const Center(
-                        child: Icon(
-                          Icons.photo,
-                          size: 50,
-                          color: Colors.white70,
-                        ),
-                      ),
                     ),
                     const SizedBox(height: 20),
-                    Container(
+                    LazyNetworkImage(
+                      url: 'https://example.com/ceremony-2.webp',
                       width: double.infinity,
                       height: isMobile ? 200 : 300,
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFD4C4B0),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: const Center(
-                        child: Icon(
-                          Icons.photo,
-                          size: 50,
-                          color: Colors.white70,
-                        ),
-                      ),
                     ),
                   ],
                 ),
@@ -941,17 +899,11 @@ class TogetherForeverSection extends StatelessWidget {
           ),
           if (!isMobile) const SizedBox(width: 40),
           if (!isMobile)
-            Expanded(
+            const Expanded(
               flex: 3,
-              child: Container(
+              child: LazyNetworkImage(
+                url: 'https://example.com/together-forever.webp',
                 height: 350,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFD4C4B0),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: const Center(
-                  child: Icon(Icons.photo, size: 50, color: Colors.white70),
-                ),
               ),
             ),
         ],
