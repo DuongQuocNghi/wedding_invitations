@@ -1,8 +1,8 @@
 [build]
-  # Netlify không có Flutter SDK, nên cần build trên máy local trước
-  # Chạy: flutter build web --release
-  # Sau đó commit và push thư mục build/web lên Git
+  # GitHub Actions sẽ build và deploy, Netlify không cần build
+  # Chỉ cần publish directory (sẽ được GitHub Actions tạo)
   publish = "build/web"
+  # Không có build command vì GitHub Actions đã build rồi
 
 [[redirects]]
   from = "/*"
