@@ -118,27 +118,17 @@ class HeaderSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    final isMobile = size.width < 600;
-    // Tối ưu: chỉ decode width cần thiết để giảm bộ nhớ trên mobile
-    // Mobile: dùng 1.0 để giảm memory, Desktop: có thể dùng 1.5 vì có nhiều RAM hơn
-    final imageWidth = (size.width * (isMobile ? 1.0 : 1.5)).toInt();
-
     return Container(
       width: double.infinity,
       // Chiều cao bằng chiều cao màn hình
-      height: size.height * 0.85,
+      height: MediaQuery.of(context).size.height * 0.85,
       child: Stack(
         fit: StackFit.expand,
         children: [
-          // Sử dụng Image.asset với cacheWidth để tối ưu memory
+          // Sử dụng Image.asset không giới hạn cacheWidth để giữ nguyên chất lượng
           Image.asset(
             'assets/THO_3493.JPG',
             fit: BoxFit.cover,
-            cacheWidth: imageWidth.clamp(
-              300,
-              1920,
-            ), // Giới hạn max width để tối ưu
             // Sử dụng frameBuilder để hiển thị placeholder khi đang load
             frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
               if (wasSynchronouslyLoaded) return child;

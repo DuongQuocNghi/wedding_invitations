@@ -22,28 +22,13 @@ class LazyNetworkImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    final isMobile = size.width < 600;
-    // Tính toán cacheWidth để tối ưu memory trên mobile
-    // Chỉ decode width cần thiết, giảm memory usage đáng kể
-    // Xử lý trường hợp width có thể là double.infinity
-    final effectiveWidth = (width != null && width != double.infinity)
-        ? width!
-        : size.width;
-    // Mobile: dùng multiplier nhỏ hơn để giảm memory usage
-    // Desktop: có thể dùng multiplier cao hơn vì có nhiều RAM hơn
-    final cacheWidth = (effectiveWidth * (isMobile ? 1.0 : 1.5)).toInt().clamp(
-      200,
-      1920,
-    );
-
+    // Lazy load ảnh network với chất lượng gốc, không giới hạn cacheWidth
     final image = Image.network(
       url,
       fit: fit,
       width: width,
       height: height,
-      // Tối ưu memory trên mobile bằng cách chỉ decode width cần thiết
-      cacheWidth: cacheWidth,
+      // Không giới hạn cacheWidth để giữ nguyên chất lượng ảnh
       // Sử dụng loadingBuilder để hiển thị placeholder mượt mà
       loadingBuilder: (context, child, loadingProgress) {
         if (loadingProgress == null) return child;
