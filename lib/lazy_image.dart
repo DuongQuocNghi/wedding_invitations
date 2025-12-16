@@ -30,7 +30,9 @@ class LazyNetworkImage extends StatelessWidget {
     final effectiveWidth = (width != null && width != double.infinity)
         ? width!
         : size.width;
-    final cacheWidth = (effectiveWidth * (isMobile ? 2.0 : 1.5)).toInt().clamp(
+    // Mobile: dùng multiplier nhỏ hơn để giảm memory usage
+    // Desktop: có thể dùng multiplier cao hơn vì có nhiều RAM hơn
+    final cacheWidth = (effectiveWidth * (isMobile ? 1.0 : 1.5)).toInt().clamp(
       200,
       1920,
     );
