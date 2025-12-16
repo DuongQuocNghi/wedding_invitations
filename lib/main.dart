@@ -121,7 +121,8 @@ class HeaderSection extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     final isMobile = size.width < 600;
     // Tối ưu: chỉ decode width cần thiết để giảm bộ nhớ trên mobile
-    final imageWidth = (size.width * (isMobile ? 1.5 : 1.0)).toInt();
+    // Mobile: dùng 1.0 để giảm memory, Desktop: có thể dùng 1.5 vì có nhiều RAM hơn
+    final imageWidth = (size.width * (isMobile ? 1.0 : 1.5)).toInt();
 
     return Container(
       width: double.infinity,
