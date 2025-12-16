@@ -15,7 +15,7 @@ class WeddingInvitationApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Georgia',
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF8B6F46),
+          seedColor: const Color(0xFF8B6F47),
           brightness: Brightness.light,
         ),
       ),
