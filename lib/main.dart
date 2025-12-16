@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'lazy_image.dart';
 
 void main() {
@@ -11,14 +13,8 @@ class WeddingInvitationApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Thiệp Cưới Quốc Nghi & Mỹ Lan',
+      title: 'Quốc Nghi & Mỹ Lan',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF8B6F46),
-          brightness: Brightness.light,
-        ),
-      ),
       home: const WeddingInvitationPage(),
     );
   }
@@ -32,14 +28,19 @@ class WeddingInvitationPage extends StatelessWidget {
     // Để tối ưu first-load trên web, chỉ render các section quan trọng trước.
     // Các section nặng hơn (nhiều ảnh, nội dung dài) sẽ được load trễ sau 1 frame.
     return Scaffold(
+      backgroundColor: const Color(0xFFF4F1EA),
       body: SingleChildScrollView(
         child: Column(
           children: [
             // Header Section
             const HeaderSection(),
 
+            const SizedBox(height: 50),
+
             // Welcome Section
             const WelcomeSection(),
+
+            const SizedBox(height: 50),
 
             // Event Details Section
             const EventDetailsSection(),
@@ -117,68 +118,24 @@ class HeaderSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isMobile = MediaQuery.of(context).size.width < 600;
+    final size = MediaQuery.of(context).size;
 
     return Container(
       width: double.infinity,
+      // Chiều cao bằng chiều cao màn hình
+      height: size.height * 0.85,
       decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [Color(0xFFF5F0E8), Color(0xFFF5F0E8)],
+        image: DecorationImage(
+          image: AssetImage('assets/THO_3493.JPG'),
+          fit: BoxFit.cover,
         ),
       ),
-      child: Column(
-        children: [
-          const SizedBox(height: 40),
-          // Couple Names
-          Text(
-            'QUỐC NGHI',
-            style: TextStyle(
-              fontSize: isMobile ? 36 : 56,
-              fontWeight: FontWeight.w300,
-              letterSpacing: 4,
-              color: const Color(0xFF8B6F47),
-              fontFamily: 'Georgia',
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            'MỸ LAN',
-            style: TextStyle(
-              fontSize: isMobile ? 36 : 56,
-              fontWeight: FontWeight.w300,
-              letterSpacing: 4,
-              color: const Color(0xFF8B6F47),
-              fontFamily: 'Georgia',
-            ),
-          ),
-          const SizedBox(height: 16),
-          // Date
-          Text(
-            '08.02.2026',
-            style: TextStyle(
-              fontSize: isMobile ? 18 : 24,
-              color: const Color(0xFF8B6F47),
-              letterSpacing: 2,
-            ),
-          ),
-          const SizedBox(height: 40),
-          // Couple Photo Placeholder
-          Container(
-            width: double.infinity,
-            height: isMobile ? 300 : 500,
-            margin: const EdgeInsets.symmetric(horizontal: 20),
-            decoration: BoxDecoration(
-              color: const Color(0xFFD4C4B0),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: const Center(
-              child: Icon(Icons.photo_camera, size: 60, color: Colors.white70),
-            ),
-          ),
-          const SizedBox(height: 40),
-        ],
+      child: Align(
+        alignment: Alignment.topCenter,
+        child: Padding(
+          padding: const EdgeInsets.only(top: 37),
+          child: SvgPicture.asset('assets/home_header.svg', fit: BoxFit.fill),
+        ),
       ),
     );
   }
@@ -190,86 +147,49 @@ class WelcomeSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isMobile = MediaQuery.of(context).size.width < 600;
-
     return Container(
       width: double.infinity,
-      color: const Color(0xFFF5F0E8),
-      padding: EdgeInsets.symmetric(
-        horizontal: isMobile ? 20 : 60,
-        vertical: 60,
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
           // Title
-          RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-              style: TextStyle(
-                fontSize: isMobile ? 24 : 32,
-                fontWeight: FontWeight.bold,
-                color: const Color(0xFF5C4A37),
-                letterSpacing: 2,
-              ),
-              children: const [
-                TextSpan(text: 'WELCOME TO OUR\n'),
-                TextSpan(
-                  text: 'love Story',
-                  style: TextStyle(
-                    color: Color(0xFF8B1A1A),
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.normal,
-                  ),
+          Column(
+            children: [
+              Text(
+                'WELCOME TO OUR',
+                textAlign: TextAlign.center,
+                style: GoogleFonts.bellefair(
+                  fontSize: 28,
+                  fontWeight: FontWeight.normal,
+                  color: const Color(0xFF5C4A37),
+                  letterSpacing: 1.91, // ~7% of font size
+                  height: 1.0,
                 ),
-              ],
-            ),
+              ),
+              SvgPicture.asset('assets/love_story.svg', fit: BoxFit.contain),
+            ],
           ),
-          const SizedBox(height: 40),
+          const SizedBox(height: 16),
           // Vietnamese Text
           Text(
-            'Chúng tôi rất vui mừng được chia sẻ câu chuyện tình yêu của mình với bạn. '
-            'Đây là hành trình đầy ắp những khoảnh khắc đẹp, những nụ cười và những kỷ niệm đáng nhớ.',
+            'Chào mừng đến với khoảnh khắc mở ra cột mốc mới trong câu\n'
+            'chuyện tình yêu của chúng em, nơi hành trình mới\n'
+            'bên nhau bắt đầu.',
             textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: isMobile ? 14 : 16,
+            style: GoogleFonts.sarabun(
+              fontSize: 12,
+              fontWeight: FontWeight.w300,
               color: const Color(0xFF5C4A37),
-              height: 1.6,
             ),
           ),
-          const SizedBox(height: 40),
+          const SizedBox(height: 30),
           // Monogram
-          Container(
-            width: isMobile ? 120 : 150,
-            height: isMobile ? 120 : 150,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(color: const Color(0xFF8B6F47), width: 2),
-            ),
-            child: Center(
-              child: Text(
-                'NL',
-                style: TextStyle(
-                  fontSize: isMobile ? 36 : 48,
-                  fontWeight: FontWeight.bold,
-                  color: const Color(0xFF8B6F47),
-                  letterSpacing: 4,
-                ),
-              ),
-            ),
+          Center(
+            child: SvgPicture.asset('assets/NL_logo.svg', fit: BoxFit.contain),
           ),
           const SizedBox(height: 40),
-          // Couple Illustration Placeholder
-          Container(
-            width: isMobile ? 150 : 200,
-            height: isMobile ? 150 : 200,
-            decoration: BoxDecoration(
-              color: const Color(0xFFE8DCC6),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: const Center(
-              child: Icon(Icons.favorite, size: 60, color: Color(0xFF8B1A1A)),
-            ),
-          ),
+          // Couple Illustration
+          Image.asset('assets/NL_draw.png', height: 150, fit: BoxFit.contain),
         ],
       ),
     );
@@ -282,183 +202,174 @@ class EventDetailsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isMobile = MediaQuery.of(context).size.width < 600;
-
     return Container(
       width: double.infinity,
-      color: const Color(0xFFF5F0E8),
-      padding: EdgeInsets.symmetric(
-        horizontal: isMobile ? 20 : 60,
-        vertical: 60,
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
           // Buttons Row
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          Stack(
+            alignment: Alignment.center,
             children: [
-              Expanded(
-                child: _EventButton(text: 'Tiệc nhà gái', isMobile: isMobile),
-              ),
-              const SizedBox(width: 20),
-              Container(
-                width: isMobile ? 60 : 80,
-                height: isMobile ? 60 : 80,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(color: const Color(0xFF8B6F47), width: 2),
-                ),
-                child: Center(
-                  child: Text(
-                    'NL',
-                    style: TextStyle(
-                      fontSize: isMobile ? 20 : 28,
-                      fontWeight: FontWeight.bold,
-                      color: const Color(0xFF8B6F47),
-                    ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: _EventButton(text: 'Tiệc nhà gái', isSelected: true),
                   ),
-                ),
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: _EventButton(text: 'Lễ tân hôn', isSelected: false),
+                  ),
+                ],
               ),
-              const SizedBox(width: 20),
-              Expanded(
-                child: _EventButton(text: 'Lễ tân hôn', isMobile: isMobile),
-              ),
+              SvgPicture.asset('assets/NL_tab.svg', fit: BoxFit.contain),
             ],
           ),
-          const SizedBox(height: 60),
+          const SizedBox(height: 16),
           // Family Details
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'NHÀ TRAI',
-                      style: TextStyle(
-                        fontSize: isMobile ? 14 : 16,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xFF5C4A37),
+                child: Center(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'NHÀ TRAI',
+                        style: GoogleFonts.b612(
+                          fontSize: 10,
+                          fontWeight: FontWeight.normal,
+                          color: const Color(0xFF5C4A37),
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 12),
-                    _FamilyMember('Ông DƯƠNG VĂN MINH', isMobile),
-                    _FamilyMember('Bà DƯƠNG THỊ HOA', isMobile),
-                    _FamilyMember('Anh DƯƠNG QUỐC NGHI', isMobile),
-                  ],
+                      const SizedBox(height: 4),
+                      _FamilyMember('Ông', 'DƯƠNG VĂN MINH'),
+                      _FamilyMember('Bà', 'DƯƠNG THỊ HOA'),
+                    ],
+                  ),
                 ),
               ),
-              const SizedBox(width: 20),
+              const SizedBox(width: 12),
               Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'NHÀ GÁI',
-                      style: TextStyle(
-                        fontSize: isMobile ? 14 : 16,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xFF5C4A37),
+                child: Center(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'NHÀ GÁI',
+                        style: GoogleFonts.b612(
+                          fontSize: 10,
+                          fontWeight: FontWeight.normal,
+                          color: const Color(0xFF5C4A37),
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 12),
-                    _FamilyMember('Ông LÝ CỨU', isMobile),
-                    _FamilyMember('Bà LÝ THỊ LAN', isMobile),
-                    _FamilyMember('Cô LÝ MỸ LAN', isMobile),
-                  ],
+                      const SizedBox(height: 4),
+                      _FamilyMember('Ông', 'LÝ CỨU'),
+                      _FamilyMember('Bà', 'LÝ THỊ LAN'),
+                    ],
+                  ),
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 60),
-          // Main Event Details
-          Container(
-            padding: const EdgeInsets.all(40),
-            decoration: BoxDecoration(
-              border: Border(
-                top: BorderSide(color: const Color(0xFF8B6F47), width: 1),
-                bottom: BorderSide(color: const Color(0xFF8B6F47), width: 1),
-              ),
-            ),
-            child: Column(
-              children: [
-                Text(
-                  'THỨ BẢY',
-                  style: TextStyle(
-                    fontSize: isMobile ? 18 : 24,
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xFF5C4A37),
-                    letterSpacing: 2,
-                  ),
-                ),
-                const SizedBox(height: 16),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'LÚC 18:30',
-                      style: TextStyle(
-                        fontSize: isMobile ? 16 : 20,
-                        color: const Color(0xFF5C4A37),
-                        letterSpacing: 1,
-                      ),
-                    ),
-                    const SizedBox(width: 20),
-                    Text(
-                      '31',
-                      style: TextStyle(
-                        fontSize: isMobile ? 32 : 48,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xFF8B1A1A),
-                      ),
-                    ),
-                    const SizedBox(width: 20),
-                    Text(
-                      'NĂM 2026',
-                      style: TextStyle(
-                        fontSize: isMobile ? 16 : 20,
-                        color: const Color(0xFF5C4A37),
-                        letterSpacing: 1,
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  'THÁNG 01',
-                  style: TextStyle(
-                    fontSize: isMobile ? 16 : 20,
-                    color: const Color(0xFF5C4A37),
-                    letterSpacing: 1,
-                  ),
-                ),
-              ],
+          const SizedBox(height: 32),
+          Text(
+            'Trân trọng kính mời đến dự bữa tiệc rượu chung vui\n'
+            'được tổ chức vào',
+            textAlign: TextAlign.center,
+            style: GoogleFonts.aboreto(
+              fontSize: 14,
+              fontWeight: FontWeight.normal,
+              color: const Color(0xFF565857),
             ),
           ),
-          const SizedBox(height: 40),
+          const SizedBox(height: 16),
+          // Main Event Details
+          Column(
+            children: [
+              Text(
+                'THỨ BẢY',
+                style: GoogleFonts.aBeeZee(
+                  fontSize: 14,
+                  fontWeight: FontWeight.normal,
+                  color: const Color(0xFF5E121F),
+                ),
+              ),
+              const SizedBox(height: 8),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'LÚC 18:30',
+                    style: GoogleFonts.aBeeZee(
+                      fontSize: 12,
+                      fontWeight: FontWeight.normal,
+                      color: const Color(0xFF5E121F),
+                    ),
+                  ),
+                  const SizedBox(width: 20),
+                  Text(
+                    '31',
+                    style: GoogleFonts.b612(
+                      fontSize: 32,
+                      fontWeight: FontWeight.w500,
+                      color: const Color(0xFF5E121F),
+                    ),
+                  ),
+                  const SizedBox(width: 20),
+                  Text(
+                    'NĂM 2026',
+                    style: GoogleFonts.aBeeZee(
+                      fontSize: 12,
+                      fontWeight: FontWeight.normal,
+                      color: const Color(0xFF5E121F),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+              Text(
+                'THÁNG 01',
+                style: GoogleFonts.aBeeZee(
+                  fontSize: 14,
+                  fontWeight: FontWeight.normal,
+                  color: const Color(0xFF5E121F),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
           // Location
           Column(
             children: [
               Text(
-                'NHÀ HÀNG AI HƯƠNG 2',
-                style: TextStyle(
-                  fontSize: isMobile ? 18 : 24,
-                  fontWeight: FontWeight.bold,
-                  color: const Color(0xFF5C4A37),
+                'Tại',
+                style: GoogleFonts.aboreto(
+                  fontSize: 10,
+                  color: const Color(0xFF565857),
+                ),
+              ),
+              Text(
+                'NHÀ HÀNG ÁI HUÊ 2',
+                style: GoogleFonts.aBeeZee(
+                  fontSize: 10,
+                  fontWeight: FontWeight.normal,
+                  color: const Color(0xFF565857),
                   letterSpacing: 1,
                 ),
               ),
-              const SizedBox(height: 12),
               Text(
                 '338 Trần Hưng Đạo, Phường 11, Quận 5',
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: isMobile ? 14 : 16,
-                  color: const Color(0xFF5C4A37),
+                style: GoogleFonts.aBeeZee(
+                  fontSize: 10,
+                  fontWeight: FontWeight.normal,
+                  color: const Color(0xFF565857),
+                  letterSpacing: 1,
                 ),
               ),
-              const SizedBox(height: 16),
               TextButton(
                 onPressed: () {
                   // Open map
@@ -466,9 +377,8 @@ class EventDetailsSection extends StatelessWidget {
                 child: Text(
                   'Xem bản đồ',
                   style: TextStyle(
-                    fontSize: isMobile ? 14 : 16,
-                    color: const Color(0xFF8B1A1A),
-                    decoration: TextDecoration.underline,
+                    fontSize: 10,
+                    color: const Color(0xFF5054D3),
                   ),
                 ),
               ),
@@ -482,29 +392,30 @@ class EventDetailsSection extends StatelessWidget {
 
 class _EventButton extends StatelessWidget {
   final String text;
-  final bool isMobile;
+  final bool isSelected;
 
-  const _EventButton({required this.text, required this.isMobile});
+  const _EventButton({required this.text, this.isSelected = false});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: isMobile ? 16 : 24,
-        vertical: isMobile ? 12 : 16,
-      ),
+      height: 44,
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: const Color(0xFF8B6F47), width: 1),
+        color: isSelected ? const Color(0xFFEBDAD0) : const Color(0xFFF4F1EA),
+        borderRadius: BorderRadius.circular(22),
+        border: Border.all(color: const Color(0xFF9F7D6A), width: 1),
       ),
-      child: Text(
-        text,
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontSize: isMobile ? 12 : 14,
-          color: const Color(0xFF5C4A37),
-          fontWeight: FontWeight.w500,
+      child: Center(
+        child: Text(
+          text,
+          textAlign: TextAlign.center,
+          style: GoogleFonts.aboreto(
+            fontSize: 20,
+            fontWeight: FontWeight.normal,
+            color: isSelected
+                ? const Color(0xFF5E121F)
+                : const Color(0xFF9F7D6A),
+          ),
         ),
       ),
     );
@@ -512,22 +423,36 @@ class _EventButton extends StatelessWidget {
 }
 
 class _FamilyMember extends StatelessWidget {
+  final String title;
   final String name;
-  final bool isMobile;
 
-  const _FamilyMember(this.name, this.isMobile);
+  const _FamilyMember(this.title, this.name);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8),
-      child: Text(
-        name,
-        style: TextStyle(
-          fontSize: isMobile ? 12 : 14,
-          color: const Color(0xFF5C4A37),
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        SizedBox(
+          width: 30,
+          child: Text(
+            '$title ',
+            style: GoogleFonts.aBeeZee(
+              fontSize: 10,
+              fontWeight: FontWeight.normal,
+              color: const Color(0xFF5C4A37),
+            ),
+          ),
+        ), // Frutiger
+        Text(
+          name,
+          style: GoogleFonts.aBeeZee(
+            fontSize: 10,
+            fontWeight: FontWeight.w600,
+            color: const Color(0xFF5C4A37),
+          ),
         ),
-      ),
+      ],
     );
   }
 }
