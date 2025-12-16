@@ -119,23 +119,46 @@ class HeaderSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final isMobile = size.width < 600;
+    // Tối ưu: chỉ decode width cần thiết để giảm bộ nhớ trên mobile
+    final imageWidth = (size.width * (isMobile ? 1.5 : 1.0)).toInt();
 
     return Container(
       width: double.infinity,
       // Chiều cao bằng chiều cao màn hình
       height: size.height * 0.85,
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/THO_3493.JPG'),
-          fit: BoxFit.cover,
-        ),
-      ),
-      child: Align(
-        alignment: Alignment.topCenter,
-        child: Padding(
-          padding: const EdgeInsets.only(top: 37),
-          child: SvgPicture.asset('assets/home_header.svg', fit: BoxFit.fill),
-        ),
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          // Sử dụng Image.asset với cacheWidth để tối ưu memory
+          Image.asset(
+            'assets/THO_3493.JPG',
+            fit: BoxFit.cover,
+            cacheWidth: imageWidth.clamp(
+              300,
+              1920,
+            ), // Giới hạn max width để tối ưu
+            // Sử dụng frameBuilder để hiển thị placeholder khi đang load
+            frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
+              if (wasSynchronouslyLoaded) return child;
+              return AnimatedOpacity(
+                opacity: frame == null ? 0 : 1,
+                duration: const Duration(milliseconds: 300),
+                child: child,
+              );
+            },
+          ),
+          Align(
+            alignment: Alignment.topCenter,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 37),
+              child: SvgPicture.asset(
+                'assets/home_header.svg',
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -188,8 +211,13 @@ class WelcomeSection extends StatelessWidget {
             child: SvgPicture.asset('assets/NL_logo.svg', fit: BoxFit.contain),
           ),
           const SizedBox(height: 40),
-          // Couple Illustration
-          Image.asset('assets/NL_draw.png', height: 150, fit: BoxFit.contain),
+          // Couple Illustration - tối ưu với cacheWidth
+          Image.asset(
+            'assets/NL_draw.png',
+            height: 150,
+            fit: BoxFit.contain,
+            cacheWidth: 300, // Tối ưu cho mobile
+          ),
         ],
       ),
     );

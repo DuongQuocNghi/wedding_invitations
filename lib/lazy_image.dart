@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 /// Widget hỗ trợ lazy-load ảnh network với placeholder mượt mà.
 ///
 /// Dùng để gắn các ảnh cưới/galleries mà không chặn first paint.
+/// Tối ưu cho mobile web với image caching và memory optimization.
 class LazyNetworkImage extends StatelessWidget {
   final String url;
   final double? width;
@@ -21,11 +22,27 @@ class LazyNetworkImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final isMobile = size.width < 600;
+    // Tính toán cacheWidth để tối ưu memory trên mobile
+    // Chỉ decode width cần thiết, giảm memory usage đáng kể
+    // Xử lý trường hợp width có thể là double.infinity
+    final effectiveWidth = (width != null && width != double.infinity)
+        ? width!
+        : size.width;
+    final cacheWidth = (effectiveWidth * (isMobile ? 2.0 : 1.5)).toInt().clamp(
+      200,
+      1920,
+    );
+
     final image = Image.network(
       url,
       fit: fit,
       width: width,
       height: height,
+      // Tối ưu memory trên mobile bằng cách chỉ decode width cần thiết
+      cacheWidth: cacheWidth,
+      // Sử dụng loadingBuilder để hiển thị placeholder mượt mà
       loadingBuilder: (context, child, loadingProgress) {
         if (loadingProgress == null) return child;
         return _buildPlaceholder();
