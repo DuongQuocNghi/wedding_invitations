@@ -466,7 +466,7 @@ class _FamilyMember extends StatelessWidget {
         Text(
           name,
           style: GoogleFonts.aBeeZee(
-            fontSize: 10,
+            fontSize: 14,
             fontWeight: FontWeight.w600,
             color: const Color(0xFF5C4A37),
           ),
