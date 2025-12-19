@@ -10,19 +10,27 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Nếu sau này bạn build (VD: Vite, React, v.v.) thì thêm bước build ở đây.
-      # Với project hiện tại chỉ có HTML/CSS/JS static, không cần bước build.
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.38.5'
+          channel: 'stable'
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Build web app
+        run: flutter build web --release
 
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v3.0
         with:
-          # Vì là static, publish thẳng thư mục gốc repo
-          publish-dir: '.'
+          publish-dir: './build/web'
           production-branch: main
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
@@ -32,5 +40,5 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        timeout-minutes: 5
+        timeout-minutes: 1
 
