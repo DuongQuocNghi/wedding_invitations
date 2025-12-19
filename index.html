@@ -9,393 +9,228 @@
       content="Thiệp cưới online với bộ sưu tập hình ảnh và video kỷ niệm."
     />
 
-    <!-- Tailwind CSS via CDN (phù hợp static host Netlify/Vercel) -->
+    <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Font & icon -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Quicksand:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;500;700&family=Quicksand:wght@400;600&family=Dancing+Script:wght@400;500;600&family=Bellefair&family=Sarabun:wght@300;600&family=Raleway:wght@300;400&family=Montserrat:wght@500&family=Alex+Brush&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="./assets/css/custom.css" />
   </head>
-  <body
-    class="bg-stone-50 text-stone-800 min-h-screen flex flex-col font-[Quicksand]"
-  >
-    <!-- Background pattern -->
-    <div
-      class="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_top,_#f9e4e8,_transparent_60%),_radial-gradient(circle_at_bottom,_#e0f2fe,_transparent_55%)] opacity-80 -z-10"
-    ></div>
-
+  <body class="bg-stone-50 text-stone-800 min-h-screen font-[Quicksand]">
     <!-- Main container -->
-    <div class="max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <!-- Card wrapper -->
-      <div
-        class="bg-white/80 backdrop-blur-md shadow-2xl rounded-3xl overflow-hidden border border-white/60"
+    <div class="w-full max-w-[375px] mx-auto">
+      <!-- Layout 1: Header với background ảnh -->
+      <section
+        id="layout-1"
+        class="layout-section"
+        style="height: 721px; background-image: url('./assets/images/THO_3493.JPG'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative;"
       >
-        <!-- Hero section -->
-        <header
-          class="relative overflow-hidden bg-gradient-to-br from-rose-100/80 via-white to-sky-50/80"
-        >
-          <!-- Decorative corners -->
+        <div class="layout-1-container">
           <div
-            class="pointer-events-none absolute -left-24 -top-24 w-56 h-56 border-4 border-rose-200/70 rounded-full"
-          ></div>
-          <div
-            class="pointer-events-none absolute -right-24 -bottom-24 w-64 h-64 border-4 border-sky-100/80 rounded-full"
-          ></div>
-
-          <div class="relative z-10 px-6 pt-10 pb-6 sm:px-12 sm:pt-14 sm:pb-10">
-            <p
-              class="tracking-[0.25em] text-xs sm:text-sm uppercase text-stone-500 text-center mb-4"
-            >
-              Thiệp cưới
-            </p>
-            <h1
-              class="font-[Playfair_Display] text-3xl sm:text-4xl md:text-5xl text-center text-stone-800 mb-3"
-            >
-              Tên Cô Dâu &amp; Tên Chú Rể
-            </h1>
-            <p
-              class="text-center text-sm sm:text-base text-stone-600 max-w-xl mx-auto"
-            >
-              Trân trọng kính mời Quý khách đến dự lễ thành hôn của chúng tôi.
-            </p>
-
-            <!-- Date & place -->
-            <div
-              class="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm sm:text-base"
-            >
-              <div class="flex items-center gap-3">
-                <div
-                  class="flex h-10 w-10 items-center justify-center rounded-full bg-rose-100 text-rose-500"
-                >
-                  <span class="material-symbols-outlined text-xl">favorite</span>
-                </div>
-                <div>
-                  <p class="text-xs uppercase tracking-widest text-stone-400">
-                    Thời gian
-                  </p>
-                  <p class="font-semibold text-stone-700">
-                    18:00 - 20/12/2025
-                  </p>
-                </div>
-              </div>
-
-              <div class="hidden sm:block h-10 w-px bg-stone-200"></div>
-
-              <div class="flex items-center gap-3">
-                <div
-                  class="flex h-10 w-10 items-center justify-center rounded-full bg-sky-100 text-sky-500"
-                >
-                  <span class="material-symbols-outlined text-xl">location_on</span>
-                </div>
-                <div>
-                  <p class="text-xs uppercase tracking-widest text-stone-400">
-                    Địa điểm
-                  </p>
-                  <p class="font-semibold text-stone-700">
-                    Trung tâm tiệc cưới ABC, Quận 1, TP. HCM
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- CTA buttons -->
-            <div
-              class="mt-8 mb-4 flex flex-wrap justify-center gap-3 sm:gap-4 text-sm"
-            >
-              <button
-                data-scroll-target="#gallery"
-                class="btn-primary"
-              >
-                Xem bộ sưu tập hình
-              </button>
-              <button
-                data-scroll-target="#video"
-                class="btn-outline"
-              >
-                Xem video kỷ niệm
-              </button>
-              <button data-scroll-target="#rsvp" class="btn-soft">
-                Xác nhận tham dự
-              </button>
+            class="layout-1-header"
+            style="position: absolute; top: 0; left: 0; width: 100%; background: transparent; z-index: 10;"
+          >
+            <div class="layout-1-header-content">
+              <img
+                src="./assets/images/home_header.svg"
+                alt="Header"
+                class="w-full h-auto"
+              />
             </div>
           </div>
-        </header>
+        </div>
+      </section>
 
-        <!-- Content -->
-        <main class="px-6 sm:px-10 md:px-12 pb-10 sm:pb-12">
-          <!-- Couple intro -->
-          <section class="mt-10 grid md:grid-cols-[1.1fr_0.9fr] gap-8 md:gap-10">
-            <!-- Text -->
-            <div class="space-y-4 text-sm sm:text-base leading-relaxed">
-              <h2
-                class="font-[Playfair_Display] text-2xl sm:text-3xl text-stone-800 mb-2"
-              >
-                Lời ngỏ
-              </h2>
-              <p class="text-stone-600">
-                Sau hành trình dài đầy kỷ niệm, chúng tôi quyết định nắm tay
-                nhau đi tiếp chặng đường mới. Sự hiện diện của Quý khách là niềm
-                vinh hạnh và là món quà quý giá đối với chúng tôi.
-              </p>
-              <p class="text-stone-600">
-                Kính mời Quý khách đến chung vui, sẻ chia niềm hạnh phúc trong
-                ngày trọng đại của chúng tôi.
-              </p>
-
-              <!-- Info cards -->
-              <div
-                class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-stone-700"
-              >
-                <div class="info-card">
-                  <p class="font-semibold text-stone-800">Nhà trai</p>
-                  <p class="mt-1 text-stone-600">
-                    Ông A &amp; B<br />
-                    Địa chỉ: 123 Đường ABC, Quận X, TP. HCM
-                  </p>
-                </div>
-                <div class="info-card">
-                  <p class="font-semibold text-stone-800">Nhà gái</p>
-                  <p class="mt-1 text-stone-600">
-                    Ông C &amp; D<br />
-                    Địa chỉ: 456 Đường XYZ, Quận Y, TP. HCM
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Hero photo -->
-            <div class="relative">
-              <div
-                class="aspect-[4/5] rounded-3xl overflow-hidden shadow-xl border border-rose-100/80 bg-stone-100"
-              >
-                <img
-                  src="./assets/img/hero.jpg"
-                  alt="Ảnh cưới"
-                  class="h-full w-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <!-- Small floating card -->
-              <div
-                class="absolute -bottom-4 -left-3 sm:-left-6 bg-white/90 backdrop-blur-md rounded-2xl shadow-lg px-4 py-3 text-xs sm:text-sm text-stone-600 border border-rose-100/60"
-              >
-                <p>"Yêu là cùng nhau đi qua mọi khoảnh khắc"</p>
-              </div>
-            </div>
-          </section>
-
-          <!-- Gallery -->
-          <section id="gallery" class="mt-12 sm:mt-14">
-            <div class="flex items-center justify-between mb-4">
-              <h2
-                class="font-[Playfair_Display] text-2xl sm:text-3xl text-stone-800"
-              >
-                Bộ sưu tập hình
-              </h2>
-              <p class="text-xs sm:text-sm text-stone-500">
-                Gợi ý: thay ảnh trong thư mục <code>assets/img</code>
-              </p>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
-              <!-- Ảnh 1 -->
-              <button class="gallery-item" data-img="./assets/img/photo1.jpg">
-                <img
-                  src="./assets/img/photo1.jpg"
-                  alt="Khoảnh khắc 1"
-                  loading="lazy"
-                />
-              </button>
-              <!-- Ảnh 2 -->
-              <button class="gallery-item" data-img="./assets/img/photo2.jpg">
-                <img
-                  src="./assets/img/photo2.jpg"
-                  alt="Khoảnh khắc 2"
-                  loading="lazy"
-                />
-              </button>
-              <!-- Ảnh 3 -->
-              <button class="gallery-item" data-img="./assets/img/photo3.jpg">
-                <img
-                  src="./assets/img/photo3.jpg"
-                  alt="Khoảnh khắc 3"
-                  loading="lazy"
-                />
-              </button>
-              <!-- Ảnh 4 -->
-              <button class="gallery-item" data-img="./assets/img/photo4.jpg">
-                <img
-                  src="./assets/img/photo4.jpg"
-                  alt="Khoảnh khắc 4"
-                  loading="lazy"
-                />
-              </button>
-              <!-- Ảnh 5 -->
-              <button class="gallery-item" data-img="./assets/img/photo5.jpg">
-                <img
-                  src="./assets/img/photo5.jpg"
-                  alt="Khoảnh khắc 5"
-                  loading="lazy"
-                />
-              </button>
-              <!-- Ảnh 6 -->
-              <button class="gallery-item" data-img="./assets/img/photo6.jpg">
-                <img
-                  src="./assets/img/photo6.jpg"
-                  alt="Khoảnh khắc 6"
-                  loading="lazy"
-                />
-              </button>
-            </div>
-          </section>
-
-          <!-- Video section -->
-          <section id="video" class="mt-12 sm:mt-14">
-            <h2
-              class="font-[Playfair_Display] text-2xl sm:text-3xl text-stone-800 mb-4"
-            >
-              Video kỷ niệm
-            </h2>
-            <p class="text-sm sm:text-base text-stone-600 mb-4">
-              Thay đường dẫn video YouTube/Vimeo của bạn vào phần nhúng bên
-              dưới để khách mời dễ dàng xem lại những khoảnh khắc đáng nhớ.
+      <!-- Layout 2: Text section -->
+      <section id="layout-2" class="layout-section">
+        <div class="layout-2-container">
+          <div class="layout-2-content">
+            <h2 class="layout-2-heading-1">WELCOME TO OUR</h2>
+            <img
+              src="./assets/images/love_story.svg"
+              alt="love Story"
+              class="layout-2-heading-2"
+            />
+            <p class="layout-2-text">
+              Chào mừng đến với khoảnh khắc mở ra cột mốc mới trong câu
+              chuyện tình yêu của chúng em, nơi hành trình mới bên nhau bắt
+              đầu.
             </p>
-
-            <div
-              class="relative w-full overflow-hidden rounded-3xl border border-stone-200/70 shadow-lg bg-black/5"
-            >
-              <div class="aspect-video">
-                <!-- Thay VIDEO_ID bên dưới bằng ID video YouTube của bạn -->
-                <iframe
-                  class="h-full w-full"
-                  src="https://www.youtube.com/embed/VIDEO_ID?rel=0"
-                  title="Video cưới"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                  loading="lazy"
-                ></iframe>
-              </div>
+            <div class="layout-2-monogram">
+              <img src="./assets/images/NL_logo.svg" alt="NL Logo" />
             </div>
-          </section>
+            <div class="layout-2-illustration">
+              <img src="./assets/images/NL_draw.png" alt="NL Draw" />
+            </div>
+          </div>
+          <div class="layout-2-border"></div>
+        </div>
+      </section>
 
-          <!-- RSVP -->
-          <section id="rsvp" class="mt-12 sm:mt-14">
-            <h2
-              class="font-[Playfair_Display] text-2xl sm:text-3xl text-stone-800 mb-4"
-            >
-              Xác nhận tham dự
-            </h2>
-            <p class="text-sm sm:text-base text-stone-600 mb-5">
-              Để chúng tôi chuẩn bị đón tiếp chu đáo, vui lòng để lại thông tin
-              xác nhận tham dự. (Bạn có thể tùy chỉnh phần này để gửi form tới
-              Google Forms hoặc một dịch vụ khác.)
-            </p>
+      <!-- Layout 3: Thiệp mời chi tiết -->
+      <section id="layout-3" class="layout-section">
+        <div class="layout-3-container">
+          <!-- Event Cards -->
+          <div class="layout-3-event-cards">
+            <!-- Monogram -->
+            <div class="layout-3-monogram">
+              <img
+                src="./assets/images/NL_tab.svg"
+                alt="NL Monogram"
+                class="layout-3-monogram-img"
+              />
+            </div>
+            <div class="layout-3-card layout-3-card-left">Tiệc nhà gái</div>
+            <div class="layout-3-card layout-3-card-right">Lễ tân hôn</div>
+          </div>
 
-            <form
-              class="grid gap-3 sm:gap-4 max-w-xl"
-              onsubmit="handleRsvpSubmit(event)"
-            >
-              <div class="grid sm:grid-cols-2 gap-3 sm:gap-4">
-                <div>
-                  <label class="form-label">Họ và tên</label>
-                  <input
-                    type="text"
-                    name="name"
-                    class="form-input"
-                    required
-                  />
-                </div>
-                <div>
-                  <label class="form-label">Số điện thoại</label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    class="form-input"
-                    required
-                  />
-                </div>
-              </div>
+          <!-- Family Information -->
+          <div class="layout-3-family">
+            <div class="layout-3-family-column">
+              <h4 class="layout-3-family-title">NHÀ TRAI</h4>
+              <p class="layout-3-family-title-name">
+                Ông <span class="layout-3-family-name">DƯƠNG VĂN MINH</span>
+              </p>
+              <p class="layout-3-family-title-name">
+                Bà
+                <span class="layout-3-family-name">NGUYỄN LÊ TUYẾT PHƯỢNG</span>
+              </p>
+            </div>
+            <div class="layout-3-family-column">
+              <h4 class="layout-3-family-title">NHÀ GÁI</h4>
+              <p class="layout-3-family-title-name">
+                Ông <span class="layout-3-family-name">LÝ CỬU</span>
+              </p>
+              <p class="layout-3-family-title-name">
+                Bà
+                <span class="layout-3-family-name">CHUNG THỊ CẨM VÂN</span>
+              </p>
+            </div>
+          </div>
 
-              <div class="grid sm:grid-cols-2 gap-3 sm:gap-4">
-                <div>
-                  <label class="form-label">Số lượng người tham dự</label>
-                  <input
-                    type="number"
-                    name="guests"
-                    min="1"
-                    class="form-input"
-                    required
-                  />
-                </div>
-                <div>
-                  <label class="form-label">Bên nhà</label>
-                  <select name="side" class="form-input" required>
-                    <option value="">Chọn</option>
-                    <option value="groom">Nhà trai</option>
-                    <option value="bride">Nhà gái</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label class="form-label">Lời nhắn</label>
-                <textarea
-                  name="message"
-                  rows="3"
-                  class="form-input resize-none"
-                  placeholder="Bạn có thể để lại lời chúc hoặc ghi chú đặc biệt..."
-                ></textarea>
-              </div>
-
-              <div class="flex items-center gap-3">
-                <button type="submit" class="btn-primary">
-                  Gửi xác nhận
-                </button>
-                <p
-                  id="rsvp-status"
-                  class="text-xs sm:text-sm text-stone-500 hidden"
-                ></p>
-              </div>
-            </form>
-          </section>
-        </main>
-
-        <!-- Footer -->
-        <footer
-          class="border-t border-stone-100 bg-gradient-to-r from-rose-50/70 via-white to-sky-50/70 px-6 sm:px-10 md:px-12 py-4 sm:py-5 text-center text-xs sm:text-sm text-stone-500"
-        >
-          <p>
-            Cảm ơn bạn đã dành thời gian xem thiệp cưới online của chúng tôi.
+          <!-- Invitation Message -->
+          <p class="layout-3-invitation-message">
+            Trân trọng kính mời đến dự bữa tiệc rượu chung vui được tổ chức vào
           </p>
-        </footer>
-      </div>
-    </div>
 
-    <!-- Gallery lightbox -->
-    <div
-      id="lightbox"
-      class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-40 opacity-0 pointer-events-none transition-opacity duration-200"
-    >
-      <button
-        id="lightbox-close"
-        class="absolute top-5 right-5 text-white/80 hover:text-white text-2xl"
-        aria-label="Đóng"
-      >
-        ×
-      </button>
-      <img
-        id="lightbox-img"
-        src=""
-        alt="Ảnh phóng to"
-        class="max-h-[80vh] max-w-[90vw] object-contain rounded-2xl shadow-2xl border border-white/20"
-      />
+          <!-- Date and Time -->
+          <div class="layout-3-datetime">
+            <div class="layout-3-day">THỨ BẢY</div>
+            <div class="layout-3-date-container">
+              <div class="layout-3-time-section">
+                <div class="layout-3-date-line"></div>
+                <span class="layout-3-time-label">LÚC 18:00</span>
+                <div class="layout-3-date-line"></div>
+              </div>
+              <div class="layout-3-date-number">31</div>
+              <div class="layout-3-year-section">
+                <div class="layout-3-date-line"></div>
+                <span class="layout-3-year-label">NĂM 2026</span>
+                <div class="layout-3-date-line"></div>
+              </div>
+            </div>
+            <div class="layout-3-month">THÁNG 01</div>
+          </div>
+
+          <!-- Location -->
+          <div class="layout-3-location">
+            <div class="layout-3-location-label">TẠI</div>
+            <div class="layout-3-location-name">NHÀ HÀNG ÁI HUỆ 2</div>
+            <div class="layout-3-location-address">
+              338 Trần Hưng Đạo, Phường 11, Quận 5
+            </div>
+            <a href="#" class="layout-3-map-link">Xem bản đồ</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Layout 4: Lời nhắn -->
+      <section id="layout-4" class="layout-section">
+        <div class="layout-4-container">
+          <div class="layout-4-content">
+            <blockquote class="layout-4-quote">
+              "Tình yêu trở nên trọn vẹn hơn khi
+              được sẻ chia cùng những người ta trân quý."
+            </blockquote>
+            <p class="layout-4-text">
+              Sự hiện diện và những lời chúc tốt đẹp của
+              cô chú/anh chị sẽ là niềm vinh hạnh, góp phần làm
+              ngày trọng đại của chúng con/em thêm ý nghĩa.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Layout 5: Our Wedding Memories -->
+      <section id="layout-5" class="layout-section">
+        <div class="layout-5-container">
+          <h2 class="layout-5-title">Our Wedding<br />Memories</h2>
+          <div class="layout-5-left">
+            <p class="layout-5-quote">
+              Ngay từ ngày đầu gặp gỡ,<br />
+              trái tim chúng ta đã hòa chung nhịp đập,<br />
+              thì thầm rằng người ấy<br />
+              chính là duy nhất.
+            </p>
+            <div class="layout-5-image-small">
+              <!-- Small image placeholder -->
+            </div>
+          </div>
+          <div class="layout-5-right">
+            <div class="layout-5-image-large">
+              <!-- Large image placeholder -->
+            </div>
+          </div>
+          <div class="layout-5-watermark">Dating</div>
+        </div>
+      </section>
+
+      //todo layout 6
+
+      <!-- Layout 7: Image section -->
+      <section id="layout-7" class="layout-section">
+        <div class="layout-7-container">
+          <div class="layout-7-image">
+            <!-- Image placeholder -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Layout 8: Image section -->
+      <section id="layout-8" class="layout-section">
+        <div class="layout-8-container">
+          <div class="layout-8-image">
+            <!-- Image placeholder -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Layout 9: Rounded bar -->
+      <section id="layout-9" class="layout-section">
+        <div class="layout-9-container">
+          <div class="layout-9-bar">
+            <!-- Bar content -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Layout 10: Final section với border -->
+      <section id="layout-10" class="layout-section">
+        <div class="layout-10-container">
+          <div class="layout-10-header">
+            <!-- Header với border -->
+          </div>
+          <div class="layout-10-content">
+            <!-- Main content -->
+          </div>
+        </div>
+      </section>
     </div>
 
     <script src="./assets/js/main.js"></script>
