@@ -39,11 +39,12 @@
 
 .welcome-title {
   font-family: 'Bellefair', serif;
-  font-size: 28px;
   font-weight: 400;
-  color: var(--text-brown);
-  letter-spacing: 1.91px;
-  line-height: 1;
+  font-style: normal;
+  font-size: 27.31px;
+  line-height: 100%;
+  letter-spacing: 0.07em;
+  color: var(--content, #565857);
   text-align: center;
   margin-bottom: var(--spacing-md);
 }
@@ -62,11 +63,13 @@
 
 .welcome-text {
   font-family: 'Sarabun', sans-serif;
-  font-size: 12px;
   font-weight: 300;
-  color: var(--text-brown);
+  font-style: normal;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0;
   text-align: center;
-  line-height: 1.6;
+  color: var(--content, #565857);
   white-space: pre-line;
   margin-bottom: 30px;
 }
@@ -122,10 +125,13 @@
   border-radius: 22px;
   border: 1px solid var(--button-border);
   background-color: var(--bg-primary);
-  font-family: 'Aboreto', cursive;
-  font-size: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
-  color: var(--accent-brown);
+  font-style: normal;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.07em;
+  color: var(--highlight, #5E121F);
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
@@ -168,10 +174,13 @@
 }
 
 .family-label {
-  font-family: 'B612', sans-serif;
-  font-size: 10px;
+  font-family: 'Bellefair', serif;
   font-weight: 400;
-  color: var(--text-brown);
+  font-style: normal;
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: 0.07em;
+  color: var(--content, #565857);
   margin-bottom: var(--spacing-xs);
 }
 
@@ -182,26 +191,35 @@
 }
 
 .family-member-title {
-  font-family: 'ABeeZee', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-style: normal;
   font-size: 10px;
-  font-weight: 400;
-  color: var(--text-brown);
+  line-height: 16px;
+  letter-spacing: 0.07em;
+  color: var(--content, #565857);
   width: 30px;
 }
 
 .family-member-name {
-  font-family: 'ABeeZee', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-brown);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 0.07em;
+  color: var(--content, #565857);
 }
 
 .invitation-text {
-  font-family: 'Aboreto', cursive;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-style: normal;
   font-size: 14px;
-  font-weight: 400;
-  color: var(--text-gray);
+  line-height: 20px;
+  letter-spacing: 0;
   text-align: center;
+  color: var(--content, #565857);
   white-space: pre-line;
   margin-bottom: 16px;
 }
@@ -212,10 +230,14 @@
 }
 
 .event-day {
-  font-family: 'ABeeZee', sans-serif;
-  font-size: 14px;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
-  color: var(--text-dark-red);
+  font-style: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.07em;
+  text-align: center;
+  color: var(--highlight, #5E121F);
   margin-bottom: 8px;
 }
 
@@ -229,24 +251,35 @@
 
 .event-time,
 .event-year {
-  font-family: 'ABeeZee', sans-serif;
-  font-size: 12px;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
-  color: var(--text-dark-red);
+  font-style: normal;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.07em;
+  text-align: center;
+  color: var(--highlight, #5E121F);
 }
 
 .event-date-number {
-  font-family: 'B612', sans-serif;
-  font-size: 32px;
+  font-family: 'Playfair Display', serif;
   font-weight: 500;
-  color: var(--text-dark-red);
+  font-style: normal;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0.07em;
+  color: var(--highlight, #5E121F);
 }
 
 .event-month {
-  font-family: 'ABeeZee', sans-serif;
-  font-size: 14px;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
-  color: var(--text-dark-red);
+  font-style: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.09em;
+  text-align: center;
+  color: var(--highlight, #5E121F);
 }
 
 .event-location {
@@ -254,33 +287,49 @@
 }
 
 .location-label {
-  font-family: 'Aboreto', cursive;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-style: normal;
   font-size: 10px;
-  color: var(--text-gray);
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;
+  color: var(--content, #565857);
   margin-bottom: var(--spacing-xs);
 }
 
 .location-name {
-  font-family: 'ABeeZee', sans-serif;
-  font-size: 10px;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
-  color: var(--text-gray);
-  letter-spacing: 1px;
+  font-style: normal;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 0.07em;
+  text-align: center;
+  color: var(--content, #565857);
   margin-bottom: var(--spacing-xs);
 }
 
 .location-address {
-  font-family: 'ABeeZee', sans-serif;
-  font-size: 10px;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
-  color: var(--text-gray);
-  letter-spacing: 1px;
+  font-style: normal;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 0.07em;
+  text-align: center;
+  color: var(--content, #565857);
   margin-bottom: var(--spacing-xs);
 }
 
 .location-map-link {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-style: normal;
   font-size: 10px;
-  color: var(--link-blue);
+  line-height: 16px;
+  letter-spacing: 0.07em;
+  color: #5054D3;
   background: none;
   border: none;
   cursor: pointer;
@@ -306,11 +355,14 @@
 }
 
 .quote-text {
-  font-size: 16px;
-  color: var(--white);
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 600;
   font-style: italic;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0;
   text-align: center;
+  color: var(--suface-01, #F4F1EA);
   margin-bottom: var(--spacing-lg);
 }
 
@@ -321,10 +373,14 @@
 }
 
 .quote-description {
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 300;
+  font-style: normal;
   font-size: 14px;
-  color: var(--white-70);
-  line-height: 1.6;
+  line-height: 20px;
+  letter-spacing: 0;
   text-align: center;
+  color: var(--surface-02, #EBDAD0);
 }
 
 @media (min-width: 600px) {
@@ -347,16 +403,19 @@
 }
 
 .section-title {
-  font-size: 24px;
-  color: var(--text-red);
-  font-style: italic;
-  font-weight: 300;
+  font-family: 'Alex Brush', cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: 0;
+  color: var(--highlight, #5E121F);
   margin-bottom: var(--spacing-lg);
 }
 
 @media (min-width: 600px) {
   .section-title {
-    font-size: 32px;
+    font-size: 40px;
   }
 }
 
@@ -375,14 +434,18 @@
 
 .memories-text {
   flex: 2;
-  font-size: 14px;
-  color: var(--text-brown);
-  line-height: 1.6;
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 0;
+  color: var(--content, #565857);
 }
 
 @media (min-width: 600px) {
   .memories-text {
-    font-size: 16px;
+    font-size: 10px;
   }
 }
 
@@ -431,10 +494,13 @@
   position: absolute;
   right: 20px;
   top: 40px;
-  font-size: 60px;
-  color: rgba(139, 111, 71, 0.2);
+  font-family: 'Brush Script MT', cursive;
+  font-weight: 400;
   font-style: italic;
-  font-weight: 300;
+  font-size: 110px;
+  line-height: 46.97px;
+  letter-spacing: -0.04em;
+  color: var(--secondary, #9F7D6A);
   pointer-events: none;
   z-index: 0;
 }
@@ -442,7 +508,7 @@
 @media (min-width: 600px) {
   .dating-bg-text {
     right: 60px;
-    font-size: 120px;
+    font-size: 110px;
   }
 }
 
@@ -467,14 +533,18 @@
 
 .dating-text {
   flex: 2;
-  font-size: 14px;
-  color: var(--text-brown);
-  line-height: 1.6;
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 0;
+  color: var(--suface-01, #F4F1EA);
 }
 
 @media (min-width: 600px) {
   .dating-text {
-    font-size: 16px;
+    font-size: 10px;
   }
 }
 
@@ -509,16 +579,19 @@
 }
 
 .dating-date {
-  font-size: 24px;
-  color: rgba(139, 111, 71, 0.5);
+  font-family: 'Brush Script MT', cursive;
+  font-weight: 400;
   font-style: italic;
-  font-weight: 300;
+  font-size: 80px;
+  line-height: 100%;
+  letter-spacing: -0.06em;
+  color: #CDAC94;
   margin-top: var(--spacing-lg);
 }
 
 @media (min-width: 600px) {
   .dating-date {
-    font-size: 36px;
+    font-size: 80px;
   }
 }
 
@@ -533,6 +606,16 @@
   .ceremony-section {
     padding: var(--spacing-4xl) 60px;
   }
+}
+
+.ceremony-section .section-title {
+  font-family: 'Alex Brush', cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 44px;
+  line-height: 33px;
+  letter-spacing: 0;
+  color: var(--highlight, #5E121F);
 }
 
 .ceremony-content {
@@ -570,14 +653,18 @@
 
 .ceremony-text {
   flex: 2;
-  font-size: 14px;
-  color: var(--text-brown);
-  line-height: 1.6;
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 0;
+  color: var(--content, #565857);
 }
 
 @media (min-width: 600px) {
   .ceremony-text {
-    font-size: 16px;
+    font-size: 10px;
   }
 }
 
@@ -600,6 +687,16 @@
   }
 }
 
+.together-section .section-title {
+  font-family: 'Alex Brush', cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 44px;
+  line-height: 33px;
+  letter-spacing: 0;
+  color: var(--highlight, #5E121F);
+}
+
 .together-content {
   display: flex;
   flex-direction: column;
@@ -618,14 +715,18 @@
 }
 
 .together-text-content {
-  font-size: 14px;
-  color: var(--text-brown);
-  line-height: 1.6;
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 0;
+  color: var(--content, #565857);
 }
 
 @media (min-width: 600px) {
   .together-text-content {
-    font-size: 16px;
+    font-size: 10px;
   }
 }
 
@@ -665,15 +766,18 @@
 }
 
 .album-title {
+  font-family: 'Alex Brush', cursive;
+  font-weight: 400;
+  font-style: normal;
   font-size: 24px;
-  color: var(--text-red);
-  font-style: italic;
-  font-weight: 300;
+  line-height: 33px;
+  letter-spacing: 0;
+  color: var(--highlight, #5E121F);
 }
 
 @media (min-width: 600px) {
   .album-title {
-    font-size: 32px;
+    font-size: 24px;
   }
 }
 
@@ -694,16 +798,19 @@
 }
 
 .album-box-title {
+  font-family: 'Castoro Titling', serif;
+  font-weight: 400;
+  font-style: normal;
   font-size: 18px;
-  font-weight: bold;
-  color: var(--text-brown);
-  letter-spacing: 2px;
+  line-height: 100%;
+  letter-spacing: 0.06em;
+  color: var(--highlight, #5E121F);
   margin-bottom: var(--spacing-lg);
 }
 
 @media (min-width: 600px) {
   .album-box-title {
-    font-size: 24px;
+    font-size: 18px;
   }
 }
 
@@ -759,30 +866,39 @@
 }
 
 .thank-you-title {
-  font-size: 32px;
-  font-weight: bold;
-  color: var(--bg-section);
-  letter-spacing: 4px;
+  font-family: 'Castoro Titling', serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: var(--suface-01, #F4F1EA);
   margin-bottom: var(--spacing-lg);
 }
 
 @media (min-width: 600px) {
   .thank-you-title {
-    font-size: 48px;
+    font-size: 28px;
   }
 }
 
 .thank-you-text {
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 300;
+  font-style: normal;
   font-size: 14px;
-  color: var(--white-70);
-  line-height: 1.6;
+  line-height: 20px;
+  letter-spacing: 0;
+  text-align: center;
+  color: var(--suface-01, #F4F1EA);
   max-width: 800px;
   margin: 0 auto;
 }
 
 @media (min-width: 600px) {
   .thank-you-text {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 

@@ -14,6 +14,11 @@
   --link-blue: #5054D3;
   --white: #FFFFFF;
   --white-70: rgba(255, 255, 255, 0.7);
+  --content: #565857;
+  --highlight: #5E121F;
+  --suface-01: #F4F1EA;
+  --surface-02: #EBDAD0;
+  --secondary: #9F7D6A;
   
   /* Spacing */
   --spacing-xs: 4px;
