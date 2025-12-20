@@ -1,8 +1,7 @@
 [build]
-  # GitHub Actions sẽ build và deploy, Netlify không cần build
-  # Chỉ cần publish directory (sẽ được GitHub Actions tạo)
-  publish = "build/web"
-  # Không có build command vì GitHub Actions đã build rồi
+  # Dự án HTML/CSS/JS thuần, không cần build
+  # Publish trực tiếp từ root directory
+  publish = "."
 
 [[headers]]
   for = "/*.js"
@@ -15,17 +14,12 @@
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "/*.wasm"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/icons/*"
+  for = "/web/icons/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000"
 
 [[headers]]
-  for = "/favicon.png"
+  for = "/web/favicon.png"
   [headers.values]
     Cache-Control = "public, max-age=31536000"
 

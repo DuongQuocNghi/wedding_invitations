@@ -5,7 +5,10 @@ on:
     branches:
       - main
       - master
-  workflow_dispatch: # Cho phép chạy thủ công
+  pull_request:
+    branches:
+      - main
+      - master
 
 jobs:
   build-and-deploy:
@@ -15,30 +18,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
+      - name: Setup Node.js (for Netlify CLI)
+        uses: actions/setup-node@v4
         with:
-          flutter-version: '3.38.5'
-          channel: 'stable'
+          node-version: '18'
 
-      - name: Get dependencies
-        run: flutter pub get
-
-      - name: Build web app
-        run: flutter build web --release
+      - name: Install Netlify CLI
+        run: npm install -g netlify-cli
 
       - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v3.0
-        with:
-          publish-dir: './build/web'
-          production-branch: main
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy from GitHub Actions"
-          enable-pull-request-comment: false
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        timeout-minutes: 1
-
+        run: |
+          # Deploy production build
+          if [ "${{ github.event_name }}" == "push" ]; then
+            netlify deploy --prod --dir=. --message="Deploy from GitHub Actions - ${{ github.sha }}"
+          else
+            # Deploy preview for pull requests
+            netlify deploy --dir=. --message="Preview deploy from PR #${{ github.event.pull_request.number }}"
+          fi
