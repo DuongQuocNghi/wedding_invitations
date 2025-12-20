@@ -15,22 +15,22 @@
 .header-overlay {
   position: absolute;
   top: 37px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
 .header-overlay img {
-  width: 100%;
+  width: auto;
   height: auto;
+  transform: scale(1.1);
+  transform-origin: center;
 }
 
 /* Welcome Section */
 .welcome-section {
   width: 100%;
-}
-
-.welcome-section .container {
 }
 
 .welcome-title {
@@ -42,6 +42,7 @@
   letter-spacing: 0.07em;
   color: var(--color-text, #565857);
   text-align: center;
+  padding-top: 50px;
 }
 
 .welcome-love-story {
@@ -64,21 +65,25 @@
   text-align: center;
   color: var(--color-text, #565857);
   white-space: pre-line;
+  padding-top: 16px;
 }
 
 .welcome-logo {
   display: flex;
   justify-content: center;
+  padding-top: 30px;
 }
 
 .welcome-logo svg {
   width: auto;
   height: auto;
+  padding-top: 30px;
 }
 
 .welcome-illustration {
   display: flex;
   justify-content: center;
+  padding-top: 30px;
 }
 
 .welcome-illustration img {
@@ -90,9 +95,9 @@
 /* Event Details Section */
 .event-details-section {
   width: 100%;
-}
-
-.event-details-section .container {
+  padding-top: 60px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .event-tabs {
@@ -106,9 +111,11 @@
   width: 100%;
   position: relative;
   z-index: 0;
+  gap: 16px;
 }
 
 .event-tab-button {
+  width: 100%;
   flex: 1;
   height: 44px;
   border-radius: 22px;
@@ -158,6 +165,7 @@
 .family-details {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  padding-top: 24px;
 }
 
 .family-column {
@@ -167,9 +175,11 @@
 }
 
 .family-column:nth-child(1) {
+  padding-left: 18%;
 }
 
 .family-column:nth-child(2) {
+  padding-left: 18%;
 }
 
 .family-label {
@@ -195,7 +205,7 @@
   line-height: 16px;
   letter-spacing: 0.07em;
   color: var(--color-text, #565857);
-  width: 30px;
+  width: 25px;
 }
 
 .family-member-name {
@@ -209,6 +219,7 @@
 }
 
 .invitation-text {
+  padding-top: 32px;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -222,6 +233,7 @@
 
 .event-date {
   text-align: center;
+  padding-top: 16px;
 }
 
 .event-day {
@@ -233,6 +245,7 @@
   letter-spacing: 0.07em;
   text-align: center;
   color: var(--color-highlight, #5E121F);
+  padding-bottom: 8px;
 }
 
 .event-time-row {
@@ -290,10 +303,13 @@
   letter-spacing: 0.09em;
   text-align: center;
   color: var(--color-highlight, #5E121F);
+  padding-top: 8px;
 }
 
 .event-location {
   text-align: center;
+  padding-top: 16px;
+  padding-bottom: 36px;
 }
 
 .location-label {
@@ -351,6 +367,8 @@
 .quote-section {
   background: var(--color-accent, #9F7D6A);
   width: 100%;
+  padding-top: 36px;
+  padding-bottom: 36px;
 }
 
 .quote-text {
@@ -365,6 +383,7 @@
 }
 
 .quote-description {
+  padding-top: 8px;
   font-family: 'Sarabun', sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -377,16 +396,24 @@
 
 /* Memories Section */
 .memories-section {
+  padding-top: 65px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 100px;
   background-color: var(--bg-section);
   width: 100%;
   position: relative;
+  overflow: visible;
 }
 
 .memories-section .container {
   position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
 }
 
-.section-title {
+.section-title-1 {
   position: relative;
   z-index: 1;
   font-family: 'Alex Brush', cursive;
@@ -398,28 +425,46 @@
   color: var(--color-highlight, #5E121F);
 }
 
+.section-title-2 {
+  padding-top: 10px;
+  padding-bottom: 24px;
+  position: relative;
+  z-index: 1;
+  font-family: 'Alex Brush', cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  line-height: 40px;
+  letter-spacing: 0;
+  color: var(--color-highlight, #5E121F);
+  text-align: right;
+}
+
 .section-footer {
   position: absolute;
-  bottom: 85px;
-  right: 12px;
+  bottom: 45px;
+  right: -30px;
   z-index: 0;
   font-family: 'Brush Script MT', cursive;
   font-weight: 400;
   font-style: italic;
-  font-size: 210px;
+  font-size: 110px;
   line-height: 46.97px;
   letter-spacing: -4%;
   opacity: 0.08;
   color: var(--color-accent, #9F7D6A);
   text-align: right;
   pointer-events: none;
+  overflow: visible;
+  white-space: nowrap;
 }
 
 .memories-layout {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  gap: 9px;
+  grid-template-columns: 1.2fr 1fr;
   align-items: end;
 }
 
@@ -431,10 +476,14 @@
 }
 
 .memories-right {
+  height: 224px;
   position: relative;
   z-index: 1;
   display: flex;
   align-items: flex-start;
+  align-self: start;
+  margin-top: -25px;
+  overflow: hidden;
 }
 
 .memories-text {
@@ -445,6 +494,7 @@
   line-height: 16px;
   letter-spacing: 0;
   color: var(--color-text, #565857);
+  padding-top: 18px;
 }
 
 .memories-image {
@@ -457,17 +507,21 @@
 .memories-image-stack {
   position: relative;
   z-index: 1;
+  padding-top: 47px;
+  margin-bottom: 82px;
+  overflow: hidden;
 }
 
 .memories-image-small {
-  height: 200px;
+  height: 123px;
   object-position: center;
 }
 
 
 .memories-image-large {
   width: 100%;
-  height: 360px;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Dating Section */
@@ -478,17 +532,25 @@
   overflow: hidden;
 }
 
+.dating-section .container {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
 .dating-content {
   position: relative;
+  overflow: hidden;
+  width: 100%;
 }
 
 /* Brown background layer */
 .dating-brown-bg {
   position: absolute;
   left: 0;
-  top: 0;
+  top: 32px;
   width: 100%;
-  height: 70%;
+  height: 209px;
   background-color: var(--color-accent, #9F7D6A);
   z-index: 0;
 }
@@ -508,9 +570,12 @@
   z-index: 2;
   display: flex;
   align-items: flex-start;
+  padding-right: 5px;
 }
 
 .dating-text {
+  padding-top: 80px;
+  padding-left: 16px;
   font-family: 'Sarabun', sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -532,8 +597,8 @@
 }
 
 .dating-image-large {
-  width: 100%;
-  height: 600px;
+  width: 197px;
+  height: 320px;
   object-fit: cover;
   object-position: center;
   border-radius: 6px;
@@ -551,25 +616,34 @@
 }
 
 .dating-date-brown {
-  font-family: 'Alex Brush', cursive;
+  font-family: 'Brush Script MT', cursive;
   font-weight: 400;
   font-style: normal;
-  font-size: 120px;
+  font-size: 80px;
   line-height: 100%;
   letter-spacing: -0.02em;
-  color: red;
+  color: #CDAC94;
   display: block;
+  max-width: 100%;
+  overflow: visible;
+  padding-left: 11px;
+  margin-bottom: -40px;
+  opacity: 0.3;
 }
 
 .dating-date-beige {
-  font-family: 'Alex Brush', cursive;
+  font-family: 'Brush Script MT', cursive;
   font-weight: 400;
   font-style: normal;
-  font-size: 120px;
+  font-size: 80px;
   line-height: 100%;
   letter-spacing: -0.02em;
-  color: red;
+  color: #CDAC94;
   display: block;
+  max-width: 100%;
+  overflow: visible;
+  padding-left: 54px;
+  opacity: 0.3;
 }
 
 /* Ceremony Section */
@@ -581,6 +655,7 @@
 
 
 .ceremony-section-title-1 {
+  padding-top: 10px;
   position: relative;
   z-index: 1;
   font-family: 'Alex Brush', cursive;
@@ -590,6 +665,7 @@
   line-height: 40px;
   letter-spacing: 0;
   color: var(--color-highlight, #5E121F);
+  margin-left: -50%;
 }
 
 .ceremony-section-title-2 {
@@ -606,14 +682,16 @@
 
 .ceremony-section .container {
   position: relative;
+  overflow-x: hidden;
 }
 
 .ceremony-layout {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 1.2fr 1fr;
   align-items: end;
+  gap: 5px;
 }
 
 .ceremony-left {
@@ -630,9 +708,10 @@
   display: flex;
   flex-direction: column;
   align-items: start;
+  padding-top: 40px;
 }
 
-.ceremony-text {
+.ceremony-text-1 {
   font-family: 'Sarabun', sans-serif;
   font-weight: 400;
   font-style: italic;
@@ -640,6 +719,21 @@
   line-height: 16px;
   letter-spacing: 0;
   color: var(--color-text, #565857);
+  padding-bottom: 31px;
+  padding-top: 35px;
+}
+
+.ceremony-text-2 {
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 0;
+  color: var(--color-text, #565857);
+  padding-top: 13px;
+  padding-left: 5px;
+  padding-bottom: 35px;
 }
 
 .ceremony-image {
@@ -649,14 +743,27 @@
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
 }
 
-.ceremony-image-stack {
+.ceremony-image-stack-1 {
   position: relative;
   z-index: 1;
 }
 
+.ceremony-image-stack-2 {
+  position: relative;
+  z-index: 1;
+}
+
+
 .ceremony-image-small {
-  height: 200px;
   object-position: center;
+}
+
+.ceremony-left .ceremony-image-small {
+  height: 212px;
+}
+
+.ceremony-right .ceremony-image-small {
+  height: 218px;
 }
 
 .ceremony-image-large {
@@ -666,6 +773,8 @@
 
 /* Together Forever Section */
 .together-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
   background-color: var(--bg-section);
   width: 100%;
 }
@@ -673,7 +782,8 @@
 .together-section .container {
   display: flex;
   flex-direction: row;
-  align-items: start;
+  align-items: center;
+  gap: 5px;
 }
 
 .together-section .section-title {
@@ -689,7 +799,9 @@
 .together-content {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 0 0 40%;
+  width: 100%;
+  
 }
 
 .together-text {
@@ -707,7 +819,7 @@
 }
 
 .together-image {
-  flex: 1;
+  flex: 0 0 60%;
   width: 100%;
   height: 250px;
   object-fit: cover;
