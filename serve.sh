@@ -8,13 +8,19 @@ echo "🎉 Wedding Invitation Web Server"
 echo "================================"
 echo ""
 
-# Kiểm tra Python
-if command -v python3 &> /dev/null; then
+# Kiểm tra Python 3 với custom server (khuyến nghị - không có BrokenPipeError)
+if command -v python3 &> /dev/null && [ -f "server.py" ]; then
+    echo "✅ Sử dụng custom Python server (không có BrokenPipeError)"
+    echo ""
+    python3 server.py
+# Kiểm tra Python 3 với http.server mặc định
+elif command -v python3 &> /dev/null; then
     echo "✅ Tìm thấy Python 3"
     echo "🚀 Đang khởi động server tại http://localhost:$PORT"
     echo "📝 Nhấn Ctrl+C để dừng server"
+    echo "💡 Tip: Sử dụng server.py để tránh BrokenPipeError"
     echo ""
-    python3 -m http.server $PORT
+    python3 -m http.server $PORT 2>&1 | grep -v "BrokenPipeError" || true
 elif command -v python &> /dev/null; then
     echo "✅ Tìm thấy Python 2"
     echo "🚀 Đang khởi động server tại http://localhost:$PORT"
