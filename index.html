@@ -112,7 +112,7 @@ bên nhau bắt đầu.</p>
         <div class="location-label">Tại</div>
         <div class="location-name">NHÀ HÀNG ÁI HUÊ 2</div>
         <div class="location-address">338 Trần Hưng Đạo, Phường 11, Quận 5</div>
-        <button class="location-map-link" onclick="window.open('https://maps.google.com/?q=338+Trần+Hưng+Đạo,+Phường+11,+Quận+5', '_blank')">Xem bản đồ</button>
+        <button class="location-map-link" onclick="window.open('https://maps.app.goo.gl/qpimk6XEoDmA6src7', '_blank')">Xem bản đồ</button>
       </div>
     </div>
   </section>
@@ -128,34 +128,47 @@ bên nhau bắt đầu.</p>
   <!-- Memories Section -->
   <section class="memories-section">
     <div class="container">
-      <h2 class="section-title">Our Wedding Memories</h2>
-      <div class="memories-content">
-        <p class="memories-text">Những khoảnh khắc đẹp trong ngày cưới của chúng tôi sẽ mãi mãi được lưu giữ. Mỗi bức ảnh là một câu chuyện, mỗi nụ cười là một kỷ niệm đáng nhớ.</p>
-        <div class="memories-images">
-          <img src="https://via.placeholder.com/600x250/F5F0E8/5C4A37?text=Wedding+Memory+1" alt="Wedding Memory 1" class="memories-image" loading="lazy">
-          <img src="https://via.placeholder.com/600x250/F5F0E8/5C4A37?text=Wedding+Memory+2" alt="Wedding Memory 2" class="memories-image" loading="lazy">
-          <img src="https://via.placeholder.com/600x200/F5F0E8/5C4A37?text=Wedding+Memory+3" alt="Wedding Memory 3" class="memories-image" loading="lazy">
-          <img src="https://via.placeholder.com/600x200/F5F0E8/5C4A37?text=Wedding+Memory+4" alt="Wedding Memory 4" class="memories-image" loading="lazy">
+      <h2 class="section-title">Our Wedding<br>Memories</h2>
+      <div class="memories-layout">
+        <div class="memories-left">
+          <p class="memories-text">Những khoảnh khắc đẹp trong ngày cưới của chúng tôi sẽ mãi mãi được lưu giữ. Mỗi bức ảnh là một câu chuyện, mỗi nụ cười là một kỷ niệm đáng nhớ.</p>
+          <div class="memories-image-stack">
+            <img src="assets/images/THO_3493.JPG" alt="Wedding Memory Small" class="memories-image memories-image-small" loading="lazy">
+          </div>
+        </div>
+        <div class="memories-right">
+          <img src="assets/images/THO_3493.JPG" alt="Wedding Memory Large" class="memories-image memories-image-large" loading="lazy">
         </div>
       </div>
+      <h2 class="section-footer">Dating</h2>
     </div>
   </section>
 
   <!-- Dating Section -->
   <section class="dating-section">
     <div class="container">
-      <div class="dating-bg-text">Dating</div>
       <div class="dating-content">
-        <div class="dating-text-row">
-          <p class="dating-text">Hành trình yêu thương của chúng tôi bắt đầu từ những ngày tháng đẹp đẽ. Mỗi khoảnh khắc bên nhau đều là những kỷ niệm quý giá.</p>
-          <div class="dating-images">
-            <img src="https://via.placeholder.com/600x200/F5F0E8/5C4A37?text=Dating+Photo+1" alt="Dating Photo 1" class="dating-image" loading="lazy">
-            <img src="https://via.placeholder.com/600x250/F5F0E8/5C4A37?text=Dating+Photo+2" alt="Dating Photo 2" class="dating-image" loading="lazy">
-            <img src="https://via.placeholder.com/600x180/F5F0E8/5C4A37?text=Dating+Photo+3" alt="Dating Photo 3" class="dating-image" loading="lazy">
-            <img src="https://via.placeholder.com/600x220/F5F0E8/5C4A37?text=Dating+Photo+4" alt="Dating Photo 4" class="dating-image" loading="lazy">
+        <!-- Brown background layer -->
+        <div class="dating-brown-bg"></div>
+        
+        <!-- Main content wrapper -->
+        <div class="dating-main-wrapper">
+          <!-- Left side: Text overlapping brown background -->
+          <div class="dating-left">
+            <p class="dating-text">Hành trình yêu thương của chúng tôi bắt đầu từ những ngày tháng đẹp đẽ. Mỗi khoảnh khắc bên nhau đều là những kỷ niệm quý giá.</p>
+          </div>
+          
+          <!-- Right side: Large image -->
+          <div class="dating-right">
+            <img src="assets/images/THO_3493.JPG" alt="Dating Photo" class="dating-image-large" loading="lazy">
           </div>
         </div>
-        <div class="dating-date">28 04</div>
+        
+        <!-- Date at bottom left -->
+        <div class="dating-date-wrapper">
+          <div class="dating-date-brown">28</div>
+          <div class="dating-date-beige">04</div>
+        </div>
       </div>
     </div>
   </section>
@@ -163,13 +176,21 @@ bên nhau bắt đầu.</p>
   <!-- Ceremony Section -->
   <section class="ceremony-section">
     <div class="container">
-      <h2 class="section-title">Wedding Ceremony</h2>
-      <div class="ceremony-content">
-        <div class="ceremony-images">
-          <img src="https://via.placeholder.com/600x300/F5F0E8/5C4A37?text=Ceremony+Photo+1" alt="Ceremony Photo 1" class="ceremony-image" loading="lazy">
-          <img src="https://via.placeholder.com/600x300/F5F0E8/5C4A37?text=Ceremony+Photo+2" alt="Ceremony Photo 2" class="ceremony-image" loading="lazy">
+      <div class="ceremony-layout">
+        <div class="ceremony-left">
+          <div class="ceremony-image-stack">
+            <img src="assets/images/THO_3493.JPG" alt="Ceremony Photo Small" class="ceremony-image ceremony-image-small" loading="lazy">
+          </div>
+          <p class="ceremony-text">Ngày cưới là ngày đẹp nhất trong cuộc đời chúng tôi. Được đứng bên nhau, hứa hẹn sẽ yêu thương và chăm sóc nhau suốt đời.</p>
         </div>
-        <p class="ceremony-text">Ngày cưới là ngày đẹp nhất trong cuộc đời chúng tôi. Được đứng bên nhau, hứa hẹn sẽ yêu thương và chăm sóc nhau suốt đời.</p>
+        <div class="ceremony-right">
+          <h2 class="ceremony-section-title-1">Wedding</h2>
+          <h2 class="ceremony-section-title-2">Ceremony</h2>
+          <p class="ceremony-text">Ngày cưới là ngày đẹp nhất trong cuộc đời chúng tôi. Được đứng bên nhau, hứa hẹn sẽ yêu thương và chăm sóc nhau suốt đời.</p>
+          <div class="ceremony-image-stack">
+            <img src="assets/images/THO_3493.JPG" alt="Ceremony Photo Small" class="ceremony-image ceremony-image-small" loading="lazy">
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -177,25 +198,21 @@ bên nhau bắt đầu.</p>
   <!-- Together Forever Section -->
   <section class="together-section">
     <div class="container">
-      <h2 class="section-title">Together Forever</h2>
       <div class="together-content">
+        <h2 class="section-title">Together Forever</h2>
         <div class="together-text">
           <p class="together-text-content">Chúng tôi hứa sẽ cùng nhau đi qua mọi thăng trầm của cuộc sống, chia sẻ niềm vui và nỗi buồn, và luôn yêu thương nhau mãi mãi.</p>
         </div>
-        <img src="https://via.placeholder.com/600x350/F5F0E8/5C4A37?text=Together+Forever" alt="Together Forever" class="together-image" loading="lazy">
       </div>
+      <img src="assets/images/THO_3493.JPG" alt="Together Forever" class="together-image" loading="lazy">
+
     </div>
   </section>
 
   <!-- Wedding Album Section -->
   <section class="album-section">
     <div class="container">
-      <div class="album-title-row">
-        <h2 class="album-title">Wedding Album</h2>
-        <svg class="album-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
+      <div class="album-cta">Wedding Album →</div>
       <div class="album-box">
         <div class="album-box-title">WEDDING BOX</div>
         <div class="album-qr">
