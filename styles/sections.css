@@ -751,6 +751,7 @@
 .ceremony-image-stack-2 {
   position: relative;
   z-index: 1;
+  padding-bottom: 20px;
 }
 
 
@@ -773,7 +774,7 @@
 
 /* Together Forever Section */
 .together-section {
-  padding-top: 40px;
+  padding-top: 20px;
   padding-bottom: 40px;
   background-color: var(--bg-section);
   width: 100%;
@@ -830,12 +831,15 @@
 .album-section {
   background: var(--bg-section);
   width: 100%;
+  padding-bottom: 153px;
+  overflow: visible;
 }
 
 .album-section .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 88px;
 }
 
 .album-cta {
@@ -885,6 +889,7 @@
   width: 100%;
   text-align: center;
   position: relative;
+  overflow: visible;
 }
 
 .thank-you-photo {
@@ -897,9 +902,15 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  position: relative;
+  top: -60px;
+  z-index: 10;
 }
 
 .thank-you-title {
+  padding-top: 32px;
+  padding-bottom: 8px;
   font-family: 'Castoro Titling', serif;
   font-weight: 400;
   font-style: normal;
