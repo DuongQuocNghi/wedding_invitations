@@ -58,8 +58,11 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# SPA fallback - redirect all routes to index.html for client-side routing
+# Note: This is only needed if you plan to add client-side routing
+# For now, commented out as it may cause issues with direct file access
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 200
 
