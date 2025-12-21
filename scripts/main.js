@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const tabContentBride = document.querySelector('.tab-content-bride');
   const tabContentReception = document.querySelector('.tab-content-reception');
   
+  // Initialize: hide reception tab by default
+  if (tabContentReception) {
+    tabContentReception.style.display = 'none';
+  }
+  
   tabButtons.forEach(button => {
     button.addEventListener('click', function() {
       // Remove active class from all buttons
@@ -24,6 +29,17 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show Family Details 2 (Lễ tân hôn)
         if (tabContentBride) tabContentBride.style.display = 'none';
         if (tabContentReception) tabContentReception.style.display = 'block';
+      }
+    });
+  });
+  
+  // Map link handlers
+  const mapLinks = document.querySelectorAll('.location-map-link[data-map-url]');
+  mapLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      const mapUrl = this.getAttribute('data-map-url');
+      if (mapUrl) {
+        window.open(mapUrl, '_blank', 'noopener,noreferrer');
       }
     });
   });

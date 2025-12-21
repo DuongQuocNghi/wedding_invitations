@@ -162,6 +162,14 @@
   display: block;
 }
 
+.tab-content {
+  display: block;
+}
+
+.tab-content-reception {
+  display: none;
+}
+
 .family-details {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -278,7 +286,7 @@
 }
 
 .event-date-number {
-  font-family: 'FONTSPRING DEMO - Gibson Medium', sans-serif;
+  font-family: 'B612', sans-serif;
   font-weight: 500;
   font-style: normal;
   font-size: 32px;
