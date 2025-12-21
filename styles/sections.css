@@ -824,7 +824,7 @@
 .album-section {
   background: var(--bg-section);
   width: 100%;
-  padding-bottom: 153px;
+  padding-bottom: 163px;
   overflow: visible;
 }
 
@@ -836,7 +836,7 @@
 }
 
 .album-cta {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -844,46 +844,64 @@
   border-radius: 30px;
   background: #f6f0e9;
   border: 1px solid rgba(139, 111, 71, 0.35);
-  color: var(--color-highlight);
-  font-family: 'Sarabun', sans-serif;
-  letter-spacing: 0.05em;
-  font-size: 14px;
+  color: var(--color-highlight, #5E121F);
+  font-family: 'Alex Brush', cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 33px;
+  letter-spacing: 0;
   padding-left: 24px;
   padding-right: 24px;
   opacity: 1;
+}
+
+.album-cta__text {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.album-cta__arrow {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  padding-top: 8px;
 }
 
 .album-box {
   width: 100%;
-  background-color: var(--color-white);
+  background-image: url('../assets/images/wedding_box.avif');
+  background-size: 100% auto;
+  background-position: center top;
+  background-repeat: no-repeat;
   border-radius: 12px;
-  border: 1px solid rgba(139, 111, 71, 0.5);
   text-align: center;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.06);
   padding-left: 24px;
   padding-right: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
   opacity: 1;
-}
-
-.album-box-title {
-  font-family: 'Castoro Titling', serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 18px;
-  line-height: 100%;
-  letter-spacing: 0.06em;
-  color: var(--color-highlight, #5E121F);
+  position: relative;
+  min-height: 300px;
 }
 
 .album-qr {
-  width: 150px;
-  height: 150px;
-  background-color: #f0f0f0;
-  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
+
+.album-qr img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-top: 90px;
+  margin-right: 10px;
+}
+
 
 /* Thank You Section */
 .thank-you-section {
