@@ -1,0 +1,118 @@
+/* Self-hosted Google Fonts */
+/* Font files should be downloaded and placed in assets/fonts/ directory */
+
+/* Bellefair - Regular */
+@font-face {
+  font-family: 'Bellefair';
+  src: url('../assets/fonts/Bellefair-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Sarabun - Light (300), Regular (400), SemiBold (600) */
+@font-face {
+  font-family: 'Sarabun';
+  src: url('../assets/fonts/Sarabun-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sarabun';
+  src: url('../assets/fonts/Sarabun-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sarabun';
+  src: url('../assets/fonts/Sarabun-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* B612 - Regular (400), Medium (500) */
+@font-face {
+  font-family: 'B612';
+  src: url('../assets/fonts/B612-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'B612';
+  src: url('../assets/fonts/B612-Bold.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Aboreto - Regular */
+@font-face {
+  font-family: 'Aboreto';
+  src: url('../assets/fonts/Aboreto-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ABeeZee - Regular */
+@font-face {
+  font-family: 'ABeeZee';
+  src: url('../assets/fonts/ABeeZee-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Alex Brush - Regular */
+@font-face {
+  font-family: 'Alex Brush';
+  src: url('../assets/fonts/AlexBrush-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Castoro Titling - Regular */
+@font-face {
+  font-family: 'Castoro Titling';
+  src: url('../assets/fonts/CastoroTitling-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Playfair Display - Medium (500) */
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../assets/fonts/PlayfairDisplay-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Source Sans Pro - Light (300), Regular (400) */
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('../assets/fonts/SourceSansPro-Light.woff2') format('woff2'),
+       url('../assets/fonts/SourceSansPro-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('../assets/fonts/SourceSansPro-Regular.woff2') format('woff2'),
+       url('../assets/fonts/SourceSansPro-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
