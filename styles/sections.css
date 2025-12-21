@@ -523,8 +523,8 @@
 /* Memories Section */
 .memories-section {
   padding-top: 65px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 0;
+  padding-right: 0;
   padding-bottom: 100px;
   background-color: var(--bg-section);
   width: 100%;
@@ -534,11 +534,13 @@
 
 .memories-section .container {
   position: relative;
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
   overflow: visible;
 }
 
+.memories-section .section-title {
+  text-align: left;
+}
 
 .memories-layout {
   position: relative;
@@ -547,6 +549,7 @@
   gap: 9px;
   grid-template-columns: 1.2fr 1fr;
   align-items: end;
+  margin: 0;
 }
 
 .memories-layout__left {
@@ -593,8 +596,13 @@
 }
 
 .dating-section .container {
-  padding: 0;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 0;
+  padding-bottom: 0;
   margin: 0;
+  max-width: 100% !important;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -602,6 +610,8 @@
   position: relative;
   overflow: hidden;
   width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /* Brown background layer */
@@ -646,22 +656,25 @@
   align-items: flex-start;
   justify-content: flex-start;
   width: 100%;
+  padding-right: 16px;
 }
 
 .dating-image {
   /* Uses .image-rounded--large-shadow utility */
-  width: 197px;
+  width: 100%;
   height: 320px;
+  object-fit: cover;
 }
 
-/* Date wrapper at bottom left */
+/* Date wrapper at bottom right */
 .dating-date-wrapper {
   position: absolute;
-  left: 0;
+  right: 0;
   bottom: 0;
   z-index: var(--z-content);
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
 }
 
 .dating-date {
@@ -679,12 +692,12 @@
 }
 
 .dating-date--day {
-  padding-left: 11px;
+  padding-right: calc(50vw + 45px + 20px);
   margin-bottom: -40px;
 }
 
 .dating-date--month {
-  padding-left: 54px;
+  padding-right: calc(50vw + 20px);
 }
 
 /* Ceremony Section */
@@ -887,22 +900,6 @@
   min-height: 300px;
 }
 
-.album-qr {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.album-qr img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  margin-top: 90px;
-  margin-right: 10px;
-}
-
-
 /* Thank You Section */
 .thank-you-section {
   background-color: var(--bg-dark);
@@ -970,5 +967,602 @@
   letter-spacing: 0;
   text-align: center;
   color: var(--color-surface-light, #F4F1EA);
+}
+
+/* ============================================
+   Responsive Styles
+   ============================================ */
+
+/* Tablet styles (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Header Section */
+  .header-section {
+    height: 70vh;
+  }
+
+  .header-overlay {
+    top: 50px;
+  }
+
+  .header-overlay img {
+    transform: scale(1.3);
+  }
+
+  /* Welcome Section */
+  .welcome-title {
+    font-size: 36px;
+    padding-top: 60px;
+  }
+
+  .welcome-text {
+    font-size: 14px;
+    line-height: 24px;
+    padding-top: 24px;
+  }
+
+  .welcome-logo {
+    padding-top: 40px;
+  }
+
+  .welcome-illustration {
+    padding-top: 40px;
+  }
+
+  .welcome-illustration img {
+    height: 200px;
+  }
+
+  /* Event Details Section */
+  .event-details-section {
+    padding-top: 80px;
+  }
+
+  .event-tab-button {
+    font-size: 20px;
+    height: 50px;
+  }
+
+  .family-details {
+    padding-top: 32px;
+  }
+
+  .family-label {
+    font-size: 12px;
+  }
+
+  .family-member-title,
+  .family-member-name {
+    font-size: 12px;
+  }
+
+  .invitation-text {
+    font-size: 16px;
+    line-height: 24px;
+    padding-top: 40px;
+  }
+
+  .event-day {
+    font-size: 16px;
+  }
+
+  .event-time,
+  .event-year {
+    font-size: 14px;
+  }
+
+  .event-date-number {
+    font-size: 40px;
+  }
+
+  .event-month {
+    font-size: 16px;
+  }
+
+  .location-name,
+  .location-address {
+    font-size: 12px;
+  }
+
+  /* Quote Section */
+  .quote-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .quote-text {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .quote-description {
+    font-size: 16px;
+    line-height: 24px;
+    padding-top: 12px;
+  }
+
+  /* Memories Section */
+  .memories-section {
+    padding-top: 80px;
+    padding-bottom: 120px;
+  }
+
+  .section-title {
+    font-size: 60px;
+    line-height: 50px;
+  }
+
+  .memories-text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .memories-layout__right {
+    height: 280px;
+  }
+
+  .memories-image-wrapper {
+    padding-top: 60px;
+  }
+
+  .image-small {
+    height: 160px;
+  }
+
+  /* Dating Section */
+  .dating-brown-bg {
+    top: 40px;
+    height: 260px;
+  }
+
+  .dating-text {
+    font-size: 14px;
+    line-height: 24px;
+    padding-top: 100px;
+  }
+
+  .dating-image {
+    width: 100%;
+    height: 400px;
+  }
+
+  .dating-date {
+    font-size: 100px;
+  }
+
+  /* Ceremony Section */
+  .ceremony-layout {
+    gap: 20px;
+  }
+
+  .ceremony-layout__right {
+    padding-top: 400px;
+  }
+
+  .ceremony-text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .ceremony-layout__left .ceremony-image--small {
+    height: 260px;
+  }
+
+  .ceremony-layout__right .ceremony-image--small {
+    height: 270px;
+  }
+
+  /* Together Section */
+  .together-section {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  .together-image {
+    height: 320px;
+  }
+
+  /* Album Section */
+  .album-section {
+    padding-bottom: 200px;
+  }
+
+  .album-cta {
+    font-size: 28px;
+    height: 60px;
+  }
+
+  .album-box {
+    min-height: 380px;
+  }
+
+  /* Thank You Section */
+  .thank-you-photo {
+    width: 260px;
+    height: 224px;
+    top: -100px;
+  }
+
+  .thank-you-photo__image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .thank-you-title {
+    font-size: 36px;
+    padding-top: 40px;
+  }
+
+  .thank-you-text {
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 160px;
+  }
+}
+
+/* Laptop/Desktop styles (> 1024px) */
+@media (min-width: 1025px) {
+  /* Header Section */
+  .header-section {
+    height: 80vh;
+    max-height: 900px;
+  }
+
+  .header-overlay {
+    top: 60px;
+  }
+
+  .header-overlay img {
+    transform: scale(1.5);
+  }
+
+  /* Welcome Section */
+  .welcome-title {
+    font-size: 42px;
+    padding-top: 80px;
+  }
+
+  .welcome-text {
+    font-size: 16px;
+    line-height: 28px;
+    padding-top: 32px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .welcome-logo {
+    padding-top: 50px;
+  }
+
+  .welcome-illustration {
+    padding-top: 50px;
+  }
+
+  .welcome-illustration img {
+    height: 250px;
+  }
+
+  /* Event Details Section */
+  .event-details-section {
+    padding-top: 100px;
+  }
+
+  .event-tabs-buttons {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .event-tab-button {
+    font-size: 22px;
+    height: 56px;
+  }
+
+  .family-details {
+    padding-top: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .family-column:nth-child(1),
+  .family-column:nth-child(2) {
+    padding-left: 10%;
+  }
+
+  .family-label {
+    font-size: 14px;
+  }
+
+  .family-member-title,
+  .family-member-name {
+    font-size: 14px;
+  }
+
+  .invitation-text {
+    font-size: 18px;
+    line-height: 28px;
+    padding-top: 48px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .event-date {
+    padding-top: 24px;
+  }
+
+  .event-day {
+    font-size: 18px;
+  }
+
+  .event-time,
+  .event-year {
+    font-size: 16px;
+    width: 120px;
+    height: 40px;
+  }
+
+  .event-date-number {
+    font-size: 48px;
+    width: 120px;
+    height: 40px;
+  }
+
+  .event-month {
+    font-size: 18px;
+    padding-top: 12px;
+  }
+
+  .event-location {
+    padding-top: 24px;
+    padding-bottom: 48px;
+  }
+
+  .location-label {
+    font-size: 12px;
+  }
+
+  .location-name {
+    font-size: 14px;
+  }
+
+  .location-address {
+    font-size: 14px;
+  }
+
+  .location-map-link {
+    font-size: 14px;
+  }
+
+  /* Quote Section */
+  .quote-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .quote-text {
+    font-size: 24px;
+    line-height: 32px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .quote-description {
+    font-size: 18px;
+    line-height: 28px;
+    padding-top: 16px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* Memories Section */
+  .memories-section {
+    padding-top: 100px;
+    padding-bottom: 150px;
+  }
+
+  .section-title {
+    font-size: 70px;
+    line-height: 60px;
+  }
+
+  .memories-layout {
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+
+  .memories-text {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .memories-layout__right {
+    height: 350px;
+    margin-top: -30px;
+  }
+
+  .memories-image-wrapper {
+    padding-top: 80px;
+  }
+
+  .image-small {
+    height: 200px;
+  }
+
+  .section-footer {
+    font-size: 140px;
+    bottom: 60px;
+    right: -50px;
+  }
+
+  /* Dating Section */
+  .dating-section .container {
+    max-width: 100% !important;
+  }
+
+  .dating-brown-bg {
+    top: 50px;
+    height: 320px;
+  }
+
+  .dating-main-wrapper {
+    gap: 30px;
+  }
+
+  .dating-text {
+    font-size: 16px;
+    line-height: 28px;
+    padding-top: 120px;
+  }
+
+  .dating-image {
+    width: 100%;
+    height: 500px;
+  }
+
+  .dating-date {
+    font-size: 120px;
+  }
+
+  .dating-date--day {
+    padding-right: calc(50vw + 45px + 20px);
+    margin-bottom: -50px;
+  }
+
+  .dating-date--month {
+    padding-right: calc(50vw + 20px);
+  }
+
+  /* Ceremony Section */
+  .ceremony-section .container {
+    max-width: 1000px;
+  }
+
+  .ceremony-layout {
+    gap: 30px;
+    align-items: start;
+  }
+
+  .ceremony-layout__right {
+    padding-top: 40px;
+  }
+
+  .ceremony-title__primary {
+    margin-left: -30%;
+  }
+
+  .ceremony-text {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .ceremony-text--left {
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+
+  .ceremony-text--right {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+  .ceremony-layout__left .ceremony-image--small {
+    height: 320px;
+  }
+
+  .ceremony-layout__right .ceremony-image--small {
+    height: 330px;
+  }
+
+  /* Together Section */
+  .together-section {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+
+  .together-section .container {
+    max-width: 1000px;
+    gap: 40px;
+  }
+
+  .together-content {
+    flex: 0 0 45%;
+  }
+
+  .together-text {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .together-image {
+    flex: 0 0 55%;
+    height: 400px;
+  }
+
+  /* Album Section */
+  .album-section {
+    padding-bottom: 250px;
+  }
+
+  .album-section .container {
+    max-width: 800px;
+    gap: 100px;
+  }
+
+  .album-cta {
+    font-size: 32px;
+    height: 70px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .album-box {
+    min-height: 450px;
+    padding: 40px;
+  }
+
+  /* Thank You Section */
+  .thank-you-photo {
+    width: 320px;
+    height: 275px;
+    top: -120px;
+  }
+
+  .thank-you-photo__image {
+    width: 240px;
+    height: 240px;
+  }
+
+  .thank-you-title {
+    font-size: 42px;
+    padding-top: 50px;
+  }
+
+  .thank-you-text {
+    font-size: 18px;
+    line-height: 28px;
+    padding-bottom: 200px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+/* Large Desktop (> 1440px) */
+@media (min-width: 1441px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  .header-section {
+    max-height: 1000px;
+  }
+
+  .memories-layout,
+  .dating-section .container {
+    max-width: 100% !important;
+  }
+  
+  .ceremony-section .container,
+  .together-section .container {
+    max-width: 1200px;
+  }
 }
 
