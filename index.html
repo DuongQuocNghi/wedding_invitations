@@ -12,20 +12,27 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Thiệp Cưới Nghi & Lan">
   <meta property="og:description" content="Thiệp cưới Quốc Nghi & Mỹ Lan. Kính mời quý khách đến tham dự bữa tiệc chung vui cùng gia đình chúng tôi.">
-  <meta property="og:image" content="web/favicon.png">
+  <meta property="og:url" content="https://nghi-lan-wedding.site">
+  <meta property="og:image" content="https://nghi-lan-wedding.site/assets/images/hinh_1.avif">
+  <meta property="og:image:width" content="430">
+  <meta property="og:image:height" content="730">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Thiệp Cưới Nghi & Lan">
   <meta name="twitter:description" content="Thiệp cưới Quốc Nghi & Mỹ Lan. Kính mời quý khách đến tham dự bữa tiệc chung vui cùng gia đình chúng tôi.">
-  <meta name="twitter:image" content="web/favicon.png">
+  <meta name="twitter:image" content="https://nghi-lan-wedding.site/assets/images/hinh_1.avif">
   
-  <!-- Preconnect to Google Fonts for faster font loading -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Preload LCP image for faster loading -->
+  <link rel="preload" as="image" href="assets/images/hinh_1.avif" fetchpriority="high" type="image/avif">
   
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Sarabun:wght@300;400;600&family=B612:wght@400;500&family=Aboreto&family=ABeeZee&family=Alex+Brush&family=Castoro+Titling&family=Playfair+Display:wght@500&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+  <!-- Preload critical CSS -->
+  <link rel="preload" as="style" href="styles/main.css">
+  <link rel="preload" as="style" href="styles/sections.css">
+  <link rel="preload" as="style" href="styles/fonts.css">
+  
+  <!-- Self-hosted Fonts -->
+  <link rel="stylesheet" href="styles/fonts.css">
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/main.css">
@@ -39,9 +46,9 @@
 <body>
   <!-- Header Section -->
   <section class="header-section">
-    <img src="assets/images/hinh_1.png" alt="Wedding Header" class="header-background" loading="eager">
+    <img src="assets/images/hinh_1.avif" alt="Wedding Header" class="header-background" loading="eager" width="430" height="730" fetchpriority="high" decoding="async">
     <div class="header-overlay">
-      <img src="assets/svg/home_header.svg" alt="Header Decoration">
+      <img src="assets/svg/home_header.svg" alt="Header Decoration" width="200" height="100">
     </div>
   </section>
 
@@ -50,16 +57,16 @@
     <div class="container">
       <h1 class="welcome-title">WELCOME TO OUR</h1>
       <div class="welcome-love-story">
-        <img src="assets/svg/love_story.svg" alt="Love Story">
+        <img src="assets/svg/love_story.svg" alt="Love Story" width="200" height="50">
       </div>
       <p class="welcome-text">Chào mừng đến với khoảnh khắc mở ra cột mốc mới trong câu
 chuyện tình yêu của chúng em, nơi hành trình mới
 bên nhau bắt đầu.</p>
       <div class="welcome-logo">
-        <img src="assets/svg/NL_logo.svg" alt="NL Logo">
+        <img src="assets/svg/NL_logo.svg" alt="NL Logo" width="150" height="80">
       </div>
       <div class="welcome-illustration">
-        <img src="assets/images/NL_draw.png" alt="Couple Illustration">
+        <img src="assets/images/NL_draw.png" alt="Couple Illustration" width="200" height="150">
       </div>
     </div>
   </section>
@@ -74,7 +81,7 @@ bên nhau bắt đầu.</p>
           <button class="event-tab-button" data-tab="reception">Lễ tân hôn</button>
         </div>
         <div class="event-tabs-decoration">
-          <img src="assets/svg/NL_tab.svg" alt="Tab Decoration">
+          <img src="assets/svg/NL_tab.svg" alt="Tab Decoration" width="100" height="50">
         </div>
       </div>
       <!-- Family Details 1 - Tiệc nhà gái -->
@@ -201,11 +208,11 @@ bên nhau bắt đầu.</p>
         <div class="memories-left">
           <p class="memories-text">Ngay từ ngày đầu gặp gỡ, trái tim chúng ta đã hòa chung nhịp đập, thì thầm rằng người ấy chính là duy nhất.</p>
           <div class="memories-image-stack">
-            <img src="assets/images/hinh_3.png" alt="Wedding Memory Small" class="memories-image memories-image-small" loading="lazy">
+            <img src="assets/images/hinh_3.avif" alt="Wedding Memory Small" class="memories-image memories-image-small" loading="lazy" width="200" height="123">
           </div>
         </div>
         <div class="memories-right">
-          <img src="assets/images/hinh_2.png" alt="Wedding Memory Large" class="memories-image memories-image-large" loading="lazy">
+          <img src="assets/images/hinh_2.avif" alt="Wedding Memory Large" class="memories-image memories-image-large" loading="lazy" width="215" height="300">
         </div>
       </div>
       <h2 class="section-footer">Dating</h2>
@@ -228,7 +235,7 @@ bên nhau bắt đầu.</p>
           
           <!-- Right side: Large image -->
           <div class="dating-right">
-            <img src="assets/images/hinh_4.png" alt="Dating Photo" class="dating-image-large" loading="lazy">
+            <img src="assets/images/hinh_4.avif" alt="Dating Photo" class="dating-image-large" loading="lazy" width="197" height="320">
           </div>
         </div>
         
@@ -247,7 +254,7 @@ bên nhau bắt đầu.</p>
       <div class="ceremony-layout">
         <div class="ceremony-left">
           <div class="ceremony-image-stack-1">
-            <img src="assets/images/hinh_5.png" alt="Ceremony Photo Small" class="ceremony-image ceremony-image-small" loading="lazy">
+            <img src="assets/images/hinh_5.avif" alt="Ceremony Photo Small" class="ceremony-image ceremony-image-small" loading="lazy" width="200" height="212">
           </div>
           <p class="ceremony-text-1">Nắm tay nhau bước lên lễ đường, với lời hứa sẽ đồng hành cùng nhau qua những ngày bình yên lẫn giông bão, giữ nhau bằng lòng tin và sự yêu thương.</p>
         </div>
@@ -256,7 +263,7 @@ bên nhau bắt đầu.</p>
           <h2 class="ceremony-section-title-2">Ceremony</h2>
           <p class="ceremony-text-2">Tình yêu là hành trình trải nghiệm cùng nhau, không phải một đích đến.</p>
           <div class="ceremony-image-stack-2">
-            <img src="assets/images/hinh_6.png" alt="Ceremony Photo Small" class="ceremony-image ceremony-image-small" loading="lazy">
+            <img src="assets/images/hinh_6.avif" alt="Ceremony Photo Small" class="ceremony-image ceremony-image-small" loading="lazy" width="200" height="218">
           </div>
         </div>
       </div>
@@ -274,7 +281,7 @@ bên nhau bắt đầu.</p>
           <p class="together-text-content">Và dù con đường ‘mãi mãi’ kéo dài đến đâu, anh và em vẫn chọn cùng nhau đi hết quãng đường ấy.</p>
         </div>
       </div>
-      <img src="assets/images/hinh_7.png" alt="Together Forever" class="together-image" loading="lazy">
+      <img src="assets/images/hinh_7.avif" alt="Together Forever" class="together-image" loading="lazy" width="258" height="250">
 
     </div>
   </section>
@@ -309,7 +316,7 @@ bên nhau bắt đầu.</p>
   </section>
 
   <!-- Minimal JavaScript for tab functionality -->
-  <script src="scripts/main.js"></script>
+  <script src="scripts/main.js" defer></script>
 </body>
 </html>
 
