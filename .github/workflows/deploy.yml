@@ -18,6 +18,31 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 'stable'
+          channel: 'stable'
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build Flutter Web
+        run: flutter build web --release
+
+      - name: Verify build output
+        run: |
+          if [ ! -d "build/web" ]; then
+            echo "Error: build/web directory not found!"
+            exit 1
+          fi
+          if [ ! -f "build/web/index.html" ]; then
+            echo "Error: build/web/index.html not found!"
+            exit 1
+          fi
+          echo "Build output verified successfully"
+
       - name: Setup Node.js (for Netlify CLI)
         uses: actions/setup-node@v4
         with:
@@ -33,8 +58,8 @@ jobs:
         run: |
           # Deploy production build
           if [ "${{ github.event_name }}" == "push" ]; then
-            netlify deploy --prod --dir=. --message="Deploy from GitHub Actions - ${{ github.sha }}"
+            netlify deploy --prod --dir=build/web --message="Deploy from GitHub Actions - ${{ github.sha }}"
           else
             # Deploy preview for pull requests
-            netlify deploy --dir=. --message="Preview deploy from PR #${{ github.event.pull_request.number }}"
+            netlify deploy --dir=build/web --message="Preview deploy from PR #${{ github.event.pull_request.number }}"
           fi
