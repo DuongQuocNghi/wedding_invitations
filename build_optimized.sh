@@ -17,8 +17,6 @@ flutter pub get
 echo "🔨 Building web app with optimizations..."
 flutter build web \
   --release \
-  --web-renderer canvaskit \
-  --dart-define=FLUTTER_WEB_USE_SKIA=true \
   --base-href="/" \
   --source-maps
 
