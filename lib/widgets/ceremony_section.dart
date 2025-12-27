@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../constants/text_styles.dart';
 import '../constants/spacing.dart';
+import 'optimized_image.dart';
 
 class CeremonySection extends StatelessWidget {
   const CeremonySection({super.key});
@@ -21,20 +22,13 @@ class CeremonySection extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: AppSpacing.s90),
-                  ClipRRect(
+                  OptimizedImage(
+                    imagePath: 'assets/images/hinh_5.webp',
+                    height: 212,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                     borderRadius: BorderRadius.circular(6),
-                    child: Image.asset(
-                      'assets/images/hinh_5.webp',
-                      height: 212,
-                      width: double.infinity,
-                      fit: BoxFit.cover,
-                      gaplessPlayback: true,
-                      cacheHeight: 212,
-                      errorBuilder: (_, __, ___) => Container(
-                        height: 212,
-                        color: Colors.grey[300],
-                      ),
-                    ),
+                    placeholderColor: Colors.grey[300],
                   ),
                   const SizedBox(height: AppSpacing.s36),
                   Text(
@@ -72,20 +66,13 @@ class CeremonySection extends StatelessWidget {
                     style: AppTextStyles.textItalic,
                   ),
                   const SizedBox(height: AppSpacing.s36),
-                  ClipRRect(
+                  OptimizedImage(
+                    imagePath: 'assets/images/hinh_6.webp',
+                    height: 218,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                     borderRadius: BorderRadius.circular(6),
-                    child: Image.asset(
-                      'assets/images/hinh_6.webp',
-                      height: 218,
-                      width: double.infinity,
-                      fit: BoxFit.cover,
-                      gaplessPlayback: true,
-                      cacheHeight: 218,
-                      errorBuilder: (_, __, ___) => Container(
-                        height: 218,
-                        color: Colors.grey[300],
-                      ),
-                    ),
+                    placeholderColor: Colors.grey[300],
                   ),
                 ],
               ),

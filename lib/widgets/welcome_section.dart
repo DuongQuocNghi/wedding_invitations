@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../constants/text_styles.dart';
 import '../constants/spacing.dart';
+import 'optimized_image.dart';
 
 class WelcomeSection extends StatelessWidget {
   const WelcomeSection({super.key});
@@ -41,13 +42,10 @@ class WelcomeSection extends StatelessWidget {
             SvgPicture.asset('assets/svg/NL_logo.svg', height: 135),
             const SizedBox(height: AppSpacing.s30),
             // Illustration
-            Image.asset(
-              'assets/images/NL_draw.webp',
+            OptimizedImage(
+              imagePath: 'assets/images/NL_draw.webp',
               height: 110,
-              gaplessPlayback: true,
-              cacheHeight: 110,
-              errorBuilder: (_, __, ___) =>
-                  Container(height: 110, color: Colors.grey[300]),
+              placeholderColor: Colors.grey[300],
             ),
 
             const SizedBox(height: AppSpacing.s50),

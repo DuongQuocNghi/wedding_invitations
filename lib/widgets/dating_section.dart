@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../constants/text_styles.dart';
 import '../constants/spacing.dart';
 import '../constants/colors.dart';
+import 'optimized_image.dart';
 
 class DatingSection extends StatelessWidget {
   const DatingSection({super.key});
@@ -38,7 +39,7 @@ class DatingSection extends StatelessWidget {
                       ),
 
                       // Date at bottom left
-                      const SizedBox(height: AppSpacing.s60),
+                      const SizedBox(height: AppSpacing.s40),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -72,20 +73,13 @@ class DatingSection extends StatelessWidget {
                 const SizedBox(width: AppSpacing.s4),
                 // Right side: Image
                 Expanded(
-                  child: ClipRRect(
+                  child: OptimizedImage(
+                    imagePath: 'assets/images/hinh_4.webp',
+                    height: 320,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                     borderRadius: BorderRadius.circular(6),
-                    child: Image.asset(
-                      'assets/images/hinh_4.webp',
-                      height: 320,
-                      width: double.infinity,
-                      fit: BoxFit.cover,
-                      gaplessPlayback: true,
-                      cacheHeight: 320,
-                      errorBuilder: (_, __, ___) => Container(
-                        height: 320,
-                        color: Colors.grey[300],
-                      ),
-                    ),
+                    placeholderColor: Colors.grey[300],
                   ),
                 ),
                 const SizedBox(width: AppSpacing.s16),

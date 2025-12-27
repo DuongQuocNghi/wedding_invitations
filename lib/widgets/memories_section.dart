@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../constants/text_styles.dart';
 import '../constants/spacing.dart';
+import 'optimized_image.dart';
 
 class MemoriesSection extends StatelessWidget {
   const MemoriesSection({super.key});
@@ -33,18 +34,13 @@ class MemoriesSection extends StatelessWidget {
                         style: AppTextStyles.textItalic,
                       ),
                       const SizedBox(height: AppSpacing.s47),
-                      ClipRRect(
+                      OptimizedImage(
+                        imagePath: 'assets/images/hinh_3.webp',
+                        height: 163,
+                        width: double.infinity,
+                        fit: BoxFit.cover,
                         borderRadius: BorderRadius.circular(6),
-                        child: Image.asset(
-                          'assets/images/hinh_3.webp',
-                          height: 163,
-                          width: double.infinity,
-                          fit: BoxFit.cover,
-                          gaplessPlayback: true,
-                          cacheHeight: 163,
-                          errorBuilder: (_, __, ___) =>
-                              Container(height: 163, color: Colors.grey[300]),
-                        ),
+                        placeholderColor: Colors.grey[300],
                       ),
                     ],
                   ),
@@ -54,18 +50,13 @@ class MemoriesSection extends StatelessWidget {
                 Expanded(
                   child: Transform.translate(
                     offset: const Offset(0, -40),
-                    child: ClipRRect(
+                    child: OptimizedImage(
+                      imagePath: 'assets/images/hinh_2.webp',
+                      height: 224,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
                       borderRadius: BorderRadius.circular(6),
-                      child: Image.asset(
-                        'assets/images/hinh_2.webp',
-                        height: 224,
-                        width: double.infinity,
-                        fit: BoxFit.cover,
-                        gaplessPlayback: true,
-                        cacheHeight: 224,
-                        errorBuilder: (_, __, ___) =>
-                            Container(height: 224, color: Colors.grey[300]),
-                      ),
+                      placeholderColor: Colors.grey[300],
                     ),
                   ),
                 ),
