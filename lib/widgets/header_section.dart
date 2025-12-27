@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'optimized_image.dart';
 
 class HeaderSection extends StatelessWidget {
   const HeaderSection({super.key});
@@ -8,7 +9,6 @@ class HeaderSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     final screenHeight = mediaQuery.size.height;
-    final devicePixelRatio = mediaQuery.devicePixelRatio;
     final headerHeight = screenHeight * 0.85;
     final svgHeight = screenHeight * 0.3;
 
@@ -20,13 +20,11 @@ class HeaderSection extends StatelessWidget {
           children: [
             // Background image
             Positioned.fill(
-              child: Image.asset(
-                'assets/images/hinh_1.webp',
+              child: OptimizedImage(
+                imagePath: 'assets/images/hinh_1.webp',
+                height: headerHeight,
                 fit: BoxFit.cover,
-                gaplessPlayback: true,
-                cacheHeight: (headerHeight * devicePixelRatio).round(),
-                errorBuilder: (_, __, ___) =>
-                    Container(color: Colors.grey[300]),
+                placeholderColor: Colors.grey[300],
               ),
             ),
             // Overlay decoration

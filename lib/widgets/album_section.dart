@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../constants/text_styles.dart';
 import '../constants/spacing.dart';
 import '../constants/colors.dart';
+import 'optimized_image.dart';
 
 class AlbumSection extends StatelessWidget {
   const AlbumSection({super.key});
@@ -34,12 +35,10 @@ class AlbumSection extends StatelessWidget {
             const SizedBox(height: AppSpacing.s90),
             // Album box (placeholder for QR code or wedding box)
             Center(
-              child: Image.asset(
-                'assets/images/wedding_box.webp',
+              child: OptimizedImage(
+                imagePath: 'assets/images/wedding_box.webp',
                 fit: BoxFit.contain,
-                gaplessPlayback: true,
-                errorBuilder: (_, __, ___) =>
-                    Container(width: 200, height: 200, color: Colors.grey[300]),
+                placeholderColor: Colors.grey[300],
               ),
             ),
             const SizedBox(height: AppSpacing.s150),

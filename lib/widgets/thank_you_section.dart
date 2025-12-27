@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../constants/text_styles.dart';
 import '../constants/spacing.dart';
 import '../constants/colors.dart';
+import 'optimized_image.dart';
 
 class ThankYouSection extends StatelessWidget {
   const ThankYouSection({super.key});
@@ -22,21 +23,13 @@ class ThankYouSection extends StatelessWidget {
               Stack(
                 alignment: Alignment.center,
                 children: [
-                  ClipRRect(
+                  OptimizedImage(
+                    imagePath: 'assets/images/THO_3990.webp',
+                    width: 160,
+                    height: 160,
+                    fit: BoxFit.cover,
                     borderRadius: BorderRadius.circular(80),
-                    child: Image.asset(
-                      'assets/images/THO_3990.webp',
-                      width: 160,
-                      height: 160,
-                      fit: BoxFit.cover,
-                      gaplessPlayback: true,
-                      cacheHeight: 160,
-                      errorBuilder: (_, __, ___) => Container(
-                        width: 160,
-                        height: 160,
-                        color: Colors.grey[300],
-                      ),
-                    ),
+                    placeholderColor: Colors.grey[300],
                   ),
                   SvgPicture.asset('assets/svg/border_avatar.svg', height: 182),
                 ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../constants/text_styles.dart';
 import '../constants/spacing.dart';
+import 'optimized_image.dart';
 
 class TogetherSection extends StatelessWidget {
   const TogetherSection({super.key});
@@ -57,14 +58,11 @@ class TogetherSection extends StatelessWidget {
             const SizedBox(width: AppSpacing.s4),
             // Image
             Expanded(
-              child: Image.asset(
-                'assets/images/hinh_7.webp',
+              child: OptimizedImage(
+                imagePath: 'assets/images/hinh_7.webp',
                 height: 321,
                 fit: BoxFit.cover,
-                gaplessPlayback: true,
-                cacheHeight: 321,
-                errorBuilder: (_, __, ___) =>
-                    Container(height: 321, color: Colors.grey[300]),
+                placeholderColor: Colors.grey[300],
               ),
             ),
           ],
