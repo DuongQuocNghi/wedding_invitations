@@ -36,7 +36,7 @@ class AppTextStyles {
     fontFamily: 'AlexBrush',
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.italic,
-    fontSize: 110,
+    fontSize: 140,
     height: 0.43,
     letterSpacing: -4,
     color: AppColors.accent.withValues(alpha: 0.08),
@@ -92,7 +92,7 @@ class AppTextStyles {
   // Family member name - B612 Bold
   static TextStyle familyMemberName = const TextStyle(
     fontFamily: 'B612',
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     fontSize: 10,
     height: 1.2,
     letterSpacing: 0.05,
@@ -203,7 +203,7 @@ class AppTextStyles {
     fontStyle: FontStyle.italic,
     fontSize: 12,
     height: 1.67,
-    color: AppColors.textBrown,
+    color: AppColors.white,
   );
 
   // Quote description - Sarabun Light
@@ -212,7 +212,7 @@ class AppTextStyles {
     fontWeight: FontWeight.w300,
     fontSize: 10,
     height: 1.6,
-    color: AppColors.textGray,
+    color: AppColors.white,
   );
 
   // Thank you title - Castoro Titling
@@ -222,7 +222,7 @@ class AppTextStyles {
     fontSize: 24,
     height: 1.2,
     letterSpacing: 0.1,
-    color: AppColors.textBrown,
+    color: AppColors.bgPrimary,
   );
 
   // Thank you text - Sarabun Light
@@ -231,7 +231,7 @@ class AppTextStyles {
     fontWeight: FontWeight.w300,
     fontSize: 10,
     height: 1.6,
-    color: AppColors.textGray,
+    color: AppColors.bgPrimary,
   );
 
   // Map link button - Source Sans Pro Regular
@@ -245,4 +245,3 @@ class AppTextStyles {
     decoration: TextDecoration.underline,
   );
 }
-
