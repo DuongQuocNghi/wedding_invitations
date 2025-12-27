@@ -28,8 +28,16 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Build Flutter Web
-        run: flutter build web --release
+      - name: Clean previous build
+        run: flutter clean
+
+      - name: Build Flutter Web (Optimized)
+        run: |
+          flutter build web \
+            --release \
+            --web-renderer canvaskit \
+            --source-maps \
+            --base-href="/"
 
       - name: Verify build output
         run: |
@@ -42,6 +50,26 @@ jobs:
             exit 1
           fi
           echo "Build output verified successfully"
+          
+      - name: Check build size
+        run: |
+          BUILD_SIZE=$(du -sh build/web | cut -f1)
+          echo "📦 Build size: $BUILD_SIZE"
+          
+          # Check if main.dart.js exists and get its size
+          if [ -f "build/web/main.dart.js" ]; then
+            JS_SIZE=$(du -h build/web/main.dart.js | cut -f1)
+            echo "📄 main.dart.js size: $JS_SIZE"
+          fi
+          
+          # Warn if build is too large (> 20MB)
+          BUILD_SIZE_BYTES=$(du -sb build/web | cut -f1)
+          MAX_SIZE=$((20 * 1024 * 1024)) # 20MB
+          if [ $BUILD_SIZE_BYTES -gt $MAX_SIZE ]; then
+            echo "⚠️  Warning: Build size exceeds 20MB. Consider optimizing images."
+          else
+            echo "✅ Build size is within acceptable limits"
+          fi
 
       - name: Setup Node.js (for Netlify CLI)
         uses: actions/setup-node@v4
