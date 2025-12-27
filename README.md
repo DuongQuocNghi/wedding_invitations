@@ -1,7 +1,5 @@
 # Wedding Invitations Flutter App
 
-Ứng dụng Flutter chuyển đổi từ website thiệp cưới HTML/CSS/JS sang Flutter.
-
 ## Cấu trúc dự án
 
 ```
