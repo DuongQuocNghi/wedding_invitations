@@ -34,8 +34,7 @@ jobs:
         run: |
           flutter build web \
             --release \
-            --base-href="/" \
-            --web-renderer canvaskit
+            --base-href="/"
       
       - name: Verify build output
         run: |
