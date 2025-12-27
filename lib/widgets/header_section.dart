@@ -18,13 +18,14 @@ class HeaderSection extends StatelessWidget {
         width: double.infinity,
         child: Stack(
           children: [
-            // Background image
+            // Background image - above the fold, load immediately
             Positioned.fill(
               child: OptimizedImage(
                 imagePath: 'assets/images/hinh_1.webp',
                 height: headerHeight,
                 fit: BoxFit.cover,
                 placeholderColor: Colors.grey[300],
+                lazyLoad: false, // Critical image, load immediately
               ),
             ),
             // Overlay decoration

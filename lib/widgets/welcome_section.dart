@@ -41,11 +41,12 @@ class WelcomeSection extends StatelessWidget {
             // Logo
             SvgPicture.asset('assets/svg/NL_logo.svg', height: 135),
             const SizedBox(height: AppSpacing.s30),
-            // Illustration
+            // Illustration - above the fold, load immediately
             OptimizedImage(
               imagePath: 'assets/images/NL_draw.webp',
               height: 110,
               placeholderColor: Colors.grey[300],
+              lazyLoad: false, // Critical image, load immediately
             ),
 
             const SizedBox(height: AppSpacing.s50),
