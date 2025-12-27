@@ -25,7 +25,7 @@ class WelcomeSection extends StatelessWidget {
             SvgPicture.asset(
               'assets/svg/love_story.svg',
               height: 50,
-              placeholderBuilder: (context) => const SizedBox.shrink(),
+              placeholderBuilder: (_) => const SizedBox.shrink(),
             ),
             const SizedBox(height: AppSpacing.s16),
             // Welcome text
@@ -45,6 +45,9 @@ class WelcomeSection extends StatelessWidget {
               'assets/images/NL_draw.webp',
               height: 110,
               gaplessPlayback: true,
+              cacheHeight: 110,
+              errorBuilder: (_, __, ___) =>
+                  Container(height: 110, color: Colors.grey[300]),
             ),
 
             const SizedBox(height: AppSpacing.s50),

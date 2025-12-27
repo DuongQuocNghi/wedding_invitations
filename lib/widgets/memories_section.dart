@@ -41,6 +41,9 @@ class MemoriesSection extends StatelessWidget {
                           width: double.infinity,
                           fit: BoxFit.cover,
                           gaplessPlayback: true,
+                          cacheHeight: 163,
+                          errorBuilder: (_, __, ___) =>
+                              Container(height: 163, color: Colors.grey[300]),
                         ),
                       ),
                     ],
@@ -59,6 +62,9 @@ class MemoriesSection extends StatelessWidget {
                         width: double.infinity,
                         fit: BoxFit.cover,
                         gaplessPlayback: true,
+                        cacheHeight: 224,
+                        errorBuilder: (_, __, ___) =>
+                            Container(height: 224, color: Colors.grey[300]),
                       ),
                     ),
                   ),

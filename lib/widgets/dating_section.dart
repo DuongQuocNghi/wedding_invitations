@@ -80,6 +80,11 @@ class DatingSection extends StatelessWidget {
                       width: double.infinity,
                       fit: BoxFit.cover,
                       gaplessPlayback: true,
+                      cacheHeight: 320,
+                      errorBuilder: (_, __, ___) => Container(
+                        height: 320,
+                        color: Colors.grey[300],
+                      ),
                     ),
                   ),
                 ),

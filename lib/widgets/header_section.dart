@@ -6,9 +6,15 @@ class HeaderSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
+    final screenHeight = mediaQuery.size.height;
+    final devicePixelRatio = mediaQuery.devicePixelRatio;
+    final headerHeight = screenHeight * 0.85;
+    final svgHeight = screenHeight * 0.3;
+
     return RepaintBoundary(
       child: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.85,
+        height: headerHeight,
         width: double.infinity,
         child: Stack(
           children: [
@@ -18,6 +24,9 @@ class HeaderSection extends StatelessWidget {
                 'assets/images/hinh_1.webp',
                 fit: BoxFit.cover,
                 gaplessPlayback: true,
+                cacheHeight: (headerHeight * devicePixelRatio).round(),
+                errorBuilder: (_, __, ___) =>
+                    Container(color: Colors.grey[300]),
               ),
             ),
             // Overlay decoration
@@ -28,8 +37,8 @@ class HeaderSection extends StatelessWidget {
               child: Center(
                 child: SvgPicture.asset(
                   'assets/svg/home_header.svg',
-                  height: MediaQuery.of(context).size.height * 0.3,
-                  placeholderBuilder: (context) => const SizedBox.shrink(),
+                  height: svgHeight,
+                  placeholderBuilder: (_) => const SizedBox.shrink(),
                 ),
               ),
             ),

@@ -29,6 +29,11 @@ class CeremonySection extends StatelessWidget {
                       width: double.infinity,
                       fit: BoxFit.cover,
                       gaplessPlayback: true,
+                      cacheHeight: 212,
+                      errorBuilder: (_, __, ___) => Container(
+                        height: 212,
+                        color: Colors.grey[300],
+                      ),
                     ),
                   ),
                   const SizedBox(height: AppSpacing.s36),
@@ -75,6 +80,11 @@ class CeremonySection extends StatelessWidget {
                       width: double.infinity,
                       fit: BoxFit.cover,
                       gaplessPlayback: true,
+                      cacheHeight: 218,
+                      errorBuilder: (_, __, ___) => Container(
+                        height: 218,
+                        color: Colors.grey[300],
+                      ),
                     ),
                   ),
                 ],

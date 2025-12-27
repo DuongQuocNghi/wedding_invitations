@@ -38,6 +38,8 @@ class AlbumSection extends StatelessWidget {
                 'assets/images/wedding_box.webp',
                 fit: BoxFit.contain,
                 gaplessPlayback: true,
+                errorBuilder: (_, __, ___) =>
+                    Container(width: 200, height: 200, color: Colors.grey[300]),
               ),
             ),
             const SizedBox(height: AppSpacing.s150),
