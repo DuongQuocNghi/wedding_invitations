@@ -34,11 +34,21 @@ class _OptimizedImageState extends State<OptimizedImage> {
   void initState() {
     super.initState();
     if (!widget.lazyLoad) {
+      // Load immediately if not lazy loading
       _isVisible = true;
     } else {
-      // Use a post-frame callback to check visibility
+      // For lazy loading, check visibility after first frame
       WidgetsBinding.instance.addPostFrameCallback((_) {
         _checkVisibility();
+      });
+      // Fallback: load image after 1 second if still not visible
+      // This ensures images will eventually load even if visibility check fails
+      Future.delayed(const Duration(seconds: 1), () {
+        if (mounted && !_isVisible) {
+          setState(() {
+            _isVisible = true;
+          });
+        }
       });
     }
   }
@@ -46,47 +56,60 @@ class _OptimizedImageState extends State<OptimizedImage> {
   void _checkVisibility() {
     if (!mounted || _isVisible) return;
     
-    final RenderObject? renderObject = _key.currentContext?.findRenderObject();
-    if (renderObject != null && renderObject is RenderBox) {
-      final position = renderObject.localToGlobal(Offset.zero);
-      final size = renderObject.size;
-      final screenHeight = MediaQuery.of(context).size.height;
-      
-      // Load if image is within 2 screen heights of viewport
-      // This ensures images load before user scrolls to them
-      if (position.dy < screenHeight * 2 && position.dy + size.height > -screenHeight) {
-        if (mounted) {
-          setState(() {
-            _isVisible = true;
+    try {
+      final RenderObject? renderObject = _key.currentContext?.findRenderObject();
+      if (renderObject != null && renderObject is RenderBox) {
+        final position = renderObject.localToGlobal(Offset.zero);
+        final size = renderObject.size;
+        final screenHeight = MediaQuery.of(context).size.height;
+        
+        // Load if image is within 2 screen heights of viewport
+        // This ensures images load before user scrolls to them
+        if (position.dy < screenHeight * 2 && position.dy + size.height > -screenHeight) {
+          if (mounted) {
+            setState(() {
+              _isVisible = true;
+            });
+          }
+        } else {
+          // If not visible yet, check again after a delay
+          Future.delayed(const Duration(milliseconds: 200), () {
+            if (mounted && !_isVisible) {
+              _checkVisibility();
+            }
           });
         }
+      } else {
+        // If render object not available yet, try again after a delay
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted && !_isVisible) {
+            _checkVisibility();
+          }
+        });
+      }
+    } catch (e) {
+      // If visibility check fails, load image anyway to prevent blank spaces
+      if (mounted) {
+        setState(() {
+          _isVisible = true;
+        });
       }
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    // Use NotificationListener to detect when widget enters viewport
-    return NotificationListener<ScrollNotification>(
-      onNotification: (notification) {
-        if (widget.lazyLoad && !_isVisible && mounted) {
-          // Debounce visibility checks during scrolling
-          Future.microtask(() => _checkVisibility());
-        }
-        return false;
-      },
-      child: Container(
-        key: _key,
-        width: widget.width,
-        height: widget.height,
-        decoration: widget.borderRadius != null
-            ? BoxDecoration(
-                borderRadius: widget.borderRadius,
-                color: widget.placeholderColor ?? Colors.grey[200],
-              )
-            : null,
-        child: _isVisible ? _buildImage() : _buildPlaceholder(),
-      ),
+    return Container(
+      key: _key,
+      width: widget.width,
+      height: widget.height,
+      decoration: widget.borderRadius != null
+          ? BoxDecoration(
+              borderRadius: widget.borderRadius,
+              color: widget.placeholderColor ?? Colors.grey[200],
+            )
+          : null,
+      child: _isVisible ? _buildImage() : _buildPlaceholder(),
     );
   }
 
