@@ -18,7 +18,8 @@ echo "🔨 Building web app with optimizations..."
 flutter build web \
   --release \
   --base-href="/" \
-  --source-maps
+  --source-maps \
+  --web-renderer canvaskit
 
 echo "✅ Build complete!"
 echo ""
@@ -26,8 +27,9 @@ echo "📊 Build output: build/web/"
 echo ""
 echo "💡 Performance tips:"
 echo "   - CSS and JS are automatically minified in release mode"
+echo "   - CanvasKit renderer provides better performance on modern browsers"
 echo "   - Source maps are generated for debugging"
-echo "   - Images should be optimized before deployment"
+echo "   - Images should be optimized before deployment (< 500KB each)"
 echo "   - Consider using a CDN for static assets"
 echo ""
 echo "🔍 To analyze performance:"
