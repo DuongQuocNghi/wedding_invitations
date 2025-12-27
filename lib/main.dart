@@ -53,6 +53,7 @@ class WeddingInvitationPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.bgPrimary,
       body: SingleChildScrollView(
+        physics: const ClampingScrollPhysics(),
         child: Column(
           children: const [
             HeaderSection(),

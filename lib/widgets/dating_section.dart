@@ -8,90 +8,87 @@ class DatingSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md),
-      child: Stack(
-        children: [
-          // Brown background layer
-          Positioned.fill(
-            child: Container(
-              margin: const EdgeInsets.only(top: 100),
-              decoration: BoxDecoration(
+    return RepaintBoundary(
+      child: Container(
+        width: double.infinity,
+        child: Stack(
+          children: [
+            // Brown background layer
+            Positioned.fill(
+              child: Container(
+                margin: const EdgeInsets.only(top: 32, bottom: 83),
                 color: AppColors.bgDark,
-                borderRadius: BorderRadius.circular(6),
               ),
             ),
-          ),
-          // Main content
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: AppSpacing.xxxxl),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Left side: Text
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 100),
-                      child: Text(
+
+            // Main content
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(width: AppSpacing.s16),
+                // Left side: Text
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: AppSpacing.s80),
+                      Text(
                         'Giây phút chiếc nhẫn chạm vào tay là hành trình mới của chúng ta bắt đầu. Từ khoảnh khắc ấy, em, anh, không còn là hai cuộc đời riêng nữa.',
                         style: AppTextStyles.textBodyLight,
                       ),
-                    ),
-                  ),
-                  const SizedBox(width: AppSpacing.md),
-                  // Right side: Image
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 50),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(6),
-                        child: Image.asset(
-                          'assets/images/hinh_4.webp',
-                          height: 320,
-                          width: double.infinity,
-                          fit: BoxFit.cover,
-                          errorBuilder: (context, error, stackTrace) {
-                            return Container(
-                              height: 320,
-                              color: Colors.grey[300],
-                            );
-                          },
-                        ),
+
+                      // Date at bottom left
+                      const SizedBox(height: AppSpacing.s60),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Transform.translate(
+                            offset: const Offset(0, 20),
+                            child: Text(
+                              '28',
+                              style: AppTextStyles.sectionTitle.copyWith(
+                                fontSize: 60,
+                                color: AppColors.accent,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              left: AppSpacing.s50,
+                            ),
+                            child: Text(
+                              '04',
+                              style: AppTextStyles.sectionTitle.copyWith(
+                                fontSize: 60,
+                                color: AppColors.accent,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
+                    ],
+                  ),
+                ),
+                const SizedBox(width: AppSpacing.s4),
+                // Right side: Image
+                Expanded(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(6),
+                    child: Image.asset(
+                      'assets/images/hinh_4.webp',
+                      height: 320,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                      gaplessPlayback: true,
                     ),
                   ),
-                ],
-              ),
-              const SizedBox(height: AppSpacing.xl),
-              // Date at bottom left
-              Row(
-                children: [
-                  Text(
-                    '28',
-                    style: AppTextStyles.sectionTitle.copyWith(
-                      fontSize: 60,
-                      color: AppColors.accent,
-                    ),
-                  ),
-                  const SizedBox(width: AppSpacing.sm),
-                  Text(
-                    '04',
-                    style: AppTextStyles.sectionTitle.copyWith(
-                      fontSize: 60,
-                      color: AppColors.accent,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: AppSpacing.xxxxl),
-            ],
-          ),
-        ],
+                ),
+                const SizedBox(width: AppSpacing.s16),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
 }
-

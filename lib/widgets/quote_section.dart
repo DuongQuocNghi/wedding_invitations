@@ -8,12 +8,13 @@ class QuoteSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return RepaintBoundary(
+      child: Container(
       width: double.infinity,
       color: AppColors.accent,
       padding: const EdgeInsets.symmetric(
-        horizontal: AppSpacing.md,
-        vertical: AppSpacing.lg,
+        horizontal: AppSpacing.s16,
+        vertical: AppSpacing.s36,
       ),
       child: Column(
         children: [
@@ -22,7 +23,7 @@ class QuoteSection extends StatelessWidget {
             style: AppTextStyles.quoteText,
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: AppSpacing.md),
+          const SizedBox(height: AppSpacing.s8),
           Text(
             'Sự hiện diện và những lời chúc tốt đẹp của cô chú/anh chị sẽ là niềm vinh hạnh, góp phần làm ngày trọng đại của chúng con/em thêm ý nghĩa.',
             style: AppTextStyles.quoteDescription,
@@ -30,7 +31,7 @@ class QuoteSection extends StatelessWidget {
           ),
         ],
       ),
+    ),
     );
   }
 }
-

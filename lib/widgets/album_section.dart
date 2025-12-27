@@ -8,55 +8,42 @@ class AlbumSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md),
-      child: Column(
-        children: [
-          const SizedBox(height: AppSpacing.xxxxl),
-          // CTA
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Wedding Album',
-                style: AppTextStyles.sectionTitle.copyWith(
-                  fontSize: 24,
+    return RepaintBoundary(
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.s16),
+        child: Column(
+          children: [
+            // CTA
+            Container(
+              height: 53,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(27),
+                border: Border.all(
+                  width: 1,
+                  color: AppColors.accent.withAlpha(128),
                 ),
               ),
-              const SizedBox(width: AppSpacing.sm),
-              const Text(
-                '→',
-                style: TextStyle(
-                  fontSize: 24,
-                  color: AppColors.textHighlight,
+              child: Center(
+                child: Text(
+                  'Wedding Album →',
+                  style: AppTextStyles.sectionTitle.copyWith(fontSize: 24),
                 ),
               ),
-            ],
-          ),
-          const SizedBox(height: AppSpacing.lg),
-          // Album box (placeholder for QR code or wedding box)
-          Container(
-            width: double.infinity,
-            height: 200,
-            decoration: BoxDecoration(
-              color: AppColors.surfaceLight,
-              borderRadius: BorderRadius.circular(6),
             ),
-            child: Center(
+            const SizedBox(height: AppSpacing.s90),
+            // Album box (placeholder for QR code or wedding box)
+            Center(
               child: Image.asset(
                 'assets/images/wedding_box.webp',
                 fit: BoxFit.contain,
-                errorBuilder: (context, error, stackTrace) {
-                  return const SizedBox.shrink();
-                },
+                gaplessPlayback: true,
               ),
             ),
-          ),
-          const SizedBox(height: AppSpacing.xxxxl),
-        ],
+            const SizedBox(height: AppSpacing.s150),
+          ],
+        ),
       ),
     );
   }
 }
-
