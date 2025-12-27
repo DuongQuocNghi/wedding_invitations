@@ -54,7 +54,7 @@ class TogetherSection extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: AppSpacing.s4),
+            const SizedBox(width: AppSpacing.s4),
             // Image
             Expanded(
               child: Image.asset(
@@ -62,6 +62,9 @@ class TogetherSection extends StatelessWidget {
                 height: 321,
                 fit: BoxFit.cover,
                 gaplessPlayback: true,
+                cacheHeight: 321,
+                errorBuilder: (_, __, ___) =>
+                    Container(height: 321, color: Colors.grey[300]),
               ),
             ),
           ],

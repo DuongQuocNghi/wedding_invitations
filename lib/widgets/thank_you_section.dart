@@ -30,6 +30,12 @@ class ThankYouSection extends StatelessWidget {
                       height: 160,
                       fit: BoxFit.cover,
                       gaplessPlayback: true,
+                      cacheHeight: 160,
+                      errorBuilder: (_, __, ___) => Container(
+                        width: 160,
+                        height: 160,
+                        color: Colors.grey[300],
+                      ),
                     ),
                   ),
                   SvgPicture.asset('assets/svg/border_avatar.svg', height: 182),
