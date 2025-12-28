@@ -57,8 +57,54 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class WeddingInvitationPage extends StatelessWidget {
+class WeddingInvitationPage extends StatefulWidget {
   const WeddingInvitationPage({super.key});
+
+  @override
+  State<WeddingInvitationPage> createState() => _WeddingInvitationPageState();
+}
+
+class _WeddingInvitationPageState extends State<WeddingInvitationPage> {
+  // Track which sections should be loaded
+  // Load critical sections immediately, lazy load others
+  bool _showQuoteSection = false;
+  bool _showMemoriesSection = false;
+  bool _showDatingSection = false;
+  bool _showCeremonySection = false;
+  bool _showTogetherSection = false;
+  bool _showAlbumSection = false;
+  bool _showThankYouSection = false;
+
+  @override
+  void initState() {
+    super.initState();
+    // Load critical sections immediately
+    // Load non-critical sections after a short delay to improve initial render
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      // Load sections progressively to avoid blocking initial render
+      Future.delayed(const Duration(milliseconds: 100), () {
+        if (mounted) setState(() => _showQuoteSection = true);
+      });
+      Future.delayed(const Duration(milliseconds: 200), () {
+        if (mounted) setState(() => _showMemoriesSection = true);
+      });
+      Future.delayed(const Duration(milliseconds: 300), () {
+        if (mounted) setState(() => _showDatingSection = true);
+      });
+      Future.delayed(const Duration(milliseconds: 400), () {
+        if (mounted) setState(() => _showCeremonySection = true);
+      });
+      Future.delayed(const Duration(milliseconds: 500), () {
+        if (mounted) setState(() => _showTogetherSection = true);
+      });
+      Future.delayed(const Duration(milliseconds: 600), () {
+        if (mounted) setState(() => _showAlbumSection = true);
+      });
+      Future.delayed(const Duration(milliseconds: 700), () {
+        if (mounted) setState(() => _showThankYouSection = true);
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,17 +113,19 @@ class WeddingInvitationPage extends StatelessWidget {
       body: SingleChildScrollView(
         physics: const ClampingScrollPhysics(),
         child: Column(
-          children: const [
-            HeaderSection(),
-            WelcomeSection(),
-            EventDetailsSection(),
-            QuoteSection(),
-            MemoriesSection(),
-            DatingSection(),
-            CeremonySection(),
-            TogetherSection(),
-            AlbumSection(),
-            ThankYouSection(),
+          children: [
+            // Critical sections - load immediately (above fold)
+            const HeaderSection(),
+            const WelcomeSection(),
+            const EventDetailsSection(),
+            // Non-critical sections - lazy load
+            if (_showQuoteSection) const QuoteSection(),
+            if (_showMemoriesSection) const MemoriesSection(),
+            if (_showDatingSection) const DatingSection(),
+            if (_showCeremonySection) const CeremonySection(),
+            if (_showTogetherSection) const TogetherSection(),
+            if (_showAlbumSection) const AlbumSection(),
+            if (_showThankYouSection) const ThankYouSection(),
           ],
         ),
       ),

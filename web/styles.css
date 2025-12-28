@@ -1,43 +1,14 @@
 /* Performance optimizations for Flutter Web */
 
 /* Font display optimization - ensures text is visible during font load */
+/* Only 3 fonts are used now (reduced from 11 for better performance) */
 @font-face {
   font-family: 'Sarabun';
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Bellefair';
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'B612';
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aboreto';
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'ABeeZee';
-  font-display: swap;
-}
-
-@font-face {
   font-family: 'AlexBrush';
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'CastoroTitling';
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'PlayfairDisplay';
   font-display: swap;
 }
 

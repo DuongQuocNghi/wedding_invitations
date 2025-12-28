@@ -3,8 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'colors.dart';
 
 class AppTextStyles {
-  // Welcome title - Bellefair
-  static TextStyle get welcomeTitle => GoogleFonts.bellefair(
+  // Welcome title - Sarabun (replaced Bellefair to reduce font requests)
+  static TextStyle get welcomeTitle => GoogleFonts.sarabun(
     fontWeight: FontWeight.w400,
     fontSize: 27.31,
     height: 1.0,
@@ -63,60 +63,60 @@ class AppTextStyles {
     color: AppColors.surfaceLight,
   );
 
-  // Family label - B612 Bold
-  static TextStyle get familyLabel => GoogleFonts.b612(
-    fontWeight: FontWeight.w500,
+  // Family label - Sarabun (replaced B612 to reduce font requests)
+  static TextStyle get familyLabel => GoogleFonts.sarabun(
+    fontWeight: FontWeight.w600,
     fontSize: 10,
     height: 1.2,
     letterSpacing: 0.1,
     color: AppColors.textBrown,
   );
 
-  // Family member title - B612 Regular
-  static TextStyle get familyMemberTitle => GoogleFonts.b612(
+  // Family member title - Sarabun (replaced B612 to reduce font requests)
+  static TextStyle get familyMemberTitle => GoogleFonts.sarabun(
     fontWeight: FontWeight.w400,
     fontSize: 10,
     height: 1.2,
     color: AppColors.textBrown,
   );
 
-  // Family member name - B612 Bold
-  static TextStyle get familyMemberName => GoogleFonts.b612(
-    fontWeight: FontWeight.w600,
+  // Family member name - Sarabun (replaced B612 to reduce font requests)
+  static TextStyle get familyMemberName => GoogleFonts.sarabun(
+    fontWeight: FontWeight.w700,
     fontSize: 10,
     height: 1.2,
     letterSpacing: 0.05,
     color: AppColors.textBrown,
   );
 
-  // Invitation text - Aboreto
-  static TextStyle get invitationText => GoogleFonts.aboreto(
+  // Invitation text - Sarabun (replaced Aboreto to reduce font requests)
+  static TextStyle get invitationText => GoogleFonts.sarabun(
     fontWeight: FontWeight.w400,
     fontSize: 10,
     height: 1.6,
     color: AppColors.textBrown,
   );
 
-  // Event day - ABeeZee
-  static TextStyle get eventDay => GoogleFonts.aBeeZee(
-    fontWeight: FontWeight.w400,
+  // Event day - Sarabun (replaced ABeeZee to reduce font requests)
+  static TextStyle get eventDay => GoogleFonts.sarabun(
+    fontWeight: FontWeight.w500,
     fontSize: 14,
     height: 1.2,
     letterSpacing: 0.05,
     color: AppColors.textBrown,
   );
 
-  // Event time - ABeeZee
-  static TextStyle get eventTime => GoogleFonts.aBeeZee(
+  // Event time - Sarabun (replaced ABeeZee to reduce font requests)
+  static TextStyle get eventTime => GoogleFonts.sarabun(
     fontWeight: FontWeight.w400,
     fontSize: 12,
     height: 1.2,
     color: AppColors.textBrown,
   );
 
-  // Event date number - B612 Bold
-  static TextStyle get eventDateNumber => GoogleFonts.b612(
-    fontWeight: FontWeight.w500,
+  // Event date number - Sarabun (replaced B612 to reduce font requests)
+  static TextStyle get eventDateNumber => GoogleFonts.sarabun(
+    fontWeight: FontWeight.w700,
     fontSize: 32,
     height: 1.0,
     letterSpacing: 0.07,
@@ -193,8 +193,8 @@ class AppTextStyles {
     color: AppColors.white,
   );
 
-  // Thank you title - Castoro Titling
-  static TextStyle get thankYouTitle => GoogleFonts.castoroTitling(
+  // Thank you title - Sansita Swashed (replaced Castoro Titling to reduce font requests)
+  static TextStyle get thankYouTitle => GoogleFonts.sansitaSwashed(
     fontWeight: FontWeight.w400,
     fontSize: 24,
     height: 1.2,

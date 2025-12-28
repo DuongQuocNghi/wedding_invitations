@@ -55,18 +55,21 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
   <link rel="alternate icon" href="icons/Icon-192.png">
 
-  <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Preconnect for performance - connect to Google Fonts early -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   
   <!-- Preload critical resources -->
-  <!-- Note: Image preload removed - Flutter handles asset loading automatically -->
-  <!-- Preloading images in HTML can cause 404 errors if path doesn't match Flutter's asset serving -->
+  <!-- Preload Flutter bootstrap for faster initialization -->
   <link rel="preload" href="flutter_bootstrap.js" as="script">
+  <!-- Note: Don't preload images in HTML - Flutter handles asset loading automatically -->
+  <!-- Preloading images can cause 404 errors if path doesn't match Flutter's asset serving -->
   
-  <!-- Preload Google Fonts for better performance -->
-  <link rel="preload" href="https://fonts.gstatic.com/s/sarabun/v13/DtVjJx26TKEr37c9YHZJmnYI5gnOpg.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="https://fonts.gstatic.com/s/bellefair/v14/NaPDcZTIAOhVxoMyOr9n_E7fdMPmDQ.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Google Fonts preconnect - let Flutter/google_fonts package handle actual font loading -->
+  <!-- Note: Don't preload fonts manually - google_fonts package handles this dynamically -->
+  <!-- Manual preloads can cause 404 errors if font URLs change -->
 
   <title>Thiệp Cưới Nghi & Lan</title>
   <link rel="manifest" href="manifest.json">
