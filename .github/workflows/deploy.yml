@@ -1,87 +1,32 @@
-name: Build and Deploy to Netlify
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
-      - master
-  pull_request:
-    branches:
-      - main
-      - master
+    branches: [ main, master ]
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
-
+      
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.35.1'
+          flutter-version: '3.27.0'
           channel: 'stable'
-          cache: true
-
+      
       - name: Install dependencies
         run: flutter pub get
-
-      - name: Build Flutter Web (Optimized)
-        run: |
-          chmod +x build_optimized.sh
-          ./build_optimized.sh
-
-      - name: Verify build output
-        run: |
-          if [ ! -d "build/web" ]; then
-            echo "Error: build/web directory not found!"
-            exit 1
-          fi
-          if [ ! -f "build/web/index.html" ]; then
-            echo "Error: build/web/index.html not found!"
-            exit 1
-          fi
-          echo "Build output verified successfully"
-          
-      - name: Check build size
-        run: |
-          BUILD_SIZE=$(du -sh build/web | cut -f1)
-          echo "📦 Build size: $BUILD_SIZE"
-          
-          # Check if main.dart.js exists and get its size
-          if [ -f "build/web/main.dart.js" ]; then
-            JS_SIZE=$(du -h build/web/main.dart.js | cut -f1)
-            echo "📄 main.dart.js size: $JS_SIZE"
-          fi
-          
-          # Warn if build is too large (> 20MB)
-          BUILD_SIZE_BYTES=$(du -sb build/web | cut -f1)
-          MAX_SIZE=$((20 * 1024 * 1024)) # 20MB
-          if [ $BUILD_SIZE_BYTES -gt $MAX_SIZE ]; then
-            echo "⚠️  Warning: Build size exceeds 20MB. Consider optimizing images."
-          else
-            echo "✅ Build size is within acceptable limits"
-          fi
-
-      - name: Setup Node.js (for Netlify CLI)
-        uses: actions/setup-node@v4
+      
+      - name: Build web
+        run: flutter build web --release --base-href "/wedding_invitations/"
+      
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          node-version: '18'
-
-      - name: Install Netlify CLI
-        run: npm install -g netlify-cli
-
-      - name: Deploy to Netlify
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: |
-          # Deploy production build
-          if [ "${{ github.event_name }}" == "push" ]; then
-            netlify deploy --prod --dir=build/web --message="Deploy from GitHub Actions - ${{ github.sha }}"
-          else
-            # Deploy preview for pull requests
-            netlify deploy --dir=build/web --message="Preview deploy from PR #${{ github.event.pull_request.number }}"
-          fi
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/web
