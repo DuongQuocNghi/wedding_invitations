@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'dart:html' as html show window;
 import '../constants/text_styles.dart';
 import '../constants/spacing.dart';
 import '../constants/colors.dart';
@@ -15,11 +15,10 @@ class EventDetailsSection extends StatefulWidget {
 class _EventDetailsSectionState extends State<EventDetailsSection> {
   int _selectedTab = 0; // 0 = bride, 1 = reception
 
-  void _openMap(String url) async {
-    final uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
-    }
+  void _openMap(String url) {
+    // Use dart:html directly for web - no need for url_launcher package
+    // This reduces bundle size by ~20-30KB
+    html.window.open(url, '_blank');
   }
 
   @override

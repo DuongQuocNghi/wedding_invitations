@@ -31,10 +31,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.8
-  url_launcher: ^6.2.5
+  # Removed cupertino_icons - not used in the app (saves ~50-100KB bundle size)
+  # Removed url_launcher - using dart:html directly for web (saves ~20-30KB bundle size)
   flutter_svg: ^2.0.10+1
   google_fonts: ^6.2.1
 

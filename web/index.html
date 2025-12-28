@@ -129,20 +129,20 @@
   <link rel="alternate icon" href="icons/Icon-192.png">
 
   <!-- Preconnect for performance - connect to Google Fonts early -->
+  <!-- Preconnect is preferred over dns-prefetch for HTTPS resources -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   
-  <!-- Preload critical resources -->
-  <!-- Preload Flutter bootstrap for faster initialization -->
-  <link rel="preload" href="flutter_bootstrap.js" as="script">
-  <!-- Note: Don't preload images in HTML - Flutter handles asset loading automatically -->
-  <!-- Preloading images can cause 404 errors if path doesn't match Flutter's asset serving -->
+  <!-- Preload critical resources for faster initialization -->
+  <!-- Preload Flutter bootstrap script - critical for app initialization -->
+  <link rel="preload" href="flutter_bootstrap.js" as="script" crossorigin>
   
-  <!-- Google Fonts preconnect - let Flutter/google_fonts package handle actual font loading -->
-  <!-- Note: Don't preload fonts manually - google_fonts package handles this dynamically -->
-  <!-- Manual preloads can cause 404 errors if font URLs change -->
+  <!-- Preload main Flutter bundle - helps reduce parse time -->
+  <!-- Note: This may generate a harmless 404 if Flutter uses a different bundle name -->
+  <link rel="preload" href="main.dart.js" as="script" crossorigin>
+  
+  <!-- Note: Images are handled by Flutter's asset system -->
+  <!-- Preloading images here may cause 404 if paths don't match Flutter's asset serving -->
 
   <title>Thiệp Cưới Nghi & Lan</title>
   <link rel="manifest" href="manifest.json">
@@ -202,6 +202,7 @@
     }, 3000);
   </script>
   
-  <script src="flutter_bootstrap.js" async></script>
+  <!-- Load Flutter bootstrap asynchronously to not block rendering -->
+  <script src="flutter_bootstrap.js" async crossorigin="anonymous"></script>
 </body>
 </html>
