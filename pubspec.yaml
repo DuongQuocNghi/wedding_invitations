@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   url_launcher: ^6.2.5
   flutter_svg: ^2.0.10+1
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -63,51 +64,3 @@ flutter:
   assets:
     - assets/images/
     - assets/svg/
-    - assets/fonts/
-
-  # Custom fonts
-  fonts:
-    - family: Bellefair
-      fonts:
-        - asset: assets/fonts/Bellefair-Regular.ttf
-          weight: 400
-    - family: Sarabun
-      fonts:
-        - asset: assets/fonts/Sarabun-Light.ttf
-          weight: 300
-        - asset: assets/fonts/Sarabun-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/Sarabun-SemiBold.ttf
-          weight: 600
-    - family: B612
-      fonts:
-        - asset: assets/fonts/B612-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/B612-Bold.ttf
-          weight: 500
-    - family: Aboreto
-      fonts:
-        - asset: assets/fonts/Aboreto-Regular.ttf
-          weight: 400
-    - family: ABeeZee
-      fonts:
-        - asset: assets/fonts/ABeeZee-Regular.ttf
-          weight: 400
-    - family: AlexBrush
-      fonts:
-        - asset: assets/fonts/AlexBrush-Regular.ttf
-          weight: 400
-    - family: CastoroTitling
-      fonts:
-        - asset: assets/fonts/CastoroTitling-Regular.ttf
-          weight: 400
-    - family: PlayfairDisplay
-      fonts:
-        - asset: assets/fonts/PlayfairDisplay-Medium.ttf
-          weight: 500
-    - family: SourceSansPro
-      fonts:
-        - asset: assets/fonts/SourceSansPro-Light.woff2
-          weight: 300
-        - asset: assets/fonts/SourceSansPro-Regular.woff2
-          weight: 400

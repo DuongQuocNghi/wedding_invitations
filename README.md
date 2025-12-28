@@ -51,7 +51,7 @@ flutter run
 
 ## Fonts
 
-Ứng dụng sử dụng các fonts sau (cần có trong `assets/fonts/`):
+Ứng dụng sử dụng Google Fonts:
 - Bellefair (Regular)
 - Sarabun (Light, Regular, SemiBold)
 - B612 (Regular, Bold)
@@ -60,7 +60,7 @@ flutter run
 - AlexBrush (Regular)
 - CastoroTitling (Regular)
 - PlayfairDisplay (Medium)
-- SourceSansPro (Light, Regular)
+- SansitaSwashed (Light, Regular)
 
 ## Màu sắc
 

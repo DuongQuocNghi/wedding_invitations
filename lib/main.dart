@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'constants/colors.dart';
 import 'widgets/header_section.dart';
 import 'widgets/welcome_section.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: AppColors.bgPrimary,
         scaffoldBackgroundColor: AppColors.bgPrimary,
-        fontFamily: 'Sarabun',
+        textTheme: GoogleFonts.sarabunTextTheme(),
         colorScheme: ColorScheme.fromSeed(
           seedColor: AppColors.accent,
           primary: AppColors.accent,
