@@ -19,8 +19,81 @@
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   
-  <!-- Viewport for responsive design -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <!-- Viewport for responsive design - accessible zoom enabled -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  
+  <!-- Script to ensure Flutter-injected viewport tags allow zooming for accessibility -->
+  <script>
+    // Fix viewport meta tags to ensure accessibility (allow zooming)
+    // This handles both regular viewport tags and Flutter's flt-viewport tags
+    (function() {
+      function fixViewportTags() {
+        // Fix all viewport meta tags, including those with flt-viewport attribute
+        var viewportTags = document.querySelectorAll('meta[name="viewport"]');
+        viewportTags.forEach(function(tag) {
+          var content = tag.getAttribute('content') || '';
+          var originalContent = content;
+          
+          // Remove restrictive settings that prevent zooming
+          content = content.replace(/user-scalable\s*=\s*no/gi, '');
+          
+          // Replace maximum-scale=1.0 with 5.0 for accessibility
+          content = content.replace(/maximum-scale\s*=\s*1\.0/gi, 'maximum-scale=5.0');
+          
+          // Ensure maximum-scale is at least 5.0 for accessibility compliance
+          if (!content.match(/maximum-scale/i)) {
+            content += (content ? ', ' : '') + 'maximum-scale=5.0';
+          } else {
+            content = content.replace(/maximum-scale\s*=\s*(\d+\.?\d*)/gi, function(match, scaleValue) {
+              var scale = parseFloat(scaleValue);
+              return scale < 5.0 ? 'maximum-scale=5.0' : match;
+            });
+          }
+          
+          // Clean up: remove double commas and trim
+          content = content.replace(/,\s*,/g, ',').replace(/^,\s*|\s*,$/g, '').trim();
+          
+          // Only update if content changed
+          if (content !== originalContent) {
+            tag.setAttribute('content', content);
+          }
+        });
+      }
+      
+      // Fix immediately (runs before Flutter bootstrap)
+      fixViewportTags();
+      
+      // Fix after DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', fixViewportTags);
+      }
+      
+      // Fix after page load (in case Flutter injects viewport tags during initialization)
+      if (window.addEventListener) {
+        window.addEventListener('load', fixViewportTags);
+        
+        // Use MutationObserver to catch dynamically added viewport tags (including Flutter's flt-viewport)
+        if (window.MutationObserver) {
+          var observer = new MutationObserver(function(mutations) {
+            var shouldFix = false;
+            mutations.forEach(function(mutation) {
+              mutation.addedNodes.forEach(function(node) {
+                if (node.nodeType === 1 && // Element node
+                    node.tagName === 'META' &&
+                    node.getAttribute('name') === 'viewport') {
+                  shouldFix = true;
+                }
+              });
+            });
+            if (shouldFix) {
+              fixViewportTags();
+            }
+          });
+          observer.observe(document.head, { childList: true, subtree: true });
+        }
+      }
+    })();
+  </script>
   
   <!-- SEO Meta Tags -->
   <meta name="description" content="Thiệp cưới Nghi & Lan - Mời bạn đến dự lễ cưới và tiệc cưới của chúng tôi. Thông tin chi tiết về địa điểm, thời gian và lời mời chân thành.">
