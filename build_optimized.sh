@@ -20,7 +20,7 @@ echo "🔨 Building web app with optimizations..."
 echo "   - Flutter auto-selects optimal renderer (CanvasKit in 3.35.1+)"
 echo "   - Maximum optimization level (O4) - smallest & fastest code"
 echo "   - Tree shaking enabled - removes unused code & icons"
-echo "   - Source maps disabled - reduces bundle size"
+echo "   - Source maps enabled - for debugging in production"
 echo "   - Minification enabled - compresses code"
 echo ""
 
@@ -34,7 +34,7 @@ flutter build web \
   --base-href="/" \
   --tree-shake-icons \
   --optimization-level=4 \
-  --no-source-maps
+  --source-maps
 BUILD_EXIT_CODE=$?
 set -e  # Re-enable exit on error
 
@@ -63,7 +63,7 @@ echo "   ✓ Flutter auto-selects optimal renderer (CanvasKit in 3.35.1+)"
 echo "   ✓ Maximum optimization level (O4) - smallest bundle"
 echo "   ✓ Tree shaking enabled (removes unused code)"
 echo "   ✓ Icon tree shaking (removes unused Material icons - 99%+ reduction)"
-echo "   ✓ Source maps disabled (reduces bundle size 10-20%)"
+echo "   ✓ Source maps enabled (for debugging in production)"
 echo "   ✓ Minification enabled (release mode)"
 echo ""
 echo "💡 Performance optimizations:"
