@@ -63,6 +63,7 @@ class TogetherSection extends StatelessWidget {
                 height: 321,
                 fit: BoxFit.cover,
                 placeholderColor: Colors.grey[300],
+                borderRadius: BorderRadius.circular(6),
               ),
             ),
           ],
