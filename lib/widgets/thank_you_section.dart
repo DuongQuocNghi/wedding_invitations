@@ -24,7 +24,7 @@ class ThankYouSection extends StatelessWidget {
                 alignment: Alignment.center,
                 children: [
                   OptimizedImage(
-                    imagePath: 'assets/images/THO_3990.webp',
+                    imagePath: 'assets/images/hinh_8.webp',
                     width: 160,
                     height: 160,
                     fit: BoxFit.cover,
