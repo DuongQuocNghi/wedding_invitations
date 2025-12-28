@@ -3,11 +3,13 @@
 # Build script for optimized Flutter web deployment
 # This script builds the app with all performance optimizations enabled
 
+set -e  # Exit on any error (except where explicitly handled)
+
 echo "🚀 Building optimized Flutter web app..."
 
 # Clean previous build
 echo "📦 Cleaning previous build..."
-flutter clean
+flutter clean || echo "⚠️  Clean failed, continuing..."  # Continue even if clean fails
 
 # Get dependencies
 echo "📥 Getting dependencies..."
@@ -21,14 +23,32 @@ echo "   - Code splitting enabled"
 echo "   - Minification enabled"
 echo ""
 
+# Build for web - using only widely supported flags
+echo "Running flutter build web..."
+set +e  # Temporarily disable exit on error
 flutter build web \
   --release \
   --web-renderer html \
   --base-href="/" \
-  --source-maps \
-  --dart-define=FLUTTER_WEB_USE_SKIA=false \
-  --pwa-strategy=offline-first \
   --tree-shake-icons
+BUILD_EXIT_CODE=$?
+set -e  # Re-enable exit on error
+
+if [ $BUILD_EXIT_CODE -ne 0 ]; then
+  echo "❌ Build failed with exit code: $BUILD_EXIT_CODE"
+  exit 1
+fi
+
+# Verify build output
+if [ ! -d "build/web" ]; then
+  echo "❌ Error: build/web directory not found after build!"
+  exit 1
+fi
+
+if [ ! -f "build/web/index.html" ]; then
+  echo "❌ Error: build/web/index.html not found after build!"
+  exit 1
+fi
 
 echo ""
 echo "✅ Build complete!"
