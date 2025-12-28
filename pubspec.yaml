@@ -60,7 +60,8 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  # Assets
+  # Assets - optimized for web performance
+  # Using Google Fonts CDN instead of local fonts for better caching
   assets:
     - assets/images/
     - assets/svg/

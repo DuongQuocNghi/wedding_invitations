@@ -15,11 +15,19 @@ import 'widgets/thank_you_section.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+
   // Set preferred orientations
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
+
+  // Optimize for web performance
+  if (const bool.fromEnvironment('dart.vm.product')) {
+    // Production optimizations
+    debugPrint = (String? message, {int? wrapWidth}) {}; // Disable debug prints
+  }
+
   runApp(const MyApp());
 }
 
@@ -40,6 +48,9 @@ class MyApp extends StatelessWidget {
           primary: AppColors.accent,
           surface: AppColors.bgPrimary,
         ),
+        // Optimize material rendering for web
+        useMaterial3: true,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: const WeddingInvitationPage(),
     );

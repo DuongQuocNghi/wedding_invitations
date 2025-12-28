@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'skeleton_loader.dart';
 
 /// Optimized image widget for better performance
 /// Uses proper caching, loading states, and lazy loading
@@ -159,16 +160,19 @@ class _OptimizedImageState extends State<OptimizedImage> {
   }
 
   Widget _buildPlaceholder() {
+    // Use skeleton loader for better perceived performance
+    if (widget.borderRadius != null) {
+      return SkeletonLoader(
+        width: widget.width,
+        height: widget.height,
+        borderRadius: widget.borderRadius!.topLeft.x,
+      );
+    }
+    
     return Container(
       width: widget.width,
       height: widget.height,
       color: widget.placeholderColor ?? Colors.grey[200],
-      child: widget.borderRadius != null
-          ? ClipRRect(
-              borderRadius: widget.borderRadius!,
-              child: Container(color: widget.placeholderColor ?? Colors.grey[200]),
-            )
-          : null,
     );
   }
 }
