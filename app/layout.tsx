@@ -1,0 +1,56 @@
+import type { Metadata, Viewport } from 'next';
+import './globals.css';
+
+export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
+  title: 'Thiệp Cưới Nghi & Lan',
+  description:
+    'Thiệp cưới Nghi & Lan - Mời bạn đến dự lễ cưới và tiệc cưới của chúng tôi. Thông tin chi tiết về địa điểm, thời gian và lời mời chân thành.',
+  keywords: 'thiệp cưới, wedding invitation, Nghi Lan, lễ cưới, tiệc cưới',
+  authors: [{ name: 'Nghi & Lan' }],
+  openGraph: {
+    type: 'website',
+    title: 'Thiệp Cưới Nghi & Lan',
+    description: 'Mời bạn đến dự lễ cưới và tiệc cưới của chúng tôi',
+    images: ['/assets/images/hinh_1.webp'],
+    locale: 'vi_VN',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Thiệp Cưới Nghi & Lan',
+    description: 'Mời bạn đến dự lễ cưới và tiệc cưới của chúng tôi',
+    images: ['/assets/images/hinh_1.webp'],
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'Nghi & Lan',
+  },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#9F7D6A',
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="vi">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body className="antialiased">{children}</body>
+    </html>
+  );
+}

@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Alex+Brush&family=Sansita+Swashed:wght@300;400&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #F4F1EA;
+  --foreground: #565857;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Sarabun', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Font families */
+.font-sarabun {
+  font-family: 'Sarabun', sans-serif;
+}
+
+.font-alex-brush {
+  font-family: 'Alex Brush', cursive;
+}
+
+.font-sansita-swashed {
+  font-family: 'Sansita Swashed', cursive;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+  content-visibility: auto;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

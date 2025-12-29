@@ -1,0 +1,11 @@
+[build]
+  # Build is done in GitHub Actions
+  # Publish directory for static site export (out folder)
+  publish = "out"
+
+# No need for Next.js plugin for static export
+# Static files can be served directly by Netlify
+
+[build.environment]
+  NODE_VERSION = "20"
+
