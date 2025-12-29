@@ -26,7 +26,7 @@ export function OptimizedImage({
   fill = false,
   objectFit = 'cover',
   borderRadius = 0,
-  placeholderColor = '#E5E5E5',
+  placeholderColor = '#F4F1EA',
 }: OptimizedImageProps) {
   const [isVisible, setIsVisible] = useState(!priority);
   const [isLoading, setIsLoading] = useState(true);
@@ -132,12 +132,6 @@ export function OptimizedImage({
           className={`transition-opacity duration-200 ${
             isLoading ? 'opacity-0' : 'opacity-100'
           }`}
-        />
-      )}
-      {isLoading && (
-        <div
-          className="absolute inset-0 animate-pulse"
-          style={{ backgroundColor: placeholderColor }}
         />
       )}
     </div>

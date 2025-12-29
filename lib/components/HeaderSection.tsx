@@ -15,6 +15,7 @@ export function HeaderSection() {
           priority
           objectFit="cover"
           className="w-full h-full"
+          placeholderColor="#F4F1EA"
         />
       </div>
       {/* SVG overlay */}
