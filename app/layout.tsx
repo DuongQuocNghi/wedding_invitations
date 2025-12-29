@@ -43,11 +43,24 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <head>
+        {/* Font preconnect for better performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
+        />
+        {/* Load fonts with display=swap for non-blocking render */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Alex+Brush&family=Sansita+Swashed:wght@300;400&display=swap"
+          rel="stylesheet"
+        />
+        {/* Preload critical images */}
+        <link
+          rel="preload"
+          href="/assets/images/hinh_1.webp"
+          as="image"
+          type="image/webp"
         />
       </head>
       <body className="antialiased">{children}</body>

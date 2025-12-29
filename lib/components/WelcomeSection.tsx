@@ -18,12 +18,14 @@ export function WelcomeSection() {
       
       {/* Love story SVG */}
       <div className="flex justify-center my-4">
-        <img
+        <Image
           src="/assets/svg/love_story.svg"
           alt="Love story"
+          width={200}
           height={50}
           style={{ width: 'auto' }}
           className="w-auto"
+          priority
         />
       </div>
       
@@ -40,12 +42,14 @@ export function WelcomeSection() {
       
       {/* Logo */}
       <div className="flex justify-center">
-        <img
+        <Image
           src="/assets/svg/NL_logo.svg"
           alt="NL Logo"
+          width={200}
           height={135}
           style={{ width: 'auto' }}
           className="w-auto"
+          priority
         />
       </div>
       

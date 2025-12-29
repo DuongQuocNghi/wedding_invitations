@@ -1,6 +1,7 @@
 'use client';
 
 import { OptimizedImage } from '@/lib/utils/image';
+import Image from 'next/image';
 
 export function HeaderSection() {
   return (
@@ -18,11 +19,14 @@ export function HeaderSection() {
       </div>
       {/* SVG overlay */}
       <div className="absolute top-[37px] left-4 right-4 flex justify-center z-10 pointer-events-none">
-        <img
+        <Image
           src="/assets/svg/home_header.svg"
           alt="Header decoration"
+          width={300}
+          height={200}
           style={{ height: '30vh', width: 'auto' }}
           className="w-auto"
+          priority
         />
       </div>
     </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { OptimizedImage } from '@/lib/utils/image';
+import Image from 'next/image';
 import { AppColors } from '@/lib/constants/colors';
 import { AppSpacing } from '@/lib/constants/spacing';
 
@@ -22,7 +23,7 @@ export function ThankYouSection() {
               objectFit="cover"
               borderRadius={80}
             />
-            <img
+            <Image
               src="/assets/svg/border_avatar.svg"
               alt="Border"
               width={182}

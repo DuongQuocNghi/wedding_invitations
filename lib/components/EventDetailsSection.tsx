@@ -178,9 +178,11 @@ export function EventDetailsSection() {
         </div>
         {/* Decoration SVG */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <img
+          <Image
             src="/assets/svg/NL_tab.svg"
             alt="Tab decoration"
+            width={100}
+            height={100}
             style={{ width: 'auto', height: 'auto' }}
             className="w-auto h-auto"
           />
