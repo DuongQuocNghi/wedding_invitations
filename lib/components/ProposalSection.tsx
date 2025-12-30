@@ -4,7 +4,7 @@ import { OptimizedImage } from '@/lib/utils/image';
 import { AppColors } from '@/lib/constants/colors';
 import { AppSpacing } from '@/lib/constants/spacing';
 
-export function DatingSection() {
+export function ProposalSection() {
   return (
     <div className="w-full relative">
       {/* Brown background layer */}
@@ -13,7 +13,7 @@ export function DatingSection() {
         style={{
           marginTop: 32,
           marginBottom: 83,
-          backgroundColor: AppColors.bgDark,
+          backgroundColor: '#9F7D6A',
         }}
       />
 
@@ -33,16 +33,16 @@ export function DatingSection() {
           <div className="flex flex-col">
             <div style={{ transform: 'translateY(20px)' }}>
               <p
-                className="font-alex-brush text-[60px] leading-[0.8]"
-                style={{ color: AppColors.accent }}
+                className="text-[80px] leading-[0.8]"
+                style={{ color: 'rgba(205, 172, 148, 0.3)', fontFamily: 'Brush Script MT' }}
               >
                 28
               </p>
             </div>
             <div style={{ paddingLeft: AppSpacing.s50 }}>
               <p
-                className="font-alex-brush text-[60px] leading-[0.8]"
-                style={{ color: AppColors.accent }}
+                className="text-[80px] leading-[0.8]"
+                style={{ color: 'rgba(205, 172, 148, 0.3)', fontFamily: 'Brush Script MT' }}
               >
                 04
               </p>

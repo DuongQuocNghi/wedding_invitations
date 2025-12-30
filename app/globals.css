@@ -27,6 +27,18 @@ body {
   font-family: 'Sansita Swashed', cursive;
 }
 
+.font-bellefair {
+  font-family: 'Bellefair', serif;
+}
+
+.font-utm-futura-light {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;

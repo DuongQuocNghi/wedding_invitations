@@ -133,9 +133,13 @@ function TabButton({ text, isActive, onClick }: TabButtonProps) {
       }}
     >
       <p
-        className={`font-sansita-swashed text-lg leading-[1.56] tracking-[0.07px] ${
+        className={`font-utm-futura-light text-lg leading-[1.56] tracking-[0.07px] font-light ${
           isActive ? 'text-[#5E121F]' : 'text-[#565857]'
         }`}
+        style={{
+          WebkitFontSmoothing: 'antialiased',
+          MozOsxFontSmoothing: 'grayscale',
+        }}
       >
         {text}
       </p>

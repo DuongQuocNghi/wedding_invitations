@@ -6,7 +6,7 @@ import { WelcomeSection } from '@/lib/components/WelcomeSection';
 import { EventDetailsSection } from '@/lib/components/EventDetailsSection';
 import { QuoteSection } from '@/lib/components/QuoteSection';
 import { MemoriesSection } from '@/lib/components/MemoriesSection';
-import { DatingSection } from '@/lib/components/DatingSection';
+import { ProposalSection } from '@/lib/components/ProposalSection';
 import { CeremonySection } from '@/lib/components/CeremonySection';
 import { TogetherSection } from '@/lib/components/TogetherSection';
 import { AlbumSection } from '@/lib/components/AlbumSection';
@@ -27,7 +27,7 @@ export default function Home() {
 
         <QuoteSection />
         <MemoriesSection />
-        <DatingSection />
+        <ProposalSection />
         <CeremonySection />
         <TogetherSection />
         <AlbumSection />

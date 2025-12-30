@@ -11,7 +11,7 @@ export function WelcomeSection() {
       
       {/* Title */}
       <h1
-        className="text-center font-sarabun text-[27.31px] leading-none tracking-[0.07px] text-[#565857]"
+        className="text-center font-bellefair text-[27.31px] leading-none tracking-[0.07px] text-[#565857]"
       >
         WELCOME TO OUR
       </h1>
@@ -31,11 +31,9 @@ export function WelcomeSection() {
       
       {/* Welcome text */}
       <p
-        className="text-center font-sarabun font-light text-xs leading-[1.67] text-[#565857]"
+        className="text-center font-sarabun font-light text-base leading-[1.67] text-[#565857]"
       >
-        Chào mừng đến với khoảnh khắc mở ra cột mốc mới trong câu<br />
-        chuyện tình yêu của chúng em, nơi hành trình mới<br />
-        bên nhau bắt đầu.
+        Chào mừng đến với khoảnh khắc mở ra cột mốc mới trong câu chuyện tình yêu của chúng em, nơi hành trình mới bên nhau bắt đầu.
       </p>
       
       <div style={{ height: AppSpacing.s30 }} />
@@ -60,8 +58,8 @@ export function WelcomeSection() {
         <OptimizedImage
           src="/assets/images/NL_draw.webp"
           alt="NL Draw"
-          width={110}
-          height={110}
+          width={160}
+          height={108}
           priority
           objectFit="contain"
         />

@@ -52,7 +52,7 @@ export default function RootLayout({
         />
         {/* Load fonts with display=swap for non-blocking render */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Alex+Brush&family=Sansita+Swashed:wght@300;400&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Alex+Brush&family=Sansita+Swashed:wght@300;400&family=Bellefair&family=Montserrat:wght@300&display=swap"
           rel="stylesheet"
         />
         {/* Preload critical images */}
