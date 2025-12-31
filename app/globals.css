@@ -39,6 +39,14 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+.font-frutiger {
+  font-family: 'Frutiger', 'Frutiger Linotype', 'Univers', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.font-freeform {
+  font-family: 'Freeform', cursive;
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;

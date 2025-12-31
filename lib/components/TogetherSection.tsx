@@ -5,15 +5,15 @@ import { AppSpacing } from '@/lib/constants/spacing';
 
 export function TogetherSection() {
   return (
-    <div className="w-full px-4 py-10 flex gap-1">
+    <div className="w-full px-4 py-10 flex gap-1 items-center">
       {/* Title */}
-      <div className="flex-1 flex flex-col">
+      <div className="w-[40%] flex flex-col justify-center">
         <div className="flex flex-col">
           <h2 className="font-alex-brush text-[50px] leading-[0.8] text-[#5E121F]">
             Together
           </h2>
           <div style={{ height: AppSpacing.s11 }} />
-          <div style={{ paddingLeft: AppSpacing.s40 }}>
+          <div>
             <h2 className="font-alex-brush text-[50px] leading-[0.8] text-[#5E121F]">
               Forever
             </h2>
@@ -22,11 +22,11 @@ export function TogetherSection() {
         <div style={{ height: AppSpacing.s24 }} />
         {/* Text */}
         <div className="flex flex-col">
-          <p className="font-sarabun italic text-[10px] leading-[1.6] text-[#565857] text-left">
+          <p className="font-sarabun font-light italic text-[12px] leading-[1.67] text-[#565857]">
             Nhà là nơi có nhau, nơi yêu thương được gìn giữ từng ngày.
           </p>
           <div style={{ height: AppSpacing.s8 }} />
-          <p className="font-sarabun italic text-[10px] leading-[1.6] text-[#565857] text-left">
+          <p className="font-sarabun font-light italic text-[12px] leading-[1.67] text-[#565857]">
             Và dù con đường &apos;mãi mãi&apos; kéo dài đến đâu, anh và em vẫn
             chọn cùng nhau đi hết quãng đường ấy.
           </p>
@@ -34,7 +34,7 @@ export function TogetherSection() {
       </div>
 
       {/* Image */}
-      <div className="flex-1">
+      <div className="w-[60%]">
         <OptimizedImage
           src="/assets/images/hinh_7.webp"
           alt="Together"

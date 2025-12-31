@@ -17,7 +17,7 @@ export function WelcomeSection() {
       </h1>
       
       {/* Love story SVG */}
-      <div className="flex justify-center my-4">
+      <div className="flex justify-center mt-[4px] mb-4">
         <Image
           src="/assets/svg/love_story.svg"
           alt="Love story"
@@ -33,7 +33,7 @@ export function WelcomeSection() {
       <p
         className="text-center font-sarabun font-light text-base leading-[1.67] text-[#565857]"
       >
-        Chào mừng đến với khoảnh khắc mở ra cột mốc mới trong câu chuyện tình yêu của chúng em, nơi hành trình mới bên nhau bắt đầu.
+        Chào mừng đến với khoảnh khắc mở ra cột mốc mới trong câu chuyện tình yêu của chúng em, <br />nơi hành trình mới bên nhau bắt đầu.
       </p>
       
       <div style={{ height: AppSpacing.s30 }} />

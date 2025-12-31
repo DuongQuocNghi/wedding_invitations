@@ -15,7 +15,7 @@ export function AlbumSection() {
           borderWidth: 1,
         }}
       >
-        <p className="font-alex-brush text-2xl leading-[0.8] text-[#5E121F]">
+        <p className="font-alex-brush text-2xl leading-[0.8] text-[#5E121F] whitespace-nowrap">
           Wedding Album →
         </p>
       </div>
@@ -27,8 +27,8 @@ export function AlbumSection() {
         <OptimizedImage
           src="/assets/images/wedding_box.webp"
           alt="Wedding box"
-          width={500}
-          height={500}
+          width={380}
+          height={380}
           objectFit="contain"
         />
       </div>

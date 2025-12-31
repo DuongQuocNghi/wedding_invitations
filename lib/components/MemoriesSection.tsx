@@ -9,7 +9,7 @@ export function MemoriesSection() {
       <div style={{ height: AppSpacing.s65 }} />
 
       {/* Title */}
-      <h2 className="font-alex-brush text-[50px] leading-[0.8] text-[#5E121F]">
+      <h2 className="font-alex-brush text-[46px] leading-[0.8] text-[#5E121F]">
         Our Wedding<br />
         Memories
       </h2>
@@ -19,7 +19,7 @@ export function MemoriesSection() {
       <div className="flex gap-2">
         {/* Left side */}
         <div className="flex-1 flex flex-col">
-          <p className="font-sarabun italic text-[10px] leading-[1.6] text-[#565857]">
+          <p className="font-sarabun font-light italic text-[12px] leading-[1.67] text-[#565857] pr-[4px]">
             Ngay từ ngày đầu gặp gỡ, trái tim chúng ta đã hòa chung nhịp đập,
             thì thầm rằng người ấy chính là duy nhất.
           </p>
@@ -36,11 +36,11 @@ export function MemoriesSection() {
 
         {/* Right side */}
         <div className="flex-1">
-          <div style={{ transform: 'translateY(-40px)' }}>
+          <div style={{ transform: 'translateY(-40px)', marginTop: '16px' }}>
             <OptimizedImage
               src="/assets/images/hinh_2.webp"
               alt="Memory 2"
-              height={224}
+              height={240}
               objectFit="cover"
               borderRadius={6}
               className="w-full"
@@ -53,9 +53,9 @@ export function MemoriesSection() {
 
       {/* Footer */}
       <div className="flex justify-end">
-        <div style={{ transform: 'translateX(40px)' }}>
+        <div style={{ transform: 'translateX(40px) translateY(-36px)' }}>
           <p
-            className="font-alex-brush italic text-[140px] leading-[0.43] tracking-[-4px]"
+            className="font-alex-brush italic text-[120px] leading-[0.43] tracking-[-4px]"
             style={{ color: 'rgba(159, 125, 106, 0.08)' }}
           >
             Dating
@@ -63,7 +63,7 @@ export function MemoriesSection() {
         </div>
       </div>
 
-      <div style={{ height: AppSpacing.s50 }} />
+      <div style={{ height: 25 }} />
     </div>
   );
 }

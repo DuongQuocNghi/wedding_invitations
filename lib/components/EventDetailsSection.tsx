@@ -18,16 +18,16 @@ interface FamilyDetailsProps {
 function FamilyColumn({ label, family }: FamilyDetailsProps) {
   return (
     <div className="flex flex-col items-center">
-      <p className="font-sarabun font-semibold text-[10px] leading-[1.2] tracking-[0.1px] text-[#5C4A37]">
+      <p className="font-sarabun font-light text-xs leading-[1.2] tracking-[0.1px] text-[#5C4A37] opacity-80">
         {label}
       </p>
       <div style={{ height: AppSpacing.s8 }} />
       {family.map((member, index) => (
-        <div key={index} className="mb-1 text-center">
-          <span className="font-sarabun text-[10px] leading-[1.2] text-[#5C4A37]">
+        <div key={index} className="mb-1 text-center whitespace-nowrap">
+          <span className="font-sarabun text-xs leading-[1.2] text-[#5C4A37] opacity-80">
             {member.title}{' '}
           </span>
-          <span className="font-sarabun font-bold text-[10px] leading-[1.2] tracking-[0.05px] text-[#5C4A37]">
+          <span className="font-sarabun font-medium text-sm leading-[1.2] tracking-[0.05px] text-[#5C4A37]">
             {member.name}
           </span>
         </div>
@@ -46,28 +46,28 @@ interface EventDateProps {
 
 function EventDate({ day, time, date, month, year }: EventDateProps) {
   return (
-    <div className="flex flex-col items-center">
-      <p className="font-sarabun font-medium text-sm leading-[1.2] tracking-[0.05px] text-[#5C4A37]">
+    <div className="flex flex-col items-center" style={{ transform: 'scale(1.2)' }}>
+      <p className="font-sarabun font-medium text-sm leading-[1.2] tracking-[0.05px] text-[#5E121F]">
         {day}
       </p>
-      <div style={{ height: AppSpacing.s8 }} />
+      <div style={{ height: AppSpacing.s8 * 1.5 }} />
       <div className="flex items-center gap-2">
-        <div className="py-2 border-t border-b border-[#9F7D6A]">
-          <p className="font-sarabun text-xs leading-[1.2] text-[#5C4A37]">
+        <div className="py-2 px-[12px] border-t border-b border-[#9F7D6A]">
+          <p className="font-frutiger font-light text-xs leading-[1.2] text-[#5E121F] opacity-80" style={{ letterSpacing: '0.06em' }}>
             {time}
           </p>
         </div>
-        <p className="font-sarabun font-bold text-[32px] leading-none tracking-[0.07px] text-[#5E121F]">
+        <p className="font-frutiger font-bold text-[32px] leading-none tracking-[0.07px] text-[#5E121F]">
           {date}
         </p>
-        <div className="py-2 border-t border-b border-[#9F7D6A]">
-          <p className="font-sarabun text-xs leading-[1.2] text-[#5C4A37]">
+        <div className="py-2 px-[12px] border-t border-b border-[#9F7D6A]">
+          <p className="font-frutiger font-light text-xs leading-[1.2] text-[#5E121F] opacity-80" style={{ letterSpacing: '0.06em' }}>
             {year}
           </p>
         </div>
       </div>
-      <div style={{ height: AppSpacing.s4 }} />
-      <p className="font-sansita-swashed text-sm leading-[1.43] tracking-[0.09px] text-[#5E121F]">
+      <div style={{ height: AppSpacing.s8 * 1.5 }} />
+      <p className="font-sarabun font-medium text-sm leading-[1.2] tracking-[0.05px] text-[#5E121F]">
         {month}
       </p>
     </div>
@@ -87,25 +87,25 @@ function Location({ name, address, mapUrl }: LocationProps) {
 
   return (
     <div className="flex flex-col items-center">
-      <p className="font-sansita-swashed font-light text-[10px] leading-none text-[#565857]">
+      <p className="font-sarabun font-light text-sm leading-[1.2] tracking-[0.1px] text-[#565857] opacity-80">
         Tại
       </p>
-      <div style={{ height: AppSpacing.s4 }} />
-      <p className="font-sansita-swashed text-[10px] leading-[1.6] tracking-[0.07px] text-[#565857]">
+      <div style={{ height: 2 }} />
+      <p className="font-sarabun text-base leading-[1.6] tracking-[0.07px] text-[#565857]">
         {name}
       </p>
-      <div style={{ height: AppSpacing.s4 }} />
+      <div style={{ height: 2 }} />
       {address.map((line, index) => (
         <p
           key={index}
-          className="font-sansita-swashed text-[10px] leading-[1.6] tracking-[0.07px] text-[#565857]"
+          className="font-sarabun font-normal text-sm leading-[1.2] tracking-[0.1px] text-[#565857] opacity-80 whitespace-nowrap"
         >
           {line}
         </p>
       ))}
       <button
         onClick={openMap}
-        className="mt-2 font-sansita-swashed text-[10px] leading-[1.6] tracking-[0.07px] text-[#5054D3] underline"
+        className="mt-1 font-sarabun text-sm leading-[1.6] tracking-[0.07px] text-[#5054D3] underline"
       >
         Xem bản đồ
       </button>
@@ -211,12 +211,12 @@ export function EventDetailsSection() {
           <div style={{ height: AppSpacing.s32 }} />
 
           {/* Invitation text */}
-          <p className="text-center font-sarabun text-[10px] leading-[1.6] text-[#5C4A37]">
+          <p className="text-center font-sarabun font-light text-base leading-[1.67] text-[#565857]">
             Trân trọng kính mời đến dự bữa tiệc rượu chung vui<br />
             được tổ chức vào
           </p>
 
-          <div style={{ height: AppSpacing.s16 }} />
+          <div style={{ height: AppSpacing.s16 * 2 }} />
 
           {/* Event date */}
           <EventDate
@@ -227,14 +227,13 @@ export function EventDetailsSection() {
             year="NĂM 2026"
           />
 
-          <div style={{ height: AppSpacing.s16 }} />
+          <div style={{ height: AppSpacing.s16 * 2 }} />
 
           {/* Location */}
           <Location
             name="NHÀ HÀNG ÁI HUÊ 2"
             address={[
-              '338 Trần Hưng Đạo, Phường 11, Quận 5,',
-              'Thành phố Hồ Chí Minh',
+              '338 Trần Hưng Đạo, Phường 11, Quận 5, HCM',
             ]}
             mapUrl="https://maps.app.goo.gl/qpimk6XEoDmA6src7"
           />
@@ -254,12 +253,12 @@ export function EventDetailsSection() {
           <div style={{ height: AppSpacing.s24 }} />
 
           {/* Invitation text */}
-          <p className="text-center font-sarabun text-[10px] leading-[1.6] text-[#5C4A37]">
+          <p className="text-center font-sarabun font-light text-base leading-[1.67] text-[#565857]">
             Trân trọng kính mời đến dự bữa tiệc rượu chung vui<br />
             được tổ chức vào
           </p>
 
-          <div style={{ height: AppSpacing.s24 }} />
+          <div style={{ height: AppSpacing.s24 * 2 }} />
 
           {/* Event date */}
           <EventDate
@@ -270,21 +269,20 @@ export function EventDetailsSection() {
             year="NĂM 2026"
           />
 
-          <div style={{ height: AppSpacing.s24 }} />
+          <div style={{ height: AppSpacing.s24 * 2 }} />
 
           {/* Location */}
           <Location
             name="NHÀ HÀNG Minh Phú"
             address={[
-              '146 Đ. Lê Văn Việt, Tăng Nhơn Phú B, Thủ Đức,',
-              'Thành phố Hồ Chí Minh',
+              '146 Đ. Lê Văn Việt, Tăng Nhơn Phú B, Thủ Đức',
             ]}
             mapUrl="https://maps.app.goo.gl/MCkVr82wMV39BA4V9"
           />
         </div>
       )}
 
-      <div style={{ height: AppSpacing.s36 }} />
+      <div style={{ height: AppSpacing.s36 * 2 }} />
     </div>
   );
 }
