@@ -14,6 +14,14 @@ body {
   overflow-x: hidden;
 }
 
+/* Responsive breakpoints:
+   Mobile: < 500px (full width, current UI optimized)
+   Tablet: 500px - 1023px (shows mobile view centered with shadow)
+   Desktop: ≥ 1024px (shows mobile view centered with shadow)
+   
+   Note: Centered view starts at 500px on #EBDAD0 background
+*/
+
 /* Font families */
 .font-sarabun {
   font-family: 'Sarabun', sans-serif;
