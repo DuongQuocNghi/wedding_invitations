@@ -53,7 +53,7 @@ export function ProposalSection() {
         {/* Right side: Image */}
         <div className="w-[55%]">
           <OptimizedImage
-            src="/assets/images/hinh_4.webp"
+            src="/assets/images/hinh_4.png"
             alt="Dating"
             height={320}
             objectFit="cover"

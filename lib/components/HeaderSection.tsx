@@ -9,7 +9,7 @@ export function HeaderSection() {
       {/* Background image */}
       <div className="absolute inset-0">
         <OptimizedImage
-          src="/assets/images/hinh_1.webp"
+          src="/assets/images/hinh_1.png"
           alt="Wedding header"
           fill
           priority
@@ -19,7 +19,7 @@ export function HeaderSection() {
         />
       </div>
       {/* SVG overlay */}
-      <div className="absolute top-[37px] left-4 right-4 flex justify-center z-10 pointer-events-none">
+      <div className="absolute top-[20px] left-4 right-4 flex justify-center z-10 pointer-events-none">
         <Image
           src="/assets/svg/home_header.svg"
           alt="Header decoration"

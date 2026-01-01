@@ -12,14 +12,14 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Thiệp Cưới Nghi & Lan',
     description: 'Mời bạn đến dự lễ cưới và tiệc cưới của chúng tôi',
-    images: ['/assets/images/hinh_1.webp'],
+    images: ['/assets/images/hinh_1.png'],
     locale: 'vi_VN',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Thiệp Cưới Nghi & Lan',
     description: 'Mời bạn đến dự lễ cưới và tiệc cưới của chúng tôi',
-    images: ['/assets/images/hinh_1.webp'],
+    images: ['/assets/images/hinh_1.png'],
   },
   appleWebApp: {
     capable: true,
@@ -58,7 +58,7 @@ export default function RootLayout({
         {/* Preload critical images */}
         <link
           rel="preload"
-          href="/assets/images/hinh_1.webp"
+          href="/assets/images/hinh_1.png"
           as="image"
           type="image/webp"
         />
