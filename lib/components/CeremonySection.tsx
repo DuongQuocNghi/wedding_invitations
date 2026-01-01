@@ -11,7 +11,7 @@ export function CeremonySection() {
         <div style={{ height: AppSpacing.s90 }} />
         <div className="aspect-square w-full relative">
           <OptimizedImage
-            src="/assets/images/hinh_5.png"
+            src="/assets/images/hinh_5.webp"
             alt="Ceremony 1"
             fill
             objectFit="cover"
@@ -46,7 +46,7 @@ export function CeremonySection() {
         </p>
         <div style={{ height: AppSpacing.s36 }} />
         <OptimizedImage
-          src="/assets/images/hinh_6.png"
+          src="/assets/images/hinh_6.webp"
           alt="Ceremony 2"
           height={290}
           objectFit="cover"

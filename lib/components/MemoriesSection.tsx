@@ -25,7 +25,7 @@ export function MemoriesSection() {
           </p>
           <div style={{ height: AppSpacing.s47 }} />
           <OptimizedImage
-            src="/assets/images/hinh_3.png"
+            src="/assets/images/hinh_3.webp"
             alt="Memory 3"
             height={163}
             objectFit="cover"
@@ -38,7 +38,7 @@ export function MemoriesSection() {
         <div className="flex-1">
           <div style={{ transform: 'translateY(-40px)', marginTop: '16px' }}>
             <OptimizedImage
-              src="/assets/images/hinh_2.png"
+              src="/assets/images/hinh_2.webp"
               alt="Memory 2"
               height={240}
               objectFit="cover"

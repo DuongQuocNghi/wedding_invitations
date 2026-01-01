@@ -16,7 +16,7 @@ export function ThankYouSection() {
         <div className="relative flex justify-center items-center">
           <div className="relative w-[202px] h-[202px] mx-auto flex items-center justify-center">
             <OptimizedImage
-              src="/assets/images/hinh_8.png"
+              src="/assets/images/hinh_8.webp"
               alt="Thank you"
               width={150}
               height={150}

@@ -36,7 +36,7 @@ export function TogetherSection() {
       {/* Image */}
       <div className="w-[60%]">
         <OptimizedImage
-          src="/assets/images/hinh_7.png"
+          src="/assets/images/hinh_7.webp"
           alt="Together"
           height={321}
           objectFit="cover"

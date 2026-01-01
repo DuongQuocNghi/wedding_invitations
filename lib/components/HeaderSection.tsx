@@ -6,17 +6,32 @@ import Image from 'next/image';
 export function HeaderSection() {
   return (
     <div className="relative w-full" style={{ height: '85vh' }}>
-      {/* Background image */}
+      {/* Background image - Responsive: mobile uses smaller image */}
       <div className="absolute inset-0">
-        <OptimizedImage
-          src="/assets/images/hinh_1.png"
-          alt="Wedding header"
-          fill
-          priority
-          objectFit="cover"
-          className="w-full h-full"
-          placeholderColor="#F4F1EA"
-        />
+        {/* Mobile image */}
+        <div className="block min-[500px]:hidden w-full h-full">
+          <OptimizedImage
+            src="/assets/images/hinh_1_m.webp"
+            alt="Wedding header"
+            fill
+            priority
+            objectFit="cover"
+            className="w-full h-full"
+            placeholderColor="#F4F1EA"
+          />
+        </div>
+        {/* Desktop/Tablet image */}
+        <div className="hidden min-[500px]:block w-full h-full">
+          <OptimizedImage
+            src="/assets/images/hinh_1.webp"
+            alt="Wedding header"
+            fill
+            priority
+            objectFit="cover"
+            className="w-full h-full"
+            placeholderColor="#F4F1EA"
+          />
+        </div>
       </div>
       {/* SVG overlay */}
       <div className="absolute top-[20px] left-4 right-4 flex justify-center z-10 pointer-events-none">

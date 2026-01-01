@@ -123,9 +123,10 @@ export function AlbumSection() {
               ×
             </button>
             <video
-              src="/assets/videos/Nghi_Lan_08_02_2026.MOV"
+              src="/assets/videos/Nghi_Lan_08_02_2026.mp4"
               controls
               autoPlay
+              preload="metadata"
               className="max-w-full max-h-full w-auto h-auto rounded-lg"
             >
               Your browser does not support the video tag.
