@@ -9,14 +9,15 @@ export function AlbumSection() {
     <div className="w-full px-4 flex flex-col items-center">
       {/* CTA */}
       <div
-        className="h-[53px] rounded-[27px] border flex items-center justify-center px-30"
+        className="h-[53px] w-full rounded-[27px] border flex items-center justify-center px-4 -mx-4"
         style={{
           borderColor: `${AppColors.accent}80`,
           borderWidth: 1,
         }}
       >
         <p className="font-alex-brush text-2xl leading-[0.8] text-[#5E121F] whitespace-nowrap">
-          Wedding Album →
+          Wedding Album{' '}
+          <span className="opacity-40 font-light inline-block translate-y-1">→</span>
         </p>
       </div>
 
@@ -30,10 +31,11 @@ export function AlbumSection() {
           width={380}
           height={380}
           objectFit="contain"
+          className="max-w-[500px] w-full h-auto"
         />
       </div>
 
-      <div style={{ height: AppSpacing.s150 }} />
+      <div style={{ height: 30 }} />
     </div>
   );
 }

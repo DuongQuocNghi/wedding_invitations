@@ -250,7 +250,7 @@ export function EventDetailsSection() {
             </div>
           </div>
 
-          <div style={{ height: AppSpacing.s24 }} />
+          <div style={{ height: AppSpacing.s32 }} />
 
           {/* Invitation text */}
           <p className="text-center font-sarabun font-light text-base leading-[1.67] text-[#565857]">
@@ -258,7 +258,7 @@ export function EventDetailsSection() {
             được tổ chức vào
           </p>
 
-          <div style={{ height: AppSpacing.s24 * 2 }} />
+          <div style={{ height: AppSpacing.s16 * 2 }} />
 
           {/* Event date */}
           <EventDate
@@ -269,7 +269,7 @@ export function EventDetailsSection() {
             year="NĂM 2026"
           />
 
-          <div style={{ height: AppSpacing.s24 * 2 }} />
+          <div style={{ height: AppSpacing.s16 * 2 }} />
 
           {/* Location */}
           <Location
