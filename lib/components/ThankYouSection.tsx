@@ -8,7 +8,7 @@ import { AppSpacing } from '@/lib/constants/spacing';
 export function ThankYouSection() {
   return (
     <div
-      className="w-full px-[30px]"
+      className="w-full px-[10px]"
       style={{ backgroundColor: AppColors.accent }}
     >
       <div style={{ transform: 'translateY(-80px)' }}>

@@ -29,13 +29,12 @@ export function AlbumSection() {
           src="/assets/images/wedding_box.webp"
           alt="Wedding box"
           width={380}
-          height={380}
+          height={350}
           objectFit="contain"
           className="max-w-[500px] w-full h-auto"
         />
       </div>
 
-      <div style={{ height: 30 }} />
     </div>
   );
 }

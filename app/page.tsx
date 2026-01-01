@@ -27,7 +27,15 @@ export default function Home() {
                 <img 
                   src="/assets/svg/flower_1.svg" 
                   alt="Flower decoration" 
-                  className="w-auto h-auto origin-bottom-left"
+                  className="origin-bottom-left flex-shrink-0"
+                  style={{ 
+                    width: '500px', 
+                    height: '300px',
+                    maxWidth: '500px', 
+                    maxHeight: '300px',
+                    marginRight: '-120px',
+                    objectFit: 'contain'
+                  }}
                 />
               </div>
             </div>
@@ -38,7 +46,12 @@ export default function Home() {
                 <img 
                   src="/assets/svg/flower_2.svg" 
                   alt="Flower decoration" 
-                  className="w-auto h-auto origin-top-right"
+                  className="origin-top-right flex-shrink-0"
+                  style={{ 
+                    maxWidth: '330px', 
+                    maxHeight: '230px',
+                    marginRight: '-60px'
+                  }}
                 />
               </div>
             </div>
@@ -74,7 +87,12 @@ export default function Home() {
                 <img 
                   src="/assets/svg/flower_3.svg" 
                   alt="Flower decoration" 
-                  className="w-auto h-auto origin-top-right"
+                  className="origin-top-right flex-shrink-0"
+                  style={{ 
+                    maxWidth: '200px', 
+                    maxHeight: '300px',
+                    marginLeft: '-50px'
+                  }}
                 />
               </div>
             </div>
@@ -85,7 +103,16 @@ export default function Home() {
                 <img 
                   src="/assets/svg/flower_4.svg" 
                   alt="Flower decoration" 
-                  className="w-auto h-auto origin-bottom-left"
+                  className="origin-bottom-left flex-shrink-0"
+                  style={{ 
+                    maxWidth: '320px', 
+                    maxHeight: '320px',
+                    width: '320px', 
+                    height: '320px',
+                    objectFit: 'contain',
+                    marginLeft: '-60px',
+                    marginBottom: '-30px'
+                  }}
                 />
               </div>
             </div>
