@@ -17,69 +17,79 @@ export default function Home() {
   return (
     // Outer container with background color for tablet/desktop
     <div className="min-h-screen w-full bg-[#EBDAD0] relative">
-      
-      {/* Flower decoration - left bottom, behind main frame */}
-      <div className="fixed left-0 bottom-0 z-0 pointer-events-none">
-        <div className="bg-[#EBDAD0]">
-          <img 
-            src="/assets/svg/flower_1.svg" 
-            alt="Flower decoration" 
-            className="w-auto h-auto max-w-[200px] sm:max-w-[300px] opacity-60 scale-80 origin-bottom-left"
-          />
+      <div className="flex min-[500px]:justify-center">
+        {/* Left column - Flower decorations - Fixed */}
+        <div className="fixed left-0 top-0 h-screen w-[calc((100%-480px)/2)] hidden min-[500px]:block z-0 pointer-events-none">
+          <div className="relative w-full h-full">
+            {/* Flower decoration - right bottom */}
+            <div className="absolute right-0 bottom-0">
+              <div className="bg-[#EBDAD0]">
+                <img 
+                  src="/assets/svg/flower_1.svg" 
+                  alt="Flower decoration" 
+                  className="w-auto h-auto origin-bottom-left"
+                />
+              </div>
+            </div>
+
+            {/* Flower decoration - top right */}
+            <div className="absolute right-0 top-0">
+              <div className="bg-[#EBDAD0]">
+                <img 
+                  src="/assets/svg/flower_2.svg" 
+                  alt="Flower decoration" 
+                  className="w-auto h-auto origin-top-right"
+                />
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      {/* Flower decoration - top left, behind main frame */}
-      <div className="fixed left-20 top-0 z-0 pointer-events-none">
-        <div className="bg-[#EBDAD0]">
-          <img 
-            src="/assets/svg/flower_2.svg" 
-            alt="Flower decoration" 
-            className="w-auto h-auto max-w-[200px] sm:max-w-[300px] opacity-60 scale-80 origin-top-right"
-          />
+        {/* Middle column - Main content - Scrollable */}
+        <div className="w-full min-[500px]:max-w-[480px] min-[500px]:shadow-xl relative z-10 overflow-x-hidden"
+          style={{ backgroundColor: AppColors.bgPrimary }}
+        >
+          <div className="flex flex-col min-h-screen">
+            {/* Critical sections - load immediately */}
+            <HeaderSection />
+            <WelcomeSection />
+            <EventDetailsSection />
+
+            <QuoteSection />
+            <MemoriesSection />
+            <ProposalSection />
+            <CeremonySection />
+            <TogetherSection />
+            <AlbumSection />
+            <ThankYouSection />
+          </div>
         </div>
-      </div>
 
-      {/* Flower decoration - top right, behind main frame */}
-      <div className="fixed right-0 top-0 z-0 pointer-events-none">
-        <div className="bg-[#EBDAD0]">
-          <img 
-            src="/assets/svg/flower_3.svg" 
-            alt="Flower decoration" 
-            className="w-auto h-auto max-w-[200px] sm:max-w-[300px] opacity-60 scale-80 origin-top-right"
-          />
-        </div>
-      </div>
+        {/* Right column - Flower decorations - Fixed */}
+        <div className="fixed right-0 top-0 h-screen w-[calc((100%-480px)/2)] hidden min-[500px]:block z-0 pointer-events-none">
+          <div className="relative w-full h-full">
+            {/* Flower decoration - top left */}
+            <div className="absolute left-0 top-0">
+              <div className="bg-[#EBDAD0]">
+                <img 
+                  src="/assets/svg/flower_3.svg" 
+                  alt="Flower decoration" 
+                  className="w-auto h-auto origin-top-right"
+                />
+              </div>
+            </div>
 
-      {/* Flower decoration - right bottom, rotated 180deg, behind main frame */}
-      <div className="fixed right-10 bottom-0 z-0 pointer-events-none -mb-[50px]">
-        <div className="bg-[#EBDAD0]">
-          <img 
-            src="/assets/svg/flower_4.svg" 
-            alt="Flower decoration" 
-            className="w-auto h-auto max-w-[200px] sm:max-w-[300px] opacity-60  scale-80 origin-bottom-left"
-          />
-        </div>
-      </div>
-
-      {/* Mobile view wrapper - centered on tablet/desktop with shadow */}
-      <div
-        className="min-h-screen w-full overflow-x-hidden min-[500px]:max-w-[480px] min-[500px]:mx-auto min-[500px]:shadow-xl relative z-10"
-        style={{ backgroundColor: AppColors.bgPrimary }}
-      >
-        <div className="flex flex-col">
-          {/* Critical sections - load immediately */}
-          <HeaderSection />
-          <WelcomeSection />
-          <EventDetailsSection />
-
-          <QuoteSection />
-          <MemoriesSection />
-          <ProposalSection />
-          <CeremonySection />
-          <TogetherSection />
-          <AlbumSection />
-          <ThankYouSection />
+            {/* Flower decoration - left bottom */}
+            <div className="absolute left-0 bottom-0 -mb-[50px]">
+              <div className="bg-[#EBDAD0]">
+                <img 
+                  src="/assets/svg/flower_4.svg" 
+                  alt="Flower decoration" 
+                  className="w-auto h-auto origin-bottom-left"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
