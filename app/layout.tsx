@@ -5,20 +5,20 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
   title: 'Thiệp Cưới Nghi & Lan',
   description:
-    'Thiệp cưới Nghi & Lan - Mời bạn đến dự lễ cưới và tiệc cưới của chúng tôi. Thông tin chi tiết về địa điểm, thời gian và lời mời chân thành.',
+    'Thiệp cưới Nghi & Lan - Mời bạn đến dự lễ cưới và tiệc cưới của chúng em. Thông tin chi tiết về địa điểm, thời gian và lời mời chân thành.',
   keywords: 'thiệp cưới, wedding invitation, Nghi Lan, lễ cưới, tiệc cưới',
   authors: [{ name: 'Nghi & Lan' }],
   openGraph: {
     type: 'website',
     title: 'Thiệp Cưới Nghi & Lan',
-    description: 'Mời bạn đến dự lễ cưới và tiệc cưới của chúng tôi',
+    description: 'Mời bạn đến dự lễ cưới và tiệc cưới của chúng em',
     images: ['/assets/images/hinh_1_m.webp'],
     locale: 'vi_VN',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Thiệp Cưới Nghi & Lan',
-    description: 'Mời bạn đến dự lễ cưới và tiệc cưới của chúng tôi',
+    description: 'Mời bạn đến dự lễ cưới và tiệc cưới của chúng em',
     images: ['/assets/images/hinh_1_m.webp'],
   },
   appleWebApp: {
