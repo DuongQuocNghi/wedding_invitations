@@ -5,6 +5,15 @@ import { AppColors } from '@/lib/constants/colors';
 import { AppSpacing } from '@/lib/constants/spacing';
 
 export function AlbumSection() {
+  // Xác định hình ảnh dựa trên ngày hiện tại
+  // Trước 03/02/2026: wedding_box_lan.png
+  // Từ 03/02/2026: wedding_box_nghi.png
+  const targetDate = new Date('2026-02-03');
+  const currentDate = new Date();
+  const imageSrc = currentDate < targetDate 
+    ? '/assets/images/wedding_box_lan.png'
+    : '/assets/images/wedding_box_nghi.png';
+
   return (
     <div className="w-full px-4 flex flex-col items-center">
       {/* CTA */}
@@ -26,7 +35,7 @@ export function AlbumSection() {
       {/* Album box */}
       <div className="flex justify-center">
         <OptimizedImage
-          src="/assets/images/wedding_box.webp"
+          src={imageSrc}
           alt="Wedding box"
           width={380}
           height={350}
