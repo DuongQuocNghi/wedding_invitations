@@ -12,7 +12,14 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Thiệp Cưới Nghi & Lan',
     description: 'Mời bạn đến dự lễ cưới và tiệc cưới của chúng em',
-    images: ['/assets/images/hinh_1_m.webp'],
+    images: [
+      {
+        url: '/assets/images/hinh_1_m.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Thiệp Cưới Nghi & Lan',
+      },
+    ],
     locale: 'vi_VN',
   },
   twitter: {
