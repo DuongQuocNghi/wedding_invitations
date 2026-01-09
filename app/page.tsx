@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { HeaderSection } from '@/lib/components/HeaderSection';
 import { WelcomeSection } from '@/lib/components/WelcomeSection';
 import { EventDetailsSection } from '@/lib/components/EventDetailsSection';
@@ -11,12 +11,16 @@ import { CeremonySection } from '@/lib/components/CeremonySection';
 import { TogetherSection } from '@/lib/components/TogetherSection';
 import { AlbumSection } from '@/lib/components/AlbumSection';
 import { ThankYouSection } from '@/lib/components/ThankYouSection';
+import { ThankYouPopup } from '@/lib/components/ThankYouPopup';
 import { ImageLightbox } from '@/lib/components/ImageLightbox';
 import { AppColors } from '@/lib/constants/colors';
+import { USERS } from '@/lib/constants/users';
 
 export default function Home() {
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [isThankYouPopupOpen, setIsThankYouPopupOpen] = useState(false);
+  const [userInfo, setUserInfo] = useState<{ fullName: string; title: string } | null>(null);
 
   // Helper function to convert image path to high quality version
   const getHighQualityImage = (imagePath: string): string => {
@@ -36,6 +40,26 @@ export default function Home() {
   const closeLightbox = () => {
     setIsLightboxOpen(false);
     setLightboxImage(null);
+  };
+
+  // Check for query parameter and show thank you popup if user exists
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search);
+      const userValue = urlParams.get('v');
+      if (userValue && USERS[userValue as keyof typeof USERS]) {
+        const user = USERS[userValue as keyof typeof USERS];
+        setUserInfo({
+          fullName: user.fullName,
+          title: user.title,
+        });
+        setIsThankYouPopupOpen(true);
+      }
+    }
+  }, []);
+
+  const closeThankYouPopup = () => {
+    setIsThankYouPopupOpen(false);
   };
 
   return (
@@ -150,6 +174,16 @@ export default function Home() {
         imageSrc={lightboxImage}
         onClose={closeLightbox}
       />
+
+      {/* Thank You Popup */}
+      {userInfo && (
+        <ThankYouPopup
+          isOpen={isThankYouPopupOpen}
+          onClose={closeThankYouPopup}
+          userName={userInfo.fullName}
+          title={userInfo.title}
+        />
+      )}
     </div>
   );
 }
