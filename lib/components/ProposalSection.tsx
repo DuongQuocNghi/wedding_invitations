@@ -4,7 +4,11 @@ import { OptimizedImage } from '@/lib/utils/image';
 import { AppColors } from '@/lib/constants/colors';
 import { AppSpacing } from '@/lib/constants/spacing';
 
-export function ProposalSection() {
+interface ProposalSectionProps {
+  onImageClick?: (imagePath: string) => void;
+}
+
+export function ProposalSection({ onImageClick }: ProposalSectionProps) {
   return (
     <div className="w-full relative">
       {/* Brown background layer */}
@@ -51,7 +55,10 @@ export function ProposalSection() {
         </div>
 
         {/* Right side: Image */}
-        <div className="w-[55%]">
+        <div 
+          className="w-[55%] cursor-pointer"
+          onClick={() => onImageClick?.('/assets/images/hinh_4.webp')}
+        >
           <OptimizedImage
             src="/assets/images/hinh_4.webp"
             alt="Dating"

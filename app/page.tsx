@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { HeaderSection } from '@/lib/components/HeaderSection';
 import { WelcomeSection } from '@/lib/components/WelcomeSection';
 import { EventDetailsSection } from '@/lib/components/EventDetailsSection';
@@ -11,9 +11,33 @@ import { CeremonySection } from '@/lib/components/CeremonySection';
 import { TogetherSection } from '@/lib/components/TogetherSection';
 import { AlbumSection } from '@/lib/components/AlbumSection';
 import { ThankYouSection } from '@/lib/components/ThankYouSection';
+import { ImageLightbox } from '@/lib/components/ImageLightbox';
 import { AppColors } from '@/lib/constants/colors';
 
 export default function Home() {
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
+  // Helper function to convert image path to high quality version
+  const getHighQualityImage = (imagePath: string): string => {
+    // Convert /assets/images/hinh_X.webp to /assets/images/high/hinh_X.webp
+    if (imagePath.includes('/assets/images/hinh_')) {
+      return imagePath.replace('/assets/images/hinh_', '/assets/images/high/hinh_');
+    }
+    return imagePath;
+  };
+
+  const openLightbox = (imagePath: string) => {
+    const highQualityPath = getHighQualityImage(imagePath);
+    setLightboxImage(highQualityPath);
+    setIsLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setIsLightboxOpen(false);
+    setLightboxImage(null);
+  };
+
   return (
     // Outer container with background color for tablet/desktop
     <div className="min-h-screen w-full bg-[#EBDAD0] relative">
@@ -64,17 +88,17 @@ export default function Home() {
         >
           <div className="flex flex-col min-h-screen">
             {/* Critical sections - load immediately */}
-            <HeaderSection />
+            <HeaderSection onImageClick={openLightbox} />
             <WelcomeSection />
             <EventDetailsSection />
 
             <QuoteSection />
-            <MemoriesSection />
-            <ProposalSection />
-            <CeremonySection />
-            <TogetherSection />
+            <MemoriesSection onImageClick={openLightbox} />
+            <ProposalSection onImageClick={openLightbox} />
+            <CeremonySection onImageClick={openLightbox} />
+            <TogetherSection onImageClick={openLightbox} />
             <AlbumSection />
-            <ThankYouSection />
+            <ThankYouSection onImageClick={openLightbox} />
           </div>
         </div>
 
@@ -119,6 +143,13 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Image Lightbox */}
+      <ImageLightbox
+        isOpen={isLightboxOpen}
+        imageSrc={lightboxImage}
+        onClose={closeLightbox}
+      />
     </div>
   );
 }

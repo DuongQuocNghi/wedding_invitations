@@ -5,7 +5,11 @@ import Image from 'next/image';
 import { AppColors } from '@/lib/constants/colors';
 import { AppSpacing } from '@/lib/constants/spacing';
 
-export function ThankYouSection() {
+interface ThankYouSectionProps {
+  onImageClick?: (imagePath: string) => void;
+}
+
+export function ThankYouSection({ onImageClick }: ThankYouSectionProps) {
   return (
     <div
       className="w-full px-[10px]"
@@ -14,7 +18,10 @@ export function ThankYouSection() {
       <div style={{ transform: 'translateY(-80px)' }}>
         {/* Photo with border */}
         <div className="relative flex justify-center items-center">
-          <div className="relative w-[202px] h-[202px] mx-auto flex items-center justify-center">
+          <div 
+            className="relative w-[202px] h-[202px] mx-auto flex items-center justify-center cursor-pointer"
+            onClick={() => onImageClick?.('/assets/images/hinh_8.webp')}
+          >
             <OptimizedImage
               src="/assets/images/hinh_8.webp"
               alt="Thank you"
@@ -28,7 +35,7 @@ export function ThankYouSection() {
               alt="Border"
               width={202}
               height={202}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
             />
           </div>
         </div>

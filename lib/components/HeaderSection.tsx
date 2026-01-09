@@ -3,13 +3,20 @@
 import { OptimizedImage } from '@/lib/utils/image';
 import Image from 'next/image';
 
-export function HeaderSection() {
+interface HeaderSectionProps {
+  onImageClick?: (imagePath: string) => void;
+}
+
+export function HeaderSection({ onImageClick }: HeaderSectionProps) {
   return (
     <div className="relative w-full" style={{ height: '85vh' }}>
       {/* Background image - Responsive: mobile uses smaller image */}
       <div className="absolute inset-0">
         {/* Mobile image */}
-        <div className="block min-[500px]:hidden w-full h-full">
+        <div 
+          className="block min-[500px]:hidden w-full h-full cursor-pointer"
+          onClick={() => onImageClick?.('/assets/images/hinh_1.webp')}
+        >
           <OptimizedImage
             src="/assets/images/hinh_1_m.webp"
             alt="Wedding header"
@@ -21,7 +28,10 @@ export function HeaderSection() {
           />
         </div>
         {/* Desktop/Tablet image */}
-        <div className="hidden min-[500px]:block w-full h-full">
+        <div 
+          className="hidden min-[500px]:block w-full h-full cursor-pointer"
+          onClick={() => onImageClick?.('/assets/images/hinh_1.webp')}
+        >
           <OptimizedImage
             src="/assets/images/hinh_1.webp"
             alt="Wedding header"

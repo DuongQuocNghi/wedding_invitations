@@ -3,13 +3,20 @@
 import { OptimizedImage } from '@/lib/utils/image';
 import { AppSpacing } from '@/lib/constants/spacing';
 
-export function CeremonySection() {
+interface CeremonySectionProps {
+  onImageClick?: (imagePath: string) => void;
+}
+
+export function CeremonySection({ onImageClick }: CeremonySectionProps) {
   return (
     <div className="w-full px-4 flex gap-1">
       {/* Left side */}
       <div className="w-[55%] flex flex-col">
         <div style={{ height: AppSpacing.s90 }} />
-        <div className="aspect-square w-full relative">
+        <div 
+          className="aspect-square w-full relative cursor-pointer"
+          onClick={() => onImageClick?.('/assets/images/hinh_5.webp')}
+        >
           <OptimizedImage
             src="/assets/images/hinh_5.webp"
             alt="Ceremony 1"
@@ -45,14 +52,19 @@ export function CeremonySection() {
           đến.
         </p>
         <div style={{ height: AppSpacing.s36 }} />
-        <OptimizedImage
-          src="/assets/images/hinh_6.webp"
-          alt="Ceremony 2"
-          height={290}
-          objectFit="cover"
-          borderRadius={6}
-          className="w-full"
-        />
+        <div 
+          className="cursor-pointer"
+          onClick={() => onImageClick?.('/assets/images/hinh_6.webp')}
+        >
+          <OptimizedImage
+            src="/assets/images/hinh_6.webp"
+            alt="Ceremony 2"
+            height={290}
+            objectFit="cover"
+            borderRadius={6}
+            className="w-full"
+          />
+        </div>
       </div>
     </div>
   );

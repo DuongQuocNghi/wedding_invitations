@@ -3,7 +3,11 @@
 import { OptimizedImage } from '@/lib/utils/image';
 import { AppSpacing } from '@/lib/constants/spacing';
 
-export function TogetherSection() {
+interface TogetherSectionProps {
+  onImageClick?: (imagePath: string) => void;
+}
+
+export function TogetherSection({ onImageClick }: TogetherSectionProps) {
   return (
     <div className="w-full px-4 py-10 flex gap-1 items-center">
       {/* Title */}
@@ -34,7 +38,10 @@ export function TogetherSection() {
       </div>
 
       {/* Image */}
-      <div className="w-[60%]">
+      <div 
+        className="w-[60%] cursor-pointer"
+        onClick={() => onImageClick?.('/assets/images/hinh_7.webp')}
+      >
         <OptimizedImage
           src="/assets/images/hinh_7.webp"
           alt="Together"

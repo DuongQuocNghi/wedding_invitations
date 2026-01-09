@@ -3,7 +3,11 @@
 import { OptimizedImage } from '@/lib/utils/image';
 import { AppSpacing } from '@/lib/constants/spacing';
 
-export function MemoriesSection() {
+interface MemoriesSectionProps {
+  onImageClick?: (imagePath: string) => void;
+}
+
+export function MemoriesSection({ onImageClick }: MemoriesSectionProps) {
   return (
     <div className="w-full px-4">
       <div style={{ height: AppSpacing.s65 }} />
@@ -24,19 +28,28 @@ export function MemoriesSection() {
             thì thầm rằng người ấy chính là duy nhất.
           </p>
           <div style={{ height: AppSpacing.s47 }} />
-          <OptimizedImage
-            src="/assets/images/hinh_3.webp"
-            alt="Memory 3"
-            height={163}
-            objectFit="cover"
-            borderRadius={6}
-            className="w-full"
-          />
+          <div 
+            className="cursor-pointer"
+            onClick={() => onImageClick?.('/assets/images/hinh_3.webp')}
+          >
+            <OptimizedImage
+              src="/assets/images/hinh_3.webp"
+              alt="Memory 3"
+              height={163}
+              objectFit="cover"
+              borderRadius={6}
+              className="w-full"
+            />
+          </div>
         </div>
 
         {/* Right side */}
         <div className="flex-1">
-          <div style={{ transform: 'translateY(-40px)', marginTop: '16px' }}>
+          <div 
+            style={{ transform: 'translateY(-40px)', marginTop: '16px' }}
+            className="cursor-pointer"
+            onClick={() => onImageClick?.('/assets/images/hinh_2.webp')}
+          >
             <OptimizedImage
               src="/assets/images/hinh_2.webp"
               alt="Memory 2"
