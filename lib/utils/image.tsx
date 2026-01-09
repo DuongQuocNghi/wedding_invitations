@@ -39,7 +39,10 @@ export function OptimizedImage({
 }: OptimizedImageProps) {
   const [isVisible, setIsVisible] = useState(!priority);
   const [isLoading, setIsLoading] = useState(true);
+  const [hasLoaded, setHasLoaded] = useState(false);
   const imgRef = useRef<HTMLDivElement>(null);
+  const hasBeenVisibleRef = useRef(false);
+  const isLoadingRef = useRef(true);
 
   // Auto-detect if className contains w-full and use large width for optimization
   const hasFullWidth = className.includes('w-full') || className.includes('w-[');
@@ -49,16 +52,21 @@ export function OptimizedImage({
   // Reset loading state when src changes
   useEffect(() => {
     setIsLoading(true);
+    setHasLoaded(false);
+    isLoadingRef.current = true;
   }, [src]);
 
   useEffect(() => {
     if (priority) {
       setIsVisible(true);
+      hasBeenVisibleRef.current = true;
       return;
     }
 
+    // Throttle function to limit scroll event frequency
+    let ticking = false;
     const checkVisibility = () => {
-      if (!imgRef.current) return;
+      if (!imgRef.current || hasBeenVisibleRef.current) return;
 
       const rect = imgRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
@@ -66,29 +74,47 @@ export function OptimizedImage({
       // Load if image is within 2 screen heights of viewport
       if (rect.top < windowHeight * 2 && rect.bottom > -windowHeight) {
         setIsVisible(true);
+        hasBeenVisibleRef.current = true;
+      }
+    };
+
+    const throttledCheckVisibility = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          checkVisibility();
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
     checkVisibility();
-    window.addEventListener('scroll', checkVisibility);
-    window.addEventListener('resize', checkVisibility);
+    window.addEventListener('scroll', throttledCheckVisibility, { passive: true });
+    window.addEventListener('resize', throttledCheckVisibility, { passive: true });
 
     // Fallback: load after 1 second
     const timeout = setTimeout(() => {
-      setIsVisible(true);
+      if (!hasBeenVisibleRef.current) {
+        setIsVisible(true);
+        hasBeenVisibleRef.current = true;
+      }
     }, 1000);
 
     return () => {
-      window.removeEventListener('scroll', checkVisibility);
-      window.removeEventListener('resize', checkVisibility);
+      window.removeEventListener('scroll', throttledCheckVisibility);
+      window.removeEventListener('resize', throttledCheckVisibility);
       clearTimeout(timeout);
     };
   }, [priority]);
 
-  const imageStyle: React.CSSProperties = {
+  // Create image style - only apply transition during initial load, not after
+  const getImageStyle = (): React.CSSProperties => ({
     objectFit,
     borderRadius: borderRadius > 0 ? `${borderRadius}px` : undefined,
-  };
+    // Only apply transition when loading, remove it after load to prevent flicker on scroll
+    transition: isLoading && !hasLoaded ? 'opacity 0.2s ease-in-out' : 'none',
+    willChange: isLoading ? 'opacity' : 'auto',
+  });
 
   if (!isVisible) {
     return (
@@ -141,15 +167,22 @@ export function OptimizedImage({
           src={src}
           alt={alt}
           fill
-          style={imageStyle}
+          style={getImageStyle()}
           priority={priority}
           onLoad={() => {
-            setIsLoading(false);
-            onLoadComplete?.();
+            if (isLoadingRef.current) {
+              setIsLoading(false);
+              setHasLoaded(true);
+              isLoadingRef.current = false;
+              onLoadComplete?.();
+            }
           }}
-          className={`transition-opacity duration-200 ${
-            isLoading ? 'opacity-0' : 'opacity-100'
-          }`}
+          onError={() => {
+            setIsLoading(false);
+            setHasLoaded(true);
+            isLoadingRef.current = false;
+          }}
+          className={hasLoaded || !isLoading ? 'opacity-100' : 'opacity-0'}
         />
       ) : (
         <Image
@@ -157,15 +190,22 @@ export function OptimizedImage({
           alt={alt}
           width={optimizedWidth}
           height={height}
-          style={imageStyle}
+          style={getImageStyle()}
           priority={priority}
           onLoad={() => {
-            setIsLoading(false);
-            onLoadComplete?.();
+            if (isLoadingRef.current) {
+              setIsLoading(false);
+              setHasLoaded(true);
+              isLoadingRef.current = false;
+              onLoadComplete?.();
+            }
           }}
-          className={`transition-opacity duration-200 ${
-            isLoading ? 'opacity-0' : 'opacity-100'
-          }`}
+          onError={() => {
+            setIsLoading(false);
+            setHasLoaded(true);
+            isLoadingRef.current = false;
+          }}
+          className={hasLoaded || !isLoading ? 'opacity-100' : 'opacity-0'}
         />
       )}
     </div>
