@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { OptimizedImage } from '@/lib/utils/image';
 import { AppColors } from '@/lib/constants/colors';
 import { AppSpacing } from '@/lib/constants/spacing';
+import { isBeforeTargetDate } from '@/lib/constants/events';
 
 export function AlbumSection() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -13,9 +14,7 @@ export function AlbumSection() {
   // Xác định hình ảnh dựa trên ngày hiện tại
   // Trước 03/02/2026: wedding_box_lan.png
   // Từ 03/02/2026: wedding_box_nghi.png
-  const targetDate = new Date('2026-02-03');
-  const currentDate = new Date();
-  const isLan = currentDate < targetDate;
+  const isLan = isBeforeTargetDate();
   const imageSrc = isLan
     ? '/assets/images/wedding_box_lan.png'
     : '/assets/images/wedding_box_nghi.png';

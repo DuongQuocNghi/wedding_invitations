@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { AppColors } from '@/lib/constants/colors';
 import { AppSpacing } from '@/lib/constants/spacing';
+import { getDefaultEventTab } from '@/lib/constants/events';
 
 interface FamilyMember {
   title: string;
@@ -148,7 +149,8 @@ function TabButton({ text, isActive, onClick }: TabButtonProps) {
 }
 
 export function EventDetailsSection() {
-  const [selectedTab, setSelectedTab] = useState(0); // 0 = bride, 1 = reception
+  // Default tab: 0 = "Tiệc nhà gái" (before 2026-02-03), 1 = "Lễ tân hôn" (from 2026-02-03 onwards)
+  const [selectedTab, setSelectedTab] = useState(getDefaultEventTab());
 
   const brideFamily: FamilyMember[] = [
     { title: 'Ông', name: 'LÝ CHÍ GIAI' },
