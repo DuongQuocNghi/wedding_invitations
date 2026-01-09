@@ -36,7 +36,7 @@ export function ImageLightbox({ isOpen, imageSrc, onClose }: ImageLightboxProps)
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center"
-      style={{ backgroundColor: 'rgba(0, 0, 0, 0.9)' }}
+      style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)' }}
       onClick={onClose}
     >
       {/* Close button */}
