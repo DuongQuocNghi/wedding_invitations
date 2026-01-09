@@ -1,4 +1,4 @@
-# Wedding Invitations Next.js App 💒
+# Wedding Invitations Next.js App 💒 
 
 Thiệp cưới Nghi & Lan - Website được xây dựng bằng **Next.js 16** với TypeScript và Tailwind CSS.
 
