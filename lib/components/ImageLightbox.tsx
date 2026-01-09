@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { OptimizedImage } from '@/lib/utils/image';
 
 interface ImageLightboxProps {
@@ -10,6 +10,8 @@ interface ImageLightboxProps {
 }
 
 export function ImageLightbox({ isOpen, imageSrc, onClose }: ImageLightboxProps) {
+  const [isLoading, setIsLoading] = useState(true);
+
   // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -21,6 +23,13 @@ export function ImageLightbox({ isOpen, imageSrc, onClose }: ImageLightboxProps)
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
+
+  // Reset loading state whenever a new image is opened
+  useEffect(() => {
+    if (imageSrc) {
+      setIsLoading(true);
+    }
+  }, [imageSrc]);
 
   if (!isOpen || !imageSrc) return null;
 
@@ -44,6 +53,13 @@ export function ImageLightbox({ isOpen, imageSrc, onClose }: ImageLightboxProps)
         className="relative w-full h-full max-w-[95vw] max-h-[95vh] flex items-center justify-center p-4"
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Loading indicator */}
+        {isLoading && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-10 h-10 border-2 border-white border-t-transparent rounded-full animate-spin" />
+          </div>
+        )}
+
         <div className="relative w-full h-full flex items-center justify-center">
           <OptimizedImage
             src={imageSrc}
@@ -52,6 +68,8 @@ export function ImageLightbox({ isOpen, imageSrc, onClose }: ImageLightboxProps)
             objectFit="contain"
             className="w-full h-full"
             priority
+            placeholderColor="transparent"
+            onLoadComplete={() => setIsLoading(false)}
           />
         </div>
       </div>

@@ -14,6 +14,8 @@ interface OptimizedImageProps {
   objectFit?: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down';
   borderRadius?: number;
   placeholderColor?: string;
+  // Optional callback for when the underlying image has finished loading
+  onLoadComplete?: () => void;
 }
 
 export function OptimizedImage({
@@ -27,6 +29,7 @@ export function OptimizedImage({
   objectFit = 'cover',
   borderRadius = 0,
   placeholderColor = '#F4F1EA',
+  onLoadComplete,
 }: OptimizedImageProps) {
   const [isVisible, setIsVisible] = useState(!priority);
   const [isLoading, setIsLoading] = useState(true);
@@ -115,7 +118,10 @@ export function OptimizedImage({
           fill
           style={imageStyle}
           priority={priority}
-          onLoad={() => setIsLoading(false)}
+          onLoad={() => {
+            setIsLoading(false);
+            onLoadComplete?.();
+          }}
           className={`transition-opacity duration-200 ${
             isLoading ? 'opacity-0' : 'opacity-100'
           }`}
@@ -128,7 +134,10 @@ export function OptimizedImage({
           height={height}
           style={imageStyle}
           priority={priority}
-          onLoad={() => setIsLoading(false)}
+          onLoad={() => {
+            setIsLoading(false);
+            onLoadComplete?.();
+          }}
           className={`transition-opacity duration-200 ${
             isLoading ? 'opacity-0' : 'opacity-100'
           }`}
