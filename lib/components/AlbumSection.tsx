@@ -158,6 +158,9 @@ export function AlbumSection() {
                     height={300}
                     objectFit="contain"
                     className="w-full max-w-[300px] h-auto rounded-lg"
+                    priority={true}
+                    showLoadingSpinner={true}
+                    spinnerColor={AppColors.accent}
                   />
                 </div>
 

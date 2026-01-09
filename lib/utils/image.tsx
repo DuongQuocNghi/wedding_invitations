@@ -16,6 +16,10 @@ interface OptimizedImageProps {
   placeholderColor?: string;
   // Optional callback for when the underlying image has finished loading
   onLoadComplete?: () => void;
+  // Show loading spinner while image is loading
+  showLoadingSpinner?: boolean;
+  // Custom spinner color (default: accent color)
+  spinnerColor?: string;
 }
 
 export function OptimizedImage({
@@ -30,6 +34,8 @@ export function OptimizedImage({
   borderRadius = 0,
   placeholderColor = '#F4F1EA',
   onLoadComplete,
+  showLoadingSpinner = false,
+  spinnerColor = '#9F7D6A',
 }: OptimizedImageProps) {
   const [isVisible, setIsVisible] = useState(!priority);
   const [isLoading, setIsLoading] = useState(true);
@@ -39,6 +45,11 @@ export function OptimizedImage({
   const hasFullWidth = className.includes('w-full') || className.includes('w-[');
   // Use provided width, or 1920 for full-width images, or calculate from height if only height provided
   const optimizedWidth = width || (hasFullWidth ? 1920 : height ? height * 1.5 : 800);
+
+  // Reset loading state when src changes
+  useEffect(() => {
+    setIsLoading(true);
+  }, [src]);
 
   useEffect(() => {
     if (priority) {
@@ -106,11 +117,25 @@ export function OptimizedImage({
       style={{
         width: hasFullWidth ? '100%' : width,
         height: height,
-        position: fill ? 'relative' : 'static',
+        position: fill ? 'relative' : (showLoadingSpinner ? 'relative' : 'static'),
         borderRadius: borderRadius > 0 ? `${borderRadius}px` : undefined,
         overflow: 'hidden',
       }}
     >
+      {showLoadingSpinner && isLoading && (
+        <div 
+          className="absolute inset-0 flex items-center justify-center z-10"
+          style={{
+            backgroundColor: placeholderColor,
+            borderRadius: borderRadius > 0 ? `${borderRadius}px` : undefined,
+          }}
+        >
+          <div 
+            className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-r-2" 
+            style={{ borderColor: `${spinnerColor}40`, borderTopColor: spinnerColor, borderRightColor: spinnerColor }}
+          />
+        </div>
+      )}
       {fill ? (
         <Image
           src={src}
