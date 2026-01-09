@@ -56,7 +56,7 @@ export default function RootLayout({
       <head>
         {/* Open Graph Meta Tags for Social Sharing - Hardcoded for Zalo/Facebook compatibility */}
         <meta property="og:image" content="https://nghi-lan-wedding.site/assets/images/hinh_1_m.webp" />
-        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:width" content="800" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:type" content="image/webp" />
         <meta property="og:image:alt" content="Thiệp Cưới Nghi & Lan" />
