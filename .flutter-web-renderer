@@ -1,5 +1,0 @@
-# Flutter Web Renderer Configuration
-# This file specifies the default web renderer to use
-# Options: html, canvaskit, auto
-html
-
