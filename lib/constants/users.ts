@@ -9,26 +9,6 @@ export const USERS = {
         title: "Chị",
         titleSup: "Em",
     },
-    "gh28": {
-        fullName: "Dương Văn Minh",
-        title: "Ba",
-        titleSup: "Con",
-    },
-    "3i15": {
-        fullName: "Nguyễn Lê Tuyết Phượng",
-        title: "Mẹ",
-        titleSup: "Con",
-    },
-    "iak3": {
-        fullName: "Lý Chí Giái",
-        title: "Ba",
-        titleSup: "Con",
-    },
-    "c7v7": {
-        fullName: "Chung Thị Cẩm Vân",
-        title: "Mẹ",
-        titleSup: "Con",
-    },
 };
 // https://nghi-lan-wedding.site/?v=V2N
 // https://nghi-lan-wedding.site/?v=7K2
