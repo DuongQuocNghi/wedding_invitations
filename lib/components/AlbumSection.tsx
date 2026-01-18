@@ -1,20 +1,24 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { OptimizedImage } from '@/lib/utils/image';
 import { AppColors } from '@/lib/constants/colors';
 import { AppSpacing } from '@/lib/constants/spacing';
-import { isBeforeTargetDate } from '@/lib/constants/events';
+import { shouldShowGroomSide } from '@/lib/constants/events';
 
 export function AlbumSection() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [isQROpen, setIsQROpen] = useState(false);
   const [showCopySuccess, setShowCopySuccess] = useState(false);
+  const [isLan, setIsLan] = useState(true);
 
-  // Xác định hình ảnh dựa trên ngày hiện tại
-  // Trước 03/02/2026: wedding_box_lan.png
-  // Từ 03/02/2026: wedding_box_nghi.png
-  const isLan = isBeforeTargetDate();
+  // Xác định hình ảnh dựa trên query param ?a=1 hoặc ngày hiện tại
+  // ?a=1 hoặc từ 03/02/2026: wedding_box_nghi.png (nhà trai)
+  // Còn lại: wedding_box_lan.png (nhà gái)
+  useEffect(() => {
+    setIsLan(!shouldShowGroomSide());
+  }, []);
+
   const imageSrc = isLan
     ? '/assets/images/wedding_box_lan.png'
     : '/assets/images/wedding_box_nghi.png';

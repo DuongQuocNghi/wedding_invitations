@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { AppColors } from '@/lib/constants/colors';
 import { AppSpacing } from '@/lib/constants/spacing';
@@ -149,8 +149,13 @@ function TabButton({ text, isActive, onClick }: TabButtonProps) {
 }
 
 export function EventDetailsSection() {
-  // Default tab: 0 = "Tiệc nhà gái" (before 2026-02-03), 1 = "Lễ tân hôn" (from 2026-02-03 onwards)
-  const [selectedTab, setSelectedTab] = useState(getDefaultEventTab());
+  // Default tab: 0 = "Tiệc nhà gái", 1 = "Lễ tân hôn"
+  // Check query param ?a=1 first, otherwise use date-based logic
+  const [selectedTab, setSelectedTab] = useState(0);
+
+  useEffect(() => {
+    setSelectedTab(getDefaultEventTab());
+  }, []);
 
   const brideFamily: FamilyMember[] = [
     { title: 'Ông', name: 'LÝ CHÍ GIAI' },
