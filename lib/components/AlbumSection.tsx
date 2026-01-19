@@ -74,19 +74,47 @@ export function AlbumSection() {
 
   return (
     <div className="w-full px-4 flex flex-col items-center">
-      {/* CTA */}
+      {/* Video Thumbnail CTA */}
       <div
         onClick={() => setIsVideoOpen(true)}
-        className="h-[53px] w-full rounded-[27px] border flex items-center justify-center px-4 -mx-4 cursor-pointer hover:opacity-80 transition-opacity shadow-md"
-        style={{
-          borderColor: `${AppColors.accent}80`,
-          borderWidth: 1,
-        }}
+        className="relative w-full aspect-video rounded-2xl overflow-hidden cursor-pointer group shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02]"
       >
-        <p className="font-alex-brush text-2xl leading-[0.8] text-[#5E121F] whitespace-nowrap">
-          Wedding Album{' '}
-          <span className="opacity-40 font-light inline-block translate-y-1">→</span>
-        </p>
+        {/* Video thumbnail */}
+        <video
+          src="/assets/videos/Nghi_Lan_08_02_2026.mp4#t=0"
+          preload="metadata"
+          className="w-full h-full object-cover"
+          muted
+          playsInline
+        />
+        
+        {/* Play button */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-16 h-16 rounded-full bg-white bg-opacity-90 group-hover:bg-opacity-100 flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-all duration-300">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg" >
+              <path
+                d="M8 5.14v13.72L19 12L8 5.14z"
+                fill={AppColors.accent}
+                stroke={AppColors.accent}
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
+        </div>
+        
+        {/* Wedding Album text */}
+        <div className="absolute bottom-4 left-4 right-4">
+          <p className="font-alex-brush text-4xl text-white drop-shadow-lg text-center">
+            Wedding Album
+          </p>
+        </div>
       </div>
 
       <div style={{ height: AppSpacing.s90 }} />
@@ -111,7 +139,8 @@ export function AlbumSection() {
       {/* Video Modal */}
       {isVideoOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75"
+          className="fixed inset-0 z-50 flex items-center justify-center"
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.75)' }}
           onClick={() => setIsVideoOpen(false)}
         >
           <div
@@ -120,7 +149,7 @@ export function AlbumSection() {
           >
             <button
               onClick={() => setIsVideoOpen(false)}
-              className="absolute top-4 right-4 text-white text-2xl font-bold bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-75 transition-all z-10"
+              className="absolute top-4 right-4 text-black text-2xl font-bold rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-75 transition-all z-10"
               aria-label="Close video"
             >
               ×

@@ -9,7 +9,7 @@ interface TogetherSectionProps {
 
 export function TogetherSection({ onImageClick }: TogetherSectionProps) {
   return (
-    <div className="w-full px-4 py-10 flex gap-1 items-center">
+    <div className="w-full px-4 pt-10 pb-15 flex gap-1 items-center">
       {/* Title */}
       <div className="w-[40%] flex flex-col justify-center">
         <div className="flex flex-col">
