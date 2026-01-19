@@ -81,7 +81,7 @@ export function AlbumSection() {
       >
         {/* Video thumbnail */}
         <video
-          src="/assets/videos/Nghi_Lan_08_02_2026.mp4#t=0"
+          poster="/assets/images/wedding_video_poster.webp"
           preload="metadata"
           className="w-full h-full object-cover"
           muted
@@ -110,8 +110,8 @@ export function AlbumSection() {
         </div>
         
         {/* Wedding Album text */}
-        <div className="absolute bottom-4 left-4 right-4">
-          <p className="font-alex-brush text-4xl text-white drop-shadow-lg text-center">
+        <div className="absolute bottom-1 left-4 right-4">
+          <p className="font-alex-brush text-4xl drop-shadow-lg text-center" style={{ color: AppColors.accent }}>
             Wedding Album
           </p>
         </div>
@@ -149,7 +149,8 @@ export function AlbumSection() {
           >
             <button
               onClick={() => setIsVideoOpen(false)}
-              className="absolute top-4 right-4 text-black text-2xl font-bold rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-75 transition-all z-10"
+              className="absolute top-3 right-3 bg-black text-white text-2xl font-bold rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-75 transition-all z-10"
+              style={{ paddingBottom: 5 }}
               aria-label="Close video"
             >
               ×
