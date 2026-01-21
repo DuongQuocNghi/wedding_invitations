@@ -91,19 +91,19 @@ export function AlbumSection() {
         {/* Play button */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div 
-            className="w-16 h-16 rounded-full flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-all duration-300"
-            style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
+            className="w-[70px] h-[70px] rounded-full flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-all duration-300"
+            style={{ backgroundColor: 'rgba(255, 255, 255, 1)' }}
           >
             <svg
-              width="55"
-              height="55"
+              width="60"
+              height="60"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg" >
               <path
                 d="M8 5.14v13.72L19 12L8 5.14z"
-                fill="white"
-                stroke="white"
+                fill={AppColors.accent}
+                stroke={AppColors.accent}
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -114,7 +114,7 @@ export function AlbumSection() {
         
         {/* Wedding Album text */}
         <div className="absolute bottom-1 left-4 right-4">
-          <p className="font-alex-brush text-4xl drop-shadow-lg text-center" style={{ color: AppColors.accent }}>
+          <p className="font-alex-brush text-5xl drop-shadow-lg text-center" style={{ color: 'white' }}>
             Wedding Album
           </p>
         </div>
