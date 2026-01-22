@@ -81,7 +81,7 @@ export function AlbumSection() {
       >
         {/* Video thumbnail */}
         <video
-          poster="/assets/images/wedding_video_poster.webp"
+          poster="/assets/images/wedding_video_poster_2.webp"
           preload="metadata"
           className="w-full h-full object-cover"
           muted
@@ -160,7 +160,7 @@ export function AlbumSection() {
             </button>
             <video
               src="/assets/videos/Nghi_Lan_08_02_2026.mp4"
-              poster="/assets/images/wedding_video_poster.webp"
+              poster="/assets/images/wedding_video_poster_2.webp"
               controls
               autoPlay
               preload="metadata"
