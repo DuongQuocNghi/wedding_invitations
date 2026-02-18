@@ -88,6 +88,17 @@ img {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Hide scrollbar for horizontal chip scroll */
+.hide-scrollbar {
+  -webkit-overflow-scrolling: touch;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   * {

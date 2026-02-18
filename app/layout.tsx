@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
+import { NavHeader } from '@/lib/components/NavHeader';
+import { AppShell } from '@/lib/components/AppShell';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://nghi-lan-wedding.site';
 
@@ -77,7 +79,7 @@ export default function RootLayout({
         />
         {/* Load fonts with display=swap for non-blocking render */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Alex+Brush&family=Sansita+Swashed:wght@300;400&family=Bellefair&family=Montserrat:wght@300&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Alex+Brush&family=Sansita+Swashed:wght@300;400&family=Bellefair&family=Montserrat:wght@300;500&family=Castoro+Titling&family=Ephesis&display=swap"
           rel="stylesheet"
         />
         {/* Preload critical images */}
@@ -88,7 +90,10 @@ export default function RootLayout({
           type="image/webp"
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased min-h-screen bg-[#EBDAD0]">
+        <NavHeader />
+        <AppShell>{children}</AppShell>
+      </body>
     </html>
   );
 }
