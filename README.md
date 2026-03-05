@@ -120,3 +120,8 @@ npm run build
 ```
 
 Output sẽ ở thư mục `.next/` và có thể deploy trực tiếp.
+
+## Management
+- Deploy: https://www.netlify.com/
+- Domain: https://www.spaceship.com/
+- Storage: https://imagekit.io/
