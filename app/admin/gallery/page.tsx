@@ -489,6 +489,35 @@ export default function GalleryAdminPage() {
                     className="w-full text-xs rounded border border-slate-300 px-2 py-1.5 font-mono focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500"
                     placeholder="abc, dev, test"
                   />
+                  {allTags.length > 0 && (
+                    <div className="mt-2">
+                      <p className="text-[11px] text-slate-500 mb-1">
+                        Tag có sẵn (bấm để thêm):
+                      </p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {allTags.map((tag) => (
+                          <button
+                            key={tag}
+                            type="button"
+                            onClick={() =>
+                              setTagInput((prev) => {
+                                const current = prev
+                                  .split(',')
+                                  .map((t) => t.trim())
+                                  .filter((t) => t.length > 0);
+                                if (current.includes(tag)) return prev;
+                                const next = [...current, tag];
+                                return next.join(', ');
+                              })
+                            }
+                            className="px-2 py-0.5 rounded-full border border-slate-300 bg-white text-[11px] text-slate-700 hover:border-emerald-500 hover:bg-emerald-50"
+                          >
+                            {tag}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 <label className="inline-flex items-center gap-2 text-xs text-slate-700">
