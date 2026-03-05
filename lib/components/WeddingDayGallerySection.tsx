@@ -221,7 +221,9 @@ export function WeddingDayGallerySection() {
       {/* Floating bar & scroll-to-top button: chỉ hiện khi đã scroll qua vị trí thanh gốc */}
       {showFloatingBar && (
         <>
-          <div className="fixed top-0 left-0 right-0 z-30 bg-white/95 backdrop-blur-sm">
+          <div
+            className="fixed top-0 left-0 right-0 z-30 bg-white/95 backdrop-blur-sm min-[500px]:left-1/2 min-[500px]:right-auto min-[500px]:w-full min-[500px]:max-w-[480px] min-[500px]:-translate-x-1/2"
+          >
             {/* Event tabs: align left, 16px spacing between tabs */}
             <div className="flex justify-start gap-4 px-3 pt-4 pb-0">
               {TABS.map((tab) => (
