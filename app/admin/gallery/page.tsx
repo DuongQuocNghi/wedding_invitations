@@ -27,6 +27,9 @@ export default function GalleryAdminPage() {
   const [hidden, setHidden] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [status, setStatus] = useState<string | null>(null);
+  const [filterCategory, setFilterCategory] = useState<
+    'all' | 'pre_wedding' | 'wedding_3101' | 'wedding_0802'
+  >('all');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -75,6 +78,11 @@ export default function GalleryAdminPage() {
       item: items[selectedIndex],
     };
   }, [data, selectedCategory, selectedIndex]);
+
+  const displayedItems = useMemo<FlatItem[]>(() => {
+    if (filterCategory === 'all') return flatItems;
+    return flatItems.filter((fi) => fi.category === filterCategory);
+  }, [flatItems, filterCategory]);
 
   const handleSelectItem = (fi: FlatItem) => {
     setSelectedCategory(fi.category);
@@ -224,15 +232,46 @@ export default function GalleryAdminPage() {
       <main className="flex-1 flex overflow-hidden">
         {/* Left: image list (thumbnail view) */}
         <section className="flex-1 border-r bg-white overflow-y-auto">
-          <div className="p-3 flex items-center justify-between border-b bg-slate-50">
+          <div className="p-3 flex items-center justify-between gap-3 border-b bg-slate-50">
             <span className="text-xs font-medium text-slate-600">
-              Danh sách hình ({flatItems.length})
+              Danh sách hình ({displayedItems.length}/{flatItems.length})
             </span>
+            <div className="flex items-center gap-1.5">
+              <span className="text-[11px] text-slate-500">Lọc:</span>
+              {[
+                { key: 'all', label: 'Tất cả' },
+                { key: 'pre_wedding', label: 'Pre-wedding' },
+                { key: 'wedding_3101', label: 'Wedding 31/01' },
+                { key: 'wedding_0802', label: 'Wedding 08/02' },
+              ].map((opt) => (
+                <button
+                  key={opt.key}
+                  type="button"
+                  onClick={() =>
+                    setFilterCategory(
+                      opt.key as
+                        | 'all'
+                        | 'pre_wedding'
+                        | 'wedding_3101'
+                        | 'wedding_0802',
+                    )
+                  }
+                  className={[
+                    'px-2 py-0.5 rounded-full border text-[11px] transition-colors',
+                    filterCategory === opt.key
+                      ? 'border-emerald-600 bg-emerald-50 text-emerald-700'
+                      : 'border-slate-300 text-slate-600 hover:border-slate-500',
+                  ].join(' ')}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
           </div>
           <div className="p-3">
-            {flatItems.length > 0 ? (
+            {displayedItems.length > 0 ? (
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-                {flatItems.map((fi) => {
+                {displayedItems.map((fi) => {
                   const isActive =
                     fi.category === selectedCategory &&
                     fi.index === selectedIndex;
