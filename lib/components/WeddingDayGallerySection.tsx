@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useCallback, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Lightbox from 'yet-another-react-lightbox';
 import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/styles.css';
@@ -109,6 +110,7 @@ function getImagesForChip(tabId: string, chipId: string): GalleryItem[] {
  * Images are placeholders (gray, 12px radius); import later.
  */
 export function WeddingDayGallerySection() {
+  const pathname = usePathname();
   const [activeTab, setActiveTab] = useState<TabConfig['id']>('le-gia-tien');
   const [activeChip, setActiveChip] = useState<TabChip['id']>(
     TABS[0]?.chips[0]?.id ?? '',
@@ -122,6 +124,9 @@ export function WeddingDayGallerySection() {
   >({});
   const [viewportWidth, setViewportWidth] = useState<number | null>(null);
   const [devicePixelRatio, setDevicePixelRatio] = useState<number>(1);
+  const hasInitialScrollRef = useRef(false);
+  const isUserScrollingChipsRef = useRef(false);
+  const chipScrollTimeoutRef = useRef<number | null>(null);
   const groupRefs = useRef<Record<string, HTMLElement | null>>({});
   const baseChipBarRef = useRef<HTMLDivElement | null>(null);
   const floatingChipBarRef = useRef<HTMLDivElement | null>(null);
@@ -187,20 +192,17 @@ export function WeddingDayGallerySection() {
     [showFloatingBar],
   );
 
-  const scrollToGroup = useCallback(
-    (chipId: string) => {
-      setActiveChip(chipId);
-      scrollChipIntoView(chipId);
-      const el = groupRefs.current[`group-${chipId}`];
-      if (el) {
-        const barEl = barRef.current;
-        const offset = (barEl?.offsetHeight ?? headerHeight) - 4;
-        const top = el.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
-    },
-    [headerHeight, scrollChipIntoView],
-  );
+  const markUserScrollingChips = useCallback(() => {
+    if (typeof window === 'undefined') return;
+    isUserScrollingChipsRef.current = true;
+    if (chipScrollTimeoutRef.current !== null) {
+      window.clearTimeout(chipScrollTimeoutRef.current);
+    }
+    chipScrollTimeoutRef.current = window.setTimeout(() => {
+      isUserScrollingChipsRef.current = false;
+      chipScrollTimeoutRef.current = null;
+    }, 300);
+  }, []);
 
   useEffect(() => {
     const measureHeader = () => {
@@ -238,8 +240,9 @@ export function WeddingDayGallerySection() {
 
       if (bestChipId && bestChipId !== activeChip) {
         setActiveChip(bestChipId);
-        // Dùng smooth cho auto-scroll ngang để cảm giác mượt hơn
-        scrollChipIntoView(bestChipId, 'smooth');
+        if (!isUserScrollingChipsRef.current) {
+          scrollChipIntoView(bestChipId, 'smooth');
+        }
       }
     };
 
@@ -265,6 +268,43 @@ export function WeddingDayGallerySection() {
     };
   }, [pendingChipScroll]);
 
+  const updateUrl = useCallback(
+    (tabId: string, chipId: string | null) => {
+      if (typeof window === 'undefined') return;
+
+      const url = new URL(window.location.href);
+      url.searchParams.set('tab', tabId);
+      if (chipId) {
+        url.searchParams.set('group', chipId);
+      } else {
+        url.searchParams.delete('group');
+      }
+
+      const newHref = url.toString();
+      if (newHref === window.location.href) return;
+
+      window.history.replaceState(null, '', newHref);
+    },
+    [],
+  );
+
+  const scrollToGroup = useCallback(
+    (chipId: string, tabId?: string) => {
+      const effectiveTabId = tabId ?? activeTab;
+      setActiveChip(chipId);
+      scrollChipIntoView(chipId);
+      const el = groupRefs.current[`group-${chipId}`];
+      if (el) {
+        const barEl = barRef.current;
+        const offset = (barEl?.offsetHeight ?? headerHeight) - 4;
+        const top = el.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'auto' });
+      }
+      updateUrl(effectiveTabId, chipId);
+    },
+    [activeTab, headerHeight, scrollChipIntoView, updateUrl],
+  );
+
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
@@ -280,6 +320,53 @@ export function WeddingDayGallerySection() {
       window.removeEventListener('resize', updateViewport);
     };
   }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (hasInitialScrollRef.current) return;
+
+    const url = new URL(window.location.href);
+    const urlTab = url.searchParams.get('tab');
+    const urlGroup = url.searchParams.get('group');
+
+    let initialTabId: string | null = null;
+    let initialChipId: string | null = null;
+
+    if (urlTab) {
+      const tab = TABS.find((t) => t.id === urlTab);
+      if (tab) {
+        initialTabId = tab.id;
+        if (urlGroup) {
+          const chip = tab.chips.find((c) => c.id === urlGroup);
+          if (chip) {
+            initialChipId = chip.id;
+          }
+        }
+        if (!initialChipId && tab.chips[0]) {
+          initialChipId = tab.chips[0].id;
+        }
+      }
+    } else if (urlGroup) {
+      const tab = TABS.find((t) =>
+        t.chips.some((c) => c.id === urlGroup),
+      );
+      if (tab) {
+        initialTabId = tab.id;
+        initialChipId = urlGroup;
+      }
+    }
+
+    if (initialTabId && initialChipId) {
+      hasInitialScrollRef.current = true;
+      setActiveTab(initialTabId);
+      setActiveChip(initialChipId);
+      setPendingChipScroll(initialChipId);
+
+      window.requestAnimationFrame(() => {
+        scrollToGroup(initialChipId, initialTabId);
+      });
+    }
+  }, [scrollToGroup]);
 
   const contentMaxWidth = 480;
   const baseWidth =
@@ -326,9 +413,7 @@ export function WeddingDayGallerySection() {
       {/* Floating bar & scroll-to-top button: chỉ hiện khi đã scroll qua vị trí thanh gốc */}
       {showFloatingBar && (
         <>
-          <div
-            className="fixed top-0 left-0 right-0 z-30 bg-white/95 backdrop-blur-sm min-[500px]:left-1/2 min-[500px]:right-auto min-[500px]:w-full min-[500px]:max-w-[480px] min-[500px]:-translate-x-1/2"
-          >
+          <div className="fixed top-0 left-0 right-0 z-30 bg-white/95 backdrop-blur-sm min-[500px]:left-1/2 min-[500px]:right-auto min-[500px]:w-full min-[500px]:max-w-[480px] min-[500px]:-translate-x-1/2">
             {/* Event tabs: align left, 16px spacing between tabs */}
             <div className="flex justify-start gap-4 px-3 pt-4 pb-0">
               {TABS.map((tab) => (
@@ -342,6 +427,9 @@ export function WeddingDayGallerySection() {
                     if (firstChip) {
                       setActiveChip(firstChip.id);
                       setPendingChipScroll(firstChip.id);
+                      updateUrl(tab.id, firstChip.id);
+                    } else {
+                      updateUrl(tab.id, null);
                     }
                     scrollToBarPosition();
                   }}
@@ -369,7 +457,13 @@ export function WeddingDayGallerySection() {
             {/* Chip filters: horizontal scroll — active #EBDAD0 + border #9F7D6A; inactive #F4F1EA + border #EBDAD0 */}
             <div
               ref={floatingChipBarRef}
-              className="overflow-x-auto overflow-y-hidden hide-scrollbar px-2 py-2"
+            className="overflow-x-auto overflow-y-hidden hide-scrollbar px-2 py-2"
+            onMouseDown={markUserScrollingChips}
+            onMouseUp={markUserScrollingChips}
+            onMouseLeave={markUserScrollingChips}
+            onTouchStart={markUserScrollingChips}
+            onTouchEnd={markUserScrollingChips}
+            onTouchCancel={markUserScrollingChips}
             >
               <div className="flex gap-2 min-w-max pb-1">
                 {currentTab.chips.map((chip) => {
@@ -474,11 +568,13 @@ export function WeddingDayGallerySection() {
                 onClick={() => {
                   if (activeTab === tab.id) return;
                   const firstChip = tab.chips[0];
-                  setLightboxIndex(null);
                   setActiveTab(tab.id);
                   if (firstChip) {
                     setActiveChip(firstChip.id);
                     setPendingChipScroll(firstChip.id);
+                    updateUrl(tab.id, firstChip.id);
+                  } else {
+                    updateUrl(tab.id, null);
                   }
                   scrollToBarPosition();
                 }}
@@ -506,7 +602,13 @@ export function WeddingDayGallerySection() {
           {/* Chip filters: horizontal scroll — active #EBDAD0 + border #9F7D6A; inactive #F4F1EA + border #EBDAD0 */}
           <div
             ref={baseChipBarRef}
-            className="overflow-x-auto overflow-y-hidden hide-scrollbar px-2 py-2"
+          className="overflow-x-auto overflow-y-hidden hide-scrollbar px-2 py-2"
+          onMouseDown={markUserScrollingChips}
+          onMouseUp={markUserScrollingChips}
+          onMouseLeave={markUserScrollingChips}
+          onTouchStart={markUserScrollingChips}
+          onTouchEnd={markUserScrollingChips}
+          onTouchCancel={markUserScrollingChips}
           >
             <div className="flex gap-2 min-w-max pb-1">
               {currentTab.chips.map((chip) => {
@@ -652,6 +754,10 @@ export function WeddingDayGallerySection() {
           src: item.image,
         }))}
         plugins={[Zoom]}
+        controller={{
+          // closeOnBackdropClick: true,
+          closeOnPullDown: true,
+        }}
       />
 
     </section>
