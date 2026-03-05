@@ -30,6 +30,7 @@ export default function GalleryAdminPage() {
   const [filterCategory, setFilterCategory] = useState<
     'all' | 'pre_wedding' | 'wedding_3101' | 'wedding_0802'
   >('all');
+  const [filterTag, setFilterTag] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -80,9 +81,22 @@ export default function GalleryAdminPage() {
   }, [data, selectedCategory, selectedIndex]);
 
   const displayedItems = useMemo<FlatItem[]>(() => {
-    if (filterCategory === 'all') return flatItems;
-    return flatItems.filter((fi) => fi.category === filterCategory);
-  }, [flatItems, filterCategory]);
+    let items = flatItems;
+
+    if (filterCategory !== 'all') {
+      items = items.filter((fi) => fi.category === filterCategory);
+    }
+
+    const trimmedTag = filterTag.trim();
+    if (trimmedTag) {
+      const tagLower = trimmedTag.toLowerCase();
+      items = items.filter((fi) =>
+        fi.item.tag.some((t) => t.toLowerCase().includes(tagLower)),
+      );
+    }
+
+    return items;
+  }, [flatItems, filterCategory, filterTag]);
 
   const handleSelectItem = (fi: FlatItem) => {
     setSelectedCategory(fi.category);
@@ -232,40 +246,62 @@ export default function GalleryAdminPage() {
       <main className="flex-1 flex overflow-hidden">
         {/* Left: image list (thumbnail view) */}
         <section className="flex-1 border-r bg-white overflow-y-auto">
-          <div className="p-3 flex items-center justify-between gap-3 border-b bg-slate-50">
-            <span className="text-xs font-medium text-slate-600">
-              Danh sách hình ({displayedItems.length}/{flatItems.length})
-            </span>
-            <div className="flex items-center gap-1.5">
-              <span className="text-[11px] text-slate-500">Lọc:</span>
-              {[
-                { key: 'all', label: 'Tất cả' },
-                { key: 'pre_wedding', label: 'Pre-wedding' },
-                { key: 'wedding_3101', label: 'Wedding 31/01' },
-                { key: 'wedding_0802', label: 'Wedding 08/02' },
-              ].map((opt) => (
+          <div className="p-3 flex flex-col gap-2 border-b bg-slate-50">
+            <div className="flex items-center justify-between gap-3">
+              <span className="text-xs font-medium text-slate-600">
+                Danh sách hình ({displayedItems.length}/{flatItems.length})
+              </span>
+              <div className="flex items-center gap-1.5">
+                <span className="text-[11px] text-slate-500">Lọc theo bộ:</span>
+                {[
+                  { key: 'all', label: 'Tất cả' },
+                  { key: 'pre_wedding', label: 'Pre-wedding' },
+                  { key: 'wedding_3101', label: 'Wedding 31/01' },
+                  { key: 'wedding_0802', label: 'Wedding 08/02' },
+                ].map((opt) => (
+                  <button
+                    key={opt.key}
+                    type="button"
+                    onClick={() =>
+                      setFilterCategory(
+                        opt.key as
+                          | 'all'
+                          | 'pre_wedding'
+                          | 'wedding_3101'
+                          | 'wedding_0802',
+                      )
+                    }
+                    className={[
+                      'px-2 py-0.5 rounded-full border text-[11px] transition-colors',
+                      filterCategory === opt.key
+                        ? 'border-emerald-600 bg-emerald-50 text-emerald-700'
+                        : 'border-slate-300 text-slate-600 hover:border-slate-500',
+                    ].join(' ')}
+                  >
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-[11px] text-slate-500 whitespace-nowrap">
+                Lọc theo tag:
+              </span>
+              <input
+                value={filterTag}
+                onChange={(e) => setFilterTag(e.target.value)}
+                placeholder="vd: gia_dinh, nghi..."
+                className="flex-1 rounded border border-slate-300 bg-white px-2 py-1 text-[11px] font-mono focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500"
+              />
+              {filterTag && (
                 <button
-                  key={opt.key}
                   type="button"
-                  onClick={() =>
-                    setFilterCategory(
-                      opt.key as
-                        | 'all'
-                        | 'pre_wedding'
-                        | 'wedding_3101'
-                        | 'wedding_0802',
-                    )
-                  }
-                  className={[
-                    'px-2 py-0.5 rounded-full border text-[11px] transition-colors',
-                    filterCategory === opt.key
-                      ? 'border-emerald-600 bg-emerald-50 text-emerald-700'
-                      : 'border-slate-300 text-slate-600 hover:border-slate-500',
-                  ].join(' ')}
+                  onClick={() => setFilterTag('')}
+                  className="text-[11px] text-slate-500 hover:text-slate-800"
                 >
-                  {opt.label}
+                  Xóa
                 </button>
-              ))}
+              )}
             </div>
           </div>
           <div className="p-3">
