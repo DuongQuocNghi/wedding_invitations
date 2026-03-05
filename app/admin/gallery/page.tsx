@@ -30,7 +30,9 @@ export default function GalleryAdminPage() {
   const [filterCategory, setFilterCategory] = useState<
     'all' | 'pre_wedding' | 'wedding_3101' | 'wedding_0802'
   >('all');
-  const [filterTag, setFilterTag] = useState('');
+  const [filterHiddenOnly, setFilterHiddenOnly] = useState(false);
+  const [filterNoTagOnly, setFilterNoTagOnly] = useState(false);
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -80,6 +82,17 @@ export default function GalleryAdminPage() {
     };
   }, [data, selectedCategory, selectedIndex]);
 
+  const allTags = useMemo<string[]>(() => {
+    const set = new Set<string>();
+    flatItems.forEach((fi) => {
+      if (filterCategory !== 'all' && fi.category !== filterCategory) {
+        return;
+      }
+      fi.item.tag.forEach((t) => set.add(t));
+    });
+    return Array.from(set).sort();
+  }, [flatItems, filterCategory]);
+
   const displayedItems = useMemo<FlatItem[]>(() => {
     let items = flatItems;
 
@@ -87,16 +100,20 @@ export default function GalleryAdminPage() {
       items = items.filter((fi) => fi.category === filterCategory);
     }
 
-    const trimmedTag = filterTag.trim();
-    if (trimmedTag) {
-      const tagLower = trimmedTag.toLowerCase();
-      items = items.filter((fi) =>
-        fi.item.tag.some((t) => t.toLowerCase().includes(tagLower)),
-      );
+    if (filterHiddenOnly) {
+      items = items.filter((fi) => !fi.item.hidden);
+    }
+
+    if (filterNoTagOnly) {
+      items = items.filter((fi) => !fi.item.tag || fi.item.tag.length === 0);
+    }
+
+    if (selectedTag) {
+      items = items.filter((fi) => fi.item.tag.includes(selectedTag));
     }
 
     return items;
-  }, [flatItems, filterCategory, filterTag]);
+  }, [flatItems, filterCategory, filterHiddenOnly, filterNoTagOnly, selectedTag]);
 
   const handleSelectItem = (fi: FlatItem) => {
     setSelectedCategory(fi.category);
@@ -283,25 +300,63 @@ export default function GalleryAdminPage() {
                 ))}
               </div>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-[11px] text-slate-500 whitespace-nowrap">
+            <div className="flex flex-wrap items-center gap-3">
+              <label className="inline-flex items-center gap-1.5 text-[11px] text-slate-600">
+                <input
+                  type="checkbox"
+                  className="h-3.5 w-3.5 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"
+                  checked={filterHiddenOnly}
+                  onChange={(e) => setFilterHiddenOnly(e.target.checked)}
+                />
+                Ẩn hình đã bị ẩn
+              </label>
+              <label className="inline-flex items-center gap-1.5 text-[11px] text-slate-600">
+                <input
+                  type="checkbox"
+                  className="h-3.5 w-3.5 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"
+                  checked={filterNoTagOnly}
+                  onChange={(e) => setFilterNoTagOnly(e.target.checked)}
+                />
+                Chỉ hình chưa gắn tag
+              </label>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="mt-0.5 text-[11px] text-slate-500 whitespace-nowrap">
                 Lọc theo tag:
               </span>
-              <input
-                value={filterTag}
-                onChange={(e) => setFilterTag(e.target.value)}
-                placeholder="vd: gia_dinh, nghi..."
-                className="flex-1 rounded border border-slate-300 bg-white px-2 py-1 text-[11px] font-mono focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500"
-              />
-              {filterTag && (
+              <div className="flex-1 flex flex-wrap gap-1.5">
                 <button
                   type="button"
-                  onClick={() => setFilterTag('')}
-                  className="text-[11px] text-slate-500 hover:text-slate-800"
+                  onClick={() => setSelectedTag(null)}
+                  className={[
+                    'px-2 py-0.5 rounded-full border text-[11px] transition-colors',
+                    selectedTag === null
+                      ? 'border-emerald-600 bg-emerald-50 text-emerald-700'
+                      : 'border-slate-300 text-slate-600 hover:border-slate-500',
+                  ].join(' ')}
                 >
-                  Xóa
+                  Tất cả tag
                 </button>
-              )}
+                {allTags.map((tag) => (
+                  <button
+                    key={tag}
+                    type="button"
+                    onClick={() =>
+                      setSelectedTag((current) =>
+                        current === tag ? null : tag,
+                      )
+                    }
+                    className={[
+                      'px-2 py-0.5 rounded-full border text-[11px] transition-colors',
+                      selectedTag === tag
+                        ? 'border-emerald-600 bg-emerald-50 text-emerald-700'
+                        : 'border-slate-300 text-slate-600 hover:border-slate-500',
+                    ].join(' ')}
+                  >
+                    {tag}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
           <div className="p-3 flex-1 overflow-y-auto">
@@ -388,7 +443,7 @@ export default function GalleryAdminPage() {
 
           {currentItem ? (
             <div className="flex-1 flex flex-col overflow-hidden">
-              <div className="p-3 border-b">
+              <div className="p-3 border-b space-y-2">
                 <div className="relative w-full pb-[66%] rounded-md overflow-hidden bg-slate-100">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
@@ -397,14 +452,29 @@ export default function GalleryAdminPage() {
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                 </div>
-                <p className="mt-2 text-[11px] text-slate-500 break-all">
-                  {currentItem.item.image}
-                </p>
-                <p className="mt-1 text-[11px] text-slate-500">
-                  Category:{' '}
-                  <span className="font-mono">{currentItem.category}</span> | #
-                  {currentItem.index}
-                </p>
+                <div className="flex items-start justify-between gap-2">
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[11px] text-slate-500 break-all">
+                      {currentItem.item.image}
+                    </p>
+                    <p className="mt-1 text-[11px] text-slate-500">
+                      Category:{' '}
+                      <span className="font-mono">
+                        {currentItem.category}
+                      </span>{' '}
+                      | #{currentItem.index}
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      window.open(currentItem.item.image, '_blank', 'noopener')
+                    }
+                    className="shrink-0 inline-flex items-center rounded-md border border-slate-300 bg-white px-2 py-1 text-[11px] font-medium text-slate-700 hover:bg-slate-50"
+                  >
+                    Xem full hình
+                  </button>
+                </div>
               </div>
 
               <div className="p-3 space-y-3 overflow-y-auto">
