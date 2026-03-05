@@ -65,11 +65,15 @@ function main() {
     const content = fs.readFileSync(csvPath, "utf8");
     const urls = extractUrlsFromCsv(content);
 
-    result.data[file.key] = urls.map((url) => ({
-      image: url,
-      tag: [],
-      hidden: false,
-    }));
+    result.data[file.key] = urls.map((url) => {
+      const cleanUrl = url.split("?")[0];
+
+      return {
+        image: cleanUrl,
+        tag: [],
+        hidden: false,
+      };
+    });
   }
 
   const rootDir = path.resolve(__dirname, "..");
