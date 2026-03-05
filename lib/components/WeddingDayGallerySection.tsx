@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useCallback, useEffect } from 'react';
+import galleryData from '../constants/galleryData.json';
 
 type TabChip = {
   id: string;
@@ -12,6 +13,16 @@ type TabConfig = {
   label: string;
   chips: TabChip[];
 };
+
+type GalleryItem = {
+  image: string;
+  tag: string[];
+  hidden: boolean;
+};
+
+const WEDDING_3101_ITEMS: GalleryItem[] =
+  (galleryData as { data?: { wedding_3101?: GalleryItem[] } }).data
+    ?.wedding_3101 ?? [];
 
 const TABS: TabConfig[] = [
   {
@@ -55,6 +66,40 @@ const TABS: TabConfig[] = [
 
 /** Placeholder heights for masonry-style variation (px) */
 const PLACEHOLDER_HEIGHTS = [140, 180, 120, 200, 160, 220, 150, 190, 170];
+
+const TIEC_31_01_TAG_BY_CHIP: Record<string, string | null> = {
+  'tiec-toan-canh': 'toan_canh',
+  'tiec-gia-dinh': 'gia_dinh',
+  'tiec-team-hong-bang': 'hong_bang',
+  'tiec-team-bui-thi-xuan': 'btx',
+  'tiec-team-biz4': 'biz4',
+  'tiec-team-fg': 'fg',
+  'tiec-team-jl': 'jologic',
+  'tiec-team-dreamstudio': 'dream',
+  'tiec-team-gugotech': 'gugotech',
+  'tiec-team-vio': 'vio',
+};
+
+function getOptimizedImageUrl(original: string, width: number): string {
+  const separator = original.includes('?') ? '&' : '?';
+  const transform = `tr=w-${width},q-70,f-webp`;
+  return `${original}${separator}${transform}`;
+}
+
+function getImagesForChip(tabId: string, chipId: string): GalleryItem[] {
+  if (tabId !== 'tiec-31-01') {
+    return [];
+  }
+
+  const tagKey = TIEC_31_01_TAG_BY_CHIP[chipId];
+  if (!tagKey) {
+    return [];
+  }
+
+  return WEDDING_3101_ITEMS.filter(
+    (item) => !item.hidden && item.tag.includes(tagKey),
+  );
+}
 
 /**
  * Wedding Day gallery section: title, sticky tabs, sticky chip filters, masonry-style image groups.
@@ -441,45 +486,59 @@ export function WeddingDayGallerySection() {
 
       {/* Masonry-style gallery by group (offset by fixed header height) */}
       <div className="px-1 pb-12 space-y-3">
-        {currentTab.chips.map((chip) => (
-          <div
-            key={chip.id}
-            ref={(el) => {
-              groupRefs.current[`group-${chip.id}`] = el;
-            }}
-            id={`group-${chip.id}`}
-            className="pt-4"
-          >
-            {/* Group title: left-aligned */}
-            <h3
-              className="text-left mb-3 px-2"
-              style={{
-                fontFamily: 'Montserrat, sans-serif',
-                fontWeight: 600,
-                fontSize: '16px',
-                color: '#6f2828',
-              }}
-            >
-              {chip.label}
-            </h3>
-            {/* Image list: 4px horizontal padding (50% of 8px), 8px column gap, 8px row gap */}
+        {currentTab.chips.map((chip) => {
+          const images = getImagesForChip(currentTab.id, chip.id);
+
+          return (
             <div
-              className="break-inside-avoid px-1"
-              style={{
-                columnCount: 2,
-                columnGap: '8px',
+              key={chip.id}
+              ref={(el) => {
+                groupRefs.current[`group-${chip.id}`] = el;
               }}
+              id={`group-${chip.id}`}
+              className="pt-4"
             >
-              {PLACEHOLDER_HEIGHTS.map((h, i) => (
-                <div
-                  key={`${chip.id}-${i}`}
-                  className="rounded-[12px] bg-gray-400 break-inside-avoid"
-                  style={{ height: `${h}px`, marginBottom: '8px' }}
-                />
-              ))}
+              {/* Group title: left-aligned */}
+              <h3
+                className="text-left mb-3 px-2"
+                style={{
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontWeight: 600,
+                  fontSize: '16px',
+                  color: '#6f2828',
+                }}
+              >
+                {chip.label}
+              </h3>
+              {/* Image list: 4px horizontal padding (50% of 8px), 8px column gap, 8px row gap */}
+              <div
+                className="break-inside-avoid px-1"
+                style={{
+                  columnCount: 2,
+                  columnGap: '8px',
+                }}
+              >
+                {images.length > 0
+                  ? images.map((item, index) => (
+                      <img
+                        key={`${chip.id}-${index}`}
+                        src={getOptimizedImageUrl(item.image, 600)}
+                        alt=""
+                        loading="lazy"
+                        className="w-full rounded-[12px] mb-2 break-inside-avoid"
+                      />
+                    ))
+                  : PLACEHOLDER_HEIGHTS.map((h, i) => (
+                      <div
+                        key={`${chip.id}-${i}`}
+                        className="rounded-[12px] bg-gray-400 break-inside-avoid"
+                        style={{ height: `${h}px`, marginBottom: '8px' }}
+                      />
+                    ))}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
     </section>
