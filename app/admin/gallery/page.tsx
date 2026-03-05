@@ -245,8 +245,8 @@ export default function GalleryAdminPage() {
 
       <main className="flex-1 flex overflow-hidden">
         {/* Left: image list (thumbnail view) */}
-        <section className="flex-1 border-r bg-white overflow-y-auto">
-          <div className="p-3 flex flex-col gap-2 border-b bg-slate-50">
+        <section className="flex-1 border-r bg-white flex flex-col">
+          <div className="p-3 flex flex-col gap-2 border-b bg-slate-50 sticky top-0 z-10">
             <div className="flex items-center justify-between gap-3">
               <span className="text-xs font-medium text-slate-600">
                 Danh sách hình ({displayedItems.length}/{flatItems.length})
@@ -304,7 +304,7 @@ export default function GalleryAdminPage() {
               )}
             </div>
           </div>
-          <div className="p-3">
+          <div className="p-3 flex-1 overflow-y-auto">
             {displayedItems.length > 0 ? (
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-3">
                 {displayedItems.map((fi) => {
