@@ -1,3 +1,5 @@
+# sử dụng: python tool/optimize_photos.py
+
 import os
 from pathlib import Path
 from PIL import Image
