@@ -1,6 +1,9 @@
 'use client';
 
 import { useState, useRef, useCallback, useEffect } from 'react';
+import Lightbox from 'yet-another-react-lightbox';
+import Zoom from 'yet-another-react-lightbox/plugins/zoom';
+import 'yet-another-react-lightbox/styles.css';
 import galleryData from '../constants/galleryData.json';
 
 type TabChip = {
@@ -113,6 +116,12 @@ export function WeddingDayGallerySection() {
   const [pendingChipScroll, setPendingChipScroll] = useState<string | null>(
     null,
   );
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [loadedThumbnails, setLoadedThumbnails] = useState<
+    Record<number, boolean>
+  >({});
+  const [viewportWidth, setViewportWidth] = useState<number | null>(null);
+  const [devicePixelRatio, setDevicePixelRatio] = useState<number>(1);
   const groupRefs = useRef<Record<string, HTMLElement | null>>({});
   const baseChipBarRef = useRef<HTMLDivElement | null>(null);
   const floatingChipBarRef = useRef<HTMLDivElement | null>(null);
@@ -255,6 +264,57 @@ export function WeddingDayGallerySection() {
       window.cancelAnimationFrame(frame);
     };
   }, [pendingChipScroll]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const updateViewport = () => {
+      setViewportWidth(window.innerWidth);
+      setDevicePixelRatio(window.devicePixelRatio || 1);
+    };
+
+    updateViewport();
+    window.addEventListener('resize', updateViewport);
+
+    return () => {
+      window.removeEventListener('resize', updateViewport);
+    };
+  }, []);
+
+  const contentMaxWidth = 480;
+  const baseWidth =
+    Math.min(viewportWidth ?? contentMaxWidth, contentMaxWidth) ||
+    contentMaxWidth;
+  const columnGap = 8;
+  const sidePadding = 8;
+  const columnWidth = (baseWidth - sidePadding * 2 - columnGap) / 2;
+  const thumbnailWidth = Math.max(
+    320,
+    Math.round(columnWidth * devicePixelRatio),
+  );
+
+  let runningIndex = 0;
+  const imagesByChip = currentTab.chips.map((chip) => {
+    const images = getImagesForChip(currentTab.id, chip.id);
+    const startIndex = runningIndex;
+    runningIndex += images.length;
+    return { chipId: chip.id, images, startIndex };
+  });
+  const flatImages = imagesByChip.flatMap((entry) => entry.images);
+
+  const goPrev = () => {
+    setLightboxIndex((prev) => {
+      if (prev === null || prev <= 0) return prev;
+      return prev - 1;
+    });
+  };
+
+  const goNext = () => {
+    setLightboxIndex((prev) => {
+      if (prev === null || prev >= flatImages.length - 1) return prev;
+      return prev + 1;
+    });
+  };
 
   return (
     <section
@@ -414,6 +474,7 @@ export function WeddingDayGallerySection() {
                 onClick={() => {
                   if (activeTab === tab.id) return;
                   const firstChip = tab.chips[0];
+                  setLightboxIndex(null);
                   setActiveTab(tab.id);
                   if (firstChip) {
                     setActiveChip(firstChip.id);
@@ -486,8 +547,9 @@ export function WeddingDayGallerySection() {
 
       {/* Masonry-style gallery by group (offset by fixed header height) */}
       <div className="px-1 pb-12 space-y-3">
-        {currentTab.chips.map((chip) => {
-          const images = getImagesForChip(currentTab.id, chip.id);
+        {currentTab.chips.map((chip, chipIndex) => {
+          const chipData = imagesByChip[chipIndex];
+          const images = chipData?.images ?? [];
 
           return (
             <div
@@ -519,15 +581,56 @@ export function WeddingDayGallerySection() {
                 }}
               >
                 {images.length > 0
-                  ? images.map((item, index) => (
-                      <img
-                        key={`${chip.id}-${index}`}
-                        src={getOptimizedImageUrl(item.image, 600)}
-                        alt=""
-                        loading="lazy"
-                        className="w-full rounded-[12px] mb-2 break-inside-avoid"
-                      />
-                    ))
+                  ? images.map((item, index) => {
+                      const globalIndex = (chipData?.startIndex ?? 0) + index;
+                      const isLoaded = loadedThumbnails[globalIndex];
+                      const placeholderHeight =
+                        PLACEHOLDER_HEIGHTS[
+                          index % PLACEHOLDER_HEIGHTS.length
+                        ];
+
+                      return (
+                        <div
+                          key={`${chip.id}-${index}`}
+                          className="relative mb-2 break-inside-avoid"
+                          style={{
+                            overflow: 'hidden',
+                            borderRadius: 12,
+                            height: isLoaded ? 'auto' : placeholderHeight,
+                          }}
+                        >
+                          {!isLoaded && (
+                            <div
+                              className="bg-gray-300 animate-pulse"
+                              style={{ height: placeholderHeight }}
+                            />
+                          )}
+                          <img
+                            src={getOptimizedImageUrl(
+                              item.image,
+                              thumbnailWidth,
+                            )}
+                            alt=""
+                            loading="lazy"
+                            className="w-full rounded-[12px] cursor-zoom-in transition-opacity duration-200 block"
+                            style={{ opacity: isLoaded ? 1 : 0 }}
+                            onClick={() => setLightboxIndex(globalIndex)}
+                            onLoad={() =>
+                              setLoadedThumbnails((prev) => ({
+                                ...prev,
+                                [globalIndex]: true,
+                              }))
+                            }
+                            onError={() =>
+                              setLoadedThumbnails((prev) => ({
+                                ...prev,
+                                [globalIndex]: true,
+                              }))
+                            }
+                          />
+                        </div>
+                      );
+                    })
                   : PLACEHOLDER_HEIGHTS.map((h, i) => (
                       <div
                         key={`${chip.id}-${i}`}
@@ -540,6 +643,16 @@ export function WeddingDayGallerySection() {
           );
         })}
       </div>
+
+      <Lightbox
+        open={lightboxIndex !== null}
+        close={() => setLightboxIndex(null)}
+        index={lightboxIndex ?? 0}
+        slides={flatImages.map((item) => ({
+          src: item.image,
+        }))}
+        plugins={[Zoom]}
+      />
 
     </section>
   );
