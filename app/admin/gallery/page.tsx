@@ -270,7 +270,7 @@ export default function GalleryAdminPage() {
           </div>
           <div className="p-3">
             {displayedItems.length > 0 ? (
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-3">
                 {displayedItems.map((fi) => {
                   const isActive =
                     fi.category === selectedCategory &&
