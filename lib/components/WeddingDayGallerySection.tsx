@@ -847,86 +847,95 @@ export function WeddingDayGallerySection() {
               >
                 {chip.label}
               </h3>
-              {/* Zigzag image list: row by row; odd rows reversed so layout alternates left-right / right-left */}
-              <div className="break-inside-avoid px-1 flex flex-col gap-2">
+              {/* Two-column masonry-style list: odd indexes to left column, even indexes to right column */}
+              <div className="break-inside-avoid px-1">
                 {images.length > 0 ? (
                   (() => {
-                    const rows: GalleryItem[][] = [];
-                    for (let i = 0; i < images.length; i += 2) {
-                      rows.push(images.slice(i, i + 2));
-                    }
-                    return rows.map((rowItems, rowIndex) => (
-                        <div
-                          key={`${chip.id}-row-${rowIndex}`}
-                          className="flex gap-2"
-                          style={{
-                            flexDirection:
-                              rowIndex % 2 === 1 ? 'row-reverse' : 'row',
-                          }}
-                        >
-                          {rowItems.map((item, colIndex) => {
-                            const index = rowIndex * 2 + colIndex;
-                            const globalIndex =
-                              (chipData?.startIndex ?? 0) + index;
-                            const isLoaded =
-                              loadedThumbnails[globalIndex];
-                            const orientation: ImageOrientation =
-                              item.orientation ?? 'landscape';
-                            const aspectRatio =
-                              getAspectRatio(orientation);
+                    const leftColumn: { item: GalleryItem; index: number }[] = [];
+                    const rightColumn: { item: GalleryItem; index: number }[] = [];
 
-                            return (
-                              <div
-                                key={`${chip.id}-${index}`}
-                                className="relative flex-1 min-w-0"
-                                style={{
-                                  overflow: 'hidden',
-                                  borderRadius: 12,
-                                  aspectRatio,
-                                }}
-                              >
-                                {!isLoaded && (
-                                  <div
-                                    className="absolute inset-0 bg-gray-300 animate-pulse"
-                                    aria-hidden
-                                  />
-                                )}
-                                <img
-                                  src={getOptimizedImageUrl(
-                                    item.image,
-                                    thumbnailWidth,
-                                    THUMBNAIL_QUALITY,
-                                  )}
-                                  alt=""
-                                  loading="lazy"
-                                  className="absolute inset-0 rounded-[12px] cursor-zoom-in transition-opacity duration-200"
-                                  style={{
-                                    opacity: isLoaded ? 1 : 0,
-                                    width: '100%',
-                                    height: '100%',
-                                    objectFit: 'cover',
-                                  }}
-                                  onClick={() =>
-                                    setLightboxIndex(globalIndex)
-                                  }
-                                  onLoad={() =>
-                                    setLoadedThumbnails((prev) => ({
-                                      ...prev,
-                                      [globalIndex]: true,
-                                    }))
-                                  }
-                                  onError={() =>
-                                    setLoadedThumbnails((prev) => ({
-                                      ...prev,
-                                      [globalIndex]: true,
-                                    }))
-                                  }
+                    images.forEach((item, index) => {
+                      const isLeft = (index + 1) % 2 === 1;
+                      if (isLeft) {
+                        leftColumn.push({ item, index });
+                      } else {
+                        rightColumn.push({ item, index });
+                      }
+                    });
+
+                    const renderColumn = (
+                      columnItems: { item: GalleryItem; index: number }[],
+                      columnKey: string,
+                    ) => (
+                      <div
+                        key={columnKey}
+                        className="flex-1 flex flex-col gap-2"
+                      >
+                        {columnItems.map(({ item, index }) => {
+                          const globalIndex =
+                            (chipData?.startIndex ?? 0) + index;
+                          const isLoaded = loadedThumbnails[globalIndex];
+                          const orientation: ImageOrientation =
+                            item.orientation ?? 'landscape';
+                          const aspectRatio = getAspectRatio(orientation);
+
+                          return (
+                            <div
+                              key={`${chip.id}-${index}`}
+                              className="relative min-w-0"
+                              style={{
+                                overflow: 'hidden',
+                                borderRadius: 12,
+                                aspectRatio,
+                              }}
+                            >
+                              {!isLoaded && (
+                                <div
+                                  className="absolute inset-0 bg-gray-300 animate-pulse"
+                                  aria-hidden
                                 />
-                              </div>
-                            );
-                          })}
-                        </div>
-                      ));
+                              )}
+                              <img
+                                src={getOptimizedImageUrl(
+                                  item.image,
+                                  thumbnailWidth,
+                                  THUMBNAIL_QUALITY,
+                                )}
+                                alt=""
+                                loading="lazy"
+                                className="absolute inset-0 rounded-[12px] cursor-zoom-in transition-opacity duration-200"
+                                style={{
+                                  opacity: isLoaded ? 1 : 0,
+                                  width: '100%',
+                                  height: '100%',
+                                  objectFit: 'cover',
+                                }}
+                                onClick={() => setLightboxIndex(globalIndex)}
+                                onLoad={() =>
+                                  setLoadedThumbnails((prev) => ({
+                                    ...prev,
+                                    [globalIndex]: true,
+                                  }))
+                                }
+                                onError={() =>
+                                  setLoadedThumbnails((prev) => ({
+                                    ...prev,
+                                    [globalIndex]: true,
+                                  }))
+                                }
+                              />
+                            </div>
+                          );
+                        })}
+                      </div>
+                    );
+
+                    return (
+                      <div className="flex gap-2">
+                        {renderColumn(leftColumn, `${chip.id}-left`)}
+                        {renderColumn(rightColumn, `${chip.id}-right`)}
+                      </div>
+                    );
                   })()
                 ) : (
                   (() => {
@@ -948,30 +957,45 @@ export function WeddingDayGallerySection() {
                           key: 3,
                         },
                       ];
-                      const emptyRows = [
-                        placeholders.slice(0, 2),
-                        placeholders.slice(2, 4),
-                      ];
-                      return emptyRows.map((row, rowIndex) => (
+                      const leftPlaceholders = placeholders.filter(
+                        (_, index) => (index + 1) % 2 === 1,
+                      );
+                      const rightPlaceholders = placeholders.filter(
+                        (_, index) => (index + 1) % 2 === 0,
+                      );
+
+                      const renderPlaceholderColumn = (
+                        columnItems: { orientation: ImageOrientation; key: number }[],
+                        columnKey: string,
+                      ) => (
                         <div
-                          key={`${chip.id}-empty-row-${rowIndex}`}
-                          className="flex gap-2"
-                          style={{
-                            flexDirection:
-                              rowIndex % 2 === 1 ? 'row-reverse' : 'row',
-                          }}
+                          key={columnKey}
+                          className="flex-1 flex flex-col gap-2"
                         >
-                          {row.map(({ orientation, key: i }) => (
+                          {columnItems.map(({ orientation, key: i }) => (
                             <div
                               key={`${chip.id}-empty-${i}`}
-                              className="rounded-[12px] bg-gray-400 flex-1 min-w-0"
+                              className="rounded-[12px] bg-gray-400 min-w-0"
                               style={{
                                 aspectRatio: getAspectRatio(orientation),
                               }}
                             />
                           ))}
                         </div>
-                      ));
+                      );
+
+                      return (
+                        <div className="flex gap-2">
+                          {renderPlaceholderColumn(
+                            leftPlaceholders,
+                            `${chip.id}-empty-left`,
+                          )}
+                          {renderPlaceholderColumn(
+                            rightPlaceholders,
+                            `${chip.id}-empty-right`,
+                          )}
+                        </div>
+                      );
                   })()
                 )}
               </div>
