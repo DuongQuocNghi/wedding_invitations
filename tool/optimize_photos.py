@@ -5,8 +5,8 @@ from pathlib import Path
 from PIL import Image
 
 # ĐƯỜNG DẪN CẦN SỬA CHO PHÙ HỢP MÁY ANH
-SOURCE_DIR = Path("/Users/duongquocnghi/Desktop/delete/QuocNghi&MyLan_Album/Hinh PTS")
-OUTPUT_DIR = Path("/Users/duongquocnghi/Desktop/Hinh_PTS_optimized_1")
+SOURCE_DIR = Path("/Volumes/NLSDPro/8.2 MỸ LAN-QUỐC NGHI/CHỈNH/TRUYEN THONG GIAM")
+OUTPUT_DIR = Path("/Users/duongquocnghi/Desktop/Hinh_PTS_optimized_08")
 
 # Cấu hình tối ưu
 MAX_LONG_EDGE = 3072    # px - cạnh dài nhất
