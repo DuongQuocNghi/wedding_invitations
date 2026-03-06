@@ -24,11 +24,25 @@ type GalleryItem = {
   hidden: boolean;
 };
 
+type GalleryDataShape = {
+  data?: {
+    wedding_3101?: GalleryItem[];
+    pre_wedding?: GalleryItem[];
+  };
+};
+
 const WEDDING_3101_ITEMS: GalleryItem[] =
-  (galleryData as { data?: { wedding_3101?: GalleryItem[] } }).data
-    ?.wedding_3101 ?? [];
+  (galleryData as GalleryDataShape).data?.wedding_3101 ?? [];
+
+const PRE_WEDDING_ITEMS: GalleryItem[] =
+  (galleryData as GalleryDataShape).data?.pre_wedding ?? [];
 
 const TABS: TabConfig[] = [
+  {
+    id: 'pre-wedding',
+    label: 'Pre wedding',
+    chips: [{ id: 'pre-wedding-all', label: 'Tất cả' }],
+  },
   {
     id: 'le-gia-tien',
     label: 'Lễ gia tiên',
@@ -91,6 +105,10 @@ function getOptimizedImageUrl(original: string, width: number): string {
 }
 
 function getImagesForChip(tabId: string, chipId: string): GalleryItem[] {
+  if (tabId === 'pre-wedding') {
+    return PRE_WEDDING_ITEMS.filter((item) => !item.hidden);
+  }
+
   if (tabId !== 'tiec-31-01') {
     return [];
   }

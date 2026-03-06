@@ -1,16 +1,16 @@
-# sử dụng: python tool/optimize_photos.py
+# sử dụng: python3 tool/optimize_photos.py
 
 import os
 from pathlib import Path
 from PIL import Image
 
 # ĐƯỜNG DẪN CẦN SỬA CHO PHÙ HỢP MÁY ANH
-SOURCE_DIR = Path("/Volumes/NLSDPro/8.2 MỸ LAN-QUỐC NGHI/CHỈNH/TRUYEN THONG GIAM")
-OUTPUT_DIR = Path("/Users/duongquocnghi/Desktop/Hinh_PTS_optimized_3")
+SOURCE_DIR = Path("/Users/duongquocnghi/Desktop/delete/QuocNghi&MyLan_Album/Hinh PTS")
+OUTPUT_DIR = Path("/Users/duongquocnghi/Desktop/Hinh_PTS_optimized_1")
 
 # Cấu hình tối ưu
-MAX_LONG_EDGE = 2048    # px - cạnh dài nhất
-JPEG_QUALITY = 80       # 0–100, 80 là điểm cân bằng đẹp/nhẹ
+MAX_LONG_EDGE = 3072    # px - cạnh dài nhất
+JPEG_QUALITY = 90       # 0–100, 80 là điểm cân bằng đẹp/nhẹ
 
 SUPPORTED_EXT = {".jpg", ".jpeg", ".png", ".JPG", ".JPEG", ".PNG"}
 
