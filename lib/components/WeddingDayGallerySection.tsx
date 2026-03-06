@@ -99,7 +99,7 @@ const TABS: TabConfig[] = [
       { id: 'nha_gai_tan_hon', label: 'Gia đình nhà gái' },
       { id: 'ban_be', label: 'Bạn bè' },
       { id: 'dau_re', label: 'Dâu rễ' },
-      { id: 'toan_canh_tiec_cuoi', label: 'Toàn cảnh' },
+      { id: 'toan_canh_tiec_cuoi', label: 'Tiệc cưới' },
     ],
   },
 ];
