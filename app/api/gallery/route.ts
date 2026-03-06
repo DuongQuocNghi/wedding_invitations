@@ -15,6 +15,10 @@ const DATA_PATH = path.join(
 
 export async function GET() {
   try {
+    if (process.env.NODE_ENV === 'production') {
+      return NextResponse.json({ error: 'Not Found' }, { status: 404 });
+    }
+
     const raw = await fs.readFile(DATA_PATH, 'utf-8');
     const json = JSON.parse(raw);
     return NextResponse.json(json);
@@ -29,6 +33,10 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
+    if (process.env.NODE_ENV === 'production') {
+      return NextResponse.json({ error: 'Not Found' }, { status: 404 });
+    }
+
     const body = await request.json();
     const { category, index, tag, hidden } = body as {
       category?: string;

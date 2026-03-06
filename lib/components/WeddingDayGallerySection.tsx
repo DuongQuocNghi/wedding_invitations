@@ -361,12 +361,31 @@ export function WeddingDayGallerySection() {
       setActiveTab(initialTabId);
       setActiveChip(initialChipId);
       setPendingChipScroll(initialChipId);
+      updateUrl(initialTabId, initialChipId);
 
+      const chipId = initialChipId;
+
+      // Scroll to element position at a given moment, compensating for the sticky bar offset.
+      // Does NOT change any state — safe to call multiple times.
+      const scrollToTarget = () => {
+        const el = groupRefs.current[`group-${chipId}`];
+        if (!el) return;
+        const barEl = barRef.current;
+        const offset = (barEl?.offsetHeight ?? 0) - 4;
+        const top = el.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'auto' });
+      };
+
+      // Retry at increasing intervals to catch layout shifts caused by lazy-loaded images
+      // in groups above the target expanding from placeholder heights to real heights.
       window.requestAnimationFrame(() => {
-        scrollToGroup(initialChipId, initialTabId);
+        scrollToTarget();
+        window.setTimeout(scrollToTarget, 300);
+        window.setTimeout(scrollToTarget, 800);
+        window.setTimeout(scrollToTarget, 1500);
       });
     }
-  }, [scrollToGroup]);
+  }, [updateUrl]);
 
   const contentMaxWidth = 480;
   const baseWidth =

@@ -19,6 +19,8 @@ type FlatItem = {
 };
 
 export default function GalleryAdminPage() {
+  const isProd = process.env.NODE_ENV === 'production';
+
   const [data, setData] = useState<GalleryData | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -35,6 +37,13 @@ export default function GalleryAdminPage() {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
   useEffect(() => {
+    if (isProd) {
+      setStatus(
+        'Trang quản lý gallery chỉ dùng trong môi trường development/local.',
+      );
+      return;
+    }
+
     const fetchData = async () => {
       try {
         const res = await fetch('/api/gallery', { cache: 'no-store' });
@@ -58,7 +67,7 @@ export default function GalleryAdminPage() {
     };
 
     fetchData();
-  }, []);
+  }, [isProd]);
 
   const flatItems = useMemo<FlatItem[]>(() => {
     if (!data?.data) return [];
@@ -230,6 +239,16 @@ export default function GalleryAdminPage() {
       setIsSaving(false);
     }
   };
+
+  if (isProd) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-slate-50 text-slate-600">
+        <p className="text-sm">
+          Trang quản lý gallery chỉ dùng trong môi trường development/local.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="fixed inset-0 z-40 flex flex-col bg-slate-50 text-slate-900">
