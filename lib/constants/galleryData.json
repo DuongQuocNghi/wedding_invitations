@@ -204,8 +204,8 @@
         "tag": [
           "picnic"
         ],
-        "orientation": "landscape",
-        "index": 4,
+        "orientation": "square",
+        "index": 3,
         "hidden": false
       },
       {
@@ -213,8 +213,8 @@
         "tag": [
           "picnic"
         ],
-        "orientation": "landscape",
-        "index": 2,
+        "orientation": "square",
+        "index": 3,
         "hidden": false
       },
       {
@@ -537,7 +537,7 @@
         "tag": [
           "picnic"
         ],
-        "orientation": "portrait",
+        "orientation": "landscape",
         "index": 1,
         "hidden": false
       },
@@ -583,7 +583,7 @@
           "picnic"
         ],
         "orientation": "portrait",
-        "index": 3,
+        "index": 2,
         "hidden": false
       },
       {

@@ -17,7 +17,7 @@ type TabConfig = {
   chips: TabChip[];
 };
 
-export type ImageOrientation = 'portrait' | 'landscape';
+export type ImageOrientation = 'portrait' | 'landscape' | 'square';
 
 type GalleryItem = {
   image: string;
@@ -25,7 +25,13 @@ type GalleryItem = {
   hidden: boolean;
   /** Display order: smaller value shows first. Null/undefined = use array order at end. */
   index?: number | null;
-  /** Thumbnail slot shape: portrait (3:4) or landscape (4:3). Defaults to 'landscape' if omitted. */
+  /**
+   * Thumbnail slot shape:
+   * - portrait: 3:4
+   * - landscape: 4:3
+   * - square: 1:1
+   * Defaults to 'landscape' if omitted.
+   */
   orientation?: ImageOrientation;
 };
 
@@ -93,12 +99,15 @@ const TABS: TabConfig[] = [
   },
 ];
 
-/** Aspect ratios for fixed thumbnail slots: portrait 3:4, landscape 4:3. Prevents layout shift. */
+/** Aspect ratios for fixed thumbnail slots: portrait 3:4, landscape 4:3, square 1:1. Prevents layout shift. */
 const ASPECT_RATIO_PORTRAIT = '3/4';
 const ASPECT_RATIO_LANDSCAPE = '4/3';
+const ASPECT_RATIO_SQUARE = '1/1';
 
 function getAspectRatio(orientation: ImageOrientation): string {
-  return orientation === 'portrait' ? ASPECT_RATIO_PORTRAIT : ASPECT_RATIO_LANDSCAPE;
+  if (orientation === 'portrait') return ASPECT_RATIO_PORTRAIT;
+  if (orientation === 'square') return ASPECT_RATIO_SQUARE;
+  return ASPECT_RATIO_LANDSCAPE;
 }
 
 function getOptimizedImageUrl(

@@ -42,7 +42,7 @@ export async function POST(request: Request) {
       category?: string;
       index?: number;
       tag?: string[];
-      orientation?: 'landscape' | 'portrait';
+      orientation?: 'landscape' | 'portrait' | 'square';
       hidden?: boolean;
       /** Display order for gallery (smaller = first). Pass null to clear. */
       displayIndex?: number | null;
@@ -62,7 +62,7 @@ export async function POST(request: Request) {
         {
           image: string;
           tag: string[];
-          orientation?: 'landscape' | 'portrait';
+          orientation?: 'landscape' | 'portrait' | 'square';
           hidden: boolean;
           index?: number | null;
         }[]
@@ -85,12 +85,16 @@ export async function POST(request: Request) {
     }
 
     const nextTags = Array.isArray(tag) ? tag : [];
-    const nextOrientation: 'landscape' | 'portrait' =
-      orientation === 'portrait' ? 'portrait' : 'landscape';
+    const nextOrientation: 'landscape' | 'portrait' | 'square' =
+      orientation === 'portrait'
+        ? 'portrait'
+        : orientation === 'square'
+          ? 'square'
+          : 'landscape';
     const nextItem: {
       image: string;
       tag: string[];
-      orientation?: 'landscape' | 'portrait';
+      orientation?: 'landscape' | 'portrait' | 'square';
       hidden: boolean;
       index?: number | null;
     } = {

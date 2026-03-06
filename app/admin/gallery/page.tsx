@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 
-type Orientation = 'landscape' | 'portrait';
+type Orientation = 'landscape' | 'portrait' | 'square';
 
 type GalleryItem = {
   image: string;
@@ -42,7 +42,7 @@ export default function GalleryAdminPage() {
   const [filterHiddenOnly, setFilterHiddenOnly] = useState(false);
   const [filterNoTagOnly, setFilterNoTagOnly] = useState(false);
   const [filterOrientation, setFilterOrientation] = useState<
-    'all' | 'landscape' | 'portrait'
+    'all' | 'landscape' | 'portrait' | 'square'
   >('all');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
@@ -71,7 +71,11 @@ export default function GalleryAdminPage() {
               firstItem.index != null ? String(firstItem.index) : '',
             );
             setOrientation(
-              firstItem.orientation === 'portrait' ? 'portrait' : 'landscape',
+              firstItem.orientation === 'portrait'
+                ? 'portrait'
+                : firstItem.orientation === 'square'
+                  ? 'square'
+                  : 'landscape',
             );
             setHidden(firstItem.hidden);
           }
@@ -156,8 +160,10 @@ export default function GalleryAdminPage() {
 
     if (filterOrientation !== 'all') {
       items = items.filter((fi) => {
-        const o = fi.item.orientation === 'portrait' ? 'portrait' : 'landscape';
-        return o === filterOrientation;
+        const raw = fi.item.orientation;
+        const normalized: Orientation =
+          raw === 'portrait' || raw === 'square' ? raw : 'landscape';
+        return normalized === filterOrientation;
       });
     }
 
@@ -213,7 +219,11 @@ export default function GalleryAdminPage() {
       fi.item.index != null ? String(fi.item.index) : '',
     );
     setOrientation(
-      fi.item.orientation === 'portrait' ? 'portrait' : 'landscape',
+      fi.item.orientation === 'portrait'
+        ? 'portrait'
+        : fi.item.orientation === 'square'
+          ? 'square'
+          : 'landscape',
     );
     setHidden(fi.item.hidden);
     setStatus(null);
@@ -455,6 +465,7 @@ export default function GalleryAdminPage() {
                   { key: 'all' as const, label: 'Tất cả' },
                   { key: 'landscape' as const, label: 'Landscape (ngang)' },
                   { key: 'portrait' as const, label: 'Portrait (dọc)' },
+                  { key: 'square' as const, label: 'Square (vuông)' },
                 ].map((opt) => (
                   <button
                     key={opt.key}
@@ -721,7 +732,7 @@ export default function GalleryAdminPage() {
                   <span className="block text-xs font-medium text-slate-700 mb-1.5">
                     Orientation
                   </span>
-                  <div className="flex gap-4">
+                  <div className="flex flex-wrap gap-4">
                     <label className="inline-flex items-center gap-2 text-xs text-slate-700 cursor-pointer">
                       <input
                         type="radio"
@@ -743,6 +754,17 @@ export default function GalleryAdminPage() {
                         onChange={() => setOrientation('portrait')}
                       />
                       Portrait (dọc)
+                    </label>
+                    <label className="inline-flex items-center gap-2 text-xs text-slate-700 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="orientation"
+                        value="square"
+                        className="border-slate-300 text-emerald-600 focus:ring-emerald-500"
+                        checked={orientation === 'square'}
+                        onChange={() => setOrientation('square')}
+                      />
+                      Square (vuông)
                     </label>
                   </div>
                 </div>
