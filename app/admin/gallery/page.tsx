@@ -161,6 +161,33 @@ export default function GalleryAdminPage() {
     selectedTag,
   ]);
 
+  const allDisplayedSelected =
+    displayedItems.length > 0 &&
+    displayedItems.every(
+      (fi) => !!selectedKeys[`${fi.category}:${fi.index}`],
+    );
+
+  const handleSelectAllInList = () => {
+    if (allDisplayedSelected) {
+      setSelectedKeys((prev) => {
+        const next = { ...prev };
+        displayedItems.forEach((fi) => {
+          delete next[`${fi.category}:${fi.index}`];
+        });
+        return next;
+      });
+    } else {
+      setSelectedKeys((prev) => {
+        const next = { ...prev };
+        displayedItems.forEach((fi) => {
+          next[`${fi.category}:${fi.index}`] = true;
+        });
+        return next;
+      });
+    }
+    setStatus(null);
+  };
+
   const handleSelectItem = (fi: FlatItem) => {
     setSelectedCategory(fi.category);
     setSelectedIndex(fi.index);
@@ -334,9 +361,22 @@ export default function GalleryAdminPage() {
         <section className="flex-1 border-r bg-white flex flex-col">
           <div className="p-3 flex flex-col gap-2 border-b bg-slate-50 sticky top-0 z-10">
             <div className="flex items-center justify-between gap-3">
-              <span className="text-xs font-medium text-slate-600">
-                Danh sách hình ({displayedItems.length}/{flatItems.length})
-              </span>
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-medium text-slate-600">
+                  Danh sách hình ({displayedItems.length}/{flatItems.length})
+                </span>
+                {displayedItems.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={handleSelectAllInList}
+                    className="px-2 py-1 rounded-md border border-slate-300 bg-white text-[11px] font-medium text-slate-700 hover:bg-slate-50 hover:border-slate-400"
+                  >
+                    {allDisplayedSelected
+                      ? 'Bỏ chọn tất cả'
+                      : 'Chọn tất cả hình'}
+                  </button>
+                )}
+              </div>
               <div className="flex items-center gap-1.5">
                 <span className="text-[11px] text-slate-500">Lọc theo bộ:</span>
                 {[
