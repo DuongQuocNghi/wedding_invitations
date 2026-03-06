@@ -62,16 +62,16 @@ const TABS: TabConfig[] = [
     id: 'tiec-31-01',
     label: 'Tiệc 31.01',
     chips: [
-      { id: 'tiec-toan-canh', label: 'Toàn cảnh' },
-      { id: 'tiec-gia-dinh', label: 'Gia đình' },
-      { id: 'tiec-team-hong-bang', label: 'Team Hồng Bàng' },
-      { id: 'tiec-team-bui-thi-xuan', label: 'Team Bùi Thị Xuân' },
-      { id: 'tiec-team-biz4', label: 'Team Biz4' },
-      { id: 'tiec-team-fg', label: 'Team FG' },
-      { id: 'tiec-team-jl', label: 'Team JL' },
-      { id: 'tiec-team-dreamstudio', label: 'Team DreamStudio' },
-      { id: 'tiec-team-gugotech', label: 'Team GugoTech' },
-      { id: 'tiec-team-vio', label: 'Team Vio' },
+      { id: 'toan_canh', label: 'Toàn cảnh' },
+      { id: 'gia_dinh', label: 'Gia đình' },
+      { id: 'hong_bang', label: 'Team Hồng Bàng' },
+      { id: 'btx', label: 'Team Bùi Thị Xuân' },
+      { id: 'biz4', label: 'Team Biz4' },
+      { id: 'fg', label: 'Team FG' },
+      { id: 'jologic', label: 'Team JL' },
+      { id: 'dream', label: 'Team DreamStudio' },
+      { id: 'gugotech', label: 'Team GugoTech' },
+      { id: 'vio', label: 'Team Vio' },
     ],
   },
   {
@@ -90,19 +90,6 @@ const TABS: TabConfig[] = [
 /** Placeholder heights for masonry-style variation (px) */
 const PLACEHOLDER_HEIGHTS = [140, 180, 120, 200, 160, 220, 150, 190, 170];
 
-const TIEC_31_01_TAG_BY_CHIP: Record<string, string | null> = {
-  'tiec-toan-canh': 'toan_canh',
-  'tiec-gia-dinh': 'gia_dinh',
-  'tiec-team-hong-bang': 'hong_bang',
-  'tiec-team-bui-thi-xuan': 'btx',
-  'tiec-team-biz4': 'biz4',
-  'tiec-team-fg': 'fg',
-  'tiec-team-jl': 'jologic',
-  'tiec-team-dreamstudio': 'dream',
-  'tiec-team-gugotech': 'gugotech',
-  'tiec-team-vio': 'vio',
-};
-
 function getOptimizedImageUrl(original: string, width: number): string {
   const separator = original.includes('?') ? '&' : '?';
   const transform = `tr=w-${width},q-70,f-webp`;
@@ -116,18 +103,13 @@ function getImagesForChip(tabId: string, chipId: string): GalleryItem[] {
     );
   }
 
-  if (tabId !== 'tiec-31-01') {
-    return [];
+  if (tabId === 'tiec-31-01') {
+    return WEDDING_3101_ITEMS.filter(
+      (item) => !item.hidden && item.tag.includes(chipId),
+    );
   }
 
-  const tagKey = TIEC_31_01_TAG_BY_CHIP[chipId];
-  if (!tagKey) {
-    return [];
-  }
-
-  return WEDDING_3101_ITEMS.filter(
-    (item) => !item.hidden && item.tag.includes(tagKey),
-  );
+  return [];
 }
 
 /**
