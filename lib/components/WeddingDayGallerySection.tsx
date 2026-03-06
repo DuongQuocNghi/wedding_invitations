@@ -41,7 +41,12 @@ const TABS: TabConfig[] = [
   {
     id: 'pre-wedding',
     label: 'Pre wedding',
-    chips: [{ id: 'pre-wedding-all', label: 'Tất cả' }],
+    chips: [
+      { id: 'chieu', label: 'Dã ngoại' },
+      { id: 'sang', label: 'Săn mây' },
+      { id: 'trua', label: 'Tiệc Vow' },
+      { id: 'toi', label: 'Cắm trại đêm' }
+    ],
   },
   {
     id: 'le-gia-tien',
