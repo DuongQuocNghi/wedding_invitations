@@ -107,6 +107,23 @@ export default function GalleryAdminPage() {
     };
   }, [data, selectedCategory, selectedIndex]);
 
+  const displayIndexSuggestionCategory = useMemo<string | null>(() => {
+    if (filterCategory !== 'all') return filterCategory;
+    return selectedCategory;
+  }, [filterCategory, selectedCategory]);
+
+  const suggestedNextDisplayIndex = useMemo<number | null>(() => {
+    if (!data?.data || !displayIndexSuggestionCategory) return null;
+    const items = data.data[displayIndexSuggestionCategory] || [];
+    let max = -1;
+    items.forEach((item) => {
+      if (typeof item.index !== 'number') return;
+      if (!Number.isFinite(item.index)) return;
+      max = Math.max(max, item.index);
+    });
+    return Math.max(0, max + 1);
+  }, [data, displayIndexSuggestionCategory]);
+
   const allTags = useMemo<string[]>(() => {
     const set = new Set<string>();
     flatItems.forEach((fi) => {
@@ -666,9 +683,27 @@ export default function GalleryAdminPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-slate-700 mb-1">
-                    Thứ tự hiển thị (index)
-                  </label>
+                  <div className="flex items-center justify-between gap-2 mb-1">
+                    <label className="block text-xs font-medium text-slate-700">
+                      Thứ tự hiển thị (index)
+                    </label>
+                    {suggestedNextDisplayIndex != null && (
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setDisplayIndexInput(String(suggestedNextDisplayIndex))
+                        }
+                        className="shrink-0 px-2 py-0.5 rounded-md border border-slate-300 bg-white text-[11px] font-medium text-slate-700 hover:bg-slate-50 hover:border-slate-400"
+                        title={
+                          displayIndexSuggestionCategory
+                            ? `Gợi ý theo bộ: ${displayIndexSuggestionCategory}`
+                            : 'Gợi ý index tiếp theo'
+                        }
+                      >
+                        Gợi ý: {suggestedNextDisplayIndex}
+                      </button>
+                    )}
+                  </div>
                   <input
                     type="text"
                     inputMode="numeric"
