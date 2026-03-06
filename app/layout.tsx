@@ -7,31 +7,31 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://nghi-lan-wedding.si
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title: 'Thiệp Cưới Nghi & Lan',
+  title: 'Tiệc Cưới Nghi & Lan',
   description:
-    'Thiệp cưới Nghi & Lan - Mời bạn đến dự lễ cưới và tiệc cưới của chúng em. Thông tin chi tiết về địa điểm, thời gian và lời mời chân thành.',
+    'Tiệc Cưới Nghi & Lan - Hình ảnh tiệc cưới.',
   keywords: 'thiệp cưới, wedding invitation, Nghi Lan, lễ cưới, tiệc cưới',
   authors: [{ name: 'Nghi & Lan' }],
   openGraph: {
     type: 'website',
     url: baseUrl,
-    siteName: 'Thiệp Cưới Nghi & Lan',
-    title: 'Thiệp Cưới Nghi & Lan',
-    description: 'Mời bạn đến dự lễ cưới và tiệc cưới của chúng em',
+    siteName: 'Tiệc Cưới Nghi & Lan',
+    title: 'Tiệc Cưới Nghi & Lan',
+    description: 'Hình ảnh tiệc cưới.',
     images: [
       {
         url: `${baseUrl}/assets/images/hinh_1_m.webp`,
         width: 1200,
         height: 630,
-        alt: 'Thiệp Cưới Nghi & Lan',
+        alt: 'Tiệc Cưới Nghi & Lan',
       },
     ],
     locale: 'vi_VN',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Thiệp Cưới Nghi & Lan',
-    description: 'Mời bạn đến dự lễ cưới và tiệc cưới của chúng em',
+    title: 'Tiệc Cưới Nghi & Lan',
+    description: 'Hình ảnh tiệc cưới.',
     images: [`${baseUrl}/assets/images/hinh_1_m.webp`],
   },
   appleWebApp: {
@@ -61,7 +61,7 @@ export default function RootLayout({
         <meta property="og:image:width" content="800" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:type" content="image/webp" />
-        <meta property="og:image:alt" content="Thiệp Cưới Nghi & Lan" />
+        <meta property="og:image:alt" content="Tiệc Cưới Nghi & Lan" />
         
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:image" content="https://nghi-lan-wedding.site/assets/images/hinh_1_m.webp" />
