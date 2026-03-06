@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useRef, useCallback, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
 import Lightbox from 'yet-another-react-lightbox';
 import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/styles.css';
@@ -18,10 +17,14 @@ type TabConfig = {
   chips: TabChip[];
 };
 
+export type ImageOrientation = 'portrait' | 'landscape';
+
 type GalleryItem = {
   image: string;
   tag: string[];
   hidden: boolean;
+  /** Thumbnail slot shape: portrait (3:4) or landscape (4:3). Defaults to 'landscape' if omitted. */
+  orientation?: ImageOrientation;
 };
 
 type GalleryDataShape = {
@@ -87,8 +90,13 @@ const TABS: TabConfig[] = [
   },
 ];
 
-/** Placeholder heights for masonry-style variation (px) */
-const PLACEHOLDER_HEIGHTS = [140, 180, 120, 200, 160, 220, 150, 190, 170];
+/** Aspect ratios for fixed thumbnail slots: portrait 3:4, landscape 4:3. Prevents layout shift. */
+const ASPECT_RATIO_PORTRAIT = '3/4';
+const ASPECT_RATIO_LANDSCAPE = '4/3';
+
+function getAspectRatio(orientation: ImageOrientation): string {
+  return orientation === 'portrait' ? ASPECT_RATIO_PORTRAIT : ASPECT_RATIO_LANDSCAPE;
+}
 
 function getOptimizedImageUrl(original: string, width: number): string {
   const separator = original.includes('?') ? '&' : '?';
@@ -117,7 +125,6 @@ function getImagesForChip(tabId: string, chipId: string): GalleryItem[] {
  * Images are placeholders (gray, 12px radius); import later.
  */
 export function WeddingDayGallerySection() {
-  const pathname = usePathname();
   const [activeTab, setActiveTab] = useState<TabConfig['id']>('le-gia-tien');
   const [activeChip, setActiveChip] = useState<TabChip['id']>(
     TABS[0]?.chips[0]?.id ?? '',
@@ -131,6 +138,8 @@ export function WeddingDayGallerySection() {
   >({});
   const [viewportWidth, setViewportWidth] = useState<number | null>(null);
   const [devicePixelRatio, setDevicePixelRatio] = useState<number>(1);
+  /** Avoid hydration mismatch: only use window-derived values after mount. */
+  const [hasMounted, setHasMounted] = useState(false);
   const hasInitialScrollRef = useRef(false);
   const isUserScrollingChipsRef = useRef(false);
   const chipScrollTimeoutRef = useRef<number | null>(null);
@@ -342,6 +351,7 @@ export function WeddingDayGallerySection() {
     };
 
     updateViewport();
+    setHasMounted(true);
     window.addEventListener('resize', updateViewport);
 
     return () => {
@@ -416,15 +426,18 @@ export function WeddingDayGallerySection() {
   }, [updateUrl]);
 
   const contentMaxWidth = 480;
+  // Use window-derived values only after mount so server and first client render match (avoids hydration error).
+  const effectiveViewportWidth = hasMounted ? viewportWidth : null;
+  const effectiveDpr = hasMounted ? devicePixelRatio : 1;
   const baseWidth =
-    Math.min(viewportWidth ?? contentMaxWidth, contentMaxWidth) ||
+    Math.min(effectiveViewportWidth ?? contentMaxWidth, contentMaxWidth) ||
     contentMaxWidth;
   const columnGap = 8;
   const sidePadding = 8;
   const columnWidth = (baseWidth - sidePadding * 2 - columnGap) / 2;
   const thumbnailWidth = Math.max(
     320,
-    Math.round(columnWidth * devicePixelRatio),
+    Math.round(columnWidth * effectiveDpr),
   );
 
   let runningIndex = 0;
@@ -743,10 +756,9 @@ export function WeddingDayGallerySection() {
                   ? images.map((item, index) => {
                       const globalIndex = (chipData?.startIndex ?? 0) + index;
                       const isLoaded = loadedThumbnails[globalIndex];
-                      const placeholderHeight =
-                        PLACEHOLDER_HEIGHTS[
-                          index % PLACEHOLDER_HEIGHTS.length
-                        ];
+                      const orientation: ImageOrientation =
+                        item.orientation ?? 'landscape';
+                      const aspectRatio = getAspectRatio(orientation);
 
                       return (
                         <div
@@ -755,13 +767,13 @@ export function WeddingDayGallerySection() {
                           style={{
                             overflow: 'hidden',
                             borderRadius: 12,
-                            height: isLoaded ? 'auto' : placeholderHeight,
+                            aspectRatio,
                           }}
                         >
                           {!isLoaded && (
                             <div
-                              className="bg-gray-300 animate-pulse"
-                              style={{ height: placeholderHeight }}
+                              className="absolute inset-0 bg-gray-300 animate-pulse"
+                              aria-hidden
                             />
                           )}
                           <img
@@ -771,8 +783,13 @@ export function WeddingDayGallerySection() {
                             )}
                             alt=""
                             loading="lazy"
-                            className="w-full rounded-[12px] cursor-zoom-in transition-opacity duration-200 block"
-                            style={{ opacity: isLoaded ? 1 : 0 }}
+                            className="absolute inset-0 rounded-[12px] cursor-zoom-in transition-opacity duration-200"
+                            style={{
+                              opacity: isLoaded ? 1 : 0,
+                              width: '100%',
+                              height: '100%',
+                              objectFit: 'cover',
+                            }}
                             onClick={() => setLightboxIndex(globalIndex)}
                             onLoad={() =>
                               setLoadedThumbnails((prev) => ({
@@ -790,11 +807,18 @@ export function WeddingDayGallerySection() {
                         </div>
                       );
                     })
-                  : PLACEHOLDER_HEIGHTS.map((h, i) => (
+                  : [
+                      { orientation: 'landscape' as const },
+                      { orientation: 'portrait' as const },
+                      { orientation: 'landscape' as const },
+                      { orientation: 'portrait' as const },
+                    ].map(({ orientation }, i) => (
                       <div
-                        key={`${chip.id}-${i}`}
-                        className="rounded-[12px] bg-gray-400 break-inside-avoid"
-                        style={{ height: `${h}px`, marginBottom: '8px' }}
+                        key={`${chip.id}-empty-${i}`}
+                        className="rounded-[12px] bg-gray-400 break-inside-avoid mb-2"
+                        style={{
+                          aspectRatio: getAspectRatio(orientation),
+                        }}
                       />
                     ))}
               </div>
