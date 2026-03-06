@@ -39,8 +39,12 @@ type GalleryDataShape = {
   data?: {
     wedding_3101?: GalleryItem[];
     pre_wedding?: GalleryItem[];
+    wedding_0802?: GalleryItem[];
   };
 };
+
+const WEDDING_0802_ITEMS: GalleryItem[] =
+  (galleryData as GalleryDataShape).data?.wedding_0802 ?? [];
 
 const WEDDING_3101_ITEMS: GalleryItem[] =
   (galleryData as GalleryDataShape).data?.wedding_3101 ?? [];
@@ -63,6 +67,7 @@ const TABS: TabConfig[] = [
     id: 'le-gia-tien',
     label: 'Lễ gia tiên',
     chips: [
+      { id: 'nha_gai_gia_tien', label: 'Nhà gái' },
       { id: 'don_nha_trai', label: 'Đón nhà trai' },
       { id: 'nghi_thu_hai_ho', label: 'Nghi thức hai họ' },
     ],
@@ -88,13 +93,13 @@ const TABS: TabConfig[] = [
     id: 'tan-hon-08-02',
     label: 'Tân Hôn 08.02',
     chips: [
-      { id: 'ban_be', label: 'Bạn bè' },
-      { id: 'me', label: 'Bạn mẹ' },
+      { id: 'dang_yeu', label: 'Đáng yêu' },
       { id: 'gia_dinh_nha_trai', label: 'Gia đình nhà trai' },
-      { id: 'dang_yeu', label: 'Đang yêu' },
+      { id: 'me', label: 'Người thân mẹ Phượng' },
+      { id: 'nha_gai_tan_hon', label: 'Gia đình nhà gái' },
+      { id: 'ban_be', label: 'Bạn bè' },
       { id: 'dau_re', label: 'Dâu rễ' },
-      { id: 'nha_gai', label: 'Nhà gái' },
-      { id: 'toan_canh', label: 'Toàn cảnh' },
+      { id: 'toan_canh_tiec_cuoi', label: 'Toàn cảnh' },
     ],
   },
 ];
@@ -143,6 +148,11 @@ function getImagesForChip(tabId: string, chipId: string): GalleryItem[] {
     );
   } else if (tabId === 'tiec-31-01') {
     source = WEDDING_3101_ITEMS;
+    filtered = source.filter(
+      (item) => !item.hidden && item.tag.includes(chipId),
+    );
+  } else if (tabId === 'tan-hon-08-02' || tabId === 'le-gia-tien') {
+    source = WEDDING_0802_ITEMS;
     filtered = source.filter(
       (item) => !item.hidden && item.tag.includes(chipId),
     );
