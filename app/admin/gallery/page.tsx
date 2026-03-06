@@ -2,9 +2,12 @@
 
 import { useEffect, useMemo, useState } from 'react';
 
+type Orientation = 'landscape' | 'portrait';
+
 type GalleryItem = {
   image: string;
   tag: string[];
+  orientation?: Orientation;
   hidden: boolean;
 };
 
@@ -26,6 +29,7 @@ export default function GalleryAdminPage() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [selectedKeys, setSelectedKeys] = useState<Record<string, boolean>>({});
   const [tagInput, setTagInput] = useState('');
+  const [orientation, setOrientation] = useState<Orientation>('landscape');
   const [hidden, setHidden] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [status, setStatus] = useState<string | null>(null);
@@ -34,6 +38,9 @@ export default function GalleryAdminPage() {
   >('all');
   const [filterHiddenOnly, setFilterHiddenOnly] = useState(false);
   const [filterNoTagOnly, setFilterNoTagOnly] = useState(false);
+  const [filterOrientation, setFilterOrientation] = useState<
+    'all' | 'landscape' | 'portrait'
+  >('all');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
   useEffect(() => {
@@ -57,6 +64,9 @@ export default function GalleryAdminPage() {
           const firstItem = json.data[categories[0]]?.[0];
           if (firstItem) {
             setTagInput(firstItem.tag.join(', '));
+            setOrientation(
+              firstItem.orientation === 'portrait' ? 'portrait' : 'landscape',
+            );
             setHidden(firstItem.hidden);
           }
         }
@@ -121,13 +131,30 @@ export default function GalleryAdminPage() {
       items = items.filter((fi) => fi.item.tag.includes(selectedTag));
     }
 
+    if (filterOrientation !== 'all') {
+      items = items.filter((fi) => {
+        const o = fi.item.orientation === 'portrait' ? 'portrait' : 'landscape';
+        return o === filterOrientation;
+      });
+    }
+
     return items;
-  }, [flatItems, filterCategory, filterHiddenOnly, filterNoTagOnly, selectedTag]);
+  }, [
+    flatItems,
+    filterCategory,
+    filterHiddenOnly,
+    filterNoTagOnly,
+    filterOrientation,
+    selectedTag,
+  ]);
 
   const handleSelectItem = (fi: FlatItem) => {
     setSelectedCategory(fi.category);
     setSelectedIndex(fi.index);
     setTagInput(fi.item.tag.join(', '));
+    setOrientation(
+      fi.item.orientation === 'portrait' ? 'portrait' : 'landscape',
+    );
     setHidden(fi.item.hidden);
     setStatus(null);
 
@@ -191,6 +218,7 @@ export default function GalleryAdminPage() {
             category: t.category,
             index: t.index,
             tag: tags,
+            orientation,
             hidden,
           }),
         });
@@ -256,7 +284,7 @@ export default function GalleryAdminPage() {
         <div>
           <h1 className="text-lg font-semibold">Gallery Manager (local)</h1>
           <p className="text-xs text-slate-500">
-            Quản lý tag và trạng thái ẩn, ghi trực tiếp vào file
+            Quản lý tag, orientation và trạng thái ẩn, ghi trực tiếp vào file
             <span className="font-mono ml-1">
               lib/constants/galleryData.json
             </span>
@@ -338,6 +366,32 @@ export default function GalleryAdminPage() {
                 />
                 Chỉ hình chưa gắn tag
               </label>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-[11px] text-slate-500 whitespace-nowrap">
+                Lọc theo orientation:
+              </span>
+              <div className="flex gap-1.5">
+                {[
+                  { key: 'all' as const, label: 'Tất cả' },
+                  { key: 'landscape' as const, label: 'Landscape (ngang)' },
+                  { key: 'portrait' as const, label: 'Portrait (dọc)' },
+                ].map((opt) => (
+                  <button
+                    key={opt.key}
+                    type="button"
+                    onClick={() => setFilterOrientation(opt.key)}
+                    className={[
+                      'px-2 py-0.5 rounded-full border text-[11px] transition-colors',
+                      filterOrientation === opt.key
+                        ? 'border-emerald-600 bg-emerald-50 text-emerald-700'
+                        : 'border-slate-300 text-slate-600 hover:border-slate-500',
+                    ].join(' ')}
+                  >
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
             </div>
             <div className="flex items-start gap-2">
               <span className="mt-0.5 text-[11px] text-slate-500 whitespace-nowrap">
@@ -537,6 +591,36 @@ export default function GalleryAdminPage() {
                       </div>
                     </div>
                   )}
+                </div>
+
+                <div>
+                  <span className="block text-xs font-medium text-slate-700 mb-1.5">
+                    Orientation
+                  </span>
+                  <div className="flex gap-4">
+                    <label className="inline-flex items-center gap-2 text-xs text-slate-700 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="orientation"
+                        value="landscape"
+                        className="border-slate-300 text-emerald-600 focus:ring-emerald-500"
+                        checked={orientation === 'landscape'}
+                        onChange={() => setOrientation('landscape')}
+                      />
+                      Landscape (ngang)
+                    </label>
+                    <label className="inline-flex items-center gap-2 text-xs text-slate-700 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="orientation"
+                        value="portrait"
+                        className="border-slate-300 text-emerald-600 focus:ring-emerald-500"
+                        checked={orientation === 'portrait'}
+                        onChange={() => setOrientation('portrait')}
+                      />
+                      Portrait (dọc)
+                    </label>
+                  </div>
                 </div>
 
                 <label className="inline-flex items-center gap-2 text-xs text-slate-700">

@@ -38,10 +38,11 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json();
-    const { category, index, tag, hidden } = body as {
+    const { category, index, tag, orientation, hidden } = body as {
       category?: string;
       index?: number;
       tag?: string[];
+      orientation?: 'landscape' | 'portrait';
       hidden?: boolean;
     };
 
@@ -59,6 +60,7 @@ export async function POST(request: Request) {
         {
           image: string;
           tag: string[];
+          orientation?: 'landscape' | 'portrait';
           hidden: boolean;
         }[]
       >;
@@ -80,9 +82,12 @@ export async function POST(request: Request) {
     }
 
     const nextTags = Array.isArray(tag) ? tag : [];
+    const nextOrientation =
+      orientation === 'portrait' ? 'portrait' : 'landscape';
     items[index] = {
       ...items[index],
       tag: nextTags,
+      orientation: nextOrientation,
       hidden: Boolean(hidden),
     };
 
