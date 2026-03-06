@@ -101,9 +101,13 @@ function getAspectRatio(orientation: ImageOrientation): string {
   return orientation === 'portrait' ? ASPECT_RATIO_PORTRAIT : ASPECT_RATIO_LANDSCAPE;
 }
 
-function getOptimizedImageUrl(original: string, width: number): string {
+function getOptimizedImageUrl(
+  original: string,
+  width: number,
+  quality: number = 70,
+): string {
   const separator = original.includes('?') ? '&' : '?';
-  const transform = `tr=w-${width},q-70,f-webp`;
+  const transform = `tr=w-${width},q-${quality},f-webp`;
   return `${original}${separator}${transform}`;
 }
 
@@ -152,6 +156,9 @@ export function WeddingDayGallerySection() {
     null,
   );
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [isDownloading, setIsDownloading] = useState(false);
+  const [shareCopied, setShareCopied] = useState(false);
+  const shareResetTimeoutRef = useRef<number | null>(null);
   const [loadedThumbnails, setLoadedThumbnails] = useState<
     Record<number, boolean>
   >({});
@@ -454,9 +461,19 @@ export function WeddingDayGallerySection() {
   const columnGap = 8;
   const sidePadding = 8;
   const columnWidth = (baseWidth - sidePadding * 2 - columnGap) / 2;
-  const thumbnailWidth = Math.max(
-    320,
-    Math.round(columnWidth * effectiveDpr),
+  // Request larger thumbnails (oversample) to avoid blur on high-DPR screens,
+  // then reduce quality to keep payload reasonable.
+  const THUMBNAIL_OVERSAMPLE = 1.9;
+  const THUMBNAIL_MIN_WIDTH = 480;
+  const THUMBNAIL_MAX_WIDTH = 1400;
+  const THUMBNAIL_QUALITY = 85;
+
+  const thumbnailWidth = Math.min(
+    THUMBNAIL_MAX_WIDTH,
+    Math.max(
+      THUMBNAIL_MIN_WIDTH,
+      Math.round(columnWidth * effectiveDpr * THUMBNAIL_OVERSAMPLE),
+    ),
   );
 
   let runningIndex = 0;
@@ -467,6 +484,8 @@ export function WeddingDayGallerySection() {
     return { chipId: chip.id, images, startIndex };
   });
   const flatImages = imagesByChip.flatMap((entry) => entry.images);
+  const currentLightboxSrc =
+    lightboxIndex !== null ? flatImages[lightboxIndex]?.image ?? null : null;
 
   const goPrev = () => {
     setLightboxIndex((prev) => {
@@ -481,6 +500,71 @@ export function WeddingDayGallerySection() {
       return prev + 1;
     });
   };
+
+  const downloadCurrentImage = useCallback(async () => {
+    if (!currentLightboxSrc) return;
+    setIsDownloading(true);
+    try {
+      const url = new URL(currentLightboxSrc, window.location.href).toString();
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('Download failed');
+      const blob = await res.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = blobUrl;
+      const pathname = new URL(url).pathname;
+      const filename = pathname.split('/').filter(Boolean).pop() ?? 'image';
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(blobUrl);
+    } catch {
+      window.open(currentLightboxSrc, '_blank', 'noopener,noreferrer');
+    } finally {
+      setIsDownloading(false);
+    }
+  }, [currentLightboxSrc]);
+
+  const shareCurrentImage = useCallback(async () => {
+    if (!currentLightboxSrc) return;
+
+    const url = new URL(currentLightboxSrc, window.location.href).toString();
+    const nav = navigator as Navigator & {
+      share?: (data: { url?: string; title?: string; text?: string }) => Promise<void>;
+    };
+
+    try {
+      if (typeof nav.share === 'function') {
+        await nav.share({ url, title: 'Wedding photo' });
+        return;
+      }
+    } catch {
+      // Ignore and fall back to copy.
+    }
+
+    try {
+      await navigator.clipboard.writeText(url);
+      setShareCopied(true);
+      if (shareResetTimeoutRef.current !== null) {
+        window.clearTimeout(shareResetTimeoutRef.current);
+      }
+      shareResetTimeoutRef.current = window.setTimeout(() => {
+        setShareCopied(false);
+        shareResetTimeoutRef.current = null;
+      }, 1500);
+    } catch {
+      window.prompt('Copy link', url);
+    }
+  }, [currentLightboxSrc]);
+
+  useEffect(() => {
+    return () => {
+      if (shareResetTimeoutRef.current !== null) {
+        window.clearTimeout(shareResetTimeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <section
@@ -763,83 +847,133 @@ export function WeddingDayGallerySection() {
               >
                 {chip.label}
               </h3>
-              {/* Image list: 4px horizontal padding (50% of 8px), 8px column gap, 8px row gap */}
-              <div
-                className="break-inside-avoid px-1"
-                style={{
-                  columnCount: 2,
-                  columnGap: '8px',
-                }}
-              >
-                {images.length > 0
-                  ? images.map((item, index) => {
-                      const globalIndex = (chipData?.startIndex ?? 0) + index;
-                      const isLoaded = loadedThumbnails[globalIndex];
-                      const orientation: ImageOrientation =
-                        item.orientation ?? 'landscape';
-                      const aspectRatio = getAspectRatio(orientation);
-
-                      return (
+              {/* Zigzag image list: row by row; odd rows reversed so layout alternates left-right / right-left */}
+              <div className="break-inside-avoid px-1 flex flex-col gap-2">
+                {images.length > 0 ? (
+                  (() => {
+                    const rows: GalleryItem[][] = [];
+                    for (let i = 0; i < images.length; i += 2) {
+                      rows.push(images.slice(i, i + 2));
+                    }
+                    return rows.map((rowItems, rowIndex) => (
                         <div
-                          key={`${chip.id}-${index}`}
-                          className="relative mb-2 break-inside-avoid"
+                          key={`${chip.id}-row-${rowIndex}`}
+                          className="flex gap-2"
                           style={{
-                            overflow: 'hidden',
-                            borderRadius: 12,
-                            aspectRatio,
+                            flexDirection:
+                              rowIndex % 2 === 1 ? 'row-reverse' : 'row',
                           }}
                         >
-                          {!isLoaded && (
-                            <div
-                              className="absolute inset-0 bg-gray-300 animate-pulse"
-                              aria-hidden
-                            />
-                          )}
-                          <img
-                            src={getOptimizedImageUrl(
-                              item.image,
-                              thumbnailWidth,
-                            )}
-                            alt=""
-                            loading="lazy"
-                            className="absolute inset-0 rounded-[12px] cursor-zoom-in transition-opacity duration-200"
-                            style={{
-                              opacity: isLoaded ? 1 : 0,
-                              width: '100%',
-                              height: '100%',
-                              objectFit: 'cover',
-                            }}
-                            onClick={() => setLightboxIndex(globalIndex)}
-                            onLoad={() =>
-                              setLoadedThumbnails((prev) => ({
-                                ...prev,
-                                [globalIndex]: true,
-                              }))
-                            }
-                            onError={() =>
-                              setLoadedThumbnails((prev) => ({
-                                ...prev,
-                                [globalIndex]: true,
-                              }))
-                            }
-                          />
+                          {rowItems.map((item, colIndex) => {
+                            const index = rowIndex * 2 + colIndex;
+                            const globalIndex =
+                              (chipData?.startIndex ?? 0) + index;
+                            const isLoaded =
+                              loadedThumbnails[globalIndex];
+                            const orientation: ImageOrientation =
+                              item.orientation ?? 'landscape';
+                            const aspectRatio =
+                              getAspectRatio(orientation);
+
+                            return (
+                              <div
+                                key={`${chip.id}-${index}`}
+                                className="relative flex-1 min-w-0"
+                                style={{
+                                  overflow: 'hidden',
+                                  borderRadius: 12,
+                                  aspectRatio,
+                                }}
+                              >
+                                {!isLoaded && (
+                                  <div
+                                    className="absolute inset-0 bg-gray-300 animate-pulse"
+                                    aria-hidden
+                                  />
+                                )}
+                                <img
+                                  src={getOptimizedImageUrl(
+                                    item.image,
+                                    thumbnailWidth,
+                                    THUMBNAIL_QUALITY,
+                                  )}
+                                  alt=""
+                                  loading="lazy"
+                                  className="absolute inset-0 rounded-[12px] cursor-zoom-in transition-opacity duration-200"
+                                  style={{
+                                    opacity: isLoaded ? 1 : 0,
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'cover',
+                                  }}
+                                  onClick={() =>
+                                    setLightboxIndex(globalIndex)
+                                  }
+                                  onLoad={() =>
+                                    setLoadedThumbnails((prev) => ({
+                                      ...prev,
+                                      [globalIndex]: true,
+                                    }))
+                                  }
+                                  onError={() =>
+                                    setLoadedThumbnails((prev) => ({
+                                      ...prev,
+                                      [globalIndex]: true,
+                                    }))
+                                  }
+                                />
+                              </div>
+                            );
+                          })}
                         </div>
-                      );
-                    })
-                  : [
-                      { orientation: 'landscape' as const },
-                      { orientation: 'portrait' as const },
-                      { orientation: 'landscape' as const },
-                      { orientation: 'portrait' as const },
-                    ].map(({ orientation }, i) => (
-                      <div
-                        key={`${chip.id}-empty-${i}`}
-                        className="rounded-[12px] bg-gray-400 break-inside-avoid mb-2"
-                        style={{
-                          aspectRatio: getAspectRatio(orientation),
-                        }}
-                      />
-                    ))}
+                      ));
+                  })()
+                ) : (
+                  (() => {
+                      const placeholders = [
+                        {
+                          orientation: 'landscape' as const,
+                          key: 0,
+                        },
+                        {
+                          orientation: 'portrait' as const,
+                          key: 1,
+                        },
+                        {
+                          orientation: 'landscape' as const,
+                          key: 2,
+                        },
+                        {
+                          orientation: 'portrait' as const,
+                          key: 3,
+                        },
+                      ];
+                      const emptyRows = [
+                        placeholders.slice(0, 2),
+                        placeholders.slice(2, 4),
+                      ];
+                      return emptyRows.map((row, rowIndex) => (
+                        <div
+                          key={`${chip.id}-empty-row-${rowIndex}`}
+                          className="flex gap-2"
+                          style={{
+                            flexDirection:
+                              rowIndex % 2 === 1 ? 'row-reverse' : 'row',
+                          }}
+                        >
+                          {row.map(({ orientation, key: i }) => (
+                            <div
+                              key={`${chip.id}-empty-${i}`}
+                              className="rounded-[12px] bg-gray-400 flex-1 min-w-0"
+                              style={{
+                                aspectRatio: getAspectRatio(orientation),
+                              }}
+                            />
+                          ))}
+                        </div>
+                      ));
+                  })()
+                )}
               </div>
             </div>
           );
@@ -854,6 +988,62 @@ export function WeddingDayGallerySection() {
           src: item.image,
         }))}
         plugins={[Zoom]}
+        toolbar={{
+          buttons: [
+            currentLightboxSrc ? (
+              <button
+                key="download"
+                type="button"
+                className="yarl__button"
+                onClick={downloadCurrentImage}
+                disabled={isDownloading}
+                aria-label="Download"
+                title="Download"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  className="yarl__icon"
+                >
+                  <path
+                    d="M12 3v10m0 0l4-4m-4 4l-4-4M5 17v3h14v-3"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            ) : null,
+            currentLightboxSrc ? (
+              <button
+                key="share"
+                type="button"
+                className="yarl__button"
+                onClick={shareCurrentImage}
+                aria-label={shareCopied ? 'Copied' : 'Share'}
+                title={shareCopied ? 'Copied' : 'Share'}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  className="yarl__icon"
+                >
+                  <path
+                    d="M12 3l4 4m0 0l-4 4m4-4h-7a4 4 0 00-4 4v6a4 4 0 004 4h6a4 4 0 004-4v-2"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            ) : null,
+            'close',
+          ],
+        }}
         controller={{
           // closeOnBackdropClick: true,
           closeOnPullDown: true,
