@@ -141,8 +141,13 @@ export function WeddingDayGallerySection() {
   const floatingChipRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const barRef = useRef<HTMLDivElement | null>(null);
   const [showFloatingBar, setShowFloatingBar] = useState(false);
+  const [filterBarVisible, setFilterBarVisible] = useState(true);
+  const lastScrollYRef = useRef(0);
   const [headerHeight, setHeaderHeight] = useState(0);
   const currentTab = TABS.find((tab) => tab.id === activeTab) ?? TABS[0];
+
+  /** Scroll threshold (px) before hiding/showing filter bar to avoid jitter */
+  const SCROLL_DIRECTION_THRESHOLD = 48;
 
   const scrollToTop = useCallback(() => {
     window.scrollTo({
@@ -224,8 +229,24 @@ export function WeddingDayGallerySection() {
     const handleScroll = () => {
       if (!barRef.current) return;
       const rect = barRef.current.getBoundingClientRect();
-      // Khi top của thanh gốc chạm hoặc vượt lên trên đỉnh viewport thì hiển thị bản floating
-      setShowFloatingBar(rect.top <= 0);
+      const scrollY = window.scrollY;
+      const isPastBar = rect.top <= 0;
+      setShowFloatingBar(isPastBar);
+
+      // Hide filter when scrolling down, show when scrolling up (only when floating bar is active)
+      if (!isPastBar) {
+        setFilterBarVisible(true);
+        lastScrollYRef.current = scrollY;
+      } else {
+        const delta = scrollY - lastScrollYRef.current;
+        if (delta > SCROLL_DIRECTION_THRESHOLD) {
+          setFilterBarVisible(false);
+          lastScrollYRef.current = scrollY;
+        } else if (delta < -SCROLL_DIRECTION_THRESHOLD) {
+          setFilterBarVisible(true);
+          lastScrollYRef.current = scrollY;
+        }
+      }
 
       const offsetFromTop = (barRef.current.offsetHeight || headerHeight) - 4;
       let bestChipId: string | null = null;
@@ -436,10 +457,19 @@ export function WeddingDayGallerySection() {
         background: 'linear-gradient(to bottom, #FFFFFF 0%, #F4F1EA 100%)',
       }}
     >
-      {/* Floating bar & scroll-to-top button: chỉ hiện khi đã scroll qua vị trí thanh gốc */}
+      {/* Floating bar & scroll-to-top button: chỉ hiện khi đã scroll qua vị trí thanh gốc; ẩn khi scroll xuống, hiện khi scroll lên */}
       {showFloatingBar && (
         <>
-          <div className="fixed top-0 left-0 right-0 z-30 bg-white/95 backdrop-blur-sm min-[500px]:left-1/2 min-[500px]:right-auto min-[500px]:w-full min-[500px]:max-w-[480px] min-[500px]:-translate-x-1/2">
+          <div
+            className="fixed top-0 left-0 right-0 z-30"
+            style={{
+              transform: filterBarVisible
+                ? 'translateY(0)'
+                : 'translateY(-100%)',
+              transition: 'transform 0.25s ease-out',
+            }}
+          >
+            <div className="bg-white/95 backdrop-blur-sm w-full min-[500px]:max-w-[480px] min-[500px]:mx-auto">
             {/* Event tabs: align left, 16px spacing between tabs */}
             <div className="flex justify-start gap-4 px-3 pt-4 pb-0">
               {TABS.map((tab) => (
@@ -524,6 +554,7 @@ export function WeddingDayGallerySection() {
                 })}
                 <div className="shrink-0 w-2" aria-hidden="true" />
               </div>
+            </div>
             </div>
           </div>
 
