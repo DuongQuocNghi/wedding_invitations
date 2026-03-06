@@ -9,6 +9,8 @@ type GalleryItem = {
   tag: string[];
   orientation?: Orientation;
   hidden: boolean;
+  /** Display order (smaller = first). Null/undefined = use array order. */
+  index?: number | null;
 };
 
 type GalleryData = {
@@ -29,6 +31,7 @@ export default function GalleryAdminPage() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [selectedKeys, setSelectedKeys] = useState<Record<string, boolean>>({});
   const [tagInput, setTagInput] = useState('');
+  const [displayIndexInput, setDisplayIndexInput] = useState('');
   const [orientation, setOrientation] = useState<Orientation>('landscape');
   const [hidden, setHidden] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
@@ -64,6 +67,9 @@ export default function GalleryAdminPage() {
           const firstItem = json.data[categories[0]]?.[0];
           if (firstItem) {
             setTagInput(firstItem.tag.join(', '));
+            setDisplayIndexInput(
+              firstItem.index != null ? String(firstItem.index) : '',
+            );
             setOrientation(
               firstItem.orientation === 'portrait' ? 'portrait' : 'landscape',
             );
@@ -138,7 +144,14 @@ export default function GalleryAdminPage() {
       });
     }
 
-    return items;
+    // Sort by display index (smaller first); null/undefined last; then by category and array index
+    return [...items].sort((a, b) => {
+      const orderA = a.item.index ?? Infinity;
+      const orderB = b.item.index ?? Infinity;
+      if (orderA !== orderB) return orderA - orderB;
+      if (a.category !== b.category) return a.category.localeCompare(b.category);
+      return a.index - b.index;
+    });
   }, [
     flatItems,
     filterCategory,
@@ -152,6 +165,9 @@ export default function GalleryAdminPage() {
     setSelectedCategory(fi.category);
     setSelectedIndex(fi.index);
     setTagInput(fi.item.tag.join(', '));
+    setDisplayIndexInput(
+      fi.item.index != null ? String(fi.item.index) : '',
+    );
     setOrientation(
       fi.item.orientation === 'portrait' ? 'portrait' : 'landscape',
     );
@@ -211,6 +227,10 @@ export default function GalleryAdminPage() {
 
       for (const t of targets) {
         // eslint-disable-next-line no-await-in-loop
+        const displayIndex =
+          displayIndexInput.trim() === ''
+            ? null
+            : Number(displayIndexInput.trim());
         const res = await fetch('/api/gallery', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -220,6 +240,8 @@ export default function GalleryAdminPage() {
             tag: tags,
             orientation,
             hidden,
+            displayIndex:
+              Number.isNaN(displayIndex) ? undefined : displayIndex,
           }),
         });
 
@@ -243,7 +265,7 @@ export default function GalleryAdminPage() {
         };
 
         responses.forEach(({ target, result }) => {
-          if (!result.success) return;
+          if (!result.success || !result.item) return;
           const existing = next.data[target.category] || [];
           const cloned = [...existing];
           if (cloned[target.index]) {
@@ -464,6 +486,11 @@ export default function GalleryAdminPage() {
                         <span className="px-1.5 py-0.5 rounded bg-black/50 text-[9px] text-white font-mono">
                           #{fi.index}
                         </span>
+                        {fi.item.index != null && (
+                          <span className="px-1.5 py-0.5 rounded bg-emerald-600/90 text-[9px] text-white font-mono">
+                            index: {fi.item.index}
+                          </span>
+                        )}
                       </div>
 
                       {/* Hidden badge */}
@@ -485,6 +512,11 @@ export default function GalleryAdminPage() {
 
                       {/* Bottom overlay info */}
                       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent px-1.5 pb-1.5 pt-6">
+                        {fi.item.index != null && (
+                          <p className="text-[9px] text-emerald-200 font-mono">
+                            index: {fi.item.index}
+                          </p>
+                        )}
                         <p className="text-[9px] text-slate-100 font-mono truncate">
                           {fi.category}
                         </p>
@@ -591,6 +623,23 @@ export default function GalleryAdminPage() {
                       </div>
                     </div>
                   )}
+                </div>
+
+                <div>
+                  <label className="block text-xs font-medium text-slate-700 mb-1">
+                    Thứ tự hiển thị (index)
+                  </label>
+                  <input
+                    type="text"
+                    inputMode="numeric"
+                    value={displayIndexInput}
+                    onChange={(e) => setDisplayIndexInput(e.target.value)}
+                    className="w-full text-xs rounded border border-slate-300 px-2 py-1.5 font-mono focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500"
+                    placeholder="Để trống = theo thứ tự mảng"
+                  />
+                  <p className="mt-0.5 text-[11px] text-slate-500">
+                    Số nhỏ hiển thị trước. Trống = cuối danh sách.
+                  </p>
                 </div>
 
                 <div>

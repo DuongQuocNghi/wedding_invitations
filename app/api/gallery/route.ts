@@ -38,12 +38,14 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json();
-    const { category, index, tag, orientation, hidden } = body as {
+    const { category, index, tag, orientation, hidden, displayIndex } = body as {
       category?: string;
       index?: number;
       tag?: string[];
       orientation?: 'landscape' | 'portrait';
       hidden?: boolean;
+      /** Display order for gallery (smaller = first). Pass null to clear. */
+      displayIndex?: number | null;
     };
 
     if (!category || typeof index !== 'number') {
@@ -62,6 +64,7 @@ export async function POST(request: Request) {
           tag: string[];
           orientation?: 'landscape' | 'portrait';
           hidden: boolean;
+          index?: number | null;
         }[]
       >;
     };
@@ -82,14 +85,24 @@ export async function POST(request: Request) {
     }
 
     const nextTags = Array.isArray(tag) ? tag : [];
-    const nextOrientation =
+    const nextOrientation: 'landscape' | 'portrait' =
       orientation === 'portrait' ? 'portrait' : 'landscape';
-    items[index] = {
+    const nextItem: {
+      image: string;
+      tag: string[];
+      orientation?: 'landscape' | 'portrait';
+      hidden: boolean;
+      index?: number | null;
+    } = {
       ...items[index],
       tag: nextTags,
       orientation: nextOrientation,
       hidden: Boolean(hidden),
     };
+    if (displayIndex !== undefined) {
+      nextItem.index = displayIndex === null ? null : Number(displayIndex);
+    }
+    items[index] = nextItem;
 
     await fs.writeFile(DATA_PATH, JSON.stringify(json, null, 2), 'utf-8');
 

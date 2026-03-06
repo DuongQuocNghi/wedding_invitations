@@ -23,6 +23,8 @@ type GalleryItem = {
   image: string;
   tag: string[];
   hidden: boolean;
+  /** Display order: smaller value shows first. Null/undefined = use array order at end. */
+  index?: number | null;
   /** Thumbnail slot shape: portrait (3:4) or landscape (4:3). Defaults to 'landscape' if omitted. */
   orientation?: ImageOrientation;
 };
@@ -104,20 +106,36 @@ function getOptimizedImageUrl(original: string, width: number): string {
   return `${original}${separator}${transform}`;
 }
 
+/** Sort by display index (asc); items with null/undefined index go last, then by original order. */
+function sortByDisplayIndex<T extends { index?: number | null }>(
+  items: T[],
+  originalOrder: (item: T) => number,
+): T[] {
+  return [...items].sort((a, b) => {
+    const orderA = a.index ?? Infinity;
+    const orderB = b.index ?? Infinity;
+    if (orderA !== orderB) return orderA - orderB;
+    return originalOrder(a) - originalOrder(b);
+  });
+}
+
 function getImagesForChip(tabId: string, chipId: string): GalleryItem[] {
+  let filtered: GalleryItem[] = [];
+  let source: GalleryItem[] = [];
   if (tabId === 'pre-wedding') {
-    return PRE_WEDDING_ITEMS.filter(
+    source = PRE_WEDDING_ITEMS;
+    filtered = source.filter(
+      (item) => !item.hidden && item.tag.includes(chipId),
+    );
+  } else if (tabId === 'tiec-31-01') {
+    source = WEDDING_3101_ITEMS;
+    filtered = source.filter(
       (item) => !item.hidden && item.tag.includes(chipId),
     );
   }
-
-  if (tabId === 'tiec-31-01') {
-    return WEDDING_3101_ITEMS.filter(
-      (item) => !item.hidden && item.tag.includes(chipId),
-    );
-  }
-
-  return [];
+  if (filtered.length === 0) return [];
+  const indexInSource = (item: GalleryItem) => source.indexOf(item);
+  return sortByDisplayIndex(filtered, indexInSource);
 }
 
 /**
