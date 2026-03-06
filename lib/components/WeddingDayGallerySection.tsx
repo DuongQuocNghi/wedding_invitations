@@ -63,10 +63,8 @@ const TABS: TabConfig[] = [
     id: 'le-gia-tien',
     label: 'Lễ gia tiên',
     chips: [
-      { id: 'le-nha-gai', label: 'Nhà gái' },
-      { id: 'le-don-nha-trai', label: 'Đón nhà trai' },
-      { id: 'le-nghi-thuc-hai-ho', label: 'Nghi thức hai họ' },
-      { id: 'le-ruoc-dau', label: 'Rước dâu' },
+      { id: 'don_nha_trai', label: 'Đón nhà trai' },
+      { id: 'nghi_thu_hai_ho', label: 'Nghi thức hai họ' },
     ],
   },
   {
@@ -90,11 +88,13 @@ const TABS: TabConfig[] = [
     id: 'tan-hon-08-02',
     label: 'Tân Hôn 08.02',
     chips: [
-      { id: 'tan-toan-canh', label: 'Toàn cảnh' },
-      { id: 'tan-le-tan-hon', label: 'Lễ tân hôn' },
-      { id: 'tan-gia-dinh-nha-gai', label: 'Gia dình nhà gái' },
-      { id: 'tan-gia-dinh-nha-trai', label: 'Gia đình nhà trai' },
-      { id: 'tan-ban-be', label: 'Bạn bè' },
+      { id: 'ban_be', label: 'Bạn bè' },
+      { id: 'me', label: 'Bạn mẹ' },
+      { id: 'gia_dinh_nha_trai', label: 'Gia đình nhà trai' },
+      { id: 'dang_yeu', label: 'Đang yêu' },
+      { id: 'dau_re', label: 'Dâu rễ' },
+      { id: 'nha_gai', label: 'Nhà gái' },
+      { id: 'toan_canh', label: 'Toàn cảnh' },
     ],
   },
 ];
