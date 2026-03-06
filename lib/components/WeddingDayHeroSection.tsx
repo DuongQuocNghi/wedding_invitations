@@ -11,21 +11,14 @@ export function WeddingDayHeroSection() {
     <section className="w-full">
       {/* Image container: fixed height, width 100%; image keeps aspect ratio (object-cover) */}
       <div className="relative w-full h-[278px] overflow-hidden">
-        {/* Placeholder until image is imported; replace src when ready */}
-        <div
-          className="absolute inset-0 bg-gray-400"
-          aria-hidden
-        />
-        {/* Optional: use real image when available — uncomment and set src
         <img
-          src="/assets/images/wedding-day-hero.jpg"
+          src="https://ik.imagekit.io/8f6s5msl5/tr:w-1000/wedding_3101/a/_DSC0914.jpg"
           alt="Wedding couple"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        */}
         {/* Gradient overlay: background color at bottom, fades to transparent upward */}
         <div
-          className="absolute inset-x-0 bottom-0 h-[60%] pointer-events-none"
+          className="absolute inset-x-0 bottom-0 h-[40%] pointer-events-none"
           style={{
             background: `linear-gradient(to top, ${GRADIENT_COLOR} 0%, ${GRADIENT_COLOR} 20%, transparent 100%)`,
           }}
