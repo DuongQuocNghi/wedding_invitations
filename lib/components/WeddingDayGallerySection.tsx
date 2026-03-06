@@ -111,7 +111,9 @@ function getOptimizedImageUrl(original: string, width: number): string {
 
 function getImagesForChip(tabId: string, chipId: string): GalleryItem[] {
   if (tabId === 'pre-wedding') {
-    return PRE_WEDDING_ITEMS.filter((item) => !item.hidden);
+    return PRE_WEDDING_ITEMS.filter(
+      (item) => !item.hidden && item.tag.includes(chipId),
+    );
   }
 
   if (tabId !== 'tiec-31-01') {
