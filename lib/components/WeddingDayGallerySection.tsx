@@ -1197,15 +1197,16 @@ export function WeddingDayGallerySection() {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   className="yarl__icon"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  <path
-                    d="M12 3l4 4m0 0l-4 4m4-4h-7a4 4 0 00-4 4v6a4 4 0 004 4h6a4 4 0 004-4v-2"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
+                  <circle cx="18" cy="5" r="2.5" />
+                  <circle cx="6" cy="12" r="2.5" />
+                  <circle cx="18" cy="19" r="2.5" />
+                  <path d="M8.59 13.51l6.82 3.98M15.41 6.51l-6.82 3.98" />
                 </svg>
               </button>
             ) : null,

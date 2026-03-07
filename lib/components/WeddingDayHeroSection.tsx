@@ -12,7 +12,7 @@ export function WeddingDayHeroSection() {
       {/* Image container: fixed height, width 100%; image keeps aspect ratio (object-cover) */}
       <div className="relative w-full h-[278px] overflow-hidden">
         <img
-          src="https://ik.imagekit.io/8f6s5msl5/tr:w-1000/wedding_3101/a/_DSC0914.jpg"
+          src="https://ik.imagekit.io/8f6s5msl5/tr:w-1000/wedding_0802/w/GIA02398.jpg"
           alt="Wedding couple"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
