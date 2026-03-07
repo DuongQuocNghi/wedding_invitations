@@ -747,17 +747,17 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 33,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1501.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 9,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1703.jpg",
@@ -765,7 +765,7 @@
           "vio"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 3,
         "hidden": false
       },
       {
@@ -774,7 +774,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 1.2,
         "hidden": false
       },
       {
@@ -783,7 +783,7 @@
           "toan_canh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 8,
         "hidden": false
       },
       {
@@ -792,7 +792,7 @@
           "toan_canh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 3,
         "hidden": false
       },
       {
@@ -801,7 +801,7 @@
           "vio"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 2,
         "hidden": false
       },
       {
@@ -819,7 +819,7 @@
           "dream"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 7,
         "hidden": false
       },
       {
@@ -834,26 +834,26 @@
         "tag": [
           "dau_re"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 109,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1844.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 9,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0958.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 9,
         "hidden": false
       },
       {
@@ -862,8 +862,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 9,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1716.jpg",
@@ -879,17 +879,17 @@
         "tag": [
           "btx"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 2,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0970.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 9,
         "hidden": false
       },
       {
@@ -906,8 +906,8 @@
         "tag": [
           "dau_re"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 109,
         "hidden": false
       },
       {
@@ -915,8 +915,8 @@
         "tag": [
           "gia_dinh"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 35,
         "hidden": false
       },
       {
@@ -934,7 +934,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 150,
         "hidden": false
       },
       {
@@ -943,7 +943,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 112,
         "hidden": false
       },
       {
@@ -952,8 +952,8 @@
           "vio"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 3,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1260.jpg",
@@ -961,7 +961,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 39,
         "hidden": false
       },
       {
@@ -970,16 +970,16 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 9,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0971.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 9,
         "hidden": false
       },
       {
@@ -988,16 +988,16 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 1,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1077.jpg",
         "tag": [
           "biz4"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 3,
         "hidden": false
       },
       {
@@ -1006,7 +1006,7 @@
           "vio"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 3,
         "hidden": false
       },
       {
@@ -1015,7 +1015,7 @@
           "dream"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 7,
         "hidden": false
       },
       {
@@ -1024,7 +1024,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 150,
         "hidden": false
       },
       {
@@ -1032,8 +1032,8 @@
         "tag": [
           "btx"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 3,
         "hidden": false
       },
       {
@@ -1042,7 +1042,7 @@
           "biz4"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 1,
         "hidden": false
       },
       {
@@ -1050,8 +1050,8 @@
         "tag": [
           "dau_re"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 115,
         "hidden": false
       },
       {
@@ -1060,7 +1060,7 @@
           "dream"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 7,
         "hidden": false
       },
       {
@@ -1069,7 +1069,7 @@
           "dream"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 1,
         "hidden": false
       },
       {
@@ -1077,8 +1077,8 @@
         "tag": [
           "toan_canh"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 4,
         "hidden": false
       },
       {
@@ -1087,8 +1087,8 @@
           "toan_canh"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 3,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0839.jpg",
@@ -1097,7 +1097,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1448.jpg",
@@ -1105,16 +1105,16 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 10,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1072.jpg",
         "tag": [
           "biz4"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 3,
         "hidden": false
       },
       {
@@ -1122,8 +1122,8 @@
         "tag": [
           "vio"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 1,
         "hidden": false
       },
       {
@@ -1132,8 +1132,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 5,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1258.jpg",
@@ -1141,7 +1141,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 38,
         "hidden": false
       },
       {
@@ -1150,7 +1150,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 112,
         "hidden": false
       },
       {
@@ -1168,7 +1168,7 @@
           "vio"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 3,
         "hidden": false
       },
       {
@@ -1176,9 +1176,9 @@
         "tag": [
           "dau_re"
         ],
-        "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "orientation": "square",
+        "index": 109,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1338.jpg",
@@ -1186,7 +1186,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 33,
         "hidden": false
       },
       {
@@ -1195,7 +1195,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 37,
         "hidden": false
       },
       {
@@ -1205,7 +1205,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1517.jpg",
@@ -1213,7 +1213,7 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 117,
         "hidden": false
       },
       {
@@ -1222,8 +1222,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 9,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1488.jpg",
@@ -1231,8 +1231,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 5,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0817.jpg",
@@ -1256,7 +1256,7 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 111,
         "hidden": false
       },
       {
@@ -1265,7 +1265,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 150,
         "hidden": false
       },
       {
@@ -1273,8 +1273,8 @@
         "tag": [
           "dau_re"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 110,
         "hidden": false
       },
       {
@@ -1283,26 +1283,26 @@
           "toan_canh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 1,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0977.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
-        "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "orientation": "portrait",
+        "index": 9,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0999.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1471.jpg",
@@ -1310,16 +1310,16 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 5,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1498.jpg",
         "tag": [
           "dau_re"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 115,
         "hidden": false
       },
       {
@@ -1328,8 +1328,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 9,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0816.jpg",
@@ -1344,17 +1344,17 @@
           "jologic"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 5,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0963.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 6,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1894.jpg",
@@ -1362,7 +1362,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 150,
         "hidden": false
       },
       {
@@ -1370,17 +1370,17 @@
         "tag": [
           "jologic"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 2,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1275.jpg",
         "tag": [
-          "gia_dinh"
+          "vio"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 1,
         "hidden": false
       },
       {
@@ -1388,8 +1388,8 @@
         "tag": [
           "biz4"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 2,
         "hidden": false
       },
       {
@@ -1397,8 +1397,8 @@
         "tag": [
           "biz4"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 3,
         "hidden": false
       },
       {
@@ -1406,8 +1406,8 @@
         "tag": [
           "dream"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 2,
         "hidden": false
       },
       {
@@ -1416,7 +1416,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 35,
         "hidden": false
       },
       {
@@ -1426,15 +1426,15 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1761.jpg",
         "tag": [
-          "gia_dinh"
+          "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 118,
         "hidden": false
       },
       {
@@ -1442,8 +1442,8 @@
         "tag": [
           "gia_dinh"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 33,
         "hidden": false
       },
       {
@@ -1452,7 +1452,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 45,
         "hidden": false
       },
       {
@@ -1470,8 +1470,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 111,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1704.jpg",
@@ -1479,7 +1479,7 @@
           "vio"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 3,
         "hidden": false
       },
       {
@@ -1488,7 +1488,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 28,
         "hidden": false
       },
       {
@@ -1506,7 +1506,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 150,
         "hidden": false
       },
       {
@@ -1514,8 +1514,8 @@
         "tag": [
           "toan_canh"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 5,
         "hidden": false
       },
       {
@@ -1524,7 +1524,7 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 111,
         "hidden": false
       },
       {
@@ -1533,7 +1533,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 102,
         "hidden": false
       },
       {
@@ -1543,16 +1543,16 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0910.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1589.jpg",
@@ -1560,7 +1560,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 99,
         "hidden": false
       },
       {
@@ -1568,8 +1568,8 @@
         "tag": [
           "hong_bang"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 1,
         "hidden": false
       },
       {
@@ -1593,8 +1593,8 @@
         "tag": [
           "dream"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 4,
         "hidden": false
       },
       {
@@ -1603,16 +1603,16 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 5,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0948.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 9,
         "hidden": false
       },
       {
@@ -1630,8 +1630,8 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 150,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1505.jpg",
@@ -1639,7 +1639,7 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 115,
         "hidden": false
       },
       {
@@ -1648,7 +1648,7 @@
           "gugotech"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 1,
         "hidden": false
       },
       {
@@ -1656,8 +1656,8 @@
         "tag": [
           "toan_canh"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 2,
         "hidden": false
       },
       {
@@ -1666,7 +1666,7 @@
           "vio"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 3,
         "hidden": false
       },
       {
@@ -1674,9 +1674,9 @@
         "tag": [
           "dau_re"
         ],
-        "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "orientation": "portrait",
+        "index": 117,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0803.jpg",
@@ -1685,7 +1685,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1317.jpg",
@@ -1693,7 +1693,7 @@
           "btx"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 1,
         "hidden": false
       },
       {
@@ -1702,7 +1702,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 94,
         "hidden": false
       },
       {
@@ -1711,16 +1711,16 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 9,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0975.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 9,
         "hidden": false
       },
       {
@@ -1729,7 +1729,7 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 117,
         "hidden": false
       },
       {
@@ -1739,7 +1739,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1576.jpg",
@@ -1747,7 +1747,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 97,
         "hidden": false
       },
       {
@@ -1757,7 +1757,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0961.jpg",
@@ -1765,7 +1765,7 @@
           "toan_canh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 8,
         "hidden": false
       },
       {
@@ -1774,7 +1774,7 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 108,
         "hidden": false
       },
       {
@@ -1783,16 +1783,16 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 5,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1172.jpg",
         "tag": [
           "btx"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 4,
         "hidden": false
       },
       {
@@ -1801,7 +1801,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 43,
         "hidden": false
       },
       {
@@ -1809,8 +1809,8 @@
         "tag": [
           "gia_dinh"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 30,
         "hidden": false
       },
       {
@@ -1820,16 +1820,16 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1748.jpg",
         "tag": [
-          "gia_dinh"
+          "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 118,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1364.jpg",
@@ -1844,7 +1844,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 150,
         "hidden": false
       },
       {
@@ -1857,19 +1857,19 @@
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0907.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1402.jpg",
         "tag": [
-          "gia_dinh"
+          "dau_re"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 106,
         "hidden": false
       },
       {
@@ -1878,17 +1878,17 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 99,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1749.jpg",
         "tag": [
-          "gia_dinh"
+          "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 50,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1577.jpg",
@@ -1896,7 +1896,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 97,
         "hidden": false
       },
       {
@@ -1911,8 +1911,8 @@
         "tag": [
           "gia_dinh"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 30,
         "hidden": false
       },
       {
@@ -1921,25 +1921,25 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 91,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1763.jpg",
         "tag": [
-          "gia_dinh"
+          "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 118,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0864.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 10,
         "hidden": false
       },
       {
@@ -1948,7 +1948,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 42,
         "hidden": false
       },
       {
@@ -1957,16 +1957,16 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 105,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1401.jpg",
         "tag": [
-          "gia_dinh"
+          "dau_re"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 106,
         "hidden": false
       },
       {
@@ -1981,16 +1981,16 @@
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0904.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0939.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
         "index": null,
@@ -1999,11 +1999,11 @@
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1399.jpg",
         "tag": [
-          "gia_dinh"
+          "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 50,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1366.jpg",
@@ -2024,10 +2024,10 @@
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0859.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 10,
         "hidden": false
       },
       {
@@ -2036,7 +2036,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 103,
         "hidden": false
       },
       {
@@ -2046,7 +2046,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0871.jpg",
@@ -2061,7 +2061,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 93,
         "hidden": false
       },
       {
@@ -2069,8 +2069,8 @@
         "tag": [
           "gugotech"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 1,
         "hidden": false
       },
       {
@@ -2080,21 +2080,21 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0849.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 10,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0928.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
         "index": null,
@@ -2103,11 +2103,11 @@
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0915.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1799.jpg",
@@ -2116,7 +2116,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1835.jpg",
@@ -2124,7 +2124,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 150,
         "hidden": false
       },
       {
@@ -2132,8 +2132,8 @@
         "tag": [
           "dream"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 8,
         "hidden": false
       },
       {
@@ -2142,15 +2142,15 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 103,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0914.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -2160,7 +2160,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 1,
         "hidden": false
       },
       {
@@ -2169,7 +2169,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 104,
         "hidden": false
       },
       {
@@ -2178,8 +2178,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 10,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1572.jpg",
@@ -2187,7 +2187,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 96,
         "hidden": false
       },
       {
@@ -2196,7 +2196,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 93,
         "hidden": false
       },
       {
@@ -2204,8 +2204,8 @@
         "tag": [
           "gia_dinh"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 1,
         "hidden": false
       },
       {
@@ -2221,7 +2221,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 95,
         "hidden": false
       },
       {
@@ -2230,7 +2230,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 96,
         "hidden": false
       },
       {
@@ -2238,8 +2238,8 @@
         "tag": [
           "gia_dinh"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 30,
         "hidden": false
       },
       {
@@ -2248,7 +2248,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 30,
         "hidden": false
       },
       {
@@ -2258,25 +2258,25 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1375.jpg",
         "tag": [
           "dau_re"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 103,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1765.jpg",
         "tag": [
-          "gia_dinh"
+          "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 118,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1374.jpg",
@@ -2284,8 +2284,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 1,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1348.jpg",
@@ -2302,7 +2302,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 108,
         "hidden": false
       },
       {
@@ -2311,7 +2311,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 104,
         "hidden": false
       },
       {
@@ -2320,7 +2320,7 @@
           "btx"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 5,
         "hidden": false
       },
       {
@@ -2329,16 +2329,16 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 30,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1412.jpg",
         "tag": [
-          "gia_dinh"
+          "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 107,
         "hidden": false
       },
       {
@@ -2347,7 +2347,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 102,
         "hidden": false
       },
       {
@@ -2363,7 +2363,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 101,
         "hidden": false
       },
       {
@@ -2372,8 +2372,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 5,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1580.jpg",
@@ -2381,7 +2381,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 97,
         "hidden": false
       },
       {
@@ -2390,17 +2390,17 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 30,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1758.jpg",
         "tag": [
-          "gia_dinh"
+          "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 50,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1423.jpg",
@@ -2408,8 +2408,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 5,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1390.jpg",
@@ -2417,16 +2417,16 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 1,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1392.jpg",
         "tag": [
           "dau_re"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 105,
         "hidden": false
       },
       {
@@ -2434,8 +2434,8 @@
         "tag": [
           "gia_dinh"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 1,
         "hidden": false
       },
       {
@@ -2444,16 +2444,16 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 1,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1153.jpg",
         "tag": [
           "gia_dinh"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 40,
         "hidden": false
       },
       {
@@ -2462,7 +2462,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 92,
         "hidden": false
       },
       {
@@ -2470,8 +2470,8 @@
         "tag": [
           "dau_re"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 104,
         "hidden": false
       },
       {
@@ -2486,8 +2486,8 @@
         "tag": [
           "gia_dinh"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 30,
         "hidden": false
       },
       {
@@ -2505,7 +2505,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 107,
         "hidden": false
       },
       {
@@ -2514,16 +2514,16 @@
           "btx"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 9,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1770.jpg",
         "tag": [
-          "gia_dinh"
+          "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 118,
         "hidden": false
       },
       {
@@ -2532,17 +2532,17 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 106,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0863.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 9,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1424.jpg",
@@ -2550,15 +2550,15 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 5,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1186.jpg",
         "tag": [
           "hong_bang"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -2568,7 +2568,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 106,
         "hidden": false
       },
       {
@@ -2577,7 +2577,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 97,
         "hidden": false
       },
       {
@@ -2585,8 +2585,8 @@
         "tag": [
           "jologic"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 1,
         "hidden": false
       },
       {
@@ -2594,8 +2594,8 @@
         "tag": [
           "dau_re"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 115.1,
         "hidden": false
       },
       {
@@ -2605,7 +2605,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1218.jpg",
@@ -2613,7 +2613,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 30,
         "hidden": false
       },
       {
@@ -2622,7 +2622,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 34,
         "hidden": false
       },
       {
@@ -2631,7 +2631,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 95,
         "hidden": false
       },
       {
@@ -2640,7 +2640,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 30,
         "hidden": false
       },
       {
@@ -2649,7 +2649,7 @@
           "dream"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 6,
         "hidden": false
       },
       {
@@ -2657,8 +2657,8 @@
         "tag": [
           "btx"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 9,
         "hidden": false
       },
       {
@@ -2667,7 +2667,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 99,
         "hidden": false
       },
       {
@@ -2676,7 +2676,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 107,
         "hidden": false
       },
       {
@@ -2685,7 +2685,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 107,
         "hidden": false
       },
       {
@@ -2693,7 +2693,7 @@
         "tag": [
           "fg"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -2704,7 +2704,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1583.jpg",
@@ -2712,7 +2712,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 98,
         "hidden": false
       },
       {
@@ -2721,7 +2721,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 92,
         "hidden": false
       },
       {
@@ -2730,7 +2730,7 @@
           "biz4"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 4,
         "hidden": false
       },
       {
@@ -2739,7 +2739,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 150,
         "hidden": false
       },
       {
@@ -2747,9 +2747,9 @@
         "tag": [
           "jologic"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1582.jpg",
@@ -2757,7 +2757,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 98,
         "hidden": false
       },
       {
@@ -2765,8 +2765,8 @@
         "tag": [
           "gia_dinh"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 30,
         "hidden": false
       },
       {
@@ -2775,7 +2775,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 150,
         "hidden": false
       },
       {
@@ -2784,16 +2784,16 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 1,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1409.jpg",
         "tag": [
-          "gia_dinh"
+          "dau_re"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 107,
         "hidden": false
       },
       {
@@ -2802,7 +2802,7 @@
           "dream"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 8,
         "hidden": false
       },
       {
@@ -2811,7 +2811,7 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 115,
         "hidden": false
       },
       {
@@ -2821,7 +2821,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1782.jpg",
@@ -2836,7 +2836,7 @@
           "dream"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 8,
         "hidden": false
       },
       {
@@ -2845,8 +2845,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 1,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1436.jpg",
@@ -2854,8 +2854,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 10,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1024.jpg",
@@ -2863,7 +2863,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 1,
         "hidden": false
       },
       {
@@ -2873,7 +2873,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1806.jpg",
@@ -2882,16 +2882,16 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1747.jpg",
         "tag": [
-          "gia_dinh"
+          "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 118,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1008.jpg",
@@ -2899,7 +2899,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 44,
         "hidden": false
       },
       {
@@ -2917,7 +2917,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 91,
         "hidden": false
       },
       {
@@ -2925,8 +2925,8 @@
         "tag": [
           "gia_dinh"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 1,
         "hidden": false
       },
       {
@@ -2935,7 +2935,7 @@
           "gugotech"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 1,
         "hidden": false
       },
       {
@@ -2944,13 +2944,13 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 1,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0920.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
         "index": null,
@@ -2962,8 +2962,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 1,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1435.jpg",
@@ -2971,8 +2971,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 10,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1168.jpg",
@@ -2980,7 +2980,7 @@
           "fg"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 1,
         "hidden": false
       },
       {
@@ -2990,7 +2990,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1018.jpg",
@@ -2998,7 +2998,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 1,
         "hidden": false
       },
       {
@@ -3007,7 +3007,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 30,
         "hidden": false
       },
       {
@@ -3015,17 +3015,17 @@
         "tag": [
           "btx"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 4,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0868.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 10,
         "hidden": false
       },
       {
@@ -3034,25 +3034,25 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 33,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1746.jpg",
         "tag": [
-          "gia_dinh"
+          "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 118,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1750.jpg",
         "tag": [
-          "gia_dinh"
+          "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 118,
         "hidden": false
       },
       {
@@ -3062,7 +3062,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1395.jpg",
@@ -3071,7 +3071,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1431.jpg",
@@ -3079,8 +3079,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 10,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1781.jpg",
@@ -3101,38 +3101,38 @@
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1754.jpg",
         "tag": [
-          "gia_dinh"
+          "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 50,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1757.jpg",
         "tag": [
-          "gia_dinh"
+          "dau_re"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 118,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0853.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 9,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1756.jpg",
         "tag": [
-          "gia_dinh"
+          "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 50,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1790.jpg",
@@ -3144,20 +3144,20 @@
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1382.jpg",
         "tag": [
-          "gia_dinh"
+          "dau_re"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 102,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1753.jpg",
         "tag": [
-          "gia_dinh"
+          "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 50,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1034.jpg",
@@ -3165,7 +3165,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 1,
         "hidden": false
       },
       {
@@ -3174,7 +3174,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 107,
         "hidden": false
       },
       {
@@ -3183,7 +3183,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 105,
         "hidden": false
       },
       {
@@ -3191,8 +3191,8 @@
         "tag": [
           "gia_dinh"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 32,
         "hidden": false
       },
       {
@@ -3201,7 +3201,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 100,
         "hidden": false
       },
       {
@@ -3210,15 +3210,15 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 10,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0936.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -3229,7 +3229,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1584.jpg",
@@ -3237,7 +3237,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 98,
         "hidden": false
       },
       {
@@ -3246,8 +3246,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 10,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1221.jpg",
@@ -3255,7 +3255,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 29,
         "hidden": false
       },
       {
@@ -3264,7 +3264,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 30,
         "hidden": false
       },
       {
@@ -3272,17 +3272,17 @@
         "tag": [
           "dream"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 9,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1751.jpg",
         "tag": [
-          "gia_dinh"
+          "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 118,
         "hidden": false
       },
       {
@@ -3308,7 +3308,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1722.jpg",
@@ -3332,7 +3332,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 28,
         "hidden": false
       },
       {
@@ -3341,7 +3341,7 @@
           "toan_canh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 7,
         "hidden": false
       },
       {
@@ -3350,7 +3350,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 112,
         "hidden": false
       },
       {
@@ -3375,7 +3375,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 28,
         "hidden": false
       },
       {
@@ -3384,7 +3384,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 150,
         "hidden": false
       },
       {
@@ -3393,8 +3393,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 9,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1468.jpg",
@@ -3402,8 +3402,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 5,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1643.jpg",
@@ -3411,7 +3411,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 109,
         "hidden": false
       },
       {
@@ -3420,22 +3420,22 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 116,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0951.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0945.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
         "index": null,
@@ -3447,7 +3447,7 @@
           "dream"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 10,
         "hidden": false
       },
       {
@@ -3456,8 +3456,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 5,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1455.jpg",
@@ -3465,8 +3465,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 110,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1724.jpg",
@@ -3474,26 +3474,26 @@
           "jologic"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 5,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0950.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0987.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1684.jpg",
@@ -3510,7 +3510,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 35,
         "hidden": false
       },
       {
@@ -3527,8 +3527,8 @@
         "tag": [
           "btx"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 5,
         "hidden": false
       },
       {
@@ -3537,7 +3537,7 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 116,
         "hidden": false
       },
       {
@@ -3552,8 +3552,8 @@
         "tag": [
           "fg"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 2,
         "hidden": false
       },
       {
@@ -3562,8 +3562,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 5,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1479.jpg",
@@ -3571,8 +3571,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 5,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1495.jpg",
@@ -3580,16 +3580,16 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 9,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1122.jpg",
         "tag": [
           "dream"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 10,
         "hidden": false
       },
       {
@@ -3597,8 +3597,8 @@
         "tag": [
           "dream"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 10,
         "hidden": false
       },
       {
@@ -3607,7 +3607,7 @@
           "btx"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 9,
         "hidden": false
       },
       {
@@ -3616,7 +3616,7 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 115,
         "hidden": false
       },
       {
@@ -3624,7 +3624,7 @@
         "tag": [
           "biz4"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -3652,7 +3652,7 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 110,
         "hidden": false
       },
       {
@@ -3668,7 +3668,7 @@
           "jologic"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 3,
         "hidden": false
       },
       {
@@ -3677,7 +3677,7 @@
           "vio"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 3,
         "hidden": false
       },
       {
@@ -3686,7 +3686,7 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 110,
         "hidden": false
       },
       {
@@ -3695,7 +3695,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 28,
         "hidden": false
       },
       {
@@ -3704,7 +3704,7 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 112,
         "hidden": false
       },
       {
@@ -3713,7 +3713,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 150,
         "hidden": false
       },
       {
@@ -3722,7 +3722,7 @@
           "vio"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 2,
         "hidden": false
       },
       {
@@ -3731,8 +3731,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 5,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0833.jpg",
@@ -3740,8 +3740,8 @@
           "toan_canh"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 6,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1294.jpg",
@@ -3749,7 +3749,7 @@
           "vio"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 1,
         "hidden": false
       },
       {
@@ -3758,7 +3758,7 @@
           "jologic"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 4,
         "hidden": false
       },
       {
@@ -3767,7 +3767,7 @@
           "biz4"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 4,
         "hidden": false
       },
       {
@@ -3776,8 +3776,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 5,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1645.jpg",
@@ -3785,7 +3785,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 109,
         "hidden": false
       },
       {
@@ -3802,8 +3802,8 @@
         "tag": [
           "fg"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 5,
         "hidden": false
       },
       {
@@ -3811,8 +3811,8 @@
         "tag": [
           "gia_dinh"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 32,
         "hidden": false
       },
       {
@@ -3825,19 +3825,19 @@
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1484.jpg",
         "tag": [
-          "gia_dinh"
+          "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 5,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1324.jpg",
         "tag": [
           "btx"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 1,
         "hidden": false
       },
       {
@@ -3856,7 +3856,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1126.jpg",
@@ -3864,7 +3864,7 @@
           "dream"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 10,
         "hidden": false
       },
       {
@@ -3881,8 +3881,8 @@
         "tag": [
           "biz4"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 6,
         "hidden": false
       },
       {
@@ -3891,7 +3891,7 @@
           "btx"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 1,
         "hidden": false
       },
       {
@@ -3900,7 +3900,7 @@
           "btx"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 1,
         "hidden": false
       },
       {
@@ -3909,7 +3909,7 @@
           "jologic"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 5,
         "hidden": false
       },
       {
@@ -3918,7 +3918,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 46,
         "hidden": false
       },
       {
@@ -3927,16 +3927,16 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 10,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1537.jpg",
         "tag": [
           "dau_re"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 117.1,
         "hidden": false
       },
       {
@@ -3944,8 +3944,8 @@
         "tag": [
           "dream"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 3,
         "hidden": false
       },
       {
@@ -3960,8 +3960,8 @@
         "tag": [
           "vio"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 1,
         "hidden": false
       },
       {
@@ -3970,7 +3970,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 111,
         "hidden": false
       },
       {
@@ -3979,8 +3979,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 5,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1863.jpg",
@@ -3988,8 +3988,8 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 62,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1522.jpg",
@@ -4003,8 +4003,8 @@
         "tag": [
           "dau_re"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 117.1,
         "hidden": false
       },
       {
@@ -4023,7 +4023,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1640.jpg",
@@ -4031,7 +4031,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 108,
         "hidden": false
       },
       {
@@ -4041,7 +4041,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1445.jpg",
@@ -4050,7 +4050,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1442.jpg",
@@ -4059,7 +4059,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0956.jpg",
@@ -4068,7 +4068,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1525.jpg",
@@ -4076,13 +4076,13 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 117,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0943.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
         "index": null,
@@ -4094,8 +4094,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 10,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1085.jpg",
@@ -4103,7 +4103,7 @@
           "btx"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 8,
         "hidden": false
       },
       {
@@ -4112,7 +4112,7 @@
           "fg"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 3,
         "hidden": false
       },
       {
@@ -4120,18 +4120,18 @@
         "tag": [
           "btx"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 7,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0940.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1691.jpg",
@@ -4145,11 +4145,11 @@
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0995.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0832.jpg",
@@ -4171,7 +4171,7 @@
           "toan_canh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 8.1,
         "hidden": false
       },
       {
@@ -4180,7 +4180,7 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 117,
         "hidden": false
       },
       {
@@ -4202,18 +4202,18 @@
         "tag": [
           "biz4"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "portrait",
+        "index": 5,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1109.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1862.jpg",
@@ -4221,7 +4221,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 150,
         "hidden": false
       },
       {
@@ -4236,8 +4236,8 @@
         "tag": [
           "dau_re"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 115,
         "hidden": false
       },
       {
@@ -4255,13 +4255,13 @@
           "jologic"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 5,
         "hidden": false
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0969.jpg",
         "tag": [
-          "dau_re"
+          "toan_canh"
         ],
         "orientation": "landscape",
         "index": null,
@@ -4273,8 +4273,8 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 62,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1451.jpg",
@@ -4282,8 +4282,8 @@
           "dau_re"
         ],
         "orientation": "landscape",
-        "index": null,
-        "hidden": false
+        "index": 9,
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0834.jpg",
@@ -4292,7 +4292,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0824.jpg",
@@ -4314,7 +4314,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 111,
         "hidden": false
       },
       {
@@ -4338,7 +4338,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1646.jpg",
@@ -4346,7 +4346,7 @@
           "gia_dinh"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 110,
         "hidden": false
       },
       {
@@ -4355,7 +4355,7 @@
           "vio"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 1,
         "hidden": false
       },
       {
@@ -4364,7 +4364,7 @@
           "jologic"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 5,
         "hidden": false
       },
       {
@@ -4374,7 +4374,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC0835.jpg",
@@ -4383,7 +4383,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1242.jpg",
@@ -4391,7 +4391,7 @@
           "fg"
         ],
         "orientation": "landscape",
-        "index": null,
+        "index": 4,
         "hidden": false
       },
       {
@@ -4401,15 +4401,15 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_3101/a/_DSC1135.jpg",
         "tag": [
           "btx"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 5,
         "hidden": false
       },
       {
@@ -4424,8 +4424,8 @@
         "tag": [
           "dau_re"
         ],
-        "orientation": "landscape",
-        "index": null,
+        "orientation": "square",
+        "index": 109,
         "hidden": false
       }
     ],
@@ -4444,7 +4444,7 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -4464,14 +4464,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00787.jpg",
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -4532,7 +4532,7 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -4541,7 +4541,7 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -4550,16 +4550,16 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00812.jpg",
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -4568,16 +4568,16 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00816.jpg",
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -4586,16 +4586,16 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00819.jpg",
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -4604,7 +4604,7 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -4613,9 +4613,9 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00825.jpg",
@@ -4624,14 +4624,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00830.jpg",
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -4642,14 +4642,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00834.jpg",
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -4658,7 +4658,7 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -4669,7 +4669,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00840.jpg",
@@ -4678,7 +4678,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00843.jpg",
@@ -4687,7 +4687,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00844.jpg",
@@ -4696,14 +4696,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00846.jpg",
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -4712,7 +4712,7 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -4721,7 +4721,7 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -4730,7 +4730,7 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -4739,7 +4739,7 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -4757,7 +4757,7 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -4768,7 +4768,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00867.jpg",
@@ -4777,7 +4777,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00868.jpg",
@@ -4786,7 +4786,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00869.jpg",
@@ -4802,7 +4802,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00872.jpg",
@@ -4811,7 +4811,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00873.jpg",
@@ -4820,14 +4820,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00874.jpg",
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -4838,7 +4838,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00876.jpg",
@@ -4847,7 +4847,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00877.jpg",
@@ -4856,7 +4856,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00881.jpg",
@@ -4865,7 +4865,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00883.jpg",
@@ -4874,7 +4874,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00884.jpg",
@@ -4883,14 +4883,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00886.jpg",
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -4899,7 +4899,7 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -4910,7 +4910,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00892.jpg",
@@ -4919,7 +4919,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00893.jpg",
@@ -4928,7 +4928,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00894.jpg",
@@ -4937,7 +4937,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00895.jpg",
@@ -4946,7 +4946,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00898.jpg",
@@ -4955,7 +4955,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00899.jpg",
@@ -4982,7 +4982,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00906.jpg",
@@ -5009,7 +5009,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00912.jpg",
@@ -5062,7 +5062,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00927.jpg",
@@ -5071,7 +5071,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00928.jpg",
@@ -5080,7 +5080,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00930.jpg",
@@ -5089,7 +5089,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00931.jpg",
@@ -5098,7 +5098,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00932.jpg",
@@ -5107,7 +5107,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00934.jpg",
@@ -5130,7 +5130,7 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -5139,9 +5139,9 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00940.jpg",
@@ -5150,14 +5150,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00941.jpg",
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -5168,7 +5168,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00945.jpg",
@@ -5177,14 +5177,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00947.jpg",
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -5193,7 +5193,7 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -5204,14 +5204,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00951.jpg",
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -5229,7 +5229,7 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -5238,7 +5238,7 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -5249,7 +5249,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00961.jpg",
@@ -5258,14 +5258,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00963.jpg",
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -5285,7 +5285,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00974.jpg",
@@ -5303,7 +5303,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00983.jpg",
@@ -5312,14 +5312,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00985.jpg",
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -5328,7 +5328,7 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -5339,7 +5339,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00993.jpg",
@@ -5348,7 +5348,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA00995.jpg",
@@ -5371,7 +5371,7 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -5382,7 +5382,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01001.jpg",
@@ -5391,7 +5391,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01003.jpg",
@@ -5409,7 +5409,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01005.jpg",
@@ -5427,14 +5427,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01007.jpg",
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -5445,7 +5445,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01011.jpg",
@@ -5454,7 +5454,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01013.jpg",
@@ -5463,7 +5463,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01014.jpg",
@@ -5472,14 +5472,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01015.jpg",
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -5488,7 +5488,7 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -5497,7 +5497,7 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -5508,7 +5508,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01023.jpg",
@@ -5526,7 +5526,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01026.jpg",
@@ -5544,7 +5544,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01030.jpg",
@@ -5589,7 +5589,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01040.jpg",
@@ -5612,16 +5612,16 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01047.jpg",
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -5641,7 +5641,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01052.jpg",
@@ -5659,14 +5659,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01057.jpg",
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -5677,7 +5677,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01063.jpg",
@@ -5714,7 +5714,7 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -5723,9 +5723,9 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01075.jpg",
@@ -5748,7 +5748,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01082.jpg",
@@ -5757,7 +5757,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01083.jpg",
@@ -5778,16 +5778,16 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01101.jpg",
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -5807,7 +5807,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01106.jpg",
@@ -5823,7 +5823,7 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -5850,7 +5850,7 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -5859,9 +5859,9 @@
         "tag": [
           "nha_gai_gia_tien"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01113.jpg",
@@ -5870,7 +5870,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01116.jpg",
@@ -5906,7 +5906,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01124.jpg",
@@ -5915,7 +5915,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01125.jpg",
@@ -5951,7 +5951,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01131.jpg",
@@ -5969,7 +5969,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01138.jpg",
@@ -5985,7 +5985,7 @@
         "tag": [
           "don_nha_trai"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -6623,7 +6623,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -6641,7 +6641,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -6760,7 +6760,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01306.jpg",
@@ -6778,7 +6778,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01308.jpg",
@@ -6834,7 +6834,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -6845,14 +6845,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01327.jpg",
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -6914,7 +6914,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -6930,7 +6930,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -6941,7 +6941,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01346.jpg",
@@ -7017,7 +7017,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -7051,7 +7051,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01369.jpg",
@@ -7083,7 +7083,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01376.jpg",
@@ -7101,7 +7101,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01379.jpg",
@@ -7115,7 +7115,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -7140,7 +7140,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01387.jpg",
@@ -7149,7 +7149,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01389.jpg",
@@ -7172,7 +7172,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01392.jpg",
@@ -7195,7 +7195,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01396.jpg",
@@ -7204,7 +7204,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01397.jpg",
@@ -7269,7 +7269,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01410.jpg",
@@ -7278,7 +7278,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01411.jpg",
@@ -7331,7 +7331,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01421.jpg",
@@ -7354,7 +7354,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -7388,7 +7388,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01433.jpg",
@@ -7420,7 +7420,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -7445,14 +7445,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01444.jpg",
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -7463,7 +7463,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01446.jpg",
@@ -7477,7 +7477,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -7495,7 +7495,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01453.jpg",
@@ -7527,7 +7527,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01458.jpg",
@@ -7536,7 +7536,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01460.jpg",
@@ -7586,7 +7586,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01468.jpg",
@@ -7595,7 +7595,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01469.jpg",
@@ -7631,14 +7631,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01475.jpg",
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -7658,7 +7658,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01478.jpg",
@@ -7685,7 +7685,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01485.jpg",
@@ -7694,7 +7694,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01486.jpg",
@@ -7721,7 +7721,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01492.jpg",
@@ -7730,7 +7730,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01493.jpg",
@@ -7739,7 +7739,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01494.jpg",
@@ -7757,7 +7757,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01497.jpg",
@@ -7766,14 +7766,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01498.jpg",
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -7782,7 +7782,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -7802,7 +7802,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01504.jpg",
@@ -7811,7 +7811,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01506.jpg",
@@ -7838,7 +7838,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01509.jpg",
@@ -7847,7 +7847,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01511.jpg",
@@ -7865,7 +7865,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01514.jpg",
@@ -7874,7 +7874,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01515.jpg",
@@ -7883,7 +7883,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01516.jpg",
@@ -7892,7 +7892,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01517.jpg",
@@ -7910,7 +7910,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01520.jpg",
@@ -7919,7 +7919,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01521.jpg",
@@ -7928,7 +7928,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01522.jpg",
@@ -7937,7 +7937,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01523.jpg",
@@ -7946,7 +7946,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01525.jpg",
@@ -7955,14 +7955,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01526.jpg",
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -7973,14 +7973,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01529.jpg",
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -8000,7 +8000,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01532.jpg",
@@ -8009,7 +8009,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01534.jpg",
@@ -8018,7 +8018,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01535.jpg",
@@ -8036,7 +8036,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01538.jpg",
@@ -8045,7 +8045,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01540.jpg",
@@ -8070,7 +8070,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -8081,7 +8081,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01546.jpg",
@@ -8090,7 +8090,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01548.jpg",
@@ -8108,7 +8108,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01550.jpg",
@@ -8117,7 +8117,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01552.jpg",
@@ -8126,7 +8126,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01553.jpg",
@@ -8135,7 +8135,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01555.jpg",
@@ -8144,7 +8144,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01556.jpg",
@@ -8153,7 +8153,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01557.jpg",
@@ -8169,7 +8169,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -8180,7 +8180,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01562.jpg",
@@ -8189,7 +8189,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01564.jpg",
@@ -8198,7 +8198,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01565.jpg",
@@ -8207,7 +8207,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01566.jpg",
@@ -8216,7 +8216,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01568.jpg",
@@ -8225,7 +8225,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01569.jpg",
@@ -8234,7 +8234,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01570.jpg",
@@ -8243,7 +8243,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01571.jpg",
@@ -8261,7 +8261,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01574.jpg",
@@ -8270,7 +8270,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01575.jpg",
@@ -8279,7 +8279,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01578.jpg",
@@ -8288,7 +8288,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01579.jpg",
@@ -8304,16 +8304,16 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01582.jpg",
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -8322,18 +8322,18 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01584.jpg",
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01586.jpg",
@@ -8342,7 +8342,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01587.jpg",
@@ -8351,7 +8351,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01588.jpg",
@@ -8369,7 +8369,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01590.jpg",
@@ -8396,7 +8396,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01594.jpg",
@@ -8414,7 +8414,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01597.jpg",
@@ -8432,7 +8432,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01600.jpg",
@@ -8441,7 +8441,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01602.jpg",
@@ -8464,7 +8464,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01605.jpg",
@@ -8482,7 +8482,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01609.jpg",
@@ -8491,7 +8491,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01610.jpg",
@@ -8500,14 +8500,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01611.jpg",
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -8518,7 +8518,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01619.jpg",
@@ -8527,7 +8527,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01621.jpg",
@@ -8536,7 +8536,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01622.jpg",
@@ -8552,7 +8552,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -8563,7 +8563,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01629.jpg",
@@ -8572,7 +8572,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01633.jpg",
@@ -8581,7 +8581,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01634.jpg",
@@ -8599,7 +8599,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01638.jpg",
@@ -8608,7 +8608,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01640.jpg",
@@ -8617,7 +8617,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01642.jpg",
@@ -8626,7 +8626,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01644.jpg",
@@ -8635,7 +8635,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01645.jpg",
@@ -8662,7 +8662,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01650.jpg",
@@ -8671,7 +8671,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01651.jpg",
@@ -8680,7 +8680,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01653.jpg",
@@ -8689,7 +8689,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01654.jpg",
@@ -8707,7 +8707,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01657.jpg",
@@ -8716,7 +8716,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01658.jpg",
@@ -8734,7 +8734,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01661.jpg",
@@ -8752,7 +8752,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01665.jpg",
@@ -8779,7 +8779,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01670.jpg",
@@ -8788,7 +8788,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01671.jpg",
@@ -8815,7 +8815,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01677.jpg",
@@ -8833,7 +8833,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01679.jpg",
@@ -8851,7 +8851,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01681.jpg",
@@ -8883,7 +8883,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01688.jpg",
@@ -8901,7 +8901,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01691.jpg",
@@ -8910,7 +8910,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01692.jpg",
@@ -8928,7 +8928,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01695.jpg",
@@ -8937,14 +8937,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01696.jpg",
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -8955,7 +8955,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01698.jpg",
@@ -8964,7 +8964,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01706.jpg",
@@ -8982,7 +8982,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01708.jpg",
@@ -9024,7 +9024,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -9035,7 +9035,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01718.jpg",
@@ -9065,7 +9065,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -9242,7 +9242,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01758.jpg",
@@ -9397,7 +9397,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01794.jpg",
@@ -9429,7 +9429,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01798.jpg",
@@ -9445,7 +9445,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01801.jpg",
@@ -9468,7 +9468,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01804.jpg",
@@ -9535,7 +9535,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01818.jpg",
@@ -9544,7 +9544,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01819.jpg",
@@ -9565,7 +9565,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -9608,7 +9608,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01828.jpg",
@@ -9617,14 +9617,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01832.jpg",
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -9633,9 +9633,9 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01836.jpg",
@@ -9651,14 +9651,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01838.jpg",
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -9683,7 +9683,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01842.jpg",
@@ -9706,7 +9706,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -9770,7 +9770,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01858.jpg",
@@ -9786,7 +9786,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01860.jpg",
@@ -9809,7 +9809,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01863.jpg",
@@ -9825,7 +9825,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01866.jpg",
@@ -9841,14 +9841,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01869.jpg",
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -9864,7 +9864,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -9919,7 +9919,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01885.jpg",
@@ -9937,7 +9937,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01888.jpg",
@@ -9976,7 +9976,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01896.jpg",
@@ -9999,7 +9999,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01900.jpg",
@@ -10008,7 +10008,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01902.jpg",
@@ -10026,7 +10026,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01904.jpg",
@@ -10035,7 +10035,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01906.jpg",
@@ -10044,7 +10044,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01907.jpg",
@@ -10072,7 +10072,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -10081,7 +10081,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -10090,7 +10090,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -10108,7 +10108,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01919.jpg",
@@ -10136,7 +10136,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -10145,7 +10145,7 @@
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -10163,14 +10163,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01931.jpg",
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -10195,14 +10195,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01936.jpg",
         "tag": [
           "nghi_thu_hai_ho"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -10227,7 +10227,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01943.jpg",
@@ -10236,7 +10236,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01944.jpg",
@@ -10254,7 +10254,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01948.jpg",
@@ -10263,7 +10263,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01949.jpg",
@@ -10284,7 +10284,7 @@
         "tag": [
           "dua_dau"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -10295,7 +10295,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01955.jpg",
@@ -10304,14 +10304,14 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01958.jpg",
         "tag": [
           "dua_dau"
         ],
-        "orientation": "landscape",
+        "orientation": "square",
         "index": null,
         "hidden": false
       },
@@ -10329,7 +10329,7 @@
         ],
         "orientation": "landscape",
         "index": null,
-        "hidden": false
+        "hidden": true
       },
       {
         "image": "https://ik.imagekit.io/8f6s5msl5/wedding_0802/w/GIA01965.jpg",
@@ -10352,7 +10352,7 @@
         "tag": [
           "dua_dau"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },
@@ -10456,7 +10456,7 @@
         "tag": [
           "dua_dau"
         ],
-        "orientation": "landscape",
+        "orientation": "portrait",
         "index": null,
         "hidden": false
       },

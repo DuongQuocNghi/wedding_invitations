@@ -78,6 +78,7 @@ const TABS: TabConfig[] = [
     label: 'Tiệc 31.01',
     chips: [
       { id: 'toan_canh', label: 'Toàn cảnh' },
+      { id: 'gia_dinh', label: 'Gia đình' },
       { id: 'hong_bang', label: 'Team Hồng Bàng' },
       { id: 'btx', label: 'Team Bùi Thị Xuân' },
       { id: 'biz4', label: 'Team Biz4' },
@@ -86,8 +87,8 @@ const TABS: TabConfig[] = [
       { id: 'dream', label: 'Team DreamStudio' },
       { id: 'gugotech', label: 'Team GugoTech' },
       { id: 'vio', label: 'Team Vio' },
-      { id: 'gia_dinh', label: 'Gia đình' },
-      { id: 'dau_re', label: 'Dâu Rễ' },
+      { id: 'dau_re', label: 'Tiệc cưới' },
+     
     ],
   },
   {
@@ -99,7 +100,7 @@ const TABS: TabConfig[] = [
       { id: 'me', label: 'Người thân mẹ Phượng' },
       { id: 'nha_gai_tan_hon', label: 'Gia đình nhà gái' },
       { id: 'ban_be', label: 'Bạn bè' },
-      { id: 'dau_re', label: 'Dâu rễ' },
+      { id: 'dau_re', label: 'Dâu rể' },
       { id: 'toan_canh_tiec_cuoi', label: 'Tiệc cưới' },
     ],
   },
