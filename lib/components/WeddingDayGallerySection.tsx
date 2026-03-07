@@ -164,6 +164,13 @@ function getImagesForChip(tabId: string, chipId: string): GalleryItem[] {
   return sortByDisplayIndex(filtered, indexInSource);
 }
 
+/** Flat list of images for a tab (all chips in order), for URL param and share. */
+function getFlatImagesForTab(tabId: string): GalleryItem[] {
+  const tab = TABS.find((t) => t.id === tabId);
+  if (!tab) return [];
+  return tab.chips.flatMap((chip) => getImagesForChip(tabId, chip.id));
+}
+
 /**
  * Wedding Day gallery section: title, sticky tabs, sticky chip filters, masonry-style image groups.
  * Images are placeholders (gray, 12px radius); import later.
@@ -188,6 +195,8 @@ export function WeddingDayGallerySection() {
   /** Avoid hydration mismatch: only use window-derived values after mount. */
   const [hasMounted, setHasMounted] = useState(false);
   const hasInitialScrollRef = useRef(false);
+  const hasOpenedNameImageRef = useRef(false);
+  const openNameImageTimeoutRef = useRef<number | null>(null);
   const isUserScrollingChipsRef = useRef(false);
   const chipScrollTimeoutRef = useRef<number | null>(null);
   const groupRefs = useRef<Record<string, HTMLElement | null>>({});
@@ -548,9 +557,14 @@ export function WeddingDayGallerySection() {
   }, [currentLightboxSrc]);
 
   const shareCurrentImage = useCallback(async () => {
-    if (!currentLightboxSrc) return;
+    if (currentLightboxSrc == null || lightboxIndex == null) return;
 
-    const url = new URL(currentLightboxSrc, window.location.href).toString();
+    const shareUrl = new URL(window.location.href);
+    shareUrl.searchParams.set('tab', activeTab);
+    shareUrl.searchParams.set('group', activeChip);
+    shareUrl.searchParams.set('nameImage', String(lightboxIndex));
+    const url = shareUrl.toString();
+
     const nav = navigator as Navigator & {
       share?: (data: { url?: string; title?: string; text?: string }) => Promise<void>;
     };
@@ -575,9 +589,9 @@ export function WeddingDayGallerySection() {
         shareResetTimeoutRef.current = null;
       }, 1500);
     } catch {
-      window.prompt('Copy link', url);
+      // Clipboard not available; no fallback popup.
     }
-  }, [currentLightboxSrc]);
+  }, [currentLightboxSrc, lightboxIndex, activeTab, activeChip]);
 
   useEffect(() => {
     return () => {
@@ -586,6 +600,34 @@ export function WeddingDayGallerySection() {
       }
     };
   }, []);
+
+  // Open lightbox when page loads with ?nameImage=index (e.g. from shared link).
+  // Delay opening so the initial scroll-to-group (0, 300, 800, 1500ms) completes first.
+  useEffect(() => {
+    if (typeof window === 'undefined' || !hasMounted) return;
+    if (hasOpenedNameImageRef.current) return;
+    const url = new URL(window.location.href);
+    const nameImage = url.searchParams.get('nameImage');
+    if (nameImage == null) return;
+    const idx = parseInt(nameImage, 10);
+    if (!Number.isFinite(idx) || idx < 0) return;
+    const flat = getFlatImagesForTab(activeTab);
+    if (flat.length === 0) return;
+
+    const delayMs = 1000;
+    openNameImageTimeoutRef.current = window.setTimeout(() => {
+      openNameImageTimeoutRef.current = null;
+      hasOpenedNameImageRef.current = true;
+      setLightboxIndex(Math.min(idx, flat.length - 1));
+    }, delayMs);
+
+    return () => {
+      if (openNameImageTimeoutRef.current !== null) {
+        window.clearTimeout(openNameImageTimeoutRef.current);
+        openNameImageTimeoutRef.current = null;
+      }
+    };
+  }, [hasMounted, activeTab]);
 
   return (
     <section
@@ -1033,6 +1075,11 @@ export function WeddingDayGallerySection() {
           src: item.image,
         }))}
         plugins={[Zoom]}
+        on={{
+          view: ({ index: currentIndex }) => {
+            setLightboxIndex(currentIndex);
+          },
+        }}
         toolbar={{
           buttons: [
             currentLightboxSrc ? (
