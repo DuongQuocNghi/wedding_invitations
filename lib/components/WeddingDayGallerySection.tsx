@@ -106,6 +106,76 @@ const TABS: TabConfig[] = [
   },
 ];
 
+const GALLERY_STATE_PARAM = 's';
+
+type GalleryUrlPayload = {
+  t: string;
+  g: string | null;
+  n?: number;
+};
+
+/** Encode gallery state (tab, group, nameImage) to a single URL-safe string (base64url). */
+function encodeGalleryState(payload: {
+  tab: string;
+  group?: string | null;
+  nameImage?: number | null;
+}): string {
+  const raw: GalleryUrlPayload = {
+    t: payload.tab,
+    g: payload.group ?? null,
+  };
+  if (payload.nameImage != null && Number.isFinite(payload.nameImage)) {
+    raw.n = payload.nameImage;
+  }
+  const json = JSON.stringify(raw);
+  const base64 = typeof btoa !== 'undefined' ? btoa(unescape(encodeURIComponent(json))) : '';
+  return base64.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+
+/** Decode gallery state from base64url string. Returns null if invalid. */
+function decodeGalleryState(encoded: string): { tab: string; group: string | null; nameImage: number | null } | null {
+  try {
+    let base64 = encoded.replace(/-/g, '+').replace(/_/g, '/');
+    const pad = base64.length % 4;
+    if (pad) base64 += '===='.slice(0, 4 - pad);
+    const json = decodeURIComponent(escape(typeof atob !== 'undefined' ? atob(base64) : ''));
+    const raw = JSON.parse(json) as GalleryUrlPayload;
+    if (typeof raw.t !== 'string') return null;
+    return {
+      tab: raw.t,
+      group: raw.g ?? null,
+      nameImage: raw.n != null && Number.isFinite(raw.n) ? raw.n : null,
+    };
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Read gallery state from current URL. Supports encoded param ?s=... and legacy ?tab=&group=&nameImage=.
+ */
+function getDecodedGalleryState(url: URL): { tab: string; group: string | null; nameImage: number | null } | null {
+  const encoded = url.searchParams.get(GALLERY_STATE_PARAM);
+  if (encoded) {
+    return decodeGalleryState(encoded);
+  }
+  const tab = url.searchParams.get('tab');
+  const group = url.searchParams.get('group');
+  const nameImageParam = url.searchParams.get('nameImage');
+  const nameImage = nameImageParam != null ? parseInt(nameImageParam, 10) : null;
+  if (tab) {
+    return {
+      tab,
+      group: group ?? null,
+      nameImage: Number.isFinite(nameImage ?? NaN) ? nameImage : null,
+    };
+  }
+  if (group) {
+    return { tab: '', group, nameImage: Number.isFinite(nameImage ?? NaN) ? nameImage : null };
+  }
+  return null;
+}
+
 /** Aspect ratios for fixed thumbnail slots: portrait 3:4, landscape 4:3, square 1:1. Prevents layout shift. */
 const ASPECT_RATIO_PORTRAIT = '3/4';
 const ASPECT_RATIO_LANDSCAPE = '4/3';
@@ -366,12 +436,11 @@ export function WeddingDayGallerySection() {
       if (typeof window === 'undefined') return;
 
       const url = new URL(window.location.href);
-      url.searchParams.set('tab', tabId);
-      if (chipId) {
-        url.searchParams.set('group', chipId);
-      } else {
-        url.searchParams.delete('group');
-      }
+      const encoded = encodeGalleryState({ tab: tabId, group: chipId });
+      url.searchParams.set(GALLERY_STATE_PARAM, encoded);
+      url.searchParams.delete('tab');
+      url.searchParams.delete('group');
+      url.searchParams.delete('nameImage');
 
       const newHref = url.toString();
       if (newHref === window.location.href) return;
@@ -420,18 +489,16 @@ export function WeddingDayGallerySection() {
     if (hasInitialScrollRef.current) return;
 
     const url = new URL(window.location.href);
-    const urlTab = url.searchParams.get('tab');
-    const urlGroup = url.searchParams.get('group');
-
+    const state = getDecodedGalleryState(url);
     let initialTabId: string | null = null;
     let initialChipId: string | null = null;
 
-    if (urlTab) {
-      const tab = TABS.find((t) => t.id === urlTab);
+    if (state?.tab) {
+      const tab = TABS.find((t) => t.id === state.tab);
       if (tab) {
         initialTabId = tab.id;
-        if (urlGroup) {
-          const chip = tab.chips.find((c) => c.id === urlGroup);
+        if (state.group) {
+          const chip = tab.chips.find((c) => c.id === state.group);
           if (chip) {
             initialChipId = chip.id;
           }
@@ -440,13 +507,13 @@ export function WeddingDayGallerySection() {
           initialChipId = tab.chips[0].id;
         }
       }
-    } else if (urlGroup) {
+    } else if (state?.group) {
       const tab = TABS.find((t) =>
-        t.chips.some((c) => c.id === urlGroup),
+        t.chips.some((c) => c.id === state.group),
       );
       if (tab) {
         initialTabId = tab.id;
-        initialChipId = urlGroup;
+        initialChipId = state.group;
       }
     }
 
@@ -455,7 +522,11 @@ export function WeddingDayGallerySection() {
       setActiveTab(initialTabId);
       setActiveChip(initialChipId);
       setPendingChipScroll(initialChipId);
-      updateUrl(initialTabId, initialChipId);
+      // When loading from a share link (state.nameImage set), do NOT replace URL so the
+      // nameImage effect can read it and open the lightbox. Only sync URL when there is no nameImage.
+      if (state && state.nameImage == null) {
+        updateUrl(initialTabId, initialChipId);
+      }
 
       const chipId = initialChipId;
 
@@ -560,9 +631,15 @@ export function WeddingDayGallerySection() {
     if (currentLightboxSrc == null || lightboxIndex == null) return;
 
     const shareUrl = new URL(window.location.href);
-    shareUrl.searchParams.set('tab', activeTab);
-    shareUrl.searchParams.set('group', activeChip);
-    shareUrl.searchParams.set('nameImage', String(lightboxIndex));
+    const encoded = encodeGalleryState({
+      tab: activeTab,
+      group: activeChip,
+      nameImage: lightboxIndex,
+    });
+    shareUrl.searchParams.set(GALLERY_STATE_PARAM, encoded);
+    shareUrl.searchParams.delete('tab');
+    shareUrl.searchParams.delete('group');
+    shareUrl.searchParams.delete('nameImage');
     const url = shareUrl.toString();
 
     const nav = navigator as Navigator & {
@@ -601,16 +678,15 @@ export function WeddingDayGallerySection() {
     };
   }, []);
 
-  // Open lightbox when page loads with ?nameImage=index (e.g. from shared link).
+  // Open lightbox when page loads with nameImage in state (e.g. from shared link).
   // Delay opening so the initial scroll-to-group (0, 300, 800, 1500ms) completes first.
   useEffect(() => {
     if (typeof window === 'undefined' || !hasMounted) return;
     if (hasOpenedNameImageRef.current) return;
     const url = new URL(window.location.href);
-    const nameImage = url.searchParams.get('nameImage');
-    if (nameImage == null) return;
-    const idx = parseInt(nameImage, 10);
-    if (!Number.isFinite(idx) || idx < 0) return;
+    const state = getDecodedGalleryState(url);
+    const idx = state?.nameImage ?? null;
+    if (idx == null || idx < 0) return;
     const flat = getFlatImagesForTab(activeTab);
     if (flat.length === 0) return;
 
